@@ -1465,6 +1465,7 @@ def show(tables):
         if matchs.empty:
             st.warning("⚠️ Aucun match trouvé pour cette sélection.")
         else:
+            # Préparer le DataFrame pour export
             df_export = matchs[[
                 "equipe_domicile_nom",
                 "score_domicile",
@@ -1474,11 +1475,14 @@ def show(tables):
 
             df_export.columns = ["Equipe domicile", "Score domicile", "Score extérieur", "Equipe extérieure"]
 
-            # --- 3️⃣ Prévisualisation ---
+            # Remplacer les NaN par des chaînes vides pour éviter les erreurs Excel
+            df_export = df_export.fillna("").astype(str)
+
+            # --- Prévisualisation ---
             st.markdown("### Prévisualisation des matchs")
             st.dataframe(df_export, hide_index=True)
 
-            # --- 4️⃣ Générer le fichier Excel en mémoire ---
+            # --- Générer le fichier Excel en mémoire ---
             output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                 df_export.to_excel(writer, sheet_name="Pronostics", index=False, startrow=2)
@@ -1511,7 +1515,7 @@ def show(tables):
 
                 # === Largeur automatique ===
                 for i, col in enumerate(df_export.columns):
-                    max_len = max(df_export[col].astype(str).map(len).max(), len(col)) + 2
+                    max_len = max(df_export[col].map(len).max(), len(col)) + 2
                     worksheet.set_column(i, i, max_len)
 
                 # === Alignement + zébrage ===
