@@ -1,0 +1,335 @@
+id,nom_csv,nom_db,id_nom_db
+1,Aberdeen,Aberdeen FC,509
+2,Accrington,Accrington Stanley FC,511
+3,AFC Wimbledon,AFC Wimbledon,504
+4,Ajax,Ajax Amsterdam,19
+5,Alaves,Deportivo Alavès,126
+6,Albacete,Albacete Balompié,513
+7,Aldershot,Aldershot Town FC,517
+8,Almeria,Unión Deportiva Almería,523
+9,Altrincham,Altrincham FC,524
+10,Alverca,FC Alverca,525
+11,Amiens,Amiens SC,21
+12,Anderlecht,RSC Anderlecht,370
+13,Andorra,FC Andorra,529
+14,Angers,Angers SCO,23
+15,Annecy,FC Annecy,155
+16,Antwerp,Royal Antwerp FC,530
+17,Arouca,FC Arouca,532
+18,Arsenal,Arsenal FC,28
+19,Aston Villa,Aston Villa FC,65
+20,Atalanta,Atalanta Bergame,66
+21,Ath Bilbao,Athletic Club,67
+22,Ath Madrid,Club Atlético de Madrid,110
+23,Augsburg,FC Augsbourg,156
+24,Auxerre,AJ Auxerre,18
+25,Avellino,US Avellino,536
+26,AVS,AVS Futebol SAD,505
+27,AZ Alkmaar,AZ Alkmaar,71
+28,Barcelona,FC Barcelone,159
+29,Bari,SS Calcio Bari,541
+30,Barnet,Barnet FC,542
+31,Barnsley,Barnsley FC,543
+32,Barrow,Barrow AFC,544
+33,Bastia,CA Bastia,91
+34,Bayern Munich,FC Bayern Munich,161
+35,Benfica,SL Benfica,393
+36,Betis,Real Betis Balompié,356
+37,Bielefeld,DSC Arminia Bielefeld,552
+38,Birmingham,Birmingham City FC,553
+39,Blackburn,Blackburn Rovers FC,554
+40,Blackpool,Blackpool FC,555
+41,Bochum,VfL Bochum,557
+42,Bologna,Bologne FC 1909,84
+43,Bolton,Bolton Wanderers FC,558
+44,Boreham Wood,Boreham Wood Football Club,559
+45,Boston Utd,Boston United FC,560
+46,Boulogne,US Boulogne Côte d'Opale,450
+47,Bournemouth,AFC Bournemouth,14
+48,Brackley Town,Brackley Town,561
+49,Bradford,Bradford City,562
+50,Braintree Town,Braintree Town FC,563
+51,Braunschweig,Eintracht Brunswick,564
+52,Brentford,Brentford FC,565
+53,Brest,Stade Brestois 29,411
+54,Brighton,Brighton & Hove Albion FC,567
+55,Bristol City,Bristol City FC,568
+56,Bristol Rvs,Bristol Rovers FC,569
+57,Bromley,Bromley FC,570
+58,Burgos,Burgos CF,572
+59,Burnley,Burnley FC,90
+60,Burton,Burton Albion FC,573
+61,Cadiz,Cadiz FC,577
+62,Cagliari,Cagliari Calcio,94
+63,Cambridge,Cambridge United FC,578
+64,Cardiff,Cardiff,584
+65,Carlisle,Carlisle United FC,585
+66,Carrarese,Carrarese Calcio 1908,586
+67,Casa Pia,Casa Pia Atlético Clube,588
+68,Castellon,CD Castellón,589
+69,Catanzaro,US Catanzaro 1929,591
+70,Celta,Real Club Celta de Vigo,357
+71,Celtic,Celtic FC,97
+72,Cercle Brugge,Cercle Brugge KSV,592
+73,Cesena,Cesena FC,593
+74,Ceuta,Agrupación Deportiva Ceuta FC,594
+75,Charleroi,Royal Charleroi SC,595
+76,Charlton,Charlton Athletic FC,597
+77,Chelsea,Chelsea FC,106
+78,Cheltenham,Cheltenham Town FC,599
+79,Chesterfield,Chesterfield FC,602
+80,Clermont,Clermont Foot 63,108
+81,Club Brugge,Club Brugge KV,111
+82,Colchester,Colchester United FC,606
+83,Como,Como 1907,607
+84,Cordoba,Córdoba CF,609
+85,Coventry,Coventry City FC,612
+86,Crawley Town,Crawley Town FC,613
+87,Cremonese,US Cremonese,614
+88,Crewe,Crewe Alexandra FC,615
+89,Crystal Palace,Crystal Palace FC,118
+90,Cultural Leonesa,Cultural y Deportiva Leonesa,616
+91,Darmstadt,SV Darmstadt 98,426
+92,Dender,FCV Dender EH,622
+93,Derby,Derby County FC,623
+94,Doncaster,Doncaster Rovers FC,624
+95,Dortmund,Borussia Dortmund,85
+96,Dresden,SG Dynamo Dresden,628
+97,Dundee,Dundee FC,1058
+98,Dundee United,Dundee United FC,631
+99,Dunkerque,USL Dunkerque,482
+100,Eastleigh,Eastleigh FC,635
+101,Eibar,Sociedad Deportiva Eibar,397
+102,Ein Frankfurt,Eintracht Frankfort,132
+103,Elche,Elche CF,639
+104,Elversberg,SV Elversberg,641
+105,Empoli,Empoli FC,133
+106,Espanol,RCD Espanyol de Barcelona,355
+107,Estoril,Grupo Desportivo Estoril-Praia,647
+108,Estrela,CF Estrela da Amadora,646
+109,Everton,Everton FC,151
+110,Excelsior,Excelsior Rotterdam,649
+111,Exeter,Exeter City FC,650
+112,Falkirk,Falkirk FC,656
+113,Famalicao,FC Famalicão,657
+114,FC Koln,FC Cologne,171
+115,Feyenoord,Feyenoord Rotterdam,228
+116,Fiorentina,ACF Fiorentina,10
+117,Fleetwood Town,Fleetwood Town FC,665
+118,For Sittard,Fortuna Sittard,667
+119,Forest Green,Forest Green Rovers FC,668
+120,Fortuna Dusseldorf,Fortuna Düsseldorf,633
+121,Freiburg,SC Fribourg,386
+122,Frosinone,Frosinone Calcio,244
+123,Fulham,Fulham FC,670
+124,Gateshead,Gateshead FC,673
+125,Genk,KRC Genk,283
+126,Genoa,Genoa CFC,250
+127,Gent,KAA La Gantoise,280
+128,Getafe,Getafe CF,251
+129,Gil Vicente,Gil Vicente FC,676
+130,Gillingham,Gillingham FC,677
+131,Girona,Girona FC,679
+132,Go Ahead Eagles,Go Ahead Eagles,254
+133,Granada,Granada CF,258
+134,Grenoble,Grenoble Foot 38,260
+135,Greuther Furth,SpVgg Greuther Fürth,685
+136,Grimsby,Grimsby Town FC,686
+137,Groningen,FC Groningue,179
+138,Guimaraes,Vitória Sport Clube,691
+139,Guingamp,En Avant de Guingamp,134
+140,Halifax,FC Halifax Town,694
+141,Hamburg,Hambourg SV,261
+142,Hannover,Hanovre 96,262
+143,Harrogate,Harrogate Town AFC,698
+144,Hartlepool,Hartlepool United FC,699
+145,Hearts,Heart of Midlothian FC,702
+146,Heerenveen,Sportclub Heerenveen,703
+147,Heidenheim,FC Heidenheim 1846,704
+148,Heracles,Heracles Almelo,705
+149,Hertha,Hertha BSC,266
+150,Hibernian,Hibernian FC,709
+151,Hoffenheim,TSG 1899 Hoffenheim,439
+152,Holstein Kiel,Kieler SV Holstein,711
+153,Huddersfield,Huddersfield Town AFC,713
+154,Huesca,Sociedad Deportiva Huesca,714
+155,Hull,Hull City AFC,268
+156,Inter,Inter Milan,270
+157,Ipswich,Ipswich Town FC,719
+158,Juve Stabia,Società Sportiva Juve Stabia,721
+159,Juventus,Juventus FC,279
+160,Kaiserslautern,FC Kaiserslautern,722
+161,Karlsruhe,Karlsruher SC,723
+162,Kilmarnock,Kilmarnock FC,726
+163,La Coruna,Deportivo La Corogne,127
+164,Las Palmas,Unión Deportiva Las Palmas,447
+165,Laval,Stade Lavallois Mayenne FC,414
+166,Lazio,SS Lazio,406
+167,Le Havre,Le Havre AC,286
+168,Le Mans,Le Mans FC,287
+169,Lecce,US Lecce,732
+170,Leeds,Leeds United FC,734
+171,Leganes,CD Leganés,96
+172,Leicester,Leicester City FC,291
+173,Lens,RC Lens,352
+174,Levante,Levante Unión Deportiva,294
+175,Leverkusen,Bayer 04 Leverkusen,73
+176,Leyton Orient,Leyton Orient FC,740
+177,Lille,Lille OSC,296
+178,Lincoln,Lincoln City FC,742
+179,Liverpool,Liverpool FC,298
+180,Livingston,Livingston FC,743
+181,Lorient,FC Lorient,185
+182,Luton,Luton Town FC,754
+183,Lyon,Olympique Lyonnais,327
+184,Magdeburg,FC Magdebourg,758
+185,Mainz,FSV Mayence 05,245
+186,Malaga,Málaga CF,307
+187,Mallorca,Real Club Deportivo Mallorca,762
+188,Man City,Manchester City FC,309
+189,Man United,Manchester United FC,310
+190,Mansfield,Mansfield Town FC,765
+191,Mantova,Mantova 1911,766
+192,Marseille,Olympique de Marseille,324
+193,Mechelen,Yellow Red KV Malines,768
+194,Metz,FC Metz,188
+195,M'gladbach,Borussia Monchengladbach,86
+196,Middlesbrough,Middlesbrough FC,311
+197,Milan,AC Milan,6
+198,Millwall,Millwall FC,772
+199,Milton Keynes Dons,Milton Keynes Dons FC,773
+200,Mirandes,Club Deportivo Mirandés,774
+201,Modena,Modena Football Club 2018,775
+202,Monaco,AS Monaco,43
+203,Montpellier,Montpellier HSC,314
+204,Monza,Associazione Calcio Monza,776
+205,Morecambe,Morecambe FC,777
+206,Moreirense,Moreirense FC,778
+207,Motherwell,Motherwell FC,779
+208,NAC Breda,NAC Breda,783
+209,Nacional,Clube Desportivo Nacional,757
+210,Nancy,AS Nancy Lorraine,45
+211,Nantes,FC Nantes,194
+212,Napoli,SSC Naples,407
+213,Newcastle,Newcastle United FC,316
+214,Newport County,Newport County AFC,785
+215,Nice,OGC Nice,320
+216,Nijmegen,NEC Nimègue,786
+217,Northampton,Northampton Town FC,789
+218,Norwich,Norwich City FC,318
+219,Nott'm Forest,Nottingham Forest FC,319
+220,Notts County,Notts County FC,791
+221,Nurnberg,FC Nuremberg,795
+222,Oldham,Oldham Athletic AFC,799
+223,Osasuna,Club Atlético Osasuna,803
+224,Oud-Heverlee Leuven,Oud-Heverlee Louvain,805
+225,Oviedo,Real Oviedo,806
+226,Oxford,Oxford United FC,807
+227,Paderborn,SC Paderborn 07,810
+228,Padova,Calcio Padova,811
+229,Palermo,Palerme FC,333
+230,Paris FC,Paris FC,336
+231,Paris SG,Paris Saint Germain,337
+232,Parma,Parma Calcio 1913,812
+233,Pau FC,Pau FC,338
+234,Pescara,Delfino Pescara 1936,125
+235,Peterboro,Peterborough United FC,816
+236,Pisa,Pisa SC,818
+237,Plymouth,Plymouth Argyle FC,820
+238,Port Vale,Port Vale FC,825
+239,Porto,FC Porto,197
+240,Portsmouth,Portsmouth FC,828
+241,Preston,Preston North End FC,829
+242,Preußen Münster,SC Preussen Munster,830
+243,PSV Eindhoven,PSV Eindhoven,345
+244,QPR,Queens Park Rangers FC,832
+245,RAAL La Louviere,RAAL La Louviere,833
+246,Rangers,Rangers FC,347
+247,RB Leipzig,RB Leipzig,350
+248,Reading,Reading FC,838
+249,Real Madrid,Real Madrid CF,358
+250,Red Star,Red Star FC 93,362
+251,Reggiana,AC Reggiana 1919,843
+252,Reims,Stade de Reims,413
+253,Rennes,Stade Rennais,422
+254,Rio Ave,Rio Ave FC,848
+255,Rochdale,Rochdale AFC,849
+256,Rodez,Rodez Aveyron Football,366
+257,Roma,AS Rome,51
+258,Rotherham,Rotherham United FC,854
+259,Salford,Salford City FC,860
+260,Sampdoria,UC Sampdoria,442
+261,Santa Clara,CD Santa Clara,864
+262,Santander,Racing de Santander,865
+263,Sassuolo,US Sassuolo Calcio,479
+264,Schalke 04,FC Schalke 04,205
+265,Scunthorpe,Scunthorpe United FC,869
+266,Sevilla,FC Séville,208
+267,Sheffield United,Sheffield United FC,873
+268,Sheffield Weds,Sheffield Wednesday FC,874
+269,Shrewsbury,Shrewsbury Town FC,875
+270,Sociedad,Real Sociedad de Fútbol,359
+271,Sociedad B,Real Sociedad de Fútbol B,878
+272,Solihull,Solihull Moors FC,879
+273,Southampton,Southampton FC,398
+274,Southend,Southend United FC,880
+275,Sp Braga,SC Braga,382
+276,Sp Gijon,Real Sporting de Gijón,360
+277,Sp Lisbon,Sporting CP,401
+278,Sparta Rotterdam,Sparta Rotterdam,883
+279,Spezia,Spezia Calcio,884
+280,St Etienne,AS Saint-Etienne,52
+281,St Mirren,St Mirren FC,886
+282,St Pauli,FC St Pauli,887
+283,St Truiden,K Saint-Trond VV,888
+284,St. Gilloise,Royal Union Saint-Gilloise,369
+285,Standard,Standard de Liège,423
+286,Stevenage,Stevenage FC,891
+287,Stockport,Stockport County FC,892
+288,Stoke,Stoke City FC,424
+289,Strasbourg,RC Strasbourg Alsace,354
+290,Stuttgart,VfB Stuttgart,488
+291,Sudtirol,Fußball Club Südtirol,894
+292,Sunderland,Sunderland AFC,425
+293,Sutton,Sutton United,895
+294,Swansea,Swansea City AFC,427
+295,Swindon,Swindon Town FC,896
+296,Tamworth,Tamworth FC,898
+297,Telstar,SC Telstar,899
+298,Tondela,CD Tondela,905
+299,Torino,Torino FC,431
+300,Tottenham,Tottenham Hotspur,432
+301,Toulouse,Toulouse FC,433
+302,Tranmere,Tranmere Rovers FC,907
+303,Troyes,ESTAC Troyes,146
+304,Truro,Truro City FC,912
+305,Twente,FC Twente,914
+306,Udinese,Udinese Calcio,443
+307,Union Berlin,FC Union Berlin,920
+308,Utrecht,FC Utrecht,216
+309,Valencia,Valence CF,483
+310,Valladolid,Real Valladolid CF,924
+311,Vallecano,Rayo Vallecano de Madrid,349
+312,Venezia,Venezia FC,929
+313,Verona,Hellas Verone FC,265
+314,Villarreal,Villarreal CF,490
+315,Virtus Entella,Virtus Entella,932
+316,Volendam,FC Volendam,936
+317,Walsall,Walsall FC,938
+318,Waregem,SV Zulte Waregem,939
+319,Watford,Watford FC,495
+320,Wealdstone,Wealdstone FC,941
+321,Werder Bremen,Werder Brême,496
+322,West Brom,West Bromwich Albion FC,497
+323,West Ham,West Ham United FC,498
+324,Westerlo,KVC Westerlo,944
+325,Wigan,Wigan Athletic FC,946
+326,Woking,Woking FC,948
+327,Wolfsburg,VfL Wolfsburg,489
+328,Wolves,Wolverhampton Wanderers FC,949
+329,Wrexham,Wrexham AFC,950
+330,Wycombe,Wycombe Wanderers FC,953
+331,Yeovil,Yeovil Town FC,955
+332,York,York City FC,956
+333,Zaragoza,Real Saragosse,957
+334,Zwolle,PEC Zwolle,959

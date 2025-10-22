@@ -1,0 +1,34 @@
+id,nom,type,pays,abbreviation
+1,Bundesliga,NAT,Allemagne,BUN
+2,Community Shield,NAT,Angleterre,CS
+3,Coupe de France,NAT,France,CdF
+4,Coupe de la Ligue,NAT,France,CdL
+5,Coupe du Monde,INT,Monde,CdM
+6,Euro,EUR,Europe,EUR
+7,Europa League,EUR,Europe,EL
+8,LaLiga,NAT,Espagne,LIG
+9,Ligue 1,NAT,France,L1
+10,Ligue 2,NAT,France,L2
+11,Ligue Conference,EUR,Europe,LC
+12,Ligue des Champions,EUR,Europe,LdC
+13,Ligue des Nations,EUR,Europe,LdN
+14,Ligue Europa,EUR,Europe,LE
+15,National,NAT,France,Nat
+16,Premier League,NAT,Angleterre,PL
+17,Serie A,NAT,Italie,SER
+18,Supercoupe d'Allemagne,NAT,Allemagne,SAL
+19,Supercoupe d'Espagne,NAT,Espagne,SES
+20,Supercoupe d'Europe,EUR,Europe,SEU
+21,Supercoupe d'Italie,NAT,Italie,SIT
+22,Trophée des Champions,NAT,France,TdC
+23,2. Bundesliga,NAT,Allemagne,2.BUN
+24,Jupiler League,NAT,Belgique,JL
+25,Championship,NAT,Angleterre,CHA
+26,League One,NAT,Angleterre,LeO
+27,League Two,NAT,Angleterre,LeT
+28,National League,NAT,Angleterre,NL
+29,Serie B,NAT,Italie,SERB
+30,Eredivisie,NAT,Pays-Bas,ERE
+31,Liga Portugal,NAT,Portugal,LIP
+32,LaLiga2,NAT,Espagne,LI2
+33,Premiership,NAT,Ecosse,PRS

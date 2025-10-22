@@ -1,0 +1,174 @@
+id,id_competition,competition,pays,id_participant,pseudo,saison
+1,9,Ligue 1,France,10,Kévin,2025-2026
+2,9,Ligue 1,France,15,Matthieu,2025-2026
+3,9,Ligue 1,France,5,Cédric,2025-2026
+4,9,Ligue 1,France,21,Sébastien,2025-2026
+5,9,Ligue 1,France,17,Olivier,2025-2026
+6,12,Ligue des Champions,Europe,10,Kévin,2025-2026
+7,12,Ligue des Champions,Europe,15,Matthieu,2025-2026
+8,14,Ligue Europa,Europe,10,Kévin,2025-2026
+9,14,Ligue Europa,Europe,15,Matthieu,2025-2026
+10,9,Ligue 1,France,10,Kévin,2024-2025
+11,9,Ligue 1,France,15,Matthieu,2024-2025
+12,9,Ligue 1,France,22,Titouan,2024-2025
+13,9,Ligue 1,France,21,Sébastien,2024-2025
+14,9,Ligue 1,France,4,Antoine,2024-2025
+15,9,Ligue 1,France,5,Cédric,2024-2025
+16,9,Ligue 1,France,6,Damien,2024-2025
+17,9,Ligue 1,France,17,Olivier,2024-2025
+18,9,Ligue 1,France,10,Kévin,2023-2024
+19,9,Ligue 1,France,21,Sébastien,2023-2024
+20,9,Ligue 1,France,17,Olivier,2023-2024
+21,9,Ligue 1,France,5,Cédric,2023-2024
+22,9,Ligue 1,France,19,Raphaël,2023-2024
+23,9,Ligue 1,France,18,Pierre,2023-2024
+24,9,Ligue 1,France,22,Titouan,2023-2024
+25,9,Ligue 1,France,15,Matthieu,2023-2024
+26,9,Ligue 1,France,8,Florian,2023-2024
+27,9,Ligue 1,France,6,Damien,2023-2024
+28,9,Ligue 1,France,4,Antoine,2023-2024
+29,9,Ligue 1,France,25,Yohan,2023-2024
+30,9,Ligue 1,France,11,Killian,2023-2024
+31,9,Ligue 1,France,22,Titouan,2022-2023
+32,9,Ligue 1,France,8,Florian,2022-2023
+33,9,Ligue 1,France,1,Adrien,2022-2023
+34,9,Ligue 1,France,6,Damien,2022-2023
+35,9,Ligue 1,France,11,Killian,2022-2023
+36,9,Ligue 1,France,10,Kévin,2022-2023
+37,9,Ligue 1,France,4,Antoine,2022-2023
+38,9,Ligue 1,France,14,Mathieu,2022-2023
+39,9,Ligue 1,France,17,Olivier,2022-2023
+40,9,Ligue 1,France,18,Pierre,2022-2023
+41,9,Ligue 1,France,5,Cédric,2022-2023
+42,9,Ligue 1,France,21,Sébastien,2022-2023
+43,9,Ligue 1,France,15,Matthieu,2022-2023
+44,9,Ligue 1,France,12,Marie,2022-2023
+45,9,Ligue 1,France,19,Raphaël,2022-2023
+46,10,Ligue 2,France,15,Matthieu,2022-2023
+47,10,Ligue 2,France,10,Kévin,2022-2023
+48,12,Ligue des Champions,Europe,15,Matthieu,2022-2023
+49,12,Ligue des Champions,Europe,10,Kévin,2022-2023
+50,9,Ligue 1,France,4,Antoine,2021-2022
+51,9,Ligue 1,France,10,Kévin,2021-2022
+52,9,Ligue 1,France,5,Cédric,2021-2022
+53,9,Ligue 1,France,12,Marie,2021-2022
+54,9,Ligue 1,France,21,Sébastien,2021-2022
+55,9,Ligue 1,France,25,Yohan,2021-2022
+56,9,Ligue 1,France,22,Titouan,2021-2022
+57,9,Ligue 1,France,15,Matthieu,2021-2022
+58,9,Ligue 1,France,8,Florian,2021-2022
+59,9,Ligue 1,France,16,Mélissandre,2021-2022
+60,9,Ligue 1,France,10,Kévin,2020-2021
+61,9,Ligue 1,France,5,Cédric,2020-2021
+62,9,Ligue 1,France,22,Titouan,2020-2021
+63,9,Ligue 1,France,8,Florian,2020-2021
+64,9,Ligue 1,France,15,Matthieu,2020-2021
+65,9,Ligue 1,France,21,Sébastien,2020-2021
+66,9,Ligue 1,France,2,Alexandre K,2020-2021
+67,9,Ligue 1,France,25,Yohan,2020-2021
+68,9,Ligue 1,France,12,Marie,2020-2021
+69,9,Ligue 1,France,4,Antoine,2020-2021
+70,9,Ligue 1,France,16,Mélissandre,2020-2021
+71,9,Ligue 1,France,3,Alexandre M,2020-2021
+72,9,Ligue 1,France,9,Hélène,2019-2020
+73,9,Ligue 1,France,4,Antoine,2019-2020
+74,9,Ligue 1,France,8,Florian,2019-2020
+75,9,Ligue 1,France,15,Matthieu,2019-2020
+76,9,Ligue 1,France,21,Sébastien,2019-2020
+77,9,Ligue 1,France,25,Yohan,2019-2020
+78,9,Ligue 1,France,22,Titouan,2019-2020
+79,9,Ligue 1,France,10,Kévin,2019-2020
+80,9,Ligue 1,France,20,Ronan,2019-2020
+81,9,Ligue 1,France,13,Mario,2019-2020
+82,9,Ligue 1,France,24,Virgyl,2019-2020
+83,9,Ligue 1,France,10,Kévin,2016-2017
+84,9,Ligue 1,France,15,Matthieu,2016-2017
+85,9,Ligue 1,France,23,Valentin,2016-2017
+86,9,Ligue 1,France,9,Hélène,2016-2017
+87,10,Ligue 2,France,10,Kévin,2016-2017
+88,10,Ligue 2,France,15,Matthieu,2016-2017
+89,10,Ligue 2,France,23,Valentin,2016-2017
+90,1,Bundesliga,Allemagne,10,Kévin,2016-2017
+91,1,Bundesliga,Allemagne,15,Matthieu,2016-2017
+92,1,Bundesliga,Allemagne,23,Valentin,2016-2017
+93,15,National,France,10,Kévin,2016-2017
+94,15,National,France,15,Matthieu,2016-2017
+95,15,National,France,23,Valentin,2016-2017
+96,16,Premier League,Angleterre,10,Kévin,2016-2017
+97,16,Premier League,Angleterre,15,Matthieu,2016-2017
+98,16,Premier League,Angleterre,23,Valentin,2016-2017
+99,8,LaLiga,Espagne,10,Kévin,2016-2017
+100,8,LaLiga,Espagne,15,Matthieu,2016-2017
+101,8,LaLiga,Espagne,23,Valentin,2016-2017
+102,17,Serie A,Italie,10,Kévin,2016-2017
+103,17,Serie A,Italie,15,Matthieu,2016-2017
+104,17,Serie A,Italie,23,Valentin,2016-2017
+105,12,Ligue des Champions,Europe,10,Kévin,2016-2017
+106,12,Ligue des Champions,Europe,15,Matthieu,2016-2017
+107,12,Ligue des Champions,Europe,23,Valentin,2016-2017
+108,7,Europa League,Europe,10,Kévin,2016-2017
+109,7,Europa League,Europe,15,Matthieu,2016-2017
+110,7,Europa League,Europe,23,Valentin,2016-2017
+111,9,Ligue 1,France,9,Hélène,2018-2019
+112,9,Ligue 1,France,21,Sébastien,2018-2019
+113,9,Ligue 1,France,15,Matthieu,2018-2019
+114,9,Ligue 1,France,22,Titouan,2018-2019
+115,9,Ligue 1,France,13,Mario,2018-2019
+116,9,Ligue 1,France,3,Alexandre M,2018-2019
+117,9,Ligue 1,France,20,Ronan,2018-2019
+118,9,Ligue 1,France,10,Kévin,2018-2019
+119,9,Ligue 1,France,8,Florian,2018-2019
+120,9,Ligue 1,France,6,Damien,2018-2019
+121,9,Ligue 1,France,25,Yohan,2018-2019
+122,12,Ligue des Champions,Europe,8,Florian,2018-2019
+123,12,Ligue des Champions,Europe,10,Kévin,2018-2019
+124,12,Ligue des Champions,Europe,15,Matthieu,2018-2019
+125,12,Ligue des Champions,Europe,20,Ronan,2018-2019
+126,12,Ligue des Champions,Europe,21,Sébastien,2018-2019
+127,12,Ligue des Champions,Europe,22,Titouan,2018-2019
+128,12,Ligue des Champions,Europe,13,Mario,2018-2019
+129,12,Ligue des Champions,Europe,6,Damien,2018-2019
+130,7,Europa League,Europe,8,Florian,2018-2019
+131,7,Europa League,Europe,10,Kévin,2018-2019
+132,7,Europa League,Europe,15,Matthieu,2018-2019
+133,7,Europa League,Europe,20,Ronan,2018-2019
+134,7,Europa League,Europe,21,Sébastien,2018-2019
+135,7,Europa League,Europe,22,Titouan,2018-2019
+136,7,Europa League,Europe,13,Mario,2018-2019
+137,7,Europa League,Europe,6,Damien,2018-2019
+138,9,Ligue 1,France,10,Kévin,2015-2016
+139,9,Ligue 1,France,15,Matthieu,2015-2016
+140,9,Ligue 1,France,23,Valentin,2015-2016
+141,9,Ligue 1,France,7,Dimitri,2015-2016
+142,10,Ligue 2,France,10,Kévin,2015-2016
+143,10,Ligue 2,France,15,Matthieu,2015-2016
+144,10,Ligue 2,France,7,Dimitri,2015-2016
+145,10,Ligue 2,France,23,Valentin,2015-2016
+146,1,Bundesliga,Allemagne,10,Kévin,2015-2016
+147,1,Bundesliga,Allemagne,15,Matthieu,2015-2016
+148,1,Bundesliga,Allemagne,23,Valentin,2015-2016
+149,15,National,France,10,Kévin,2015-2016
+150,15,National,France,15,Matthieu,2015-2016
+151,15,National,France,23,Valentin,2015-2016
+152,16,Premier League,Angleterre,10,Kévin,2015-2016
+153,16,Premier League,Angleterre,15,Matthieu,2015-2016
+154,16,Premier League,Angleterre,23,Valentin,2015-2016
+155,8,LaLiga,Espagne,10,Kévin,2015-2016
+156,8,LaLiga,Espagne,15,Matthieu,2015-2016
+157,8,LaLiga,Espagne,23,Valentin,2015-2016
+158,17,Serie A,Italie,10,Kévin,2015-2016
+159,17,Serie A,Italie,15,Matthieu,2015-2016
+160,17,Serie A,Italie,23,Valentin,2015-2016
+161,12,Ligue des Champions,Europe,10,Kévin,2015-2016
+162,12,Ligue des Champions,Europe,15,Matthieu,2015-2016
+163,12,Ligue des Champions,Europe,23,Valentin,2015-2016
+164,7,Europa League,Europe,10,Kévin,2015-2016
+165,7,Europa League,Europe,15,Matthieu,2015-2016
+166,7,Europa League,Europe,23,Valentin,2015-2016
+167,1,Bundesliga,Allemagne,7,Dimitri,2015-2016
+168,15,National,France,7,Dimitri,2015-2016
+169,16,Premier League,Angleterre,7,Dimitri,2015-2016
+170,8,LaLiga,Espagne,7,Dimitri,2015-2016
+171,17,Serie A,Italie,7,Dimitri,2015-2016
+172,12,Ligue des Champions,Europe,7,Dimitri,2015-2016
+173,7,Europa League,Europe,7,Dimitri,2015-2016
