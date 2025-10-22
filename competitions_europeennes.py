@@ -497,6 +497,29 @@ def show(tables):
         # Créer une clé pour associer Aller et Retour
         df['match_pair'] = df.apply(lambda x: '-'.join(sorted([x['equipe_domicile_nom'], x['equipe_exterieure_nom']])), axis=1)
 
+        # ---- Fonction de coloration du vainqueur ----
+        def highlight_winner(row):
+            """
+            Applique un style vert au vainqueur du match dans la ligne.
+            """
+            if "Score" not in row or "-" not in row["Score"]:
+                return [""] * len(row)
+
+            try:
+                score_d, score_e = row["Score"].split("-")
+                score_d = int(score_d.split()[0])  # Retire les éventuelles mentions (Prol, TAB)
+                score_e = int(score_e.split()[0])
+            except:
+                return [""] * len(row)
+
+            styles = ["", "", ""]  # Domicile, Score, Extérieur
+            if score_d > score_e:
+                styles[0] = f"background-color: {win_color}; color: white; font-weight: bold;"
+            elif score_e > score_d:
+                styles[2] = f"background-color: {win_color}; color: white; font-weight: bold;"
+            return styles
+
+        # ---- Fonction coloration score individuel (optionnelle) ----
         def color_score(val, col):
             if val == "" or '-' not in val:
                 return ""
@@ -512,6 +535,7 @@ def show(tables):
                 return f'background-color: {win_color}; font-weight: bold;'
             return ''
 
+        # ---- Boucle sur les phases ----
         for phase in phases:
             df_phase = df[df['phase'] == phase]
             if df_phase.empty:
@@ -570,7 +594,6 @@ def show(tables):
                     elif total_ext > total_dom:
                         qualifiés.append(ext)
                     else:
-                        # Égalité après prolongation, vérifier TAB
                         if 'tab_score_domicile' in df_aller.columns and pd.notna(match_aller.get('tab_score_domicile', None)):
                             tab_dom = match_aller.get('tab_score_domicile', 0) + match_retour.get('tab_score_exterieur', 0)
                             tab_ext = match_aller.get('tab_score_exterieur', 0) + match_retour.get('tab_score_domicile', 0)
@@ -586,11 +609,13 @@ def show(tables):
                 with col1:
                     st.markdown("### Matchs Aller")
                     st.dataframe(
-                        df_aller_disp.style.set_properties(**{
-                            'text-align': 'center',
-                            'font-size': '14px',
-                            'padding': '6px 8px'
-                        }),
+                        df_aller_disp.style
+                            .set_properties(**{
+                                'text-align': 'center',
+                                'font-size': '14px',
+                                'padding': '6px 8px'
+                            })
+                            .apply(highlight_winner, axis=1),
                         use_container_width=True,
                         height=hauteur_phase.get(phase),
                         hide_index=True
@@ -598,17 +623,19 @@ def show(tables):
                 with col2:
                     st.markdown("### Matchs Retour")
                     st.dataframe(
-                        df_retour_disp.style.set_properties(**{
-                            'text-align': 'center',
-                            'font-size': '14px',
-                            'padding': '6px 8px'
-                        }),
+                        df_retour_disp.style
+                            .set_properties(**{
+                                'text-align': 'center',
+                                'font-size': '14px',
+                                'padding': '6px 8px'
+                            })
+                            .apply(highlight_winner, axis=1),
                         use_container_width=True,
                         height=hauteur_phase.get(phase),
                         hide_index=True
                     )
 
-                # ---- Affichage des qualifiés en badges ----
+                # ---- Affichage des qualifiés ----
                 colors = ["#a8d5ba", "#8fc1a9", "#76b39b", "#5da78d"]
                 qualifies_html = " ".join([
                     f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};color:#000;"
@@ -652,11 +679,13 @@ def show(tables):
 
                 st.markdown("### Finale")
                 st.dataframe(
-                    df_finale_disp.style.set_properties(**{
-                        'text-align': 'center',
-                        'font-size': '14px',
-                        'padding': '6px 8px'
-                    }),
+                    df_finale_disp.style
+                        .set_properties(**{
+                            'text-align': 'center',
+                            'font-size': '14px',
+                            'padding': '6px 8px'
+                        })
+                        .apply(highlight_winner, axis=1),
                     use_container_width=True,
                     height=hauteur_phase.get(phase),
                     hide_index=True
