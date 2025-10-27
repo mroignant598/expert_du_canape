@@ -17,7 +17,7 @@ def show(tables):
     }, inplace=True)
 
     # --- Sélection saison / championnat / journée --- #
-    col1, col2, col3 = st.columns([1.1, 1.1, 1.1])
+    col1, col2 = st.columns([1.1, 3])
 
     # 1️⃣ Sélection de la saison
     with col1:
@@ -26,17 +26,101 @@ def show(tables):
             st.warning("Aucune saison disponible.")
             return
         saison_sel = st.selectbox("Sélectionner une saison :", saisons)
+        
+    competitions_possibles = [
+        'Ligue 1', 'Premier League', 'Serie A', 'Bundesliga', '2. Bundesliga',
+        'LaLiga2', 'Championship', 'League One', 'League Two', 'National League',
+        'Serie B', 'LaLiga', 'Ligue 2', 'Eredivisie', 'National',
+        'Jupiler League', 'Liga Portugal', 'Premiership'
+    ]
 
-    # 2️⃣ Sélection du championnat avec filtrage
     with col2:
-        competitions_a_afficher = [
-            'Ligue 1', 'Premier League', 'Serie A', 'Bundesliga', '2. Bundesliga',
-            'LaLiga2', 'Championship', 'League One', 'League Two', 'National League',
-            'Serie B', 'LaLiga', 'Ligue 2', 'Eredivisie', 'National',
-            'Jupiler League', 'Liga Portugal', 'Premiership'
-        ]
+        competitions_sel = st.multiselect(
+            "🏆 Sélectionner les compétitions à inclure dans les stats globales :",
+            options=competitions_possibles,
+            default=['Ligue 1', 'Premier League', 'Serie A', 'Bundesliga', 'LaLiga']
+        )
+
+        if not competitions_sel:
+            st.warning("Veuillez sélectionner au moins une compétition.")
+            st.stop()
+
+    # === Filtrage des données === #
+    df_saison = df[
+        (df["saison"] == saison_sel) &
+        (df["competition"].isin(competitions_sel))
+    ].copy()
+
+    # Conversion des scores en numérique (au cas où)
+    df_saison["score_domicile"] = pd.to_numeric(df_saison["score_domicile"], errors="coerce")
+    df_saison["score_exterieur"] = pd.to_numeric(df_saison["score_exterieur"], errors="coerce")
+
+    df_saison = df_saison.dropna(subset=["score_domicile", "score_exterieur"])
+    if df_saison.empty:
+        st.info("Aucune donnée de match disponible pour ces compétitions cette saison.")
+        st.stop()
+
+    # === Calcul des stats globales === #
+    stats = []
+    for _, row in df_saison.iterrows():
+        stats.append({
+            "équipe": row["equipe_domicile_nom"],
+            "buts_pour": row["score_domicile"],
+            "buts_contre": row["score_exterieur"]
+        })
+        stats.append({
+            "équipe": row["equipe_exterieure_nom"],
+            "buts_pour": row["score_exterieur"],
+            "buts_contre": row["score_domicile"]
+        })
+
+    df_stats = pd.DataFrame(stats)
+    classement = df_stats.groupby("équipe").sum().reset_index()
+    classement["diff"] = classement["buts_pour"] - classement["buts_contre"]
+
+    # Meilleure/pire attaque et défense
+    meilleure_attaque = classement.loc[classement["buts_pour"].idxmax()]
+    pire_attaque = classement.loc[classement["buts_pour"].idxmin()]
+    meilleure_defense = classement.loc[classement["buts_contre"].idxmin()]
+    pire_defense = classement.loc[classement["buts_contre"].idxmax()]
+
+    # === Affichage des KPI === #
+    st.subheader("📊 Statistiques globales sur la saison")
+
+    def kpi_card(title, value, subtitle, color, emoji):
+        st.markdown(f"""
+            <div style="
+                background: {color};
+                border-radius: 16px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                color: white;
+            ">
+                <div style="font-size: 32px;">{emoji}</div>
+                <div style="font-size: 20px; font-weight: bold; margin-top: 5px;">{title}</div>
+                <div style="font-size: 28px; font-weight: 800; margin-top: 10px;">{value}</div>
+                <div style="font-size: 16px; opacity: 0.9; margin-top: 5px;">{subtitle}</div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    colA, colB, colC, colD = st.columns(4)
+
+    with colA: kpi_card("Meilleure attaque", meilleure_attaque["équipe"], f"{meilleure_attaque['buts_pour']} buts marqués", "#FF8C00", "🔥")
+
+    with colB: kpi_card("Pire attaque", pire_attaque["équipe"], f"{pire_attaque['buts_pour']} buts marqués", "#708090", "🥶")
+
+    with colC: kpi_card("Meilleure défense", meilleure_defense["équipe"], f"{meilleure_defense['buts_contre']} buts encaissés", "#2E8B57", "🛡️")
+
+    with colD: kpi_card("Pire défense", pire_defense["équipe"], f"{pire_defense['buts_contre']} buts encaissés", "#B22222", "💣")
+
+    st.markdown("---")
+    
+# --- Sélection championnat / journée --- #
+    col1, col2, col3 = st.columns(3)
+    with col1:
         championnats = sorted(
-            df[(df['saison'] == saison_sel) & (df['competition'].isin(competitions_a_afficher))]['competition']
+            df[(df['saison'] == saison_sel) & (df['competition'].isin(competitions_possibles))]['competition']
             .dropna().unique()
         )
 
@@ -48,7 +132,7 @@ def show(tables):
         index_defaut = championnats.index(championnat_defaut) if championnat_defaut in championnats else 0
         championnat_sel = st.selectbox("Sélectionner un championnat :", championnats, index=index_defaut)
 
-    with col3:
+    with col2:
         # 3️⃣ Sélection de la journée
         journees_res = sorted(df[(df['saison'] == saison_sel) & (df['competition'] == championnat_sel)]['journee'].dropna().unique())
         
