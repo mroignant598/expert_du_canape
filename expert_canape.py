@@ -90,8 +90,6 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
     max_points = classement["points"].max() if not classement.empty else 1
     podium = {1:"🥇", 2:"🥈", 3:"🥉"}
 
-    st.markdown('<div class="podium-container">', unsafe_allow_html=True)
-
     for i in [1,2,3]:
         if len(top3) >= i:
             row = top3.iloc[i-1]
@@ -523,20 +521,12 @@ def show(tables):
 
             st.markdown("---")
 
-            # --- Filtrage des matchs ---
+            # --- 🔍 Filtrer la saison et le championnat, mais PAS la journée (pour permettre le cumul) --- #
             df_filtre = df_matchs[df_matchs["saison"] == saison_sel].copy()
-
             if championnat_sel != "Toutes":
                 df_filtre = df_filtre[df_filtre["competition"] == championnat_sel]
 
-            # Vérifier que la colonne 'journee' existe
-            if "journee" in df_filtre.columns and journee_sel != "Toutes":
-                # Convertir en int si nécessaire
-                df_filtre["journee"] = df_filtre["journee"].astype(int)
-                df_filtre = df_filtre[df_filtre["journee"] == int(journee_sel)]
-                
-
-            # --- Jointure avec les pronostics ---
+            # --- Fusion avec les pronostics (on garde tous les matchs de la saison filtrée) --- #
             if "match_id" not in df_filtre.columns or "match_id" not in df_pronos.columns:
                 st.warning("Impossible de faire le merge : la colonne 'match_id' est manquante")
                 return
@@ -550,33 +540,59 @@ def show(tables):
 
             if df_merge.empty:
                 st.info("Aucun pronostic enregistré pour cette sélection.")
+                return
 
-        # --- Préparer le DataFrame final ---
-        df = df_merge[[
-            "participant_id", "participant_nom",
-            "score_domicile_prono", "score_exterieur_prono",
-            "score_domicile_match", "score_exterieur_match",
-            "equipe_domicile_nom", "equipe_exterieure_nom",
-            "cote_domicile", "cote_exterieur", "cote_nul",
-            "journee_match", "saison_match", "competition"
-        ]].rename(columns={
-            "score_domicile_prono": "prono_dom",
-            "score_exterieur_prono": "prono_ext",
-            "score_domicile_match": "match_dom",
-            "score_exterieur_match": "match_ext"
-        })
+            # --- Préparation du DataFrame final --- #
+            df = df_merge[[
+                "participant_id", "participant_nom",
+                "score_domicile_prono", "score_exterieur_prono",
+                "score_domicile_match", "score_exterieur_match",
+                "equipe_domicile_nom", "equipe_exterieure_nom",
+                "cote_domicile", "cote_exterieur", "cote_nul",
+                "journee_match", "saison_match", "competition"
+            ]].rename(columns={
+                "score_domicile_prono": "prono_dom",
+                "score_exterieur_prono": "prono_ext",
+                "score_domicile_match": "match_dom",
+                "score_exterieur_match": "match_ext"
+            })
 
-        # --- Calcul des points ---
-        df["points"] = df.apply(calcul_points, axis=1)
+            # Convertir les journées en int
+            df["journee_match"] = pd.to_numeric(df["journee_match"], errors="coerce")
+            df = df.dropna(subset=["journee_match"])
+            df["journee_match"] = df["journee_match"].astype(int)
 
-        # --- Points cumulés par journée ---
-        df_progress_all = df.groupby(["participant_nom", "journee_match"]).apply(calcul_points_journee).reset_index()
-        df_progress_all["points_cumul"] = df_progress_all.groupby("participant_nom")["points"].cumsum()
+            # --- Calcul des points individuels --- #
+            df["points"] = df.apply(calcul_points, axis=1)
 
-        # --- Classement final sur la saison ---
-        classement = df_progress_all.groupby("participant_nom", as_index=False)["points"].sum()
-        classement = classement.sort_values(by="points", ascending=False).reset_index(drop=True)
-        classement["Rang"] = classement.index + 1
+            # --- Calcul des points par journée et cumul --- #
+            df_progress_all = (
+                df.groupby(["participant_nom", "journee_match"])
+                .apply(calcul_points_journee)
+                .reset_index()
+                .sort_values(["participant_nom", "journee_match"])
+            )
+            df_progress_all["points_cumul"] = df_progress_all.groupby("participant_nom")["points"].cumsum()
+
+            # --- 🧮 Filtrage jusqu’à la journée sélectionnée --- #
+            if journee_sel != "Toutes":
+                try:
+                    journee_num = int(journee_sel)
+                    df_progress_filtered = df_progress_all[df_progress_all["journee_match"] <= journee_num]
+                except ValueError:
+                    df_progress_filtered = df_progress_all.copy()
+            else:
+                df_progress_filtered = df_progress_all.copy()
+
+            # --- 🏆 Classement cumulé jusqu’à la journée choisie --- #
+            classement = (
+                df_progress_filtered.groupby("participant_nom", as_index=False)["points_cumul"]
+                .max()  # le cumul max = total jusqu’à cette journée
+                .sort_values(by="points_cumul", ascending=False)
+                .reset_index(drop=True)
+            )
+            classement.rename(columns={"points_cumul": "points"}, inplace=True)
+            classement["Rang"] = classement.index + 1
 
         # --- KPI ---
         nb_matchs = df_filtre["match_id"].nunique()
@@ -584,20 +600,19 @@ def show(tables):
         nb_participants = df["participant_nom"].nunique()
         total_points = df_progress_all["points"].sum()
         moyenne_points_joueur = total_points / nb_participants if nb_participants else 0
-        moyenne_points_joueur_journee = total_points / (nb_participants * nb_matchs) if nb_matchs and nb_participants else 0
 
-        kpi_cols = st.columns([1.2, 1, 1, 1, 1])
+        kpi_cols = st.columns([1.2, 1, 1, 1])
         with kpi_cols[0]: kpi_card("🏟️ Matchs", nb_matchs, color="#3b82f6")
         with kpi_cols[1]: kpi_card("🧾 Pronostics", nb_pronos, color="#22c55e")
         with kpi_cols[2]: kpi_card("👥 Participants", nb_participants, color="#f59e0b")
         with kpi_cols[3]: kpi_card("🎯 Moy. pts/joueur", f"{moyenne_points_joueur:.2f}", color="#2563eb")
-        with kpi_cols[4]: kpi_card("👤 Moy. pts/joueur/journée", f"{moyenne_points_joueur_journee:.2f}", color="#9333ea")
 
         st.markdown("---")
 
         # --- Affichage classement et progression ---
         st.subheader(
-            f"{'Classement global par saison' if championnat_sel == 'Toutes' else f'Classement – {championnat_sel} – {saison_sel}'}"
+            f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
+            f"{'toutes compétitions' if championnat_sel == 'Toutes' else championnat_sel} – {saison_sel}"
         )
 
         col1, col2 = st.columns([1, 2])
@@ -940,11 +955,16 @@ def show(tables):
             
         # === 📍 SECTION 4 ===
         # --- Récupération de l'historique complet du joueur depuis les CSV ---
+        # Filtrage sur le participant
         data_historique = df_pronos[df_pronos["participant_nom"] == participant_sel].merge(
             df_matchs,
             on="match_id",
             suffixes=("_prono", "_match")
         )
+
+        # --- Filtrage selon la compétition sélectionnée ---
+        if championnat_sel != "Toutes":
+            data_historique = data_historique[data_historique["competition"] == championnat_sel]
 
         # --- Sélection des colonnes et renommage pour correspondre à l'ancien SQL ---
         data_historique = data_historique[[
@@ -961,7 +981,8 @@ def show(tables):
             "cote_nul",
             "journee_match",
             "saison_match",
-            "competition"
+            "competition",
+            "match_id"
         ]].rename(columns={
             "score_domicile_prono": "prono_dom",
             "score_exterieur_prono": "prono_ext",
@@ -969,9 +990,11 @@ def show(tables):
             "score_exterieur_match": "match_ext"
         })
 
+        # --- Suppression des doublons éventuels ---
+        df_historique = data_historique.drop_duplicates(subset=["participant_id", "match_id"], keep="last")
+
         # --- Préparer le DataFrame historique ---
-        df_historique = data_historique.copy()  # <-- créer df_historique
-        df_historique["journee_match"] = df_historique["journee_match"].astype(int)  # Conversion en int
+        df_historique["journee_match"] = df_historique["journee_match"].astype(int)
         df_historique = df_historique.sort_values(by=["saison_match", "journee_match"]).reset_index(drop=True)
 
         # Vérification des résultats
@@ -985,11 +1008,7 @@ def show(tables):
         # --- Comparaison progression joueur par saison ---
         st.markdown("### 📊 Comparaison des saisons du joueur")
 
-        saisons_disponibles = sorted(
-            df_historique[df_historique["participant_nom"] == participant_sel]["saison_match"].unique(),
-            reverse=True  # Tri descendant
-        )
-
+        saisons_disponibles = sorted(df_historique["saison_match"].unique(), reverse=True)
         default_saisons = [saison_sel] if saison_sel in saisons_disponibles else []
 
         saisons_sel = st.multiselect(
@@ -1007,20 +1026,16 @@ def show(tables):
             idx_couleur = 0
 
             for saison in saisons_sel:
-                df_saison = df_historique[
-                    (df_historique["participant_nom"] == participant_sel) & 
-                    (df_historique["saison_match"] == saison)
-                ].copy()
-
+                df_saison = df_historique[df_historique["saison_match"] == saison].copy()
                 if df_saison.empty:
                     continue
 
-                # Assurer que les journées sont triées et numériques
+                # Tri et conversion en int pour les journées
                 df_saison["journee_match"] = df_saison["journee_match"].astype(int)
                 df_saison = df_saison.sort_values("journee_match").reset_index(drop=True)
 
-                # Calcul cumulatif
-                df_saison = df_saison.groupby("journee_match")["points"].sum().reset_index()
+                # --- Calcul cumulatif par journée ---
+                df_saison = df_saison.groupby("journee_match", as_index=False)["points"].sum()
                 df_saison["points_cumul"] = df_saison["points"].cumsum()
 
                 # Traces
