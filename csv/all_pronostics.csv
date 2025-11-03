@@ -52817,3 +52817,30 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 54368,5,Cédric,Toulouse FC,Stade Rennais,1,0,9546,10,2025-2026,L1_25-26
 54369,5,Cédric,FC Metz,RC Lens,0,2,9547,10,2025-2026,L1_25-26
 54370,5,Cédric,OGC Nice,Lille OSC,1,2,9548,10,2025-2026,L1_25-26
+54371,10,Kévin,Olympique de Marseille,Angers SCO,2,0,9540,10,2025-2026,L1_25-26
+54372,10,Kévin,FC Lorient,Paris Saint Germain,0,3,9541,10,2025-2026,L1_25-26
+54373,10,Kévin,FC Nantes,AS Monaco,1,2,9542,10,2025-2026,L1_25-26
+54374,10,Kévin,RC Strasbourg Alsace,AJ Auxerre,2,0,9543,10,2025-2026,L1_25-26
+54375,10,Kévin,Paris FC,Olympique Lyonnais,0,1,9544,10,2025-2026,L1_25-26
+54376,10,Kévin,Le Havre AC,Stade Brestois 29,1,1,9545,10,2025-2026,L1_25-26
+54377,10,Kévin,Toulouse FC,Stade Rennais,1,1,9546,10,2025-2026,L1_25-26
+54378,10,Kévin,FC Metz,RC Lens,0,2,9547,10,2025-2026,L1_25-26
+54379,10,Kévin,OGC Nice,Lille OSC,1,2,9548,10,2025-2026,L1_25-26
+54380,10,Kévin,Paris Saint Germain,OGC Nice,2,1,9549,11,2025-2026,L1_25-26
+54381,10,Kévin,Toulouse FC,Le Havre AC,1,1,9550,11,2025-2026,L1_25-26
+54382,10,Kévin,Lille OSC,Angers SCO,2,0,9551,11,2025-2026,L1_25-26
+54383,10,Kévin,Stade Rennais,RC Strasbourg Alsace,1,1,9552,11,2025-2026,L1_25-26
+54384,10,Kévin,RC Lens,FC Lorient,2,0,9553,11,2025-2026,L1_25-26
+54385,10,Kévin,Stade Brestois 29,Olympique Lyonnais,1,1,9554,11,2025-2026,L1_25-26
+54386,10,Kévin,FC Nantes,FC Metz,1,1,9555,11,2025-2026,L1_25-26
+54387,10,Kévin,AS Monaco,Paris FC,2,0,9556,11,2025-2026,L1_25-26
+54388,10,Kévin,AJ Auxerre,Olympique de Marseille,0,2,9557,11,2025-2026,L1_25-26
+54389,15,Matthieu,Paris Saint Germain,OGC Nice,2,1,9549,11,2025-2026,L1_25-26
+54390,15,Matthieu,Toulouse FC,Le Havre AC,2,0,9550,11,2025-2026,L1_25-26
+54391,15,Matthieu,Lille OSC,Angers SCO,2,0,9551,11,2025-2026,L1_25-26
+54392,15,Matthieu,Stade Rennais,RC Strasbourg Alsace,1,2,9552,11,2025-2026,L1_25-26
+54393,15,Matthieu,RC Lens,FC Lorient,2,0,9553,11,2025-2026,L1_25-26
+54394,15,Matthieu,Stade Brestois 29,Olympique Lyonnais,1,1,9554,11,2025-2026,L1_25-26
+54395,15,Matthieu,FC Nantes,FC Metz,1,2,9555,11,2025-2026,L1_25-26
+54396,15,Matthieu,AS Monaco,Paris FC,3,1,9556,11,2025-2026,L1_25-26
+54397,15,Matthieu,AJ Auxerre,Olympique de Marseille,0,3,9557,11,2025-2026,L1_25-26
