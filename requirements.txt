@@ -5,3 +5,5 @@ plotly
 matplotlib
 xlsxwriter
 graphviz
+streamlit_extras
+numpy
