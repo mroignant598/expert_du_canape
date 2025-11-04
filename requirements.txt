@@ -7,3 +7,4 @@ xlsxwriter
 graphviz
 streamlit_extras
 numpy
+st_aggrid
