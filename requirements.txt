@@ -8,4 +8,3 @@ graphviz
 streamlit_extras
 numpy
 streamlit-aggrid
-streamlit_extras.stylable_container
