@@ -52853,3 +52853,455 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 54404,5,Cédric,FC Nantes,FC Metz,2,0,9555,11,2025-2026,L1_25-26
 54405,5,Cédric,AS Monaco,Paris FC,1,0,9556,11,2025-2026,L1_25-26
 54406,5,Cédric,AJ Auxerre,Olympique de Marseille,1,2,9557,11,2025-2026,L1_25-26
+54407,10,Kévin,Ajax Amsterdam,Galatasaray SK,1,0,10392,4,2025-2026,LdC_25-26
+54408,10,Kévin,Club Atlético de Madrid,Royal Union Saint-Gilloise,4,0,10541,4,2025-2026,LdC_25-26
+54409,10,Kévin,Club Brugge KV,FC Barcelone,0,2,10542,4,2025-2026,LdC_25-26
+54410,10,Kévin,FK Bodo/Glimt,AS Monaco,1,2,10388,4,2025-2026,LdC_25-26
+54411,10,Kévin,Inter Milan,FK Kairat Almaty,6,0,10545,4,2025-2026,LdC_25-26
+54412,10,Kévin,Juventus FC,Sporting CP,1,1,10389,4,2025-2026,LdC_25-26
+54413,10,Kévin,Liverpool FC,Real Madrid CF,1,2,10390,4,2025-2026,LdC_25-26
+54414,10,Kévin,Manchester City FC,Borussia Dortmund,1,1,10544,4,2025-2026,LdC_25-26
+54415,10,Kévin,Newcastle United FC,Athletic Club,2,1,10394,4,2025-2026,LdC_25-26
+54416,10,Kévin,Olympiakos,PSV Eindhoven,1,1,10540,4,2025-2026,LdC_25-26
+54417,10,Kévin,Olympique de Marseille,Atalanta Bergame,2,0,10393,4,2025-2026,LdC_25-26
+54418,10,Kévin,Pafos FC,Villarreal CF,1,2,10546,4,2025-2026,LdC_25-26
+54419,10,Kévin,Paris Saint Germain,FC Bayern Munich,1,1,10539,4,2025-2026,LdC_25-26
+54420,10,Kévin,Qarabag FK,Chelsea FC,0,2,10391,4,2025-2026,LdC_25-26
+54421,10,Kévin,SL Benfica,Bayer 04 Leverkusen,1,1,10543,4,2025-2026,LdC_25-26
+54422,10,Kévin,Slavia Prague,Arsenal FC,0,3,10537,4,2025-2026,LdC_25-26
+54423,10,Kévin,SSC Naples,Eintracht Frankfort,2,1,10584,4,2025-2026,LdC_25-26
+54424,10,Kévin,Tottenham Hotspur,FC Copenhague,3,0,10538,4,2025-2026,LdC_25-26
+54425,10,Kévin,Aston Villa FC,Maccabi Tel Aviv FC,3,0,10456,4,2025-2026,LE_25-26
+54426,10,Kévin,Bologne FC 1909,SK Brann,3,0,10458,4,2025-2026,LE_25-26
+54427,10,Kévin,Etoile Rouge de Belgrade,Lille OSC,1,1,10448,4,2025-2026,LE_25-26
+54428,10,Kévin,FC Bâle,Fotbal Club FCSB,2,0,10447,4,2025-2026,LE_25-26
+54429,10,Kévin,FC Midtjylland,Celtic FC,1,1,10451,4,2025-2026,LE_25-26
+54430,10,Kévin,FC Utrecht,FC Porto,0,2,10455,4,2025-2026,LE_25-26
+54431,10,Kévin,FC Viktoria Plzen,Fenerbahçe SK,0,2,10462,4,2025-2026,LE_25-26
+54432,10,Kévin,Ferencváros TC,PFK Ludogorets Razgrad,1,1,10460,4,2025-2026,LE_25-26
+54433,10,Kévin,GNK Dinamo Zagreb,Real Club Celta de Vigo,2,1,10449,4,2025-2026,LE_25-26
+54434,10,Kévin,Malmö FF,Panathinaïkos,1,0,10450,4,2025-2026,LE_25-26
+54435,10,Kévin,OGC Nice,SC Fribourg,1,2,10452,4,2025-2026,LE_25-26
+54436,10,Kévin,PAOK Salonique,Berner Sport Club Young Boys,2,1,10461,4,2025-2026,LE_25-26
+54437,10,Kévin,Rangers FC,AS Rome,1,2,10463,4,2025-2026,LE_25-26
+54438,10,Kévin,Real Betis Balompié,Olympique Lyonnais,2,0,10457,4,2025-2026,LE_25-26
+54439,10,Kévin,Red Bull Salzbourg,Go Ahead Eagles,2,0,10453,4,2025-2026,LE_25-26
+54440,10,Kévin,SC Braga,KRC Genk,1,1,10459,4,2025-2026,LE_25-26
+54441,10,Kévin,SK Sturm Graz,Nottingham Forest FC,1,2,10454,4,2025-2026,LE_25-26
+54442,10,Kévin,VfB Stuttgart,Feyenoord Rotterdam,2,0,10464,4,2025-2026,LE_25-26
+54443,15,Matthieu,Aston Villa FC,Maccabi Tel Aviv FC,3,0,10456,4,2025-2026,LE_25-26
+54444,15,Matthieu,Bologne FC 1909,SK Brann,1,1,10458,4,2025-2026,LE_25-26
+54445,15,Matthieu,Etoile Rouge de Belgrade,Lille OSC,0,1,10448,4,2025-2026,LE_25-26
+54446,15,Matthieu,FC Bâle,Fotbal Club FCSB,1,0,10447,4,2025-2026,LE_25-26
+54447,15,Matthieu,FC Midtjylland,Celtic FC,2,1,10451,4,2025-2026,LE_25-26
+54448,15,Matthieu,FC Utrecht,FC Porto,0,2,10455,4,2025-2026,LE_25-26
+54449,15,Matthieu,FC Viktoria Plzen,Fenerbahçe SK,1,2,10462,4,2025-2026,LE_25-26
+54450,15,Matthieu,Ferencváros TC,PFK Ludogorets Razgrad,1,1,10460,4,2025-2026,LE_25-26
+54451,15,Matthieu,GNK Dinamo Zagreb,Real Club Celta de Vigo,0,2,10449,4,2025-2026,LE_25-26
+54452,15,Matthieu,Malmö FF,Panathinaïkos,2,1,10450,4,2025-2026,LE_25-26
+54453,15,Matthieu,OGC Nice,SC Fribourg,1,1,10452,4,2025-2026,LE_25-26
+54454,15,Matthieu,PAOK Salonique,Berner Sport Club Young Boys,0,0,10461,4,2025-2026,LE_25-26
+54455,15,Matthieu,Rangers FC,AS Rome,1,2,10463,4,2025-2026,LE_25-26
+54456,15,Matthieu,Real Betis Balompié,Olympique Lyonnais,1,1,10457,4,2025-2026,LE_25-26
+54457,15,Matthieu,Red Bull Salzbourg,Go Ahead Eagles,2,0,10453,4,2025-2026,LE_25-26
+54458,15,Matthieu,SC Braga,KRC Genk,2,1,10459,4,2025-2026,LE_25-26
+54459,15,Matthieu,SK Sturm Graz,Nottingham Forest FC,0,2,10454,4,2025-2026,LE_25-26
+54460,15,Matthieu,VfB Stuttgart,Feyenoord Rotterdam,2,1,10464,4,2025-2026,LE_25-26
+54461,15,Matthieu,Ajax Amsterdam,Galatasaray SK,2,0,10392,4,2025-2026,LdC_25-26
+54462,15,Matthieu,Club Atlético de Madrid,Royal Union Saint-Gilloise,3,1,10541,4,2025-2026,LdC_25-26
+54463,15,Matthieu,Club Brugge KV,FC Barcelone,0,4,10542,4,2025-2026,LdC_25-26
+54464,15,Matthieu,FK Bodo/Glimt,AS Monaco,0,2,10388,4,2025-2026,LdC_25-26
+54465,15,Matthieu,Inter Milan,FK Kairat Almaty,2,1,10545,4,2025-2026,LdC_25-26
+54466,15,Matthieu,Juventus FC,Sporting CP,3,0,10389,4,2025-2026,LdC_25-26
+54467,15,Matthieu,Liverpool FC,Real Madrid CF,1,2,10390,4,2025-2026,LdC_25-26
+54468,15,Matthieu,Manchester City FC,Borussia Dortmund,0,1,10544,4,2025-2026,LdC_25-26
+54469,15,Matthieu,Newcastle United FC,Athletic Club,2,0,10394,4,2025-2026,LdC_25-26
+54470,15,Matthieu,Olympiakos,PSV Eindhoven,2,1,10540,4,2025-2026,LdC_25-26
+54471,15,Matthieu,Olympique de Marseille,Atalanta Bergame,2,0,10393,4,2025-2026,LdC_25-26
+54472,15,Matthieu,Pafos FC,Villarreal CF,0,3,10546,4,2025-2026,LdC_25-26
+54473,15,Matthieu,Paris Saint Germain,FC Bayern Munich,1,1,10539,4,2025-2026,LdC_25-26
+54474,15,Matthieu,Qarabag FK,Chelsea FC,0,3,10391,4,2025-2026,LdC_25-26
+54475,15,Matthieu,SL Benfica,Bayer 04 Leverkusen,2,2,10543,4,2025-2026,LdC_25-26
+54476,15,Matthieu,Slavia Prague,Arsenal FC,0,2,10537,4,2025-2026,LdC_25-26
+54477,15,Matthieu,SSC Naples,Eintracht Frankfort,2,0,10584,4,2025-2026,LdC_25-26
+54478,15,Matthieu,Tottenham Hotspur,FC Copenhague,2,0,10538,4,2025-2026,LdC_25-26
+54479,10,Kévin,Olympique Lyonnais,AC Ajaccio,3,0,7922,1,2022-2023,L1_22-23
+54480,10,Kévin,RC Strasbourg Alsace,AS Monaco,1,1,7923,1,2022-2023,L1_22-23
+54481,10,Kévin,Clermont Foot 63,Paris Saint Germain,0,4,7924,1,2022-2023,L1_22-23
+54482,10,Kévin,Toulouse FC,OGC Nice,0,1,7925,1,2022-2023,L1_22-23
+54483,10,Kévin,Angers SCO,FC Nantes,2,1,7926,1,2022-2023,L1_22-23
+54484,10,Kévin,RC Lens,Stade Brestois 29,1,1,7927,1,2022-2023,L1_22-23
+54485,10,Kévin,Lille OSC,AJ Auxerre,1,0,7928,1,2022-2023,L1_22-23
+54486,10,Kévin,Montpellier HSC,ESTAC Troyes,1,0,7929,1,2022-2023,L1_22-23
+54487,10,Kévin,Stade Rennais,FC Lorient,2,0,7930,1,2022-2023,L1_22-23
+54488,10,Kévin,Olympique de Marseille,Stade de Reims,2,0,7931,1,2022-2023,L1_22-23
+54489,10,Kévin,AC Ajaccio,RC Lens,0,2,7932,2,2022-2023,L1_22-23
+54490,10,Kévin,AJ Auxerre,Angers SCO,1,1,7933,2,2022-2023,L1_22-23
+54491,10,Kévin,Stade Brestois 29,Olympique de Marseille,1,2,7934,2,2022-2023,L1_22-23
+54492,10,Kévin,FC Lorient,Olympique Lyonnais,1,2,7935,2,2022-2023,L1_22-23
+54493,10,Kévin,AS Monaco,Stade Rennais,2,0,7936,2,2022-2023,L1_22-23
+54494,10,Kévin,FC Nantes,Lille OSC,2,1,7937,2,2022-2023,L1_22-23
+54495,10,Kévin,OGC Nice,RC Strasbourg Alsace,1,0,7938,2,2022-2023,L1_22-23
+54496,10,Kévin,Paris Saint Germain,Montpellier HSC,4,0,7939,2,2022-2023,L1_22-23
+54497,10,Kévin,Stade de Reims,Clermont Foot 63,0,1,7940,2,2022-2023,L1_22-23
+54498,10,Kévin,ESTAC Troyes,Toulouse FC,1,2,7941,2,2022-2023,L1_22-23
+54499,10,Kévin,Angers SCO,Stade Brestois 29,2,1,7942,3,2022-2023,L1_22-23
+54500,10,Kévin,Clermont Foot 63,OGC Nice,0,1,7943,3,2022-2023,L1_22-23
+54501,10,Kévin,Lille OSC,Paris Saint Germain,0,3,7944,3,2022-2023,L1_22-23
+54502,10,Kévin,Olympique Lyonnais,ESTAC Troyes,3,0,7945,3,2022-2023,L1_22-23
+54503,10,Kévin,Olympique de Marseille,FC Nantes,2,0,7946,3,2022-2023,L1_22-23
+54504,10,Kévin,AS Monaco,RC Lens,2,1,7947,3,2022-2023,L1_22-23
+54505,10,Kévin,Montpellier HSC,AJ Auxerre,3,0,7948,3,2022-2023,L1_22-23
+54506,10,Kévin,Stade Rennais,AC Ajaccio,2,0,7949,3,2022-2023,L1_22-23
+54507,10,Kévin,RC Strasbourg Alsace,Stade de Reims,1,1,7950,3,2022-2023,L1_22-23
+54508,10,Kévin,Toulouse FC,FC Lorient,1,1,7951,3,2022-2023,L1_22-23
+54509,10,Kévin,AC Ajaccio,Lille OSC,0,2,7952,4,2022-2023,L1_22-23
+54510,10,Kévin,AJ Auxerre,RC Strasbourg Alsace,1,2,7953,4,2022-2023,L1_22-23
+54511,10,Kévin,Stade Brestois 29,Montpellier HSC,1,1,7954,4,2022-2023,L1_22-23
+54512,10,Kévin,RC Lens,Stade Rennais,2,1,7955,4,2022-2023,L1_22-23
+54513,10,Kévin,FC Lorient,Clermont Foot 63,1,0,7956,4,2022-2023,L1_22-23
+54514,10,Kévin,FC Nantes,Toulouse FC,2,0,7957,4,2022-2023,L1_22-23
+54515,10,Kévin,OGC Nice,Olympique de Marseille,1,2,7958,4,2022-2023,L1_22-23
+54516,10,Kévin,Paris Saint Germain,AS Monaco,3,1,7959,4,2022-2023,L1_22-23
+54517,10,Kévin,Stade de Reims,Olympique Lyonnais,0,2,7960,4,2022-2023,L1_22-23
+54518,10,Kévin,ESTAC Troyes,Angers SCO,0,2,7961,4,2022-2023,L1_22-23
+54519,10,Kévin,Toulouse FC,Paris Saint Germain,0,4,7962,5,2022-2023,L1_22-23
+54520,10,Kévin,Stade Rennais,Stade Brestois 29,2,1,7963,5,2022-2023,L1_22-23
+54521,10,Kévin,RC Strasbourg Alsace,FC Nantes,1,1,7964,5,2022-2023,L1_22-23
+54522,10,Kévin,RC Lens,FC Lorient,2,0,7965,5,2022-2023,L1_22-23
+54523,10,Kévin,Olympique de Marseille,Clermont Foot 63,3,0,7966,5,2022-2023,L1_22-23
+54524,10,Kévin,Olympique Lyonnais,AJ Auxerre,3,0,7967,5,2022-2023,L1_22-23
+54525,10,Kévin,Montpellier HSC,AC Ajaccio,2,0,7968,5,2022-2023,L1_22-23
+54526,10,Kévin,Lille OSC,OGC Nice,2,1,7969,5,2022-2023,L1_22-23
+54527,10,Kévin,Angers SCO,Stade de Reims,1,1,7970,5,2022-2023,L1_22-23
+54528,10,Kévin,AS Monaco,ESTAC Troyes,2,1,7971,5,2022-2023,L1_22-23
+54529,10,Kévin,ESTAC Troyes,Stade Rennais,0,3,7972,6,2022-2023,L1_22-23
+54530,10,Kévin,Stade de Reims,RC Lens,0,2,7973,6,2022-2023,L1_22-23
+54531,10,Kévin,Stade Brestois 29,RC Strasbourg Alsace,1,1,7974,6,2022-2023,L1_22-23
+54532,10,Kévin,Olympique Lyonnais,Angers SCO,3,0,7975,6,2022-2023,L1_22-23
+54533,10,Kévin,OGC Nice,AS Monaco,1,1,7976,6,2022-2023,L1_22-23
+54534,10,Kévin,Montpellier HSC,Lille OSC,1,2,7977,6,2022-2023,L1_22-23
+54535,10,Kévin,FC Nantes,Paris Saint Germain,0,2,7978,6,2022-2023,L1_22-23
+54536,10,Kévin,Clermont Foot 63,Toulouse FC,2,1,7979,6,2022-2023,L1_22-23
+54537,10,Kévin,AJ Auxerre,Olympique de Marseille,0,2,7980,6,2022-2023,L1_22-23
+54538,10,Kévin,AC Ajaccio,FC Lorient,1,0,7981,6,2022-2023,L1_22-23
+54539,10,Kévin,Toulouse FC,Stade de Reims,1,1,7982,7,2022-2023,L1_22-23
+54540,10,Kévin,Stade Rennais,AJ Auxerre,3,0,7983,7,2022-2023,L1_22-23
+54541,10,Kévin,RC Strasbourg Alsace,Clermont Foot 63,1,1,7984,7,2022-2023,L1_22-23
+54542,10,Kévin,RC Lens,ESTAC Troyes,2,0,7985,7,2022-2023,L1_22-23
+54543,10,Kévin,Paris Saint Germain,Stade Brestois 29,3,0,7986,7,2022-2023,L1_22-23
+54544,10,Kévin,Olympique de Marseille,Lille OSC,1,1,7987,7,2022-2023,L1_22-23
+54545,10,Kévin,FC Lorient,FC Nantes,2,1,7988,7,2022-2023,L1_22-23
+54546,10,Kévin,Angers SCO,Montpellier HSC,0,1,7989,7,2022-2023,L1_22-23
+54547,10,Kévin,AS Monaco,Olympique Lyonnais,1,2,7990,7,2022-2023,L1_22-23
+54548,10,Kévin,AC Ajaccio,OGC Nice,0,2,7991,7,2022-2023,L1_22-23
+54549,10,Kévin,Stade de Reims,AS Monaco,1,1,7992,8,2022-2023,L1_22-23
+54550,10,Kévin,Stade Brestois 29,AC Ajaccio,2,1,7993,8,2022-2023,L1_22-23
+54551,10,Kévin,Olympique de Marseille,Stade Rennais,2,1,7994,8,2022-2023,L1_22-23
+54552,10,Kévin,Olympique Lyonnais,Paris Saint Germain,1,1,7995,8,2022-2023,L1_22-23
+54553,10,Kévin,OGC Nice,Angers SCO,2,1,7996,8,2022-2023,L1_22-23
+54554,10,Kévin,Montpellier HSC,RC Strasbourg Alsace,1,1,7997,8,2022-2023,L1_22-23
+54555,10,Kévin,Lille OSC,Toulouse FC,2,0,7998,8,2022-2023,L1_22-23
+54556,10,Kévin,FC Nantes,RC Lens,1,2,7999,8,2022-2023,L1_22-23
+54557,10,Kévin,Clermont Foot 63,ESTAC Troyes,2,1,8000,8,2022-2023,L1_22-23
+54558,10,Kévin,AJ Auxerre,FC Lorient,1,1,8001,8,2022-2023,L1_22-23
+54559,10,Kévin,ESTAC Troyes,Stade de Reims,2,1,8002,9,2022-2023,L1_22-23
+54560,10,Kévin,Toulouse FC,Montpellier HSC,0,1,8003,9,2022-2023,L1_22-23
+54561,10,Kévin,RC Strasbourg Alsace,Stade Rennais,1,1,8004,9,2022-2023,L1_22-23
+54562,10,Kévin,RC Lens,Olympique Lyonnais,2,1,8005,9,2022-2023,L1_22-23
+54563,10,Kévin,Paris Saint Germain,OGC Nice,2,1,8006,9,2022-2023,L1_22-23
+54564,10,Kévin,FC Lorient,Lille OSC,0,2,8007,9,2022-2023,L1_22-23
+54565,10,Kévin,Angers SCO,Olympique de Marseille,0,2,8008,9,2022-2023,L1_22-23
+54566,10,Kévin,AS Monaco,FC Nantes,2,1,8009,9,2022-2023,L1_22-23
+54567,10,Kévin,AJ Auxerre,Stade Brestois 29,1,1,8010,9,2022-2023,L1_22-23
+54568,10,Kévin,AC Ajaccio,Clermont Foot 63,0,2,8011,9,2022-2023,L1_22-23
+54569,10,Kévin,Stade de Reims,Paris Saint Germain,0,3,8012,10,2022-2023,L1_22-23
+54570,10,Kévin,Stade Rennais,FC Nantes,2,0,8013,10,2022-2023,L1_22-23
+54571,10,Kévin,Stade Brestois 29,FC Lorient,0,1,8014,10,2022-2023,L1_22-23
+54572,10,Kévin,Olympique de Marseille,AC Ajaccio,2,0,8015,10,2022-2023,L1_22-23
+54573,10,Kévin,Olympique Lyonnais,Toulouse FC,3,0,8016,10,2022-2023,L1_22-23
+54574,10,Kévin,OGC Nice,ESTAC Troyes,2,1,8017,10,2022-2023,L1_22-23
+54575,10,Kévin,Montpellier HSC,AS Monaco,1,1,8018,10,2022-2023,L1_22-23
+54576,10,Kévin,Lille OSC,RC Lens,1,1,8019,10,2022-2023,L1_22-23
+54577,10,Kévin,Clermont Foot 63,AJ Auxerre,2,0,8020,10,2022-2023,L1_22-23
+54578,10,Kévin,Angers SCO,RC Strasbourg Alsace,1,1,8021,10,2022-2023,L1_22-23
+54579,10,Kévin,ESTAC Troyes,AC Ajaccio,2,1,8022,11,2022-2023,L1_22-23
+54580,10,Kévin,Toulouse FC,Angers SCO,2,1,8023,11,2022-2023,L1_22-23
+54581,10,Kévin,Stade Rennais,Olympique Lyonnais,1,1,8024,11,2022-2023,L1_22-23
+54582,10,Kévin,RC Strasbourg Alsace,Lille OSC,1,2,8025,11,2022-2023,L1_22-23
+54583,10,Kévin,RC Lens,Montpellier HSC,2,1,8026,11,2022-2023,L1_22-23
+54584,10,Kévin,Paris Saint Germain,Olympique de Marseille,1,1,8027,11,2022-2023,L1_22-23
+54585,10,Kévin,FC Nantes,Stade Brestois 29,1,1,8028,11,2022-2023,L1_22-23
+54586,10,Kévin,FC Lorient,Stade de Reims,2,0,8029,11,2022-2023,L1_22-23
+54587,10,Kévin,AS Monaco,Clermont Foot 63,2,1,8030,11,2022-2023,L1_22-23
+54588,10,Kévin,AJ Auxerre,OGC Nice,1,0,8031,11,2022-2023,L1_22-23
+54589,10,Kévin,ESTAC Troyes,FC Lorient,1,1,8032,12,2022-2023,L1_22-23
+54590,10,Kévin,Toulouse FC,RC Strasbourg Alsace,2,1,8033,12,2022-2023,L1_22-23
+54591,10,Kévin,Stade de Reims,AJ Auxerre,2,0,8034,12,2022-2023,L1_22-23
+54592,10,Kévin,Olympique de Marseille,RC Lens,1,2,8035,12,2022-2023,L1_22-23
+54593,10,Kévin,OGC Nice,FC Nantes,2,0,8036,12,2022-2023,L1_22-23
+54594,10,Kévin,Montpellier HSC,Olympique Lyonnais,2,1,8037,12,2022-2023,L1_22-23
+54595,10,Kévin,Lille OSC,AS Monaco,1,1,8038,12,2022-2023,L1_22-23
+54596,10,Kévin,Clermont Foot 63,Stade Brestois 29,3,0,8039,12,2022-2023,L1_22-23
+54597,10,Kévin,Angers SCO,Stade Rennais,1,2,8040,12,2022-2023,L1_22-23
+54598,10,Kévin,AC Ajaccio,Paris Saint Germain,0,3,8041,12,2022-2023,L1_22-23
+54599,10,Kévin,Stade Rennais,Montpellier HSC,2,1,8042,13,2022-2023,L1_22-23
+54600,10,Kévin,Stade Brestois 29,Stade de Reims,0,1,8043,13,2022-2023,L1_22-23
+54601,10,Kévin,RC Strasbourg Alsace,Olympique de Marseille,1,1,8044,13,2022-2023,L1_22-23
+54602,10,Kévin,RC Lens,Toulouse FC,3,0,8045,13,2022-2023,L1_22-23
+54603,10,Kévin,Paris Saint Germain,ESTAC Troyes,3,0,8046,13,2022-2023,L1_22-23
+54604,10,Kévin,Olympique Lyonnais,Lille OSC,1,1,8047,13,2022-2023,L1_22-23
+54605,10,Kévin,FC Nantes,Clermont Foot 63,1,1,8048,13,2022-2023,L1_22-23
+54606,10,Kévin,FC Lorient,OGC Nice,1,1,8049,13,2022-2023,L1_22-23
+54607,10,Kévin,AS Monaco,Angers SCO,2,0,8050,13,2022-2023,L1_22-23
+54608,10,Kévin,AJ Auxerre,AC Ajaccio,2,0,8051,13,2022-2023,L1_22-23
+54609,10,Kévin,ESTAC Troyes,AJ Auxerre,2,1,8052,14,2022-2023,L1_22-23
+54610,10,Kévin,Toulouse FC,AS Monaco,0,2,8053,14,2022-2023,L1_22-23
+54611,10,Kévin,Stade de Reims,FC Nantes,0,1,8054,14,2022-2023,L1_22-23
+54612,10,Kévin,Olympique de Marseille,Olympique Lyonnais,1,1,8055,14,2022-2023,L1_22-23
+54613,10,Kévin,OGC Nice,Stade Brestois 29,2,0,8056,14,2022-2023,L1_22-23
+54614,10,Kévin,Lille OSC,Stade Rennais,1,1,8057,14,2022-2023,L1_22-23
+54615,10,Kévin,FC Lorient,Paris Saint Germain,0,3,8058,14,2022-2023,L1_22-23
+54616,10,Kévin,Clermont Foot 63,Montpellier HSC,2,1,8059,14,2022-2023,L1_22-23
+54617,10,Kévin,Angers SCO,RC Lens,0,2,8060,14,2022-2023,L1_22-23
+54618,10,Kévin,AC Ajaccio,RC Strasbourg Alsace,2,1,8061,14,2022-2023,L1_22-23
+54619,10,Kévin,Stade Rennais,Toulouse FC,2,0,8062,15,2022-2023,L1_22-23
+54620,10,Kévin,Stade Brestois 29,ESTAC Troyes,1,1,8063,15,2022-2023,L1_22-23
+54621,10,Kévin,RC Strasbourg Alsace,FC Lorient,2,1,8064,15,2022-2023,L1_22-23
+54622,10,Kévin,RC Lens,Clermont Foot 63,2,0,8065,15,2022-2023,L1_22-23
+54623,10,Kévin,Paris Saint Germain,AJ Auxerre,4,0,8066,15,2022-2023,L1_22-23
+54624,10,Kévin,Olympique Lyonnais,OGC Nice,2,1,8067,15,2022-2023,L1_22-23
+54625,10,Kévin,Montpellier HSC,Stade de Reims,2,1,8068,15,2022-2023,L1_22-23
+54626,10,Kévin,Lille OSC,Angers SCO,2,0,8069,15,2022-2023,L1_22-23
+54627,10,Kévin,FC Nantes,AC Ajaccio,2,0,8070,15,2022-2023,L1_22-23
+54628,10,Kévin,AS Monaco,Olympique de Marseille,0,1,8071,15,2022-2023,L1_22-23
+54629,10,Kévin,ESTAC Troyes,FC Nantes,0,1,8072,16,2022-2023,L1_22-23
+54630,10,Kévin,Stade de Reims,Stade Rennais,1,2,8073,16,2022-2023,L1_22-23
+54631,10,Kévin,Stade Brestois 29,Olympique Lyonnais,0,2,8074,16,2022-2023,L1_22-23
+54632,10,Kévin,Paris Saint Germain,RC Strasbourg Alsace,2,0,8075,16,2022-2023,L1_22-23
+54633,10,Kévin,Olympique de Marseille,Toulouse FC,2,0,8076,16,2022-2023,L1_22-23
+54634,10,Kévin,OGC Nice,RC Lens,1,2,8077,16,2022-2023,L1_22-23
+54635,10,Kévin,FC Lorient,Montpellier HSC,1,1,8078,16,2022-2023,L1_22-23
+54636,10,Kévin,Clermont Foot 63,Lille OSC,0,2,8079,16,2022-2023,L1_22-23
+54637,10,Kévin,AJ Auxerre,AS Monaco,1,2,8080,16,2022-2023,L1_22-23
+54638,10,Kévin,AC Ajaccio,Angers SCO,1,0,8081,16,2022-2023,L1_22-23
+54639,10,Kévin,RC Strasbourg Alsace,ESTAC Troyes,1,1,8082,17,2022-2023,L1_22-23
+54640,10,Kévin,Montpellier HSC,Olympique de Marseille,1,1,8083,17,2022-2023,L1_22-23
+54641,10,Kévin,Angers SCO,FC Lorient,1,1,8084,17,2022-2023,L1_22-23
+54642,10,Kévin,Toulouse FC,AC Ajaccio,2,0,8085,17,2022-2023,L1_22-23
+54643,10,Kévin,Stade Rennais,OGC Nice,2,1,8086,17,2022-2023,L1_22-23
+54644,10,Kévin,RC Lens,Paris Saint Germain,1,1,8087,17,2022-2023,L1_22-23
+54645,10,Kévin,Olympique Lyonnais,Clermont Foot 63,2,0,8088,17,2022-2023,L1_22-23
+54646,10,Kévin,Lille OSC,Stade de Reims,2,0,8089,17,2022-2023,L1_22-23
+54647,10,Kévin,FC Nantes,AJ Auxerre,2,0,8090,17,2022-2023,L1_22-23
+54648,10,Kévin,AS Monaco,Stade Brestois 29,2,0,8091,17,2022-2023,L1_22-23
+54649,10,Kévin,ESTAC Troyes,Olympique de Marseille,0,2,8092,18,2022-2023,L1_22-23
+54650,10,Kévin,Stade Brestois 29,Lille OSC,1,2,8093,18,2022-2023,L1_22-23
+54651,10,Kévin,RC Strasbourg Alsace,RC Lens,0,2,8094,18,2022-2023,L1_22-23
+54652,10,Kévin,Paris Saint Germain,Angers SCO,4,0,8095,18,2022-2023,L1_22-23
+54653,10,Kévin,OGC Nice,Montpellier HSC,1,1,8096,18,2022-2023,L1_22-23
+54654,10,Kévin,FC Nantes,Olympique Lyonnais,2,1,8097,18,2022-2023,L1_22-23
+54655,10,Kévin,FC Lorient,AS Monaco,1,1,8098,18,2022-2023,L1_22-23
+54656,10,Kévin,Clermont Foot 63,Stade Rennais,0,1,8099,18,2022-2023,L1_22-23
+54657,10,Kévin,AJ Auxerre,Toulouse FC,1,1,8100,18,2022-2023,L1_22-23
+54658,10,Kévin,AC Ajaccio,Stade de Reims,1,1,8101,18,2022-2023,L1_22-23
+54659,10,Kévin,Toulouse FC,Stade Brestois 29,2,1,8102,19,2022-2023,L1_22-23
+54660,10,Kévin,Stade de Reims,OGC Nice,0,1,8103,19,2022-2023,L1_22-23
+54661,10,Kévin,Stade Rennais,Paris Saint Germain,1,2,8104,19,2022-2023,L1_22-23
+54662,10,Kévin,RC Lens,AJ Auxerre,2,0,8105,19,2022-2023,L1_22-23
+54663,10,Kévin,Olympique de Marseille,FC Lorient,2,1,8106,19,2022-2023,L1_22-23
+54664,10,Kévin,Olympique Lyonnais,RC Strasbourg Alsace,2,0,8107,19,2022-2023,L1_22-23
+54665,10,Kévin,Montpellier HSC,FC Nantes,1,1,8108,19,2022-2023,L1_22-23
+54666,10,Kévin,Lille OSC,ESTAC Troyes,3,0,8109,19,2022-2023,L1_22-23
+54667,10,Kévin,Angers SCO,Clermont Foot 63,1,1,8110,19,2022-2023,L1_22-23
+54668,10,Kévin,AS Monaco,AC Ajaccio,2,0,8111,19,2022-2023,L1_22-23
+54669,10,Kévin,ESTAC Troyes,RC Lens,0,2,8112,20,2022-2023,L1_22-23
+54670,10,Kévin,Stade Brestois 29,Angers SCO,2,0,8113,20,2022-2023,L1_22-23
+54671,10,Kévin,RC Strasbourg Alsace,Toulouse FC,0,1,8114,20,2022-2023,L1_22-23
+54672,10,Kévin,Paris Saint Germain,Stade de Reims,3,0,8115,20,2022-2023,L1_22-23
+54673,10,Kévin,Olympique de Marseille,AS Monaco,2,1,8116,20,2022-2023,L1_22-23
+54674,10,Kévin,OGC Nice,Lille OSC,1,1,8117,20,2022-2023,L1_22-23
+54675,10,Kévin,FC Lorient,Stade Rennais,1,1,8118,20,2022-2023,L1_22-23
+54676,10,Kévin,Clermont Foot 63,FC Nantes,0,1,8119,20,2022-2023,L1_22-23
+54677,10,Kévin,AJ Auxerre,Montpellier HSC,2,1,8120,20,2022-2023,L1_22-23
+54678,10,Kévin,AC Ajaccio,Olympique Lyonnais,0,2,8121,20,2022-2023,L1_22-23
+54679,10,Kévin,Stade de Reims,FC Lorient,1,1,8122,21,2022-2023,L1_22-23
+54680,10,Kévin,Olympique Lyonnais,Stade Brestois 29,2,0,8123,21,2022-2023,L1_22-23
+54681,10,Kévin,FC Nantes,Olympique de Marseille,0,2,8124,21,2022-2023,L1_22-23
+54682,10,Kévin,Toulouse FC,ESTAC Troyes,2,1,8125,21,2022-2023,L1_22-23
+54683,10,Kévin,Stade Rennais,RC Strasbourg Alsace,2,0,8126,21,2022-2023,L1_22-23
+54684,10,Kévin,RC Lens,OGC Nice,2,1,8127,21,2022-2023,L1_22-23
+54685,10,Kévin,Montpellier HSC,Paris Saint Germain,1,1,8128,21,2022-2023,L1_22-23
+54686,10,Kévin,Lille OSC,Clermont Foot 63,2,0,8129,21,2022-2023,L1_22-23
+54687,10,Kévin,Angers SCO,AC Ajaccio,0,2,8130,21,2022-2023,L1_22-23
+54688,10,Kévin,AS Monaco,AJ Auxerre,3,0,8131,21,2022-2023,L1_22-23
+54689,10,Kévin,ESTAC Troyes,Olympique Lyonnais,0,2,8132,22,2022-2023,L1_22-23
+54690,10,Kévin,Stade Rennais,Lille OSC,1,2,8133,22,2022-2023,L1_22-23
+54691,10,Kévin,Stade Brestois 29,RC Lens,1,2,8134,22,2022-2023,L1_22-23
+54692,10,Kévin,RC Strasbourg Alsace,Montpellier HSC,1,1,8135,22,2022-2023,L1_22-23
+54693,10,Kévin,Paris Saint Germain,Toulouse FC,2,0,8136,22,2022-2023,L1_22-23
+54694,10,Kévin,Olympique de Marseille,OGC Nice,2,1,8137,22,2022-2023,L1_22-23
+54695,10,Kévin,FC Lorient,Angers SCO,2,0,8138,22,2022-2023,L1_22-23
+54696,10,Kévin,Clermont Foot 63,AS Monaco,0,1,8139,22,2022-2023,L1_22-23
+54697,10,Kévin,AJ Auxerre,Stade de Reims,0,2,8140,22,2022-2023,L1_22-23
+54698,10,Kévin,AC Ajaccio,FC Nantes,0,2,8141,22,2022-2023,L1_22-23
+54699,10,Kévin,Toulouse FC,Stade Rennais,1,1,8142,23,2022-2023,L1_22-23
+54700,10,Kévin,Stade de Reims,ESTAC Troyes,2,0,8143,23,2022-2023,L1_22-23
+54701,10,Kévin,Olympique Lyonnais,RC Lens,1,2,8144,23,2022-2023,L1_22-23
+54702,10,Kévin,OGC Nice,AC Ajaccio,2,0,8145,23,2022-2023,L1_22-23
+54703,10,Kévin,Montpellier HSC,Stade Brestois 29,1,1,8146,23,2022-2023,L1_22-23
+54704,10,Kévin,Lille OSC,RC Strasbourg Alsace,2,1,8147,23,2022-2023,L1_22-23
+54705,10,Kévin,FC Nantes,FC Lorient,2,1,8148,23,2022-2023,L1_22-23
+54706,10,Kévin,Clermont Foot 63,Olympique de Marseille,1,1,8149,23,2022-2023,L1_22-23
+54707,10,Kévin,Angers SCO,AJ Auxerre,0,1,8150,23,2022-2023,L1_22-23
+54708,10,Kévin,AS Monaco,Paris Saint Germain,2,1,8151,23,2022-2023,L1_22-23
+54709,10,Kévin,ESTAC Troyes,Montpellier HSC,1,1,8152,24,2022-2023,L1_22-23
+54710,10,Kévin,Toulouse FC,Olympique de Marseille,1,2,8153,24,2022-2023,L1_22-23
+54711,10,Kévin,Stade Rennais,Clermont Foot 63,2,1,8154,24,2022-2023,L1_22-23
+54712,10,Kévin,Stade Brestois 29,AS Monaco,0,1,8155,24,2022-2023,L1_22-23
+54713,10,Kévin,RC Strasbourg Alsace,Angers SCO,1,1,8156,24,2022-2023,L1_22-23
+54714,10,Kévin,RC Lens,FC Nantes,2,0,8157,24,2022-2023,L1_22-23
+54715,10,Kévin,Paris Saint Germain,Lille OSC,3,0,8158,24,2022-2023,L1_22-23
+54716,10,Kévin,OGC Nice,Stade de Reims,2,0,8159,24,2022-2023,L1_22-23
+54717,10,Kévin,FC Lorient,AC Ajaccio,2,0,8160,24,2022-2023,L1_22-23
+54718,10,Kévin,AJ Auxerre,Olympique Lyonnais,0,3,8161,24,2022-2023,L1_22-23
+54719,10,Kévin,Stade de Reims,Toulouse FC,2,1,8162,25,2022-2023,L1_22-23
+54720,10,Kévin,Olympique de Marseille,Paris Saint Germain,2,2,8163,25,2022-2023,L1_22-23
+54721,10,Kévin,Montpellier HSC,RC Lens,1,2,8164,25,2022-2023,L1_22-23
+54722,10,Kévin,Lille OSC,Stade Brestois 29,2,0,8165,25,2022-2023,L1_22-23
+54723,10,Kévin,FC Nantes,Stade Rennais,2,1,8166,25,2022-2023,L1_22-23
+54724,10,Kévin,FC Lorient,AJ Auxerre,3,0,8167,25,2022-2023,L1_22-23
+54725,10,Kévin,Clermont Foot 63,RC Strasbourg Alsace,1,1,8168,25,2022-2023,L1_22-23
+54726,10,Kévin,Angers SCO,Olympique Lyonnais,1,1,8169,25,2022-2023,L1_22-23
+54727,10,Kévin,AS Monaco,OGC Nice,2,0,8170,25,2022-2023,L1_22-23
+54728,10,Kévin,AC Ajaccio,ESTAC Troyes,2,1,8171,25,2022-2023,L1_22-23
+54729,10,Kévin,ESTAC Troyes,AS Monaco,1,2,8172,26,2022-2023,L1_22-23
+54730,10,Kévin,Toulouse FC,Clermont Foot 63,2,1,8173,26,2022-2023,L1_22-23
+54731,10,Kévin,Stade de Reims,AC Ajaccio,2,0,8174,26,2022-2023,L1_22-23
+54732,10,Kévin,Stade Rennais,Olympique de Marseille,1,1,8175,26,2022-2023,L1_22-23
+54733,10,Kévin,RC Strasbourg Alsace,Stade Brestois 29,2,0,8176,26,2022-2023,L1_22-23
+54734,10,Kévin,RC Lens,Lille OSC,1,2,8177,26,2022-2023,L1_22-23
+54735,10,Kévin,Paris Saint Germain,FC Nantes,3,0,8178,26,2022-2023,L1_22-23
+54736,10,Kévin,Olympique Lyonnais,FC Lorient,2,0,8179,26,2022-2023,L1_22-23
+54737,10,Kévin,OGC Nice,AJ Auxerre,2,0,8180,26,2022-2023,L1_22-23
+54738,10,Kévin,Montpellier HSC,Angers SCO,2,0,8181,26,2022-2023,L1_22-23
+54739,10,Kévin,Stade Brestois 29,Paris Saint Germain,1,1,8182,27,2022-2023,L1_22-23
+54740,10,Kévin,Olympique de Marseille,RC Strasbourg Alsace,2,0,8183,27,2022-2023,L1_22-23
+54741,10,Kévin,Lille OSC,Olympique Lyonnais,2,1,8184,27,2022-2023,L1_22-23
+54742,10,Kévin,FC Nantes,OGC Nice,1,1,8185,27,2022-2023,L1_22-23
+54743,10,Kévin,FC Lorient,ESTAC Troyes,2,0,8186,27,2022-2023,L1_22-23
+54744,10,Kévin,Clermont Foot 63,RC Lens,0,1,8187,27,2022-2023,L1_22-23
+54745,10,Kévin,Angers SCO,Toulouse FC,0,2,8188,27,2022-2023,L1_22-23
+54746,10,Kévin,AS Monaco,Stade de Reims,2,1,8189,27,2022-2023,L1_22-23
+54747,10,Kévin,AJ Auxerre,Stade Rennais,0,1,8190,27,2022-2023,L1_22-23
+54748,10,Kévin,AC Ajaccio,Montpellier HSC,1,1,8191,27,2022-2023,L1_22-23
+54749,10,Kévin,ESTAC Troyes,Stade Brestois 29,0,2,8192,28,2022-2023,L1_22-23
+54750,10,Kévin,Toulouse FC,Lille OSC,1,2,8193,28,2022-2023,L1_22-23
+54751,10,Kévin,Stade de Reims,Olympique de Marseille,0,1,8194,28,2022-2023,L1_22-23
+54752,10,Kévin,RC Strasbourg Alsace,AJ Auxerre,2,1,8195,28,2022-2023,L1_22-23
+54753,10,Kévin,RC Lens,Angers SCO,3,0,8196,28,2022-2023,L1_22-23
+54754,10,Kévin,Paris Saint Germain,Stade Rennais,3,0,8197,28,2022-2023,L1_22-23
+54755,10,Kévin,Olympique Lyonnais,FC Nantes,2,0,8198,28,2022-2023,L1_22-23
+54756,10,Kévin,OGC Nice,FC Lorient,2,1,8199,28,2022-2023,L1_22-23
+54757,10,Kévin,Montpellier HSC,Clermont Foot 63,1,1,8200,28,2022-2023,L1_22-23
+54758,10,Kévin,AC Ajaccio,AS Monaco,1,2,8201,28,2022-2023,L1_22-23
+54759,10,Kévin,Stade Rennais,RC Lens,1,1,8202,29,2022-2023,L1_22-23
+54760,10,Kévin,Stade Brestois 29,Toulouse FC,1,1,8203,29,2022-2023,L1_22-23
+54761,10,Kévin,Paris Saint Germain,Olympique Lyonnais,2,0,8204,29,2022-2023,L1_22-23
+54762,10,Kévin,Olympique de Marseille,Montpellier HSC,2,0,8205,29,2022-2023,L1_22-23
+54763,10,Kévin,Lille OSC,FC Lorient,1,1,8206,29,2022-2023,L1_22-23
+54764,10,Kévin,FC Nantes,Stade de Reims,2,0,8207,29,2022-2023,L1_22-23
+54765,10,Kévin,Clermont Foot 63,AC Ajaccio,2,0,8208,29,2022-2023,L1_22-23
+54766,10,Kévin,Angers SCO,OGC Nice,0,2,8209,29,2022-2023,L1_22-23
+54767,10,Kévin,AS Monaco,RC Strasbourg Alsace,2,1,8210,29,2022-2023,L1_22-23
+54768,10,Kévin,AJ Auxerre,ESTAC Troyes,1,1,8211,29,2022-2023,L1_22-23
+54769,10,Kévin,ESTAC Troyes,Clermont Foot 63,1,2,8212,30,2022-2023,L1_22-23
+54770,10,Kévin,Stade de Reims,Stade Brestois 29,2,0,8213,30,2022-2023,L1_22-23
+54771,10,Kévin,RC Lens,RC Strasbourg Alsace,2,0,8214,30,2022-2023,L1_22-23
+54772,10,Kévin,Olympique Lyonnais,Stade Rennais,2,1,8215,30,2022-2023,L1_22-23
+54773,10,Kévin,OGC Nice,Paris Saint Germain,1,2,8216,30,2022-2023,L1_22-23
+54774,10,Kévin,Montpellier HSC,Toulouse FC,1,1,8217,30,2022-2023,L1_22-23
+54775,10,Kévin,FC Nantes,AS Monaco,0,1,8218,30,2022-2023,L1_22-23
+54776,10,Kévin,FC Lorient,Olympique de Marseille,0,2,8219,30,2022-2023,L1_22-23
+54777,10,Kévin,Angers SCO,Lille OSC,0,2,8220,30,2022-2023,L1_22-23
+54778,10,Kévin,AC Ajaccio,AJ Auxerre,2,1,8221,30,2022-2023,L1_22-23
+54779,10,Kévin,Toulouse FC,Olympique Lyonnais,0,2,8222,31,2022-2023,L1_22-23
+54780,10,Kévin,Stade Rennais,Stade de Reims,1,1,8223,31,2022-2023,L1_22-23
+54781,10,Kévin,Stade Brestois 29,OGC Nice,2,1,8224,31,2022-2023,L1_22-23
+54782,10,Kévin,RC Strasbourg Alsace,AC Ajaccio,2,0,8225,31,2022-2023,L1_22-23
+54783,10,Kévin,Paris Saint Germain,RC Lens,2,2,8226,31,2022-2023,L1_22-23
+54784,10,Kévin,Olympique de Marseille,ESTAC Troyes,2,0,8227,31,2022-2023,L1_22-23
+54785,10,Kévin,Lille OSC,Montpellier HSC,1,1,8228,31,2022-2023,L1_22-23
+54786,10,Kévin,Clermont Foot 63,Angers SCO,2,0,8229,31,2022-2023,L1_22-23
+54787,10,Kévin,AS Monaco,FC Lorient,2,0,8230,31,2022-2023,L1_22-23
+54788,10,Kévin,AJ Auxerre,FC Nantes,0,1,8231,31,2022-2023,L1_22-23
+54789,10,Kévin,Stade de Reims,RC Strasbourg Alsace,1,1,8232,32,2022-2023,L1_22-23
+54790,10,Kévin,RC Lens,AS Monaco,2,1,8233,32,2022-2023,L1_22-23
+54791,10,Kévin,Olympique Lyonnais,Olympique de Marseille,1,2,8234,32,2022-2023,L1_22-23
+54792,10,Kévin,OGC Nice,Clermont Foot 63,0,1,8235,32,2022-2023,L1_22-23
+54793,10,Kévin,Montpellier HSC,Stade Rennais,1,1,8236,32,2022-2023,L1_22-23
+54794,10,Kévin,FC Nantes,ESTAC Troyes,2,0,8237,32,2022-2023,L1_22-23
+54795,10,Kévin,FC Lorient,Toulouse FC,2,1,8238,32,2022-2023,L1_22-23
+54796,10,Kévin,Angers SCO,Paris Saint Germain,0,3,8239,32,2022-2023,L1_22-23
+54797,10,Kévin,AJ Auxerre,Lille OSC,1,1,8240,32,2022-2023,L1_22-23
+54798,10,Kévin,AC Ajaccio,Stade Brestois 29,1,2,8241,32,2022-2023,L1_22-23
+54799,10,Kévin,ESTAC Troyes,OGC Nice,1,1,8242,33,2022-2023,L1_22-23
+54800,10,Kévin,Toulouse FC,RC Lens,0,2,8243,33,2022-2023,L1_22-23
+54801,10,Kévin,Stade Rennais,Angers SCO,2,0,8244,33,2022-2023,L1_22-23
+54802,10,Kévin,Stade Brestois 29,FC Nantes,2,1,8245,33,2022-2023,L1_22-23
+54803,10,Kévin,RC Strasbourg Alsace,Olympique Lyonnais,1,2,8246,33,2022-2023,L1_22-23
+54804,10,Kévin,Paris Saint Germain,FC Lorient,3,0,8247,33,2022-2023,L1_22-23
+54805,10,Kévin,Olympique de Marseille,AJ Auxerre,2,1,8248,33,2022-2023,L1_22-23
+54806,10,Kévin,Lille OSC,AC Ajaccio,2,0,8249,33,2022-2023,L1_22-23
+54807,10,Kévin,Clermont Foot 63,Stade de Reims,1,1,8250,33,2022-2023,L1_22-23
+54808,10,Kévin,AS Monaco,Montpellier HSC,2,0,8251,33,2022-2023,L1_22-23
+54809,10,Kévin,ESTAC Troyes,Paris Saint Germain,0,2,8252,34,2022-2023,L1_22-23
+54810,10,Kévin,Stade de Reims,Lille OSC,1,1,8253,34,2022-2023,L1_22-23
+54811,10,Kévin,RC Lens,Olympique de Marseille,3,0,8254,34,2022-2023,L1_22-23
+54812,10,Kévin,Olympique Lyonnais,Montpellier HSC,1,1,8255,34,2022-2023,L1_22-23
+54813,10,Kévin,OGC Nice,Stade Rennais,2,1,8256,34,2022-2023,L1_22-23
+54814,10,Kévin,FC Nantes,RC Strasbourg Alsace,2,1,8257,34,2022-2023,L1_22-23
+54815,10,Kévin,FC Lorient,Stade Brestois 29,0,2,8258,34,2022-2023,L1_22-23
+54816,10,Kévin,Angers SCO,AS Monaco,0,2,8259,34,2022-2023,L1_22-23
+54817,10,Kévin,AJ Auxerre,Clermont Foot 63,1,1,8260,34,2022-2023,L1_22-23
+54818,10,Kévin,AC Ajaccio,Toulouse FC,0,2,8261,34,2022-2023,L1_22-23
+54819,10,Kévin,Toulouse FC,FC Nantes,2,0,8262,35,2022-2023,L1_22-23
+54820,10,Kévin,Stade Rennais,ESTAC Troyes,2,0,8263,35,2022-2023,L1_22-23
+54821,10,Kévin,Stade Brestois 29,AJ Auxerre,2,1,8264,35,2022-2023,L1_22-23
+54822,10,Kévin,RC Strasbourg Alsace,OGC Nice,1,1,8265,35,2022-2023,L1_22-23
+54823,10,Kévin,RC Lens,Stade de Reims,2,0,8266,35,2022-2023,L1_22-23
+54824,10,Kévin,Paris Saint Germain,AC Ajaccio,3,0,8267,35,2022-2023,L1_22-23
+54825,10,Kévin,Olympique de Marseille,Angers SCO,3,0,8268,35,2022-2023,L1_22-23
+54826,10,Kévin,Montpellier HSC,FC Lorient,1,1,8269,35,2022-2023,L1_22-23
+54827,10,Kévin,Clermont Foot 63,Olympique Lyonnais,1,1,8270,35,2022-2023,L1_22-23
+54828,10,Kévin,AS Monaco,Lille OSC,1,1,8271,35,2022-2023,L1_22-23
+54829,10,Kévin,ESTAC Troyes,RC Strasbourg Alsace,0,2,8272,36,2022-2023,L1_22-23
+54830,10,Kévin,Stade de Reims,Angers SCO,2,0,8273,36,2022-2023,L1_22-23
+54831,10,Kévin,Stade Brestois 29,Clermont Foot 63,1,1,8274,36,2022-2023,L1_22-23
+54832,10,Kévin,Olympique Lyonnais,AS Monaco,1,2,8275,36,2022-2023,L1_22-23
+54833,10,Kévin,OGC Nice,Toulouse FC,2,0,8276,36,2022-2023,L1_22-23
+54834,10,Kévin,Lille OSC,Olympique de Marseille,1,2,8277,36,2022-2023,L1_22-23
+54835,10,Kévin,FC Nantes,Montpellier HSC,1,1,8278,36,2022-2023,L1_22-23
+54836,10,Kévin,FC Lorient,RC Lens,1,2,8279,36,2022-2023,L1_22-23
+54837,10,Kévin,AJ Auxerre,Paris Saint Germain,1,0,8280,36,2022-2023,L1_22-23
+54838,10,Kévin,AC Ajaccio,Stade Rennais,0,2,8281,36,2022-2023,L1_22-23
+54839,10,Kévin,Toulouse FC,AJ Auxerre,0,2,8282,37,2022-2023,L1_22-23
+54840,10,Kévin,Stade Rennais,AS Monaco,2,1,8283,37,2022-2023,L1_22-23
+54841,10,Kévin,RC Strasbourg Alsace,Paris Saint Germain,1,1,8284,37,2022-2023,L1_22-23
+54842,10,Kévin,RC Lens,AC Ajaccio,3,0,8285,37,2022-2023,L1_22-23
+54843,10,Kévin,Olympique de Marseille,Stade Brestois 29,2,0,8286,37,2022-2023,L1_22-23
+54844,10,Kévin,Olympique Lyonnais,Stade de Reims,1,1,8287,37,2022-2023,L1_22-23
+54845,10,Kévin,Montpellier HSC,OGC Nice,1,1,8288,37,2022-2023,L1_22-23
+54846,10,Kévin,Lille OSC,FC Nantes,2,0,8289,37,2022-2023,L1_22-23
+54847,10,Kévin,Clermont Foot 63,FC Lorient,2,1,8290,37,2022-2023,L1_22-23
+54848,10,Kévin,Angers SCO,ESTAC Troyes,2,1,8291,37,2022-2023,L1_22-23
+54849,10,Kévin,ESTAC Troyes,Lille OSC,0,2,8292,38,2022-2023,L1_22-23
+54850,10,Kévin,Stade de Reims,Montpellier HSC,0,1,8293,38,2022-2023,L1_22-23
+54851,10,Kévin,Stade Brestois 29,Stade Rennais,0,2,8294,38,2022-2023,L1_22-23
+54852,10,Kévin,Paris Saint Germain,Clermont Foot 63,1,2,8295,38,2022-2023,L1_22-23
+54853,10,Kévin,OGC Nice,Olympique Lyonnais,1,1,8296,38,2022-2023,L1_22-23
+54854,10,Kévin,FC Nantes,Angers SCO,2,0,8297,38,2022-2023,L1_22-23
+54855,10,Kévin,FC Lorient,RC Strasbourg Alsace,1,1,8298,38,2022-2023,L1_22-23
+54856,10,Kévin,AS Monaco,Toulouse FC,2,1,8299,38,2022-2023,L1_22-23
+54857,10,Kévin,AJ Auxerre,RC Lens,0,2,8300,38,2022-2023,L1_22-23
+54858,10,Kévin,AC Ajaccio,Olympique de Marseille,1,2,8301,38,2022-2023,L1_22-23
