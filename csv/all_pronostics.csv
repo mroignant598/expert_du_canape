@@ -53305,3 +53305,48 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 54856,10,Kévin,AS Monaco,Toulouse FC,2,1,8299,38,2022-2023,L1_22-23
 54857,10,Kévin,AJ Auxerre,RC Lens,0,2,8300,38,2022-2023,L1_22-23
 54858,10,Kévin,AC Ajaccio,Olympique de Marseille,1,2,8301,38,2022-2023,L1_22-23
+54859,5,Cédric,Olympique de Marseille,Stade Brestois 29,2,0,9558,12,2025-2026,L1_25-26
+54860,15,Matthieu,Olympique de Marseille,Stade Brestois 29,3,0,9558,12,2025-2026,L1_25-26
+54861,17,Olivier,Olympique de Marseille,Stade Brestois 29,2,1,9558,12,2025-2026,L1_25-26
+54862,21,Sébastien,Olympique de Marseille,Stade Brestois 29,3,2,9558,12,2025-2026,L1_25-26
+54863,10,Kévin,Olympique de Marseille,Stade Brestois 29,2,0,9558,12,2025-2026,L1_25-26
+54864,5,Cédric,Olympique Lyonnais,Paris Saint Germain,1,3,9559,12,2025-2026,L1_25-26
+54865,15,Matthieu,Olympique Lyonnais,Paris Saint Germain,1,1,9559,12,2025-2026,L1_25-26
+54866,17,Olivier,Olympique Lyonnais,Paris Saint Germain,1,1,9559,12,2025-2026,L1_25-26
+54867,21,Sébastien,Olympique Lyonnais,Paris Saint Germain,2,4,9559,12,2025-2026,L1_25-26
+54868,10,Kévin,Olympique Lyonnais,Paris Saint Germain,1,2,9559,12,2025-2026,L1_25-26
+54869,5,Cédric,FC Metz,OGC Nice,1,2,9560,12,2025-2026,L1_25-26
+54870,15,Matthieu,FC Metz,OGC Nice,2,1,9560,12,2025-2026,L1_25-26
+54871,17,Olivier,FC Metz,OGC Nice,0,2,9560,12,2025-2026,L1_25-26
+54872,21,Sébastien,FC Metz,OGC Nice,0,3,9560,12,2025-2026,L1_25-26
+54873,10,Kévin,FC Metz,OGC Nice,0,2,9560,12,2025-2026,L1_25-26
+54874,5,Cédric,Angers SCO,AJ Auxerre,1,0,9561,12,2025-2026,L1_25-26
+54875,15,Matthieu,Angers SCO,AJ Auxerre,2,1,9561,12,2025-2026,L1_25-26
+54876,17,Olivier,Angers SCO,AJ Auxerre,1,1,9561,12,2025-2026,L1_25-26
+54877,21,Sébastien,Angers SCO,AJ Auxerre,2,0,9561,12,2025-2026,L1_25-26
+54878,10,Kévin,Angers SCO,AJ Auxerre,1,1,9561,12,2025-2026,L1_25-26
+54879,5,Cédric,Le Havre AC,FC Nantes,1,1,9562,12,2025-2026,L1_25-26
+54880,15,Matthieu,Le Havre AC,FC Nantes,1,0,9562,12,2025-2026,L1_25-26
+54881,17,Olivier,Le Havre AC,FC Nantes,1,1,9562,12,2025-2026,L1_25-26
+54882,21,Sébastien,Le Havre AC,FC Nantes,1,3,9562,12,2025-2026,L1_25-26
+54883,10,Kévin,Le Havre AC,FC Nantes,1,2,9562,12,2025-2026,L1_25-26
+54884,5,Cédric,Paris FC,Stade Rennais,0,1,9563,12,2025-2026,L1_25-26
+54885,15,Matthieu,Paris FC,Stade Rennais,2,1,9563,12,2025-2026,L1_25-26
+54886,17,Olivier,Paris FC,Stade Rennais,0,1,9563,12,2025-2026,L1_25-26
+54887,21,Sébastien,Paris FC,Stade Rennais,3,2,9563,12,2025-2026,L1_25-26
+54888,10,Kévin,Paris FC,Stade Rennais,1,2,9563,12,2025-2026,L1_25-26
+54889,5,Cédric,FC Lorient,Toulouse FC,0,2,9564,12,2025-2026,L1_25-26
+54890,15,Matthieu,FC Lorient,Toulouse FC,1,1,9564,12,2025-2026,L1_25-26
+54891,17,Olivier,FC Lorient,Toulouse FC,0,1,9564,12,2025-2026,L1_25-26
+54892,21,Sébastien,FC Lorient,Toulouse FC,0,2,9564,12,2025-2026,L1_25-26
+54893,10,Kévin,FC Lorient,Toulouse FC,1,1,9564,12,2025-2026,L1_25-26
+54894,5,Cédric,AS Monaco,RC Lens,1,1,9565,12,2025-2026,L1_25-26
+54895,15,Matthieu,AS Monaco,RC Lens,1,2,9565,12,2025-2026,L1_25-26
+54896,17,Olivier,AS Monaco,RC Lens,2,0,9565,12,2025-2026,L1_25-26
+54897,21,Sébastien,AS Monaco,RC Lens,3,2,9565,12,2025-2026,L1_25-26
+54898,10,Kévin,AS Monaco,RC Lens,2,1,9565,12,2025-2026,L1_25-26
+54899,5,Cédric,RC Strasbourg Alsace,Lille OSC,2,1,9566,12,2025-2026,L1_25-26
+54900,15,Matthieu,RC Strasbourg Alsace,Lille OSC,2,1,9566,12,2025-2026,L1_25-26
+54901,17,Olivier,RC Strasbourg Alsace,Lille OSC,2,2,9566,12,2025-2026,L1_25-26
+54902,21,Sébastien,RC Strasbourg Alsace,Lille OSC,1,3,9566,12,2025-2026,L1_25-26
+54903,10,Kévin,RC Strasbourg Alsace,Lille OSC,1,2,9566,12,2025-2026,L1_25-26
