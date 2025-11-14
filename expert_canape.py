@@ -1937,6 +1937,7 @@ def show(tables):
         
             with col_boutons:
                 # Formulaire participant
+                sa_info = st.secrets["google_service_account"]
                 if st.button("Soumettre mes pronostics"):
                     if not nom_participant :
                         st.warning("Merci de renseigner votre nom")
@@ -1946,7 +1947,7 @@ def show(tables):
                             "https://www.googleapis.com/auth/spreadsheets",  
                             "https://www.googleapis.com/auth/drive"
                         ]
-                        creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+                        creds = ServiceAccountCredentials.from_json_keyfile_name(sa_info, scope)
                         client = gspread.authorize(creds)
                         sheet = client.open("Pronos Expert").sheet1
 
