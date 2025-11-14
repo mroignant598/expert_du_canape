@@ -8,15 +8,80 @@ from datetime import date
 import xlsxwriter 
 from io import BytesIO
 import plotly.io as pio
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import datetime
 
+def afficher_classement_visuel(classement, saison_sel, championnat_sel=None, classement_prec=None, inclure_bonus=None):
+    # --- Sécurité / copie pour ne pas muter l'input ---
+    if classement is None or not isinstance(classement, pd.DataFrame):
+        st.info("Aucun classement à afficher.")
+        return
 
-def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
-    # Tri et rang
-    classement = classement.sort_values(by="points", ascending=False).reset_index(drop=True)
-    classement["Rang"] = classement.index + 1
-    max_points = classement["points"].max()
+    df = classement.copy()
 
-    # === 🌈 CSS global podium + ranking homogène ===
+    # --- Garantir colonnes de base ---
+    for col in ["points", "bonus", "correction"]:
+        if col not in df.columns:
+            df[col] = 0
+    df[["points", "bonus", "correction"]] = df[["points", "bonus", "correction"]].fillna(0)
+
+    # --- Calcul / vérification de points_final (source de vérité) ---
+    if "points_final" not in df.columns:
+        # Si inclure_bonus est explicitement fourni on l'applique, sinon on considère bonus inclus par défaut
+        use_bonus = True if inclure_bonus is None else bool(inclure_bonus)
+        df["points_final"] = df["points"] + df["correction"] + (df["bonus"] if use_bonus else 0)
+    else:
+        # garantir pas de NaN
+        df["points_final"] = df["points_final"].fillna(df["points"] + df["correction"] + df["bonus"])
+
+    # --- points_affiches : valeur à afficher (permet d'afficher points sans bonus quand décoché) ---
+    if inclure_bonus is None:
+        # si on n'a pas de choix explicite, afficher points_final
+        df["points_affiches"] = df["points_final"]
+    else:
+        if inclure_bonus:
+            df["points_affiches"] = df["points_final"]
+        else:
+            # si points_final contenait bonus, on retire le bonus affiché
+            # préférer une calcul fiable plutôt que df["points_final"] - df["bonus"] (préserve correction)
+            df["points_affiches"] = df["points"] + df["correction"]
+
+    # --- Tri et rangs basés sur points_final (référence unique) ---
+    df = df.sort_values(by="points_final", ascending=False).reset_index(drop=True)
+    df["Rang"] = df.index + 1
+
+    # --- max pour les barres de progression (utiliser points_affiches pour cohérence d'affichage) ---
+    max_points = df["points_affiches"].max() if not df.empty else 1
+    if max_points == 0:
+        max_points = 1  # éviter division par zero
+
+    # --- Calcul du classement précédent (si fourni) ---
+    if classement_prec is not None and isinstance(classement_prec, pd.DataFrame) and not classement_prec.empty:
+        # On construit un df minimal avec participant_nom et Rang_prec
+        prec = classement_prec.copy()
+        # Si la colonne s'appelle points_cumul on la prend, sinon points
+        if "points_cumul" in prec.columns:
+            prec["points_for_rank"] = pd.to_numeric(prec["points_cumul"], errors="coerce").fillna(0)
+        elif "points" in prec.columns:
+            prec["points_for_rank"] = pd.to_numeric(prec["points"], errors="coerce").fillna(0)
+        else:
+            prec["points_for_rank"] = 0
+
+        prec = prec.groupby("participant_nom", as_index=False)["points_for_rank"].max()
+        prec = prec.sort_values(by="points_for_rank", ascending=False).reset_index(drop=True)
+        prec["Rang_prec"] = prec.index + 1
+        prec = prec[["participant_nom", "Rang_prec"]]
+
+        # Merge sans écraser les colonnes existantes
+        df = df.merge(prec, on="participant_nom", how="left")
+        df["Rang_prec"] = df["Rang_prec"].fillna(0).astype(int)
+        df["Δrang"] = df["Rang_prec"] - df["Rang"]
+    else:
+        df["Rang_prec"] = 0
+        df["Δrang"] = 0
+
+    # === 🌈 CSS global ===
     st.markdown("""
         <style>
         .ranking-card, .podium-card {
@@ -27,7 +92,7 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
             margin-bottom: 8px;
             transition: all 0.25s ease-in-out;
             width: 95%;
-            max-width: 400px;
+            max-width: 500px;
             text-align: left;
             display: flex;
             flex-direction: column;
@@ -38,16 +103,13 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
             transform: translateY(-3px);
             box-shadow: 0 0 14px rgba(255,255,255,0.08);
         }
-
-        .ranking-card h5 {
+        .ranking-card h5, .podium-card h4 {
             margin: 0;
-            font-size: 15px;
             font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .progress-bar {
             height: 10px;
             border-radius: 8px;
@@ -60,7 +122,6 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
             border-radius: 8px;
             transition: width 0.8s ease;
         }
-
         .podium-container {
             display: flex;
             flex-direction: column;
@@ -69,36 +130,43 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
             gap: 10px;
             margin: 20px 0 30px 0;
         }
-
-        /* Couleurs des marches du podium */
-        .podium-1 { background: linear-gradient(135deg, #facc15 20%, #92400e 120%); }
-        .podium-2 { background: linear-gradient(135deg, #a1a1aa 20%, #52525b 120%); }
-        .podium-3 { background: linear-gradient(135deg, #f97316 20%, #78350f 120%); }
-
-        /* Tailles différentes selon le rang */
-        .podium-1 h4 { font-size: 20px; font-weight: 700; }
-        .podium-2 h4 { font-size: 18px; font-weight: 600; }
-        .podium-3 h4 { font-size: 16px; font-weight: 600; }
+        .podium-1 { background: linear-gradient(135deg, #facc15 10%, #92400e 120%); }
+        .podium-2 { background: linear-gradient(135deg, #a1a1aa 10%, #52525b 120%); }
+        .podium-3 { background: linear-gradient(135deg, #f97316 10%, #78350f 120%); }
+        .podium-1 h4 { font-size: 20px; }
+        .podium-2 h4 { font-size: 18px; }
+        .podium-3 h4 { font-size: 16px; }
         .podium-card div.emoji {
             margin-right: 8px;
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # === 🥇 Podium vertical sobre + barre de progression ===
-    top3 = classement.head(3)
-    max_points = classement["points"].max() if not classement.empty else 1
-    podium = {1:"🥇", 2:"🥈", 3:"🥉"}
+    # === 🥇 Podium ===
+    top3 = df.head(3)
+    podium = {1: "🥇", 2: "🥈", 3: "🥉"}
 
-    for i in [1,2,3]:
-        if len(top3) >= i:
-            row = top3.iloc[i-1]
-            progress = row["points"] / max_points if max_points else 0
+    for place in [1, 2, 3]:
+        if len(top3) >= place:
+            row = top3.iloc[place - 1]
+            progress = (row["points_affiches"] / max_points) if max_points else 0
+            delta = int(row.get("Δrang", 0))
+            bonus_html = ""
+            if inclure_bonus and row.get("bonus", 0) > 0:
+                bonus_html = f"<span class='bonus-tag'> &nbsp(dont {row['bonus']:.2f} bonus)</span>"
+
+            if delta > 0:
+                delta_html = f"<span style='color:#147E3BFF; font-weight:600;'>🔺+{delta}</span>"
+            elif delta < 0:
+                delta_html = f"<span style='color:#ef4444;'>🔻{abs(delta)}</span>"
+            else:
+                delta_html = ""
+
             st.markdown(f"""
-                <div class="podium-card podium-{i}">
+                <div class="podium-card podium-{place}">
                     <div style="display:flex; align-items:center; justify-content:flex-start;">
-                        <div class="emoji">{podium[i]}</div>
-                        <h4>{row['participant_nom']} - {row['points']:.2f} pts</h4>
+                        <div class="emoji">{podium[place]}</div>
+                        <h4>{row['participant_nom']} - {row['points_affiches']:.2f} pts {bonus_html} {delta_html}</h4>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width:{progress*100:.1f}%;
@@ -108,27 +176,34 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None):
                 </div>
             """, unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    others = classement.iloc[3:]
-    for i, row in others.iterrows():
+    # === 🏅 Les autres participants ===
+    others = df.iloc[3:]
+    for _, row in others.iterrows():
         rang = int(row["Rang"])
         nom = row["participant_nom"]
-        pts = row["points"]
-        progress = pts / max_points if max_points else 0
-        color = "#3b82f6"
+        pts = float(row["points_affiches"])
+        progress = (pts / max_points) if max_points else 0
+        delta = int(row.get("Δrang", 0))
+        bonus_html = f"<span class='bonus-tag'> &nbsp(dont {row['bonus']:.2f} bonus)</span>" if inclure_bonus and row.get("bonus", 0) > 0 else ""
+
+        if delta > 0:
+            delta_html = f"<span style='color:#075A25FF;'>🔺+{delta}</span>"
+        elif delta < 0:
+            delta_html = f"<span style='color:#ef4444;'>🔻{abs(delta)}</span>"
+        else:
+            delta_html = ""
 
         st.markdown(f"""
             <div class="ranking-card">
-                <h5>⚽ {rang}. {nom} - {pts:.2f} pts</h5>
+                <h6>⚽ {rang}. {nom} - {pts:.2f} pts {bonus_html} {delta_html}</h6>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width:{progress*100:.1f}% ;
-                        background: linear-gradient(90deg, {color}, rgba(255,255,255,0.3));">
+                    <div class="progress-fill" style="width:{progress*100:.1f}%;
+                        background: linear-gradient(90deg, #3b82f6, rgba(255,255,255,0.3));">
                     </div>
                 </div>
             </div>
         """, unsafe_allow_html=True)
-        
+
 def kpi_card(title, value, delta=None, color="#2563eb", width="100%", height="120px"):
     st.markdown(f"""
     <div style="
@@ -231,12 +306,24 @@ def calcul_points_journee(df_journee):
     # Bonus appliqué uniquement si les cotes sont présentes
     multiplicateur = 1
     if cotes_presentes:
-        if bons_pronos == n - 2:
-            multiplicateur = 1.33
-        elif bons_pronos == n - 1:
-            multiplicateur = 1.66
-        elif bons_pronos == n:
-            multiplicateur = 2
+        if n < 10:
+            # Barème original
+            if bons_pronos == n - 2:
+                multiplicateur = 1.33
+            elif bons_pronos == n - 1:
+                multiplicateur = 1.66
+            elif bons_pronos == n:
+                multiplicateur = 2
+        else:
+            # Nouveau barème pour n >= 10
+            if bons_pronos == n - 3:
+                multiplicateur = 1.25
+            elif bons_pronos == n - 2:
+                multiplicateur = 1.5
+            elif bons_pronos == n - 1:
+                multiplicateur = 1.75
+            elif bons_pronos == n:
+                multiplicateur = 2
 
     score_final = score_total * multiplicateur
 
@@ -355,10 +442,10 @@ def color_cells(val, row_name):
     
 def show(tables):
     st.title("📊 Les Experts du Canapé")
-    tabs_1, tabs_2 = st.tabs(["Classement/Visualisation", "Export Excel"])
+    tabs_expert, tabs_insertion, tabs_excel = st.tabs(["Classement/Visualisation", "Insertion Pronos", "Export Excel"])
     
     # ---------------------- ONGLET 1 : PAR COMPÉTITION ----------------------
-    with tabs_1:
+    with tabs_expert:
         
         # --- ⚡ CSS Glow Reactive Edition : Selectbox + Slider + Animation dynamique ---
         st.markdown("""
@@ -471,128 +558,291 @@ def show(tables):
         # --- Charger les CSV une seule fois --- #
         df_matchs = tables["all_matchs_football"]
         df_pronos = tables["all_pronostics"]
-
+        df_bonus = tables["bonus"]
 
         # --- Nettoyage rapide --- #
         for col in ["saison", "competition", "journee"]:
             if col in df_matchs.columns:
                 df_matchs[col] = df_matchs[col].astype(str)
 
-        # --- ONGLET 1 --- #
-        with tabs_1:
+        # === 🎛️ Sélecteurs === #
+        col_select_saison, col_select_championnat, col_select_journee, col_select_best = st.columns(4)
 
-            # --- CSS (inchangé) --- #
-            st.markdown("""<style> ... ton style CSS complet ici ... </style>""", unsafe_allow_html=True)
+        # --- Sélection de la saison --- #
+        with col_select_saison:
+            saisons = sorted(df_matchs["saison"].unique(), reverse=True)
+            saison_sel = st.selectbox("Sélectionner une saison", saisons)
 
-            # === 🎛️ Sélecteurs === #
-            col1, col2, col3, col4 = st.columns(4)
+        # --- Sélection du championnat --- #
+        with col_select_championnat:
+            championnats = df_matchs[df_matchs["saison"] == saison_sel]["competition"].dropna().unique().tolist()
+            championnats = ["Toutes"] + sorted(championnats)
+            default_champ = "Ligue 1" if "Ligue 1" in championnats else "Toutes"
+            championnat_sel = st.selectbox("Sélectionner un championnat", championnats, index=championnats.index(default_champ))
 
-            # --- Sélection de la saison --- #
-            with col1:
-                saisons = sorted(df_matchs["saison"].unique(), reverse=True)
-                saison_sel = st.selectbox("Sélectionner une saison", saisons)
-
-            # --- Sélection du championnat --- #
-            with col2:
-                championnats = df_matchs[df_matchs["saison"] == saison_sel]["competition"].dropna().unique().tolist()
-                championnats = ["Toutes"] + sorted(championnats)
-                default_champ = "Ligue 1" if "Ligue 1" in championnats else "Toutes"
-                championnat_sel = st.selectbox("Sélectionner un championnat", championnats, index=championnats.index(default_champ))
-
-            # --- Sélection de la journée --- #
-            with col3:
-                if championnat_sel == "Toutes":
-                    journees = df_matchs[df_matchs["saison"] == saison_sel]["journee"].dropna().unique()
-                else:
-                    journees = df_matchs[
-                        (df_matchs["saison"] == saison_sel) &
-                        (df_matchs["competition"] == championnat_sel)
-                    ]["journee"].dropna().unique()
-
-                # Convertir en int et trier
-                try:
-                    journees = sorted(map(int, journees))
-                except ValueError:
-                    journees = sorted(journees)  # Si ce sont des strings
-                journee_sel = st.selectbox("Sélectionner une journée", ["Toutes"] + [str(j) for j in journees])
-
-            with col4:
-                top_n = st.slider("Afficher les meilleurs participants", 1, 20, 10)
-
-            st.markdown("---")
-
-            # --- 🔍 Filtrer la saison et le championnat, mais PAS la journée (pour permettre le cumul) --- #
-            df_filtre = df_matchs[df_matchs["saison"] == saison_sel].copy()
-            if championnat_sel != "Toutes":
-                df_filtre = df_filtre[df_filtre["competition"] == championnat_sel]
-
-            # --- Fusion avec les pronostics (on garde tous les matchs de la saison filtrée) --- #
-            if "match_id" not in df_filtre.columns or "match_id" not in df_pronos.columns:
-                st.warning("Impossible de faire le merge : la colonne 'match_id' est manquante")
-                return
-
-            df_merge = df_pronos.merge(
-                df_filtre,
-                on="match_id",
-                suffixes=("_prono", "_match"),
-                how="inner"
-            )
-
-            if df_merge.empty:
-                st.info("Aucun pronostic enregistré pour cette sélection.")
-                return
-
-            # --- Préparation du DataFrame final --- #
-            df = df_merge[[
-                "participant_id", "participant_nom",
-                "score_domicile_prono", "score_exterieur_prono",
-                "score_domicile_match", "score_exterieur_match",
-                "equipe_domicile_nom", "equipe_exterieure_nom",
-                "cote_domicile", "cote_exterieur", "cote_nul",
-                "journee_match", "saison_match", "competition"
-            ]].rename(columns={
-                "score_domicile_prono": "prono_dom",
-                "score_exterieur_prono": "prono_ext",
-                "score_domicile_match": "match_dom",
-                "score_exterieur_match": "match_ext"
-            })
-
-            # Convertir les journées en int
-            df["journee_match"] = pd.to_numeric(df["journee_match"], errors="coerce")
-            df = df.dropna(subset=["journee_match"])
-            df["journee_match"] = df["journee_match"].astype(int)
-
-            # --- Calcul des points individuels --- #
-            df["points"] = df.apply(calcul_points, axis=1)
-
-            # --- Calcul des points par journée et cumul --- #
-            df_progress_all = (
-                df.groupby(["participant_nom", "journee_match"])
-                .apply(calcul_points_journee)
-                .reset_index()
-                .sort_values(["participant_nom", "journee_match"])
-            )
-            df_progress_all["points_cumul"] = df_progress_all.groupby("participant_nom")["points"].cumsum()
-
-            # --- 🧮 Filtrage jusqu’à la journée sélectionnée --- #
-            if journee_sel != "Toutes":
-                try:
-                    journee_num = int(journee_sel)
-                    df_progress_filtered = df_progress_all[df_progress_all["journee_match"] <= journee_num]
-                except ValueError:
-                    df_progress_filtered = df_progress_all.copy()
+        # --- Sélection de la journée --- #
+        with col_select_journee:
+            # --- Récupération des journées disponibles --- #
+            if championnat_sel == "Toutes":
+                df_journees = df_matchs[df_matchs["saison"] == saison_sel].copy()
             else:
-                df_progress_filtered = df_progress_all.copy()
+                df_journees = df_matchs[
+                    (df_matchs["saison"] == saison_sel) &
+                    (df_matchs["competition"] == championnat_sel)
+                ].copy()
 
-            # --- 🏆 Classement cumulé jusqu’à la journée choisie --- #
-            classement = (
-                df_progress_filtered.groupby("participant_nom", as_index=False)["points_cumul"]
-                .max()  # le cumul max = total jusqu’à cette journée
-                .sort_values(by="points_cumul", ascending=False)
-                .reset_index(drop=True)
+            # Nettoyage et conversion en int
+            df_journees = df_journees.dropna(subset=["journee"])
+            df_journees["journee"] = pd.to_numeric(df_journees["journee"], errors="coerce")
+            df_journees["date"] = pd.to_datetime(df_journees["date"], errors="coerce")
+            journees = sorted(df_journees["journee"].dropna().unique())
+            
+            # --- 📅 Détermination de la dernière journée jouée --- #
+            # Une journée est "jouée" si elle a au moins un score renseigné
+            df_journees["match_joue"] = df_journees["score_domicile"].notna() & df_journees["score_exterieur"].notna()
+            df_statut = df_journees.groupby("journee").apply(lambda x: x["match_joue"].all()).reset_index(name="complete")
+
+            journees_jouees = df_statut[df_statut["complete"]]["journee"].tolist()
+            derniere_journee = max(journees_jouees) if journees_jouees else min(df_journees["journee"])
+            prochaine_journee = derniere_journee + 1 if derniere_journee is not None else min(df_journees["journee"])
+
+            # --- Prochains matchs ---
+            if championnat_sel == "Toutes":
+                df_prochaine = df_journees[df_journees["journee"] == prochaine_journee].sort_values("date")
+            else:
+                df_prochaine = df_journees[
+                    (df_journees["journee"] == prochaine_journee) &
+                    (df_journees["competition"] == championnat_sel)
+                ].sort_values("date")
+            date_prochain_match = df_prochaine["date"].min().strftime("%d %B %Y à 19 h") if not df_prochaine.empty else "à venir"
+            matchs_prochaine = " | ".join(f"{r['equipe_domicile_nom']} vs {r['equipe_exterieure_nom']}" for _, r in df_prochaine.iterrows()) or "Aucun match programmé."
+
+            # --- Résultats dernière journée ---
+            df_derniere = df_journees[df_journees["journee"] == derniere_journee].sort_values("date")
+            resultats_derniere = " | ".join(
+                f"{r['equipe_domicile_nom']} {int(r['score_domicile'])}-{int(r['score_exterieur'])} {r['equipe_exterieure_nom']}"
+                for _, r in df_derniere.iterrows()
+                if pd.notna(r["score_domicile"]) and pd.notna(r["score_exterieur"])
+            ) or "Aucun résultat disponible."
+
+            # --- Sélecteur Streamlit --- #
+            options_journees = ["Toutes"] + [str(j) for j in journees]
+            default_index = options_journees.index(str(derniere_journee))
+
+            journee_sel = st.selectbox(
+                "Sélectionner une journée",
+                options_journees,
+                index=default_index
             )
-            classement.rename(columns={"points_cumul": "points"}, inplace=True)
-            classement["Rang"] = classement.index + 1
+
+            # Convertir en int et trier
+            try:
+                journees = sorted(map(int, journees))
+            except ValueError:
+                journees = sorted(journees)  # Si ce sont des strings
+
+        with col_select_best:
+            # 🔍 Filtrer les pronostics pour la saison sélectionnée
+            if championnat_sel == "Toutes":
+                df_saison_pronos = df_pronos[df_pronos["saison"] == saison_sel].copy()
+            else:
+                df_saison_pronos = df_pronos.loc[
+                    (df_pronos["saison"] == saison_sel) &
+                    (df_pronos["competition_nom"] == championnat_sel)
+                ].copy()
+
+
+            # 🧮 Calcul du nombre de participants uniques
+            if not df_saison_pronos.empty and "participant_nom" in df_saison_pronos.columns:
+                nb_participants = df_saison_pronos["participant_nom"].nunique()
+            else:
+                nb_participants = 0
+
+            # ⚙️ Slider dynamique selon le nombre réel de participants
+            if nb_participants > 0:
+                top_n = st.slider(
+                    "Afficher les meilleurs participants",
+                    min_value=1,
+                    max_value=nb_participants,
+                    value=min(10, nb_participants),
+                    step=1,
+                    help=f"Sur un total de {nb_participants} participants pour {saison_sel} ({championnat_sel})"
+                )
+            else:
+                st.warning("⚠️ Aucun participant trouvé pour cette saison / championnat.")
+                top_n = 0
+
+        # --- Vérifier l'état des pronostics pour la prochaine journée ---
+        etat_pronos = []
+
+        # Filtrer les participants actifs pour cette saison/championnat
+        if championnat_sel == "Toutes":
+            participants_saison = df_pronos[df_pronos["saison"] == saison_sel]["participant_nom"].dropna().unique()
+        else:
+            participants_saison = (
+                df_pronos.merge(df_matchs[["match_id", "competition"]], on="match_id", how="left")
+                        .query("saison == @saison_sel and competition == @championnat_sel")
+                        ["participant_nom"]
+                        .dropna()
+                        .unique()
+            )
+
+        # Boucle pour vérifier si chaque participant a fait ses pronos pour la prochaine journée
+        for p in participants_saison:
+            if championnat_sel == "Toutes":
+                df_check = df_pronos[
+                    (df_pronos["saison"] == saison_sel) &
+                    (df_pronos["participant_nom"] == p) &
+                    (df_pronos["journee"] == prochaine_journee)
+                ]
+            else:
+                df_check = df_pronos.merge(df_matchs[["match_id", "competition"]], on="match_id", how="left").query(
+                    "saison == @saison_sel and competition == @championnat_sel and participant_nom == @p and journee == @prochaine_journee"
+                )
+
+            # ✅ si pronostic existant pour cette journée, ❌ sinon
+            if not df_check.empty:
+                etat_pronos.append(f"<span style='color:#FFFFFFFF;font-weight:600;'>{p} ✅</span>")
+            else:
+                etat_pronos.append(f"<span style='color:#F75E5EFF;font-weight:600;'>{p} ❌</span>")
+
+        # --- Concaténer pour l'affichage ---
+        etat_html = " • ".join(etat_pronos) if etat_pronos else "Aucun participant"
+
+        # === 💫 Ruban animé Streamlit avec défilement continu === #
+        texte_pronos = etat_html  # ton texte participants avec ✅/❌
+
+        st.markdown(f"""
+        <style>
+        @keyframes scrollInfinite {{
+            0% {{ transform: translateX(0); }}
+            100% {{ transform: translateX(-100%); }}
+        }}
+        .ribbon {{
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.25);
+            margin-bottom: 15px;
+            text-align: center;
+        }}
+        .ribbon-prochaine {{
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            color: white;
+            padding: 10px 0;
+            position: relative;
+        }}
+        .ribbon-text-wrapper {{
+            display: inline-block;
+            white-space: nowrap;
+        }}
+        .ribbon-text-track {{
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollInfinite 200s linear infinite;
+        }}
+        .ribbon-text {{
+            display: inline-block;
+            padding-right: 3rem; /* espace entre deux passages */
+            font-weight: 600;
+            font-size: 16px;
+        }}
+        .ribbon-resultats {{
+            background: linear-gradient(90deg, #6b7280, #9ca3af, #d1d5db);
+            color: black;
+            padding: 10px 0;
+        }}
+        </style>
+
+        <!-- Bandeau Prochaine Journée avec participants défilants -->
+        <div class="ribbon ribbon-prochaine">
+            <div class="ribbon-text-track">
+                <div class="ribbon-text-wrapper">
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                    <span class="ribbon-text">⚽ <strong>Prochaine journée : {prochaine_journee}</strong> • Préparez vos pronostics avant le <strong>{date_prochain_match}</strong> ⏰ ➜ {matchs_prochaine} • 📊 État des pronostics : {texte_pronos}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ruban résultats dernière journée -->
+        <div class="ribbon ribbon-resultats">
+            <div class="ribbon-text-track">
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+                <span class="ribbon-text"> 🏁 <strong>Résultats de la journée {derniere_journee}</strong> ➜ {resultats_derniere}</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("---")
+
+        # --- 🔍 Filtrer la saison et le championnat, mais PAS la journée (pour permettre le cumul) --- #
+        df_filtre = df_matchs[df_matchs["saison"] == saison_sel].copy()
+        if championnat_sel != "Toutes":
+            df_filtre = df_filtre[df_filtre["competition"] == championnat_sel]
+
+        # --- Fusion avec les pronostics (on garde tous les matchs de la saison filtrée) --- #
+        if "match_id" not in df_filtre.columns or "match_id" not in df_pronos.columns:
+            st.warning("Impossible de faire le merge : la colonne 'match_id' est manquante")
+            return
+
+        df_merge = df_pronos.merge(
+            df_filtre,
+            on="match_id",
+            suffixes=("_prono", "_match"),
+            how="inner"
+        )
+
+        if df_merge.empty:
+            st.info("Aucun pronostic enregistré pour cette sélection.")
+            return
+
+        # --- Préparation du DataFrame final --- #
+        df = df_merge[[
+            "participant_id", "participant_nom",
+            "score_domicile_prono", "score_exterieur_prono",
+            "score_domicile_match", "score_exterieur_match",
+            "equipe_domicile_nom", "equipe_exterieure_nom",
+            "cote_domicile", "cote_exterieur", "cote_nul",
+            "journee_match", "saison_match", "competition"
+        ]].rename(columns={
+            "score_domicile_prono": "prono_dom",
+            "score_exterieur_prono": "prono_ext",
+            "score_domicile_match": "match_dom",
+            "score_exterieur_match": "match_ext"
+        })
+
+        # Convertir les journées en int
+        df["journee_match"] = pd.to_numeric(df["journee_match"], errors="coerce")
+        df = df.dropna(subset=["journee_match"])
+        df["journee_match"] = df["journee_match"].astype(int)
+
+        # --- Calcul des points individuels --- #
+        df["points"] = df.apply(calcul_points, axis=1)
+
+        # --- Calcul des points par journée et cumul --- #
+        df_progress_all = (df.groupby(["participant_nom", "journee_match"]).apply(calcul_points_journee).reset_index())
+        df_progress_all["points_cumul"] = df_progress_all.groupby("participant_nom")["points"].cumsum()
+
+        # --- 🧮 Filtrage jusqu’à la journée sélectionnée --- #
+        if journee_sel != "Toutes":
+            try:
+                journee_num = int(journee_sel)
+                df_progress_filtered = df_progress_all[df_progress_all["journee_match"] <= journee_num]
+            except ValueError:
+                df_progress_filtered = df_progress_all.copy()
+        else:
+            df_progress_filtered = df_progress_all.copy()
 
         # --- KPI ---
         nb_matchs = df_filtre["match_id"].nunique()
@@ -610,30 +860,141 @@ def show(tables):
         st.markdown("---")
 
         # --- Affichage classement et progression ---
-        st.subheader(
-            f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
-            f"{'toutes compétitions' if championnat_sel == 'Toutes' else championnat_sel} – {saison_sel}"
-        )
+        st.subheader(f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
+            f"{'toutes compétitions' if championnat_sel == 'Toutes' else championnat_sel} – {saison_sel}")
 
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            afficher_classement_visuel(classement, saison_sel, championnat_sel if championnat_sel != "Toutes" else None)
+        col_classement, col_evolution = st.columns([1, 2])
+        with col_classement:
+            # === 🕓 Classement précédent (pour visualiser les places gagnées/perdues) === #
+            if journee_sel != "Toutes":
+                try:
+                    journee_num = int(journee_sel)
+                    if journee_num > 1:
+                        # Classement cumulé jusqu’à la journée précédente
+                        df_progress_prev = df_progress_all[df_progress_all["journee_match"] <= journee_num - 1]
 
-        with col2:
+                        classement_prec = (
+                            df_progress_prev.groupby("participant_nom", as_index=False)["points_cumul"]
+                            .max()
+                            .sort_values(by="points_cumul", ascending=False)
+                            .reset_index(drop=True)
+                        )
+                        classement_prec.rename(columns={"points_cumul": "points"}, inplace=True)
+                        classement_prec["Rang"] = classement_prec.index + 1
+                    else:
+                        classement_prec = None  # pas de classement précédent pour la 1re journée
+                except ValueError:
+                    classement_prec = None
+            else:
+                classement_prec = None
+                
+            # --- 🎯 CALCUL FINAL DU CLASSEMENT (cumul + bonus) --- #
+            # Calcul du cumul actuel
+            classement = (
+                df_progress_filtered
+                    .groupby("participant_nom", as_index=False)["points_cumul"]
+                    .max()
+                    .rename(columns={"points_cumul": "points"})
+            )
+
+            # Calcul du classement précédent
+            classement_prec = None
+
+            if journee_num and journee_num > 1:
+                df_prev = df_progress_all[df_progress_all["journee_match"] <= journee_num - 1]
+
+                classement_prec = (
+                    df_prev
+                        .groupby("participant_nom", as_index=False)["points_cumul"]
+                        .max()
+                        .rename(columns={"points_cumul": "points"})
+                        .sort_values("points", ascending=False)
+                        .reset_index(drop=True)
+                )
+                classement_prec["Rang"] = classement_prec.index + 1
+
+            # Intégration des bonus
+            classement["bonus"] = 0
+            classement["correction"] = 0
+
+            inclure_bonus = st.checkbox("Prendre en compte les bonus", value=True)
+
+            # --- Fusion bonus uniquement si table OK --- #
+            if isinstance(df_bonus, pd.DataFrame) and "participant" in df_bonus.columns:
+
+                if championnat_sel == "Toutes":
+                    df_bonus_filtered = (
+                        df_bonus[df_bonus["saison"] == saison_sel]
+                        .groupby("participant", as_index=False)[["total_bonus", "correction"]]
+                        .sum()
+                    )
+                else:
+                    df_bonus_filtered = (
+                        df_bonus[
+                            (df_bonus["saison"] == saison_sel) &
+                            (df_bonus["competition"] == championnat_sel)
+                        ]
+                        .groupby("participant", as_index=False)[["total_bonus", "correction"]]
+                        .sum()
+                    )
+
+                df_bonus_filtered = df_bonus_filtered.fillna(0)
+
+                # merge sans risque
+                classement = classement.merge(
+                    df_bonus_filtered,
+                    left_on="participant_nom",
+                    right_on="participant",
+                    how="left"
+                )
+
+                # Sécurisation totale : si colonnes manquantes → 0
+                if "total_bonus" not in classement.columns:
+                    classement["total_bonus"] = 0
+
+                if "correction_y" in classement.columns:
+                    classement["correction"] = classement["correction_y"]
+                elif "correction" in classement.columns:
+                    # déjà bon
+                    pass
+                else:
+                    classement["correction"] = 0
+
+                classement["bonus"] = classement["total_bonus"]
+
+            # --- Sécurisation finale : toujours 2 colonnes existantes --- #
+            for col in ["bonus", "correction"]:
+                if col not in classement.columns:
+                    classement[col] = 0
+                classement[col] = classement[col].fillna(0)
+
+            # --- Calcul final --- #
+            classement["points_final"] = (
+                classement["points"]
+                + classement["correction"]
+                + (classement["bonus"] if inclure_bonus else 0)
+            )
+
+            classement = classement.sort_values(by="points_final", ascending=False).reset_index(drop=True)
+            classement["Rang"] = classement.index + 1
+
+            afficher_classement_visuel(classement, saison_sel, championnat_sel if championnat_sel != "Toutes" else None, classement_prec=classement_prec, inclure_bonus=inclure_bonus)
+
+        with col_evolution:
             st.markdown('')
             st.markdown('')
-            df_cumul = classement[["participant_nom", "Rang", "points"]].merge(
+
+            # --- Préparer df_cumul avec points cumulés ---
+            df_cumul = classement[["participant_nom", "Rang", "points", "bonus"]].merge(
                 df_progress_all.groupby("participant_nom")["points_cumul"].apply(list).reset_index(),
                 on="participant_nom"
             )
-            
+
             # Conversion en int pour trier correctement
             df_progress_all["journee_match"] = df_progress_all["journee_match"].astype(int)
-
-            # Tri par journée ascendant
             df_progress_all = df_progress_all.sort_values(["journee_match", "participant_nom"]).reset_index(drop=True)
 
-            # Calcul de la moyenne cumulée
+            # Calcul de la moyenne cumulée (hors bonus)
             df_moyenne = (
                 df_progress_all.groupby("journee_match")["points"]
                 .mean()
@@ -642,23 +1003,34 @@ def show(tables):
             )
             df_moyenne = df_moyenne.rename(columns={"points": "points_cumul_moyenne"})
 
+            # --- Ajouter le bonus comme "journée" supplémentaire si activé ---
+            if inclure_bonus:
+                max_journee = df_progress_all["journee_match"].max()
+                points_cumul_final = []
+                for _, row in df_cumul.iterrows():
+                    cumul = row["points_cumul"].copy()
+                    cumul.append(cumul[-1] + row["bonus"])  # ajouter bonus
+                    points_cumul_final.append(cumul)
+                df_cumul["points_cumul_affiche"] = points_cumul_final
+            else:
+                df_cumul["points_cumul_affiche"] = df_cumul["points_cumul"]
+
+            # --- Graphique ---
             fig = go.Figure()
             colors = px.colors.qualitative.Safe
 
             for i, (_, row) in enumerate(df_cumul.head(top_n).iterrows()):
+                x_vals = list(range(1, len(row["points_cumul_affiche"]) + 1))
                 fig.add_trace(go.Scatter(
-                    x=list(range(1, len(row["points_cumul"])+1)),
-                    y=row["points_cumul"],
+                    x=x_vals,
+                    y=row["points_cumul_affiche"],
                     mode='lines+markers',
                     name=row["participant_nom"],
                     line=dict(color=colors[i % len(colors)], width=3),
                     marker=dict(size=8)
                 ))
-                
-            x_moy = [0] + df_moyenne["journee_match"].tolist()
-            y_moy = [0] + df_moyenne["points_cumul_moyenne"].tolist()
-            max_journee = max(df_moyenne["journee_match"]) + 1
 
+            # Ajouter moyenne championnat (sans bonus)
             fig.add_trace(go.Scatter(
                 x=df_moyenne["journee_match"],
                 y=df_moyenne["points_cumul_moyenne"],
@@ -668,8 +1040,11 @@ def show(tables):
                 marker=dict(size=7)
             ))
 
+            # Ajuster l'axe x si bonus inclus
+            x_max = df_progress_all["journee_match"].max() + (1 if inclure_bonus else 0) + 1
+
             fig.update_layout(
-                xaxis=dict(title="Journée", tickmode="linear", range=[0, max_journee]),
+                xaxis=dict(title="Journée", tickmode="linear", range=[0, x_max]),
                 yaxis=dict(title="Points cumulés"),
                 plot_bgcolor="black",
                 hovermode="x unified",
@@ -683,34 +1058,30 @@ def show(tables):
         st.markdown("---")
         
         # === 📍 SECTION 2 ===        
-        col1, col2 = st.columns([1,3])
-        with col1:
+        col_participants, col_resultats = st.columns([1,3])
+        with col_participants:
+            st.markdown("### 🎮 Sélection du joueur")
             # --- Sélection du participant ---
-            st.markdown("   ")
-            st.markdown("   ")
             participants = classement["participant_nom"].tolist()
-            participant_sel = st.selectbox("Sélectionner un participant :", participants)
+            participant_sel = participants[0]
 
-            # --- Sélection de la journée via CSV / DataFrame ---
-            if championnat_sel == "Toutes":
-                journees = df_matchs[df_matchs["saison"] == saison_sel]["journee_match"].dropna().unique()
-            else:
-                journees = df_matchs[
-                    (df_matchs["saison"] == saison_sel) &
-                    (df_matchs["competition"] == championnat_sel)
-                ]["journee"].dropna().unique()
+            # Création de 4 colonnes
+            cols = st.columns(4)
 
-            # Tri croissant
-            journees = sorted([int(j) for j in journees])
-            
-            # Conversion en chaîne pour la selectbox
-            journee_filtre = st.selectbox("Filtrer par journée :", [str(j) for j in journees])
+            # On parcourt les participants et on les place dans les colonnes alternativement
+            for idx, participant in enumerate(participants):
+                col = cols[idx % 3]  # alterne entre les colonnes
+                card_class = "participant-card"
+                if participant == participant_sel:
+                    card_class += " selected"
+                
+                # Bouton caché pour détecter le clic
+                if col.button(participant, key=participant):
+                    participant_sel = participant
+    
 
-            # --- Filtrer les données du joueur sélectionné ---
+        # --- Filtrer les données du joueur sélectionné ---
         df_participant = df[df["participant_nom"] == participant_sel].copy()
-
-        if journee_filtre != "Toutes":
-            df_participant = df_participant[df_participant["journee_match"].astype(str) == journee_filtre]
 
         if journee_sel != "Toutes":
             df_participant = df_participant[df_participant["journee_match"] == int(journee_sel)]
@@ -745,41 +1116,44 @@ def show(tables):
             # --- Classement du joueur sélectionné ---
             joueur_stats = classement_journee[classement_journee["participant_nom"] == participant_sel]
 
-            with col2:
-                st.markdown(f"### 🏅 Classement - Journée {journee_courante}")
-                st.dataframe(classement_journee[["Rang", "participant_nom", "points_bruts", "points_bonus", "bons_pronos", "multiplicateur", "Performance (%)"]], hide_index=True, use_container_width=True)
+        with col_resultats:
+            st.markdown(f"### 🏅 Classement - Journée {journee_courante}")
+            st.dataframe(classement_journee[["Rang", "participant_nom", "points_bruts", "points_bonus", "bons_pronos", "multiplicateur", "Performance (%)"]], hide_index=True, use_container_width=True)
 
-            # --- Résumé personnel ---
-            if not joueur_stats.empty:
-                points_bruts = joueur_stats["points_bruts"].values[0]
-                points_bonus = joueur_stats["points_bonus"].values[0]
-                bons_pronos = joueur_stats["bons_pronos"].values[0]
-                multiplicateur = joueur_stats["multiplicateur"].values[0]
-                rang = joueur_stats["Rang"].values[0]
-                perf = joueur_stats["Performance (%)"].values[0]
+        # --- Résumé personnel ---
+        if not joueur_stats.empty:
+            points_bruts = joueur_stats["points_bruts"].values[0]
+            points_bonus = joueur_stats["points_bonus"].values[0]
+            bons_pronos = joueur_stats["bons_pronos"].values[0]
+            multiplicateur = joueur_stats["multiplicateur"].values[0]
+            rang = joueur_stats["Rang"].values[0]
+            perf = joueur_stats["Performance (%)"].values[0]
 
-                st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
+            st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
 
-                # Colonnes KPI améliorées
-                kpi_cols = st.columns([1, 1, 1, 1, 1])
+            # Colonnes KPI améliorées
+            kpi_cols = st.columns([1, 1, 1, 1, 1])
 
-                with kpi_cols[0]: kpi_card("🏆 Rang", rang, color="#3b82f6")  # bleu pour le rang
-                with kpi_cols[1]: kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e")  # vert pour points
-                with kpi_cols[2]: kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea")  # violet pour bonus
-                with kpi_cols[3]: kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b")  # orange pour ratio
-                with kpi_cols[4]: kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#2563eb")  # bleu foncé pour multiplicateur
+            with kpi_cols[0]: kpi_card("🏆 Rang", rang, color="#3b82f6")  # bleu pour le rang
+            with kpi_cols[1]: kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e")  # vert pour points
+            with kpi_cols[2]: kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea")  # violet pour bonus
+            with kpi_cols[3]: kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b")  # orange pour ratio
+            with kpi_cols[4]: kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#2563eb")  # bleu foncé pour multiplicateur
 
-                # Sécuriser la valeur de la barre de progression
-                perf_safe = 0 if pd.isna(perf) else perf
+            # Sécuriser la valeur de la barre de progression
+            perf_safe = 0 if pd.isna(perf) else perf
+            
+            # S'assurer que la valeur est entre 0 et 100
+            perf_safe = max(0, min(100, perf_safe))
 
-                # --- Barre de performance visuelle ---
-                st.progress(perf_safe / 100)
-                st.caption(f"Performance de {perf_safe:.1f}% par rapport au meilleur score de la journée.")
+            # --- Barre de performance visuelle ---
+            st.progress(perf_safe / 100)
+            st.caption(f"Performance de {perf_safe:.1f}% par rapport au meilleur score de la journée.")
         
         st.markdown("---")
         
         # --- 🔍 Statistiques complémentaires ---
-        st.markdown("### 📊 Statistiques avancées")
+        st.markdown(f"### 📊 Statistiques avancées de {participant_sel}")
 
         # Filtrer les matchs du joueur sélectionné
         df_joueur = df[df["participant_nom"] == participant_sel].copy()
@@ -856,9 +1230,9 @@ def show(tables):
         st.markdown("---")
             
         # === 📍 SECTION 3 ===       
-        col1, col2 = st.columns([1.3, 2])
-        with col1:
-            st.markdown("### 📝 Pronostics du joueur")
+        col_pronos, col_evolution_pts = st.columns([1.3, 2])
+        with col_pronos:
+            st.markdown(f"### 📝 Pronostics de {participant_sel}")
             
             table_display = df_participant.copy()    
             # --- Créer colonne Match avec noms des équipes ---
@@ -872,12 +1246,12 @@ def show(tables):
 
             # --- Colonnes à afficher ---
             table_display = table_display[["journee_match", "Match", "Prono", "Score Réel", "points"]]
-            table_display.columns = ["Journée_match", "Match", "Prono", "Score Réel", "Points"]
+            table_display.columns = ["Journée", "Match", "Prono", "Score Réel", "Points"]
 
             # --- Affichage ---
             st.dataframe(table_display, hide_index=True, use_container_width=True)
 
-        with col2:
+        with col_evolution_pts:
             # --- Préparer les données ---
             df["journee_match"] = df["journee_match"].astype(int)  # Conversion en entier
             df_progress = df.groupby(["participant_nom", "journee_match"]).apply(calcul_points_journee).reset_index()
@@ -1006,7 +1380,7 @@ def show(tables):
             df_historique = df_historique.sort_values(["saison_match", "journee_match"]).reset_index(drop=True)
 
         # --- Comparaison progression joueur par saison ---
-        st.markdown("### 📊 Comparaison des saisons du joueur")
+        st.markdown(f"### 📊 Comparaison des saisons de {participant_sel}")
 
         saisons_disponibles = sorted(df_historique["saison_match"].unique(), reverse=True)
         default_saisons = [saison_sel] if saison_sel in saisons_disponibles else []
@@ -1083,8 +1457,8 @@ def show(tables):
         
         # === 📍 SECTION 5 ===
         # --- Comparaison progression joueur vs moyenne générale ---
-        col1, col2 = st.columns([2.2, 1])
-        with col1:
+        col_comparaison_moyenne, col_top5 = st.columns([2.2, 1])
+        with col_comparaison_moyenne:
             st.markdown("### 📊 Comparaison avec la moyenne du championnat")
 
             # Points cumulés du joueur sélectionné
@@ -1166,7 +1540,7 @@ def show(tables):
             tendance = "au-dessus" if diff_points > 0 else "en dessous"
             st.markdown(f"💡 **{participant_sel}** est actuellement **{abs(diff_points):.2f} points {tendance}** de la moyenne des participants.")
 
-        with col2:
+        with col_top5:
             # --- Top 5 des meilleures journées du joueur ---
             st.markdown("### 🏅 Top 5 des meilleures journées")
 
@@ -1372,7 +1746,7 @@ def show(tables):
             
         # === 📍 SECTION 7 ===
         # --- 📈 Comparaison des points cumulés avec le top 3 ---
-        st.markdown("### 🏆 Points cumulés du joueur vs Top 3")
+        st.markdown(f"### 🏆 Points cumulés de {participant_sel} vs Top 3")
 
         # Calcul des points cumulés par joueur et par journée
         points_cumules = df_progress_all.groupby(["participant_nom", "journee_match"], as_index=False)["points"].sum()
@@ -1440,10 +1814,234 @@ def show(tables):
         
         st.markdown("---")
             
-    # ---------------------- ONGLET 2 : Export Excel ----------------------
-    with tabs_2:
+    # ---------------------- ONGLET 2 : Insertion Pronos ----------------------
+    with tabs_insertion:
+        # Assurer les bons types
+        df_matchs["saison"] = df_matchs["saison"].astype(str)
+        df_matchs["journee"] = df_matchs["journee"].astype(int)
+        df_matchs["competition"] = df_matchs["competition"].astype(str)
+
+        # Sélection Saison / Compétition / Journée
+        col_select_saison, col_select_championnat, col_select_journee, col_select_pseudo = st.columns(4)
+        with col_select_saison:
+            saisons = sorted(df_matchs["saison"].unique(), reverse=True)
+            saison_sel = st.selectbox("Saison :", saisons)
+
+        with col_select_championnat:
+            competitions = sorted(df_matchs[df_matchs["saison"] == saison_sel]["competition"].unique())
+            competition_sel = st.selectbox("Compétition :", competitions)
+
+        with col_select_journee:
+            # Filtrer les journées pour la saison et la compétition sélectionnées
+            df_journees = df_matchs[
+                (df_matchs["saison"] == saison_sel) &
+                (df_matchs["competition"] == competition_sel)
+            ].copy()
+
+            # Nettoyage
+            df_journees = df_journees.dropna(subset=["journee"])
+            df_journees["journee"] = pd.to_numeric(df_journees["journee"], errors="coerce")
+            df_journees["date"] = pd.to_datetime(df_journees["date"], errors="coerce")
+
+            # Déterminer la dernière journée complète
+            df_journees["match_joue"] = df_journees["score_domicile"].notna() & df_journees["score_exterieur"].notna()
+            df_statut = df_journees.groupby("journee")["match_joue"].all().reset_index(name="complete")
+            journees_jouees = df_statut[df_statut["complete"]]["journee"].tolist()
+            derniere_journee = max(journees_jouees) if journees_jouees else df_journees["journee"].min()
+
+            # Déterminer la prochaine journée à jouer
+            prochaine_journee = derniere_journee + 1
+
+            # Sélecteur Streamlit directement sur la prochaine journée
+            journees_dispo = sorted(df_journees["journee"].dropna().unique())
+            default_index = journees_dispo.index(prochaine_journee) if prochaine_journee in journees_dispo else 0
+            journee_sel = st.selectbox("Journée :", journees_dispo, index=default_index)
+
+        with col_select_pseudo:
+            # Filtrer les pseudos déjà existants pour la saison et la compétition sélectionnées
+            df_pseudos = tables["all_pronostics"]
+            pseudos_dispo = df_pseudos[
+                (df_pseudos["saison"] == saison_sel) &
+                (df_pseudos["competition_nom"] == competition_sel)
+            ]["participant_nom"].dropna().unique()  # remplacer "pseudo" par le nom de la colonne contenant le pseudo
+
+            if len(pseudos_dispo) == 0:
+                st.warning("Aucun pseudo existant pour cette saison/compétition. Veuillez en créer un manuellement.")
+                nom_participant = st.text_input("Nom / Pseudo")
+            else:
+                nom_participant = st.selectbox("Participant :", sorted(pseudos_dispo))
+
+        # Filtrer les matchs
+        matchs = df_matchs[
+            (df_matchs["saison"] == saison_sel) &
+            (df_matchs["competition"] == competition_sel) &
+            (df_matchs["journee"] == journee_sel)
+        ].sort_values(["equipe_domicile_nom", "equipe_exterieure_nom"])
+
+        if matchs.empty:
+            st.warning("⚠️ Aucun match trouvé pour cette sélection.")
+        else:
+            st.markdown("### Saisir vos pronostics")
+
+            # Récupérer les pronostics existants pour le participant
+            pseudo = nom_participant  # pseudo sélectionné ou saisi
+            df_existing = tables["all_pronostics"]
+            df_existing = df_existing[
+                (df_existing["saison"] == saison_sel) &
+                (df_existing["competition_nom"] == competition_sel) &
+                (df_existing["participant_nom"] == pseudo)
+            ][["match_id", "score_domicile", "score_exterieur"]]
+
+            # Préparer le DataFrame pour l'édition
+            df_table = matchs[[
+                "match_id", "equipe_domicile_nom", "equipe_exterieure_nom"
+            ]].copy()
+
+            # Ajouter les colonnes de scores, pré-remplis si existants
+            df_table = df_table.merge(df_existing, on="match_id", how="left")
+            df_table["score_domicile"] = df_table["score_domicile"].fillna(0).astype(int)
+            df_table["score_exterieur"] = df_table["score_exterieur"].fillna(0).astype(int)
+
+            # Renommer et réorganiser les colonnes
+            df_table = df_table.rename(columns={
+                "equipe_domicile_nom": "Équipe domicile",
+                "equipe_exterieure_nom": "Équipe extérieure",
+                "score_domicile": "Score domicile",
+                "score_exterieur": "Score extérieure"
+            })[
+                ["match_id", "Équipe domicile", "Score domicile", "Score extérieure", "Équipe extérieure"]
+            ]
+
+            col_pronos, col_boutons = st.columns([1.1,1])
+            with col_pronos:
+                # --- Tableau éditable ---
+                df_edit = st.data_editor(
+                    df_table,
+                    num_rows="dynamic",
+                    use_container_width=True
+                )
+
+                # --- Extraction des pronostics après édition ---
+                pronostics = []
+                for _, row in df_edit.iterrows():
+                    pronostics.append((
+                        row["match_id"],
+                        # ids récupérés depuis df_matchs
+                        matchs.loc[matchs["match_id"]==row["match_id"], "equipe_domicile_id"].values[0],
+                        row["Équipe domicile"],
+                        int(row["Score domicile"]),
+                        matchs.loc[matchs["match_id"]==row["match_id"], "equipe_exterieure_id"].values[0],
+                        row["Équipe extérieure"],
+                        int(row["Score extérieure"])
+                    ))
+        
+            with col_boutons:
+                # Formulaire participant
+                if st.button("Soumettre mes pronostics"):
+                    if not nom_participant :
+                        st.warning("Merci de renseigner votre nom")
+                    else:
+                        # Connexion Google Sheets
+                        scope = [
+                            "https://www.googleapis.com/auth/spreadsheets",  
+                            "https://www.googleapis.com/auth/drive"
+                        ]
+                        creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+                        client = gspread.authorize(creds)
+                        sheet = client.open("Pronos Expert").sheet1
+
+                        
+                        # Ajouter chaque pronostic
+                        for match in pronostics:
+                            sheet.append_row([
+                                str(nom_participant),
+                                str(saison_sel),
+                                str(competition_sel),
+                                int(journee_sel),
+                                int(match[0]),  # match_id
+                                int(match[1]),  # équipe domicile id
+                                str(match[2]),  # équipe domicile nom
+                                int(match[3]),  # score domicile
+                                int(match[4]),  # équipe extérieure id
+                                str(match[5]),  # équipe extérieure nom
+                                int(match[6]),  # score extérieure
+                                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            ])
+
+                        st.success(f"✅ Vos pronostics pour la Journée {journee_sel} ont été enregistrés !")
+
+                # Télécharger les matchs 
+                df_export = pd.DataFrame(pronostics, columns=[
+                    "Match ID", "Equipe Domicile ID", "Equipe Domicile", "Score Domicile",
+                    "Equipe Extérieure ID", "Equipe Extérieure", "Score Extérieur"
+                ])
+                
+                # Réorganiser les colonnes selon l'ordre souhaité
+                df_export = df_export[[
+                    "Equipe Domicile", "Score Domicile",
+                    "Score Extérieur", "Equipe Extérieure"
+                ]]
+
+                output = BytesIO()
+                with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+                    df_export.to_excel(writer, sheet_name="Pronostics", index=False, startrow=2)
+                    workbook  = writer.book
+                    worksheet = writer.sheets["Pronostics"]
+
+                    # === Styles ===
+                    title_format = workbook.add_format({
+                        "bold": True, "font_size": 16, "align": "center", "valign": "vcenter",
+                        "bg_color": "#004c91", "font_color": "white"
+                    })
+                    header_format = workbook.add_format({
+                        "bold": True, "bg_color": "#4f81bd", "font_color": "white", "border": 1,
+                        "align": "center", "valign": "vcenter"
+                    })
+                    cell_center = workbook.add_format({"align": "center", "valign": "vcenter", "border": 1})
+                    cell_left   = workbook.add_format({"align": "left",   "valign": "vcenter", "border": 1})
+                    cell_right  = workbook.add_format({"align": "right",  "valign": "vcenter", "border": 1})
+                    cell_center_alt = workbook.add_format({"align": "center", "valign": "vcenter", "border": 1, "bg_color": "#e6f0fa"})
+                    cell_left_alt   = workbook.add_format({"align": "left",   "valign": "vcenter", "border": 1, "bg_color": "#e6f0fa"})
+                    cell_right_alt  = workbook.add_format({"align": "right",  "valign": "vcenter", "border": 1, "bg_color": "#e6f0fa"})
+
+                    # === Titre fusionné sur toutes les colonnes ===
+                    worksheet.merge_range(0, 0, 0, len(df_export.columns)-1, 
+                                        f"{competition_sel} - Saison {saison_sel} - Journée {journee_sel}", 
+                                        title_format)
+
+                    # === En-têtes ===
+                    for col_num, col_name in enumerate(df_export.columns):
+                        worksheet.write(2, col_num, col_name, header_format)
+
+                    # === Largeur automatique des colonnes ===
+                    for i, col in enumerate(df_export.columns):
+                        max_len = max(df_export[col].astype(str).map(len).max(), len(col)) + 2
+                        worksheet.set_column(i, i, max_len)
+
+                    # === Contours et zébrage pour les données ===
+                        for row_num in range(len(df_export)):
+                            alt = (row_num % 2 == 1)
+                            for col_num, col_name in enumerate(df_export.columns):
+                                value = df_export.iloc[row_num, col_num]
+                                if col_num == 0:
+                                    fmt = cell_left_alt if alt else cell_left
+                                elif col_num in [1,2]:  # scores ou valeurs centrales
+                                    fmt = cell_center_alt if alt else cell_center
+                                else:
+                                    fmt = cell_right_alt if alt else cell_right
+                                worksheet.write(row_num + 3, col_num, value, fmt)
+
+                st.download_button(
+                    label="📥 Télécharger mes pronostics en Excel",
+                    data=output.getvalue(),
+                    file_name=f"{competition_sel}_J{journee_sel}_{saison_sel}_pronostics.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
+            
+    # ---------------------- ONGLET 3 : Export Excel ----------------------
+    with tabs_excel:
         # --- 1️⃣ Sélection Saison / Compétition / Journée ---
-        col1, col2, col3 = st.columns(3)
+        col_select_saison, col_select_championnat, col_select_journee = st.columns(3)
 
         # Assurer que les colonnes sont bien au bon type
         df_matchs["saison"] = df_matchs["saison"].astype(str)
@@ -1451,17 +2049,17 @@ def show(tables):
         df_matchs["competition"] = df_matchs["competition"].astype(str)
 
         # Saison
-        with col1:
+        with col_select_saison:
             saisons = sorted(df_matchs["saison"].unique(), reverse=True)  # tri descendant
             saison_sel = st.selectbox("Saison :", saisons, key="export_saison")
 
         # Compétition
-        with col2:
+        with col_select_championnat:
             competitions = sorted(df_matchs[df_matchs["saison"] == saison_sel]["competition"].unique())
             competition_sel = st.selectbox("Compétition :", competitions, key=f"export_comp_{saison_sel}")
 
         # Journée
-        with col3:
+        with col_select_journee:
             journees = sorted(
                 df_matchs[
                     (df_matchs["saison"] == saison_sel) & 

@@ -5,7 +5,7 @@ id,competition_id,annee_debut,annee_fin,code,saison,competition
 4,3,2014,2015,CdF_14-15,2014-2015,Coupe de France
 5,1,2014,2015,BUN_14-15,2014-2015,Bundesliga
 6,16,2014,2015,PL_14-15,2014-2015,Premier League
-7,8,2014,2015,LIG_14-15,2014-2015,Liga
+7,8,2014,2015,LIG_14-15,2014-2015,LaLiga
 8,17,2014,2015,SER_14-15,2014-2015,Serie A
 9,12,2014,2015,LdC_14-15,2014-2015,Ligue des Champions
 10,9,2015,2016,L1_15-16,2015-2016,Ligue 1
@@ -15,7 +15,7 @@ id,competition_id,annee_debut,annee_fin,code,saison,competition
 14,4,2015,2016,CdL_15-16,2015-2016,Coupe de la Ligue
 15,1,2015,2016,BUN_15-16,2015-2016,Bundesliga
 16,16,2015,2016,PL_15-16,2015-2016,Premier League
-17,8,2015,2016,LIG_15-16,2015-2016,Liga
+17,8,2015,2016,LIG_15-16,2015-2016,LaLiga
 18,17,2015,2016,SER_15-16,2015-2016,Serie A
 19,7,2015,2016,EL_15-16,2015-2016,Europa League
 20,12,2015,2016,LdC_15-16,2015-2016,Ligue des Champions
@@ -32,7 +32,7 @@ id,competition_id,annee_debut,annee_fin,code,saison,competition
 31,4,2016,2017,CdL_16-17,2016-2017,Coupe de la Ligue
 32,1,2016,2017,BUN_16-17,2016-2017,Bundesliga
 33,16,2016,2017,PL_16-17,2016-2017,Premier League
-34,8,2016,2017,LIG_16-17,2016-2017,Liga
+34,8,2016,2017,LIG_16-17,2016-2017,LaLiga
 35,17,2016,2017,SER_16-17,2016-2017,Serie A
 36,7,2016,2017,EL_16-17,2016-2017,Europa League
 37,12,2016,2017,LdC_16-17,2016-2017,Ligue des Champions
@@ -59,3 +59,5 @@ id,competition_id,annee_debut,annee_fin,code,saison,competition
 58,12,2025,2026,LdC_25-26,2025-2026,Ligue des Champions
 59,9,2025,2026,L1_25-26,2025-2026,Ligue 1
 60,14,2025,2026,LE_25-26,2025-2026,Ligue Europa
+61,34,2015,2016,C_15-16,2015-2016,Coupes
+242,34,2016,2017,C_16-17,2016-2017,Coupes
