@@ -11,6 +11,7 @@ import plotly.io as pio
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
+from google.oauth2.service_account import Credentials
 
 def afficher_classement_visuel(classement, saison_sel, championnat_sel=None, classement_prec=None, inclure_bonus=None):
     # --- Sécurité / copie pour ne pas muter l'input ---
@@ -1947,7 +1948,7 @@ def show(tables):
                             "https://www.googleapis.com/auth/spreadsheets",  
                             "https://www.googleapis.com/auth/drive"
                         ]
-                        creds = ServiceAccountCredentials.from_json_keyfile_name(sa_info, scope)
+                        creds = Credentials.from_service_account_info(sa_info, scopes=scope)
                         client = gspread.authorize(creds)
                         sheet = client.open("Pronos Expert").sheet1
 
