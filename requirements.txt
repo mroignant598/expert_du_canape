@@ -8,3 +8,5 @@ graphviz
 streamlit_extras
 numpy
 streamlit-aggrid
+gspread
+oauth2client
