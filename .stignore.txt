@@ -1,2 +1,16 @@
+# Dossiers virtuels et caches
+venv/
 __pycache__/
-csv/
+*.pyc
+
+# Git
+.git/
+
+# Données volumineuses
+data/
+*.xlsx
+*.csv
+*.json
+
+# Autres fichiers temporaires
+*.log
