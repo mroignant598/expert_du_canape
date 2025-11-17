@@ -61,8 +61,7 @@ def show(tables):
         # Afficher la liste avec icône FA
         st.markdown("""
             - 🔹 **Ajout des bonus** sur les différentes saisons  <i class="fa-regular fa-circle-check" style="color:green;"></i>
-            - 🏆 Accès aux **archives de la Ligue des Champions**  
-            - Accès aux **archives de la Coupe de France**  
+            - 🏆 Accès aux **archives de la Ligue des Champions**   
             - 🌍 Accès aux **matchs internationaux**  
             - ✍️ **Insertion directe des pronos** sur l’appli  <i class="fa-regular fa-circle-check" style="color:green;"></i>
         """, unsafe_allow_html=True)
