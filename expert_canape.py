@@ -652,7 +652,6 @@ def show(tables):
                     (df_pronos["competition_nom"] == championnat_sel)
                 ].copy()
 
-
             # 🧮 Calcul du nombre de participants uniques
             if not df_saison_pronos.empty and "participant_nom" in df_saison_pronos.columns:
                 nb_participants = df_saison_pronos["participant_nom"].nunique()
@@ -739,7 +738,7 @@ def show(tables):
         .ribbon-text-track {{
             display: inline-block;
             white-space: nowrap;
-            animation: scrollInfinite 200s linear infinite;
+            animation: scrollInfinite 300s linear infinite;
         }}
         .ribbon-text {{
             display: inline-block;
