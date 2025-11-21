@@ -1944,9 +1944,9 @@ def show(tables):
                 "equipe_domicile_nom": "Équipe domicile",
                 "equipe_exterieure_nom": "Équipe extérieure",
                 "score_domicile": "Score domicile",
-                "score_exterieur": "Score extérieure"
+                "score_exterieur": "Score extérieur"
             })[
-                ["match_id", "Équipe domicile", "Score domicile", "Score extérieure", "Équipe extérieure"]
+                ["match_id", "Équipe domicile", "Score domicile", "Score extérieur", "Équipe extérieure"]
             ]
             
             df_table = df_table.sort_values("match_id").reset_index(drop=True)
@@ -1956,14 +1956,14 @@ def show(tables):
                 # --- Tableau éditable ---
                 df_edit = st.data_editor(
                     df_table,
-                    num_rows="dynamic",
+                    num_rows="fixed",
                     use_container_width=True,
                     column_config={
                         "match_id": st.column_config.NumberColumn(disabled=True),
                         "Équipe domicile": st.column_config.TextColumn(disabled=True),
                         "Équipe extérieure": st.column_config.TextColumn(disabled=True),
                         "Score domicile": st.column_config.NumberColumn(disabled=False),
-                        "Score extérieure": st.column_config.NumberColumn(disabled=False),
+                        "Score extérieur": st.column_config.NumberColumn(disabled=False),
                     }
                 )
 
@@ -1978,7 +1978,7 @@ def show(tables):
                         int(row["Score domicile"]),
                         matchs.loc[matchs["match_id"]==row["match_id"], "equipe_exterieure_id"].values[0],
                         row["Équipe extérieure"],
-                        int(row["Score extérieure"])
+                        int(row["Score extérieur"])
                     ))
         
             with col_boutons:
