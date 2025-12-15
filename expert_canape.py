@@ -821,6 +821,12 @@ def show(tables):
             "score_domicile_match": "match_dom",
             "score_exterieur_match": "match_ext"
         })
+        
+        # --- Détection des scores exacts ---
+        df["bon_score"] = (
+            (df["prono_dom"] == df["match_dom"]) &
+            (df["prono_ext"] == df["match_ext"])
+        )
 
         # Convertir les journées en int
         df["journee_match"] = pd.to_numeric(df["journee_match"], errors="coerce")
@@ -1111,12 +1117,24 @@ def show(tables):
                 .rename(columns={"points": "points_total"})
             )
 
+            # --- Nombre de bons scores (score exact) ---
+            bons_scores = (
+                df_journee[df_journee["bon_score"] == True]
+                .groupby("participant_nom")
+                .size()
+                .reset_index(name="bons_scores")
+            )
+
             # --- Fusion ---
             classement_journee = pd.merge(points_sans_bonus, df_journee_bonus, on="participant_nom", how="left")
+            
+            # --- Fusion des bons scores ---
+            classement_journee = classement_journee.merge(bons_scores, on="participant_nom", how="left")
 
             # --- Calcul du bonus réel ---
             classement_journee["points_bonus"] = classement_journee["points_total"] - classement_journee["points_bruts"]
             classement_journee["points_bonus"] = classement_journee["points_bonus"].round(4)
+            classement_journee["bons_scores"] = classement_journee["bons_scores"].fillna(0).astype(int)
 
             # --- Tri ---
             classement_journee = (
@@ -1135,7 +1153,8 @@ def show(tables):
                 "participant_nom": "Participant",
                 "points_total": "Total Points",
                 "points_bonus": "Dont Bonus",
-                "bons_pronos": "Nombre de bons pronos"
+                "bons_pronos": "Nombre de bons pronos",
+                "bons_scores": "Nombre de bons scores"
             })
 
             # --- Classement du joueur sélectionné ---
@@ -1167,17 +1186,19 @@ def show(tables):
             multiplicateur = joueur_stats["multiplicateur"].values[0]
             rang = joueur_stats["Rang"].values[0]
             perf = joueur_stats["Performance (%)"].values[0]
+            bons_scores = joueur_stats["Nombre de bons scores"].values[0]
 
             st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
 
             # Colonnes KPI améliorées
-            kpi_cols = st.columns([1, 1, 1, 1, 1])
+            kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
             with kpi_cols[0]: kpi_card("🏆 Rang", rang, color="#3b82f6")  
             with kpi_cols[1]: kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e")  
             with kpi_cols[2]: kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b")  
-            with kpi_cols[3]: kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea")  
-            with kpi_cols[4]: kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea")  
+            with kpi_cols[3]: kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444")
+            with kpi_cols[4]: kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea")  
+            with kpi_cols[5]: kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea")  
 
             # Sécuriser la valeur de la barre de progression
             perf_safe = 0 if pd.isna(perf) else perf
@@ -1204,6 +1225,11 @@ def show(tables):
             ((df_joueur["prono_dom"] > df_joueur["prono_ext"]) & (df_joueur["match_dom"] > df_joueur["match_ext"])) |
             ((df_joueur["prono_dom"] < df_joueur["prono_ext"]) & (df_joueur["match_dom"] < df_joueur["match_ext"])) |
             ((df_joueur["prono_dom"] == df_joueur["prono_ext"]) & (df_joueur["match_dom"] == df_joueur["match_ext"])))
+        
+        # --- Bons scores (score exact) ---
+        df_joueur["bon_score"] = (
+            (df_joueur["prono_dom"] == df_joueur["match_dom"]) &
+            (df_joueur["prono_ext"] == df_joueur["match_ext"]))
 
         # --- Bonus multiplicateurs par match ---
         df_joueur["bonus"] = df_joueur.apply(lambda r: float(calcul_points_journee(pd.DataFrame([r]))["multiplicateur"]), axis=1)
@@ -1213,6 +1239,7 @@ def show(tables):
         moyenne_points = df_joueur["points"].mean().round(2)
         max_points_match = df_joueur["points"].max().round(2)
         min_points_match = df_joueur["points"].min().round(2)
+        nb_bons_scores = df_joueur["bon_score"].sum()
         
         # Somme des points par journée
         points_par_journee = df_joueur_participant.groupby("journee_match")["points"].sum()
@@ -1223,6 +1250,7 @@ def show(tables):
         nb_bons_pronos = df_joueur["bon_prono"].sum()
         total_pronos = len(df_joueur)
         pourcentage_bons_pronos = round(100 * nb_bons_pronos / total_pronos, 1) if total_pronos > 0 else 0
+        pourcentage_bons_scores = round(100 * nb_bons_scores / total_pronos, 1) if total_pronos > 0 else 0
 
         bonus_133 = (df_joueur_participant["multiplicateur"] == 1.33).sum() if "multiplicateur" in df_joueur_participant else 0
         bonus_166 = (df_joueur_participant["multiplicateur"] == 1.66).sum() if "multiplicateur" in df_joueur_participant else 0
@@ -1244,13 +1272,14 @@ def show(tables):
         
         # --- Affichage final ---
         # --- Ligne 1 : Performances générales ---
-        kpi_cols = st.columns([1, 1, 1, 1, 1])
+        kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
-        with kpi_cols[0]: kpi_card("🎯 Bons pronos", f"{nb_bons_pronos}/{total_pronos}", f"{pourcentage_bons_pronos}%", color="#f59e0b") 
-        with kpi_cols[1]: kpi_card("🏅 Journées gagnées", int(journees_gagnees), color="#3b82f6")  
-        with kpi_cols[2]: kpi_card("Meilleur score / journée", round(meilleur_score_journee, 2), color="#22c55e")  
-        with kpi_cols[3]: kpi_card("Moyenne points / match", round(moyenne_points, 2), color="#22c55e")  
-        with kpi_cols[4]: kpi_card("💥 Max points / match", round(max_points_match, 2), color="#22c55e")  
+        with kpi_cols[0]: kpi_card("🎯 Total bons pronos", f"{nb_bons_pronos}/{total_pronos}", f"{pourcentage_bons_pronos}%", color="#f59e0b") 
+        with kpi_cols[1]: kpi_card("🎯 Total bons scores", f"{nb_bons_scores}/{total_pronos}", f"{pourcentage_bons_scores}%", color="#ef4444")
+        with kpi_cols[2]: kpi_card("🏅 Journées gagnées", int(journees_gagnees), color="#3b82f6")  
+        with kpi_cols[3]: kpi_card("Meilleur score / journée", round(meilleur_score_journee, 2), color="#22c55e")  
+        with kpi_cols[4]: kpi_card("Moyenne points / match", round(moyenne_points, 2), color="#22c55e")  
+        with kpi_cols[5]: kpi_card("💥 Max points sur un match", round(max_points_match, 2), color="#22c55e")  
 
         st.text("")
         
@@ -1849,8 +1878,36 @@ def show(tables):
 
             st.plotly_chart(fig, use_container_width=True)
 
-        st.markdown("---")          
-            
+        st.markdown("---") 
+        
+        # === 📍 SECTION 8 ===
+        # --- Points par journée et participant ---
+        df_points_journee = (df.groupby(["journee_match", "participant_nom"])["points"].sum().reset_index())
+
+        # --- Gagnant de chaque journée ---
+        gagnants_journee = (df_points_journee.sort_values(["journee_match", "points"], ascending=[True, False]).groupby("journee_match").first().reset_index())
+
+        # --- Nombre de journées gagnées par participant ---
+        classement_journees_gagnees = (gagnants_journee.groupby("participant_nom").size().reset_index(name="Journees gagnées").sort_values("Journees gagnées", ascending=False).reset_index(drop=True))
+        classement_journees_gagnees = classement_journees_gagnees.rename(columns={"participant_nom": "Participant"})
+        classement_journees_gagnees["Rang"] = classement_journees_gagnees.index + 1
+        
+        # --- Détection des scores exacts ---
+        df["bon_score"] = ((df["prono_dom"] == df["match_dom"]) & (df["prono_ext"] == df["match_ext"]))
+
+        # --- Nombre total de bons scores par participant ---
+        classement_bons_scores = (df[df["bon_score"]].groupby("participant_nom").size().reset_index(name="Bons scores").sort_values("Bons scores", ascending=False).reset_index(drop=True))
+        classement_bons_scores = classement_bons_scores.rename(columns={"participant_nom": "Participant"})
+        classement_bons_scores["Rang"] = classement_bons_scores.index + 1
+
+        classements_cols = st.columns([1, 1])
+        with classements_cols[0] :
+            st.markdown("### 🏅 Classement – Journées gagnées")
+            st.dataframe(classement_journees_gagnees[["Rang", "Participant", "Journees gagnées"]], hide_index=True, use_container_width=True)
+        with classements_cols[1] :
+            st.markdown("### 🎯 Classement – Bons scores (score exact)")
+            st.dataframe(classement_bons_scores[["Rang", "Participant", "Bons scores"]], hide_index=True, use_container_width=True)
+
     # ---------------------- ONGLET 2 : Insertion Pronos ----------------------
     with tabs_insertion:
         # Assurer les bons types
