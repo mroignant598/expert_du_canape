@@ -39,8 +39,6 @@ def show(tables):
     Prêt à découvrir qui est **vraiment le boss du terrain** ? 😏⚽  
     Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
     Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
-    
-    _PS : les classements ne correspondent pas forcément aux classements définitifs des saisons précédentes, les bonus de mi et fin de saison n'ont pas encore été pris en compte._  
     """)
     
     st.markdown("---")
