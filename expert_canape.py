@@ -1782,12 +1782,12 @@ def show(tables):
             "saison_match",
             "competition",
             "match_id"
-        ]].rename(columns={
-            "score_domicile_prono": "prono_dom",
-            "score_exterieur_prono": "prono_ext",
-            "score_domicile_match": "match_dom",
-            "score_exterieur_match": "match_ext"
-        })
+        # ]].rename(columns={
+        #     "score_domicile_prono": "prono_dom",
+        #     "score_exterieur_prono": "prono_ext",
+        #     "score_domicile_match": "match_dom",
+        #     "score_exterieur_match": "match_ext"
+        # })
 
         # --- Suppression des doublons éventuels ---
         # df_historique = data_historique.drop_duplicates(subset=["participant_id", "match_id"], keep="last")
