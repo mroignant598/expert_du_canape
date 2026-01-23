@@ -1767,21 +1767,21 @@ def show(tables):
 
         # --- Sélection des colonnes et renommage pour correspondre à l'ancien SQL ---
         # data_historique = data_historique[[
-            "participant_id",
-            "participant_nom",
-            "score_domicile_prono", 
-            "score_exterieur_prono",
-            "score_domicile_match", 
-            "score_exterieur_match",
-            "equipe_domicile_nom",
-            "equipe_exterieure_nom",
-            "cote_domicile",
-            "cote_exterieur",
-            "cote_nul",
-            "journee_match",
-            "saison_match",
-            "competition",
-            "match_id"
+        #     "participant_id",
+        #     "participant_nom",
+        #     "score_domicile_prono", 
+        #     "score_exterieur_prono",
+        #     "score_domicile_match", 
+        #     "score_exterieur_match",
+        #     "equipe_domicile_nom",
+        #     "equipe_exterieure_nom",
+        #     "cote_domicile",
+        #     "cote_exterieur",
+        #     "cote_nul",
+        #     "journee_match",
+        #     "saison_match",
+        #     "competition",
+        #     "match_id"
         # ]].rename(columns={
         #     "score_domicile_prono": "prono_dom",
         #     "score_exterieur_prono": "prono_ext",
