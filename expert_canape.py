@@ -1755,18 +1755,18 @@ def show(tables):
         # === 📍 SECTION 7 ===
         # --- Récupération de l'historique complet du joueur depuis les CSV ---
         # Filtrage sur le participant
-        data_historique = df_pronos[df_pronos["participant_nom"] == participant_sel].merge(
-            df_matchs,
-            on="match_id",
-            suffixes=("_prono", "_match")
-        )
+        # data_historique = df_pronos[df_pronos["participant_nom"] == participant_sel].merge(
+        #     df_matchs,
+        #    on="match_id",
+        #     suffixes=("_prono", "_match")
+        # )
 
         # --- Filtrage selon la compétition sélectionnée ---
-        if championnat_sel != "Toutes":
-            data_historique = data_historique[data_historique["competition"] == championnat_sel]
+        # if championnat_sel != "Toutes":
+        #     data_historique = data_historique[data_historique["competition"] == championnat_sel]
 
         # --- Sélection des colonnes et renommage pour correspondre à l'ancien SQL ---
-        data_historique = data_historique[[
+        # data_historique = data_historique[[
             "participant_id",
             "participant_nom",
             "score_domicile_prono", 
@@ -1790,95 +1790,95 @@ def show(tables):
         })
 
         # --- Suppression des doublons éventuels ---
-        df_historique = data_historique.drop_duplicates(subset=["participant_id", "match_id"], keep="last")
+        # df_historique = data_historique.drop_duplicates(subset=["participant_id", "match_id"], keep="last")
 
         # --- Préparer le DataFrame historique ---
-        df_historique["journee_match"] = df_historique["journee_match"].astype(int)
-        df_historique = df_historique.sort_values(by=["saison_match", "journee_match"]).reset_index(drop=True)
+        # df_historique["journee_match"] = df_historique["journee_match"].astype(int)
+        # df_historique = df_historique.sort_values(by=["saison_match", "journee_match"]).reset_index(drop=True)
 
         # Vérification des résultats
-        if df_historique.empty:
-            st.info(f"Aucun pronostic historique trouvé pour {participant_sel}.")
-        else:
-            # Calcul des points pour toutes les saisons
-            df_historique["points"] = df_historique.apply(calcul_points, axis=1)
-            df_historique = df_historique.sort_values(["saison_match", "journee_match"]).reset_index(drop=True)
+        # if df_historique.empty:
+        #     st.info(f"Aucun pronostic historique trouvé pour {participant_sel}.")
+        # else:
+        #     # Calcul des points pour toutes les saisons
+        #    df_historique["points"] = df_historique.apply(calcul_points, axis=1)
+        #     df_historique = df_historique.sort_values(["saison_match", "journee_match"]).reset_index(drop=True)
 
         # --- Comparaison progression joueur par saison ---
-        st.markdown(f"### 📊 Comparaison des saisons de {participant_sel}")
+        # st.markdown(f"### 📊 Comparaison des saisons de {participant_sel}")
 
-        saisons_disponibles = sorted(df_historique["saison_match"].unique(), reverse=True)
-        default_saisons = [saison_sel] if saison_sel in saisons_disponibles else []
+        # saisons_disponibles = sorted(df_historique["saison_match"].unique(), reverse=True)
+        # default_saisons = [saison_sel] if saison_sel in saisons_disponibles else []
 
-        saisons_sel = st.multiselect(
-            "Sélectionnez les saisons à comparer",
-            options=saisons_disponibles,
-            default=default_saisons,
-            key=f"saisons_compare_{participant_sel}"
-        )
+        # saisons_sel = st.multiselect(
+        #     "Sélectionnez les saisons à comparer",
+        #     options=saisons_disponibles,
+        #    default=default_saisons,
+        #     key=f"saisons_compare_{participant_sel}"
+        # )
 
-        if not saisons_sel:
-            st.warning("Veuillez sélectionner au moins une saison pour l'affichage.")
-        else:
-            fig = go.Figure()
-            couleurs_prev = px.colors.qualitative.Pastel
-            idx_couleur = 0
+        # if not saisons_sel:
+        #     st.warning("Veuillez sélectionner au moins une saison pour l'affichage.")
+        # else:
+        #     fig = go.Figure()
+        #     couleurs_prev = px.colors.qualitative.Pastel
+        #     idx_couleur = 0
 
-            for saison in saisons_sel:
-                df_saison = df_historique[df_historique["saison_match"] == saison].copy()
-                if df_saison.empty:
-                    continue
+        #     for saison in saisons_sel:
+        #         df_saison = df_historique[df_historique["saison_match"] == saison].copy()
+        #         if df_saison.empty:
+        #             continue
 
                 # Tri et conversion en int pour les journées
-                df_saison["journee_match"] = df_saison["journee_match"].astype(int)
-                df_saison = df_saison.sort_values("journee_match").reset_index(drop=True)
+        #         df_saison["journee_match"] = df_saison["journee_match"].astype(int)
+        #         df_saison = df_saison.sort_values("journee_match").reset_index(drop=True)
 
                 # --- Calcul cumulatif par journée ---
-                df_saison = df_saison.groupby("journee_match", as_index=False)["points"].sum()
-                df_saison["points_cumul"] = df_saison["points"].cumsum()
+        #         df_saison = df_saison.groupby("journee_match", as_index=False)["points"].sum()
+        #         df_saison["points_cumul"] = df_saison["points"].cumsum()
 
                 # Traces
-                if saison == saison_sel:
-                    fig.add_trace(go.Scatter(
-                        x=df_saison["journee_match"],
-                        y=df_saison["points_cumul"],
-                        mode="lines+markers",
-                        name=f"Saison {saison} (actuelle)",
-                        line=dict(color="limegreen", width=4),
-                        marker=dict(size=10, symbol="circle"),
-                        hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
-                        customdata=df_saison[["points"]].values
-                    ))
-                else:
-                    couleur = couleurs_prev[idx_couleur % len(couleurs_prev)]
-                    idx_couleur += 1
-                    fig.add_trace(go.Scatter(
-                        x=df_saison["journee_match"],
-                        y=df_saison["points_cumul"],
-                        mode="lines+markers",
-                        name=f"Saison {saison} (précédente)",
-                        line=dict(color=couleur, width=2, dash="dash"),
-                        marker=dict(size=7, symbol="circle"),
-                        opacity=0.6,
-                        hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
-                        customdata=df_saison[["points"]].values
-                    ))
+        #         if saison == saison_sel:
+        #             fig.add_trace(go.Scatter(
+        #                 x=df_saison["journee_match"],
+        #                 y=df_saison["points_cumul"],
+        #                 mode="lines+markers",
+        #                 name=f"Saison {saison} (actuelle)",
+        #                 line=dict(color="limegreen", width=4),
+        #                 marker=dict(size=10, symbol="circle"),
+        #                 hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
+        #                 customdata=df_saison[["points"]].values
+        #              ))
+        #         else:
+        #            couleur = couleurs_prev[idx_couleur % len(couleurs_prev)]
+        #             idx_couleur += 1
+        #             fig.add_trace(go.Scatter(
+        #                 x=df_saison["journee_match"],
+        #                 y=df_saison["points_cumul"],
+        #                 mode="lines+markers",
+        #                 name=f"Saison {saison} (précédente)",
+        #                 line=dict(color=couleur, width=2, dash="dash"),
+        #                 marker=dict(size=7, symbol="circle"),
+        #                 opacity=0.6,
+        #                 hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
+        #                 customdata=df_saison[["points"]].values
+        #             ))
 
-            fig.update_layout(
-                title=f"Progression cumulée de {participant_sel} par saison",
-                xaxis_title="Journée",
-                yaxis_title="Points cumulés",
-                xaxis=dict(range=[0, df_historique["journee_match"].max() + 1]),  # X commence à 0 et va jusqu'à max +1
-                hovermode="x unified",
-                template="plotly_white",
-                height=450,
-                legend=dict(title="Saisons", x=0.01, y=0.99),
-                margin=dict(l=50, r=50, t=60, b=50)
-            )
+        #     fig.update_layout(
+        #        title=f"Progression cumulée de {participant_sel} par saison",
+        #         xaxis_title="Journée",
+        #         yaxis_title="Points cumulés",
+        #         xaxis=dict(range=[0, df_historique["journee_match"].max() + 1]),  # X commence à 0 et va jusqu'à max +1
+        #         hovermode="x unified",
+        #         template="plotly_white",
+        #         height=450,
+        #         legend=dict(title="Saisons", x=0.01, y=0.99),
+        #         margin=dict(l=50, r=50, t=60, b=50)
+        #     )
 
-            st.plotly_chart(fig, use_container_width=True)
+        #     st.plotly_chart(fig, use_container_width=True)
 
-        st.markdown("---") 
+        # st.markdown("---") 
         
         # === 📍 SECTION 8 ===
         # --- Points par journée et participant ---
