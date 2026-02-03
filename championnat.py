@@ -1345,6 +1345,17 @@ def show(tables):
                     classement_par_journee = pd.concat([classement_par_journee, classement], ignore_index=True)
 
                 # --- Sélecteur de journée ---
+                # Forcer les journées numériques
+                df_groupe["journee"] = pd.to_numeric(df_groupe["journee"], errors="coerce")
+
+                # Limite max de journée affichée
+                JOURNEE_MAX = 8
+
+                journees = (df_groupe["journee"].dropna().astype(int).unique())
+
+                # 🔒 On bloque l’affichage à la journée 8
+                journees = sorted(j for j in journees if j <= JOURNEE_MAX)
+
                 journee_sel = st.selectbox("Sélectionner une journée :", journees, index=len(journees)-1)
                 df_journee_sel = df_groupe[df_groupe['journee'] == journee_sel].copy()
                 df_classement_sel = classement_par_journee[classement_par_journee['Journée'] == journee_sel].copy()
@@ -1644,14 +1655,20 @@ def show(tables):
                         ext = match_aller['equipe_exterieure_nom']
 
                         # ---- SCORE ALLER ----
-                        score_aller = f"{int(match_aller['score_domicile'])}-{int(match_aller['score_exterieur'])}"
+                        if pd.notna(match_aller["score_domicile"]) and pd.notna(match_aller["score_exterieur"]):
+                            score_aller = f"{int(match_aller['score_domicile'])}-{int(match_aller['score_exterieur'])}"
+                        else:
+                            score_aller = "–"
                         if 'prolongation_score_domicile' in match_aller and pd.notna(match_aller['prolongation_score_domicile']):
                             score_aller += f" (Prol: {int(match_aller['prolongation_score_domicile'])}-{int(match_aller['prolongation_score_exterieur'])})"
                         if 'tab_score_domicile' in match_aller and pd.notna(match_aller['tab_score_domicile']):
                             score_aller += f" (TAB: {int(match_aller['tab_score_domicile'])}-{int(match_aller['tab_score_exterieur'])})"
 
                         # ---- SCORE RETOUR ----
-                        score_retour = f"{int(match_retour['score_domicile'])}-{int(match_retour['score_exterieur'])}"
+                        if pd.notna(match_retour["score_domicile"]) and pd.notna(match_retour["score_exterieur"]):
+                            score_retour = f"{int(match_retour['score_domicile'])}-{int(match_retour['score_exterieur'])}"
+                        else:
+                            score_retour = "–"
                         if 'prolongation_score_domicile' in match_retour and pd.notna(match_retour['prolongation_score_domicile']):
                             score_retour += f" (Prol: {int(match_retour['prolongation_score_domicile'])}-{int(match_retour['prolongation_score_exterieur'])})"
                         if 'tab_score_domicile' in match_retour and pd.notna(match_retour['tab_score_domicile']):
