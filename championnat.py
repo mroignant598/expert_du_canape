@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+import locale
 
 def show(tables):
     tab1, tab2, tab3 = st.tabs(["Nationaux", "Europe", "Coupes"])
@@ -1639,9 +1640,72 @@ def show(tables):
                 st.markdown(f"## {phase}")  # Titre de la phase
 
                 if phase != "Finale":
+
                     rows_aller, rows_retour, qualifiés = [], [], []
 
+                    # -----------------------------
+                    # Fonction : récupérer score final d’un match
+                    # -----------------------------
+                    def get_final_score(match):
+                        """
+                        Retourne le score final du match :
+                        - Si prolongation existe → score prolongation
+                        - Sinon → score normal
+                        """
+                        if (
+                            'prolongation_score_domicile' in match
+                            and pd.notna(match.get('prolongation_score_domicile'))
+                        ):
+                            sd = match.get('prolongation_score_domicile', 0)
+                            se = match.get('prolongation_score_exterieur', 0)
+                        else:
+                            sd = match.get('score_domicile', 0)
+                            se = match.get('score_exterieur', 0)
+
+                        sd = 0 if pd.isna(sd) else sd
+                        se = 0 if pd.isna(se) else se
+
+                        return int(sd), int(se)
+
+                    # -----------------------------
+                    # Fonction : déterminer le vainqueur aller/retour
+                    # -----------------------------
+                    def get_winner(match_aller, match_retour):
+
+                        dom = match_aller['equipe_domicile_nom']
+                        ext = match_aller['equipe_exterieure_nom']
+
+                        # Scores finaux
+                        sd_aller, se_aller = get_final_score(match_aller)
+                        sd_retour, se_retour = get_final_score(match_retour)
+
+                        # Cumul aller/retour
+                        total_dom = sd_aller + se_retour
+                        total_ext = se_aller + sd_retour
+
+                        # Décision
+                        if total_dom > total_ext:
+                            return dom
+                        elif total_ext > total_dom:
+                            return ext
+                        else:
+                            # Gestion TAB si égalité
+                            if 'tab_score_domicile' in match_retour and pd.notna(match_retour.get('tab_score_domicile')):
+                                tab_dom = match_retour.get('tab_score_domicile', 0)
+                                tab_ext = match_retour.get('tab_score_exterieur', 0)
+
+                                tab_dom = 0 if pd.isna(tab_dom) else tab_dom
+                                tab_ext = 0 if pd.isna(tab_ext) else tab_ext
+
+                                return dom if tab_dom > tab_ext else ext
+
+                            return dom  # fallback sécurité
+
+                    # -----------------------------
+                    # Boucle sur les matchs
+                    # -----------------------------
                     for match_pair, g in df_phase.groupby('match_pair'):
+
                         df_aller = g[g['aller_retour'] == "Aller"]
                         df_retour = g[g['aller_retour'] == "Retour"]
 
@@ -1654,53 +1718,43 @@ def show(tables):
                         dom = match_aller['equipe_domicile_nom']
                         ext = match_aller['equipe_exterieure_nom']
 
-                        # ---- SCORE ALLER ----
-                        if pd.notna(match_aller["score_domicile"]) and pd.notna(match_aller["score_exterieur"]):
-                            score_aller = f"{int(match_aller['score_domicile'])}-{int(match_aller['score_exterieur'])}"
-                        else:
-                            score_aller = "–"
-                        if 'prolongation_score_domicile' in match_aller and pd.notna(match_aller['prolongation_score_domicile']):
-                            score_aller += f" (Prol: {int(match_aller['prolongation_score_domicile'])}-{int(match_aller['prolongation_score_exterieur'])})"
-                        if 'tab_score_domicile' in match_aller and pd.notna(match_aller['tab_score_domicile']):
-                            score_aller += f" (TAB: {int(match_aller['tab_score_domicile'])}-{int(match_aller['tab_score_exterieur'])})"
+                        # ----------- AFFICHAGE SCORE ALLER -----------
+                        sd_a, se_a = get_final_score(match_aller)
+                        score_aller = f"{sd_a}-{se_a}"
 
-                        # ---- SCORE RETOUR ----
-                        if pd.notna(match_retour["score_domicile"]) and pd.notna(match_retour["score_exterieur"]):
-                            score_retour = f"{int(match_retour['score_domicile'])}-{int(match_retour['score_exterieur'])}"
-                        else:
-                            score_retour = "–"
-                        if 'prolongation_score_domicile' in match_retour and pd.notna(match_retour['prolongation_score_domicile']):
-                            score_retour += f" (Prol: {int(match_retour['prolongation_score_domicile'])}-{int(match_retour['prolongation_score_exterieur'])})"
-                        if 'tab_score_domicile' in match_retour and pd.notna(match_retour['tab_score_domicile']):
-                            score_retour += f" (TAB: {int(match_retour['tab_score_domicile'])}-{int(match_retour['tab_score_exterieur'])})"
+                        if pd.notna(match_aller.get('prolongation_score_domicile')):
+                            score_aller += " (Prol.)"
 
-                        # Ajouter aux tableaux
-                        rows_aller.append({"Domicile": dom, "Score": score_aller, "Extérieur": ext})
+                        if pd.notna(match_aller.get('tab_score_domicile')):
+                            score_aller += f" (TAB {int(match_aller['tab_score_domicile'])}-{int(match_aller['tab_score_exterieur'])})"
+
+
+                        # ----------- AFFICHAGE SCORE RETOUR -----------
+                        sd_r, se_r = get_final_score(match_retour)
+                        score_retour = f"{sd_r}-{se_r}"
+
+                        if pd.notna(match_retour.get('prolongation_score_domicile')):
+                            score_retour += " (Prol.)"
+
+                        if pd.notna(match_retour.get('tab_score_domicile')):
+                            score_retour += f" (TAB {int(match_retour['tab_score_domicile'])}-{int(match_retour['tab_score_exterieur'])})"
+
+                        # ----------- Ajout aux tableaux -----------
+                        rows_aller.append({
+                            "Domicile": dom,
+                            "Score": score_aller,
+                            "Extérieur": ext
+                        })
+
                         rows_retour.append({
                             "Domicile": match_retour['equipe_domicile_nom'],
                             "Score": score_retour,
                             "Extérieur": match_retour['equipe_exterieure_nom']
                         })
 
-                        # ---- Calcul du vainqueur cumulatif ----
-                        total_dom = match_aller['score_domicile'] + match_retour['score_exterieur']
-                        total_ext = match_aller['score_exterieur'] + match_retour['score_domicile']
-
-                        if 'prolongation_score_domicile' in df_aller.columns:
-                            total_dom += match_aller.get('prolongation_score_domicile', 0) + match_retour.get('prolongation_score_exterieur', 0)
-                            total_ext += match_aller.get('prolongation_score_exterieur', 0) + match_retour.get('prolongation_score_domicile', 0)
-
-                        if total_dom > total_ext:
-                            qualifiés.append(dom)
-                        elif total_ext > total_dom:
-                            qualifiés.append(ext)
-                        else:
-                            if 'tab_score_domicile' in df_aller.columns and pd.notna(match_aller.get('tab_score_domicile', None)):
-                                tab_dom = match_aller.get('tab_score_domicile', 0) + match_retour.get('tab_score_exterieur', 0)
-                                tab_ext = match_aller.get('tab_score_exterieur', 0) + match_retour.get('tab_score_domicile', 0)
-                                qualifiés.append(dom if tab_dom > tab_ext else ext)
-                            else:
-                                qualifiés.append(dom)
+                        # ----------- Calcul qualifié -----------
+                        winner = get_winner(match_aller, match_retour)
+                        qualifiés.append(winner)
 
                     # ---- Affichage DataFrames ----
                     df_aller_disp = pd.DataFrame(rows_aller)
@@ -1735,9 +1789,10 @@ def show(tables):
                             height=hauteur_phase.get(phase),
                             hide_index=True
                         )
-
                     # ---- Affichage des qualifiés ----
                     colors = ["#a8d5ba", "#8fc1a9", "#76b39b", "#5da78d"]
+                    locale.setlocale(locale.LC_COLLATE, "fr_FR.UTF-8")
+                    qualifiés = sorted(qualifiés, key=locale.strxfrm)
                     qualifies_html = " ".join([
                         f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};color:#000;"
                         f"padding:4px 10px;border-radius:12px;margin:2px;font-weight:bold'>{team}</span>"
@@ -1873,35 +1928,63 @@ def show(tables):
 
             for match_id, g in df_phase.groupby("match_id"):
                 match = g.iloc[0]
+
                 dom = match['equipe_domicile_nom']
                 ext = match['equipe_exterieure_nom']
 
-                # Score régulier
-                score_dom = safe_int(match['score_domicile'])
-                score_ext = safe_int(match['score_exterieur'])
-                score = f"{score_dom}-{score_ext}"
-
-                # Prolongation
+                # -----------------------------
+                # SCORE FINAL RÉEL
+                # -----------------------------
                 if pd.notna(match.get('prolongation_score_domicile')):
-                    score += f" (Prol: {safe_int(match['prolongation_score_domicile'])}-{safe_int(match['prolongation_score_exterieur'])})"
+                    score_dom = safe_int(match['prolongation_score_domicile'])
+                    score_ext = safe_int(match['prolongation_score_exterieur'])
+                    score = f"{score_dom}-{score_ext} (Prol.)"
+                else:
+                    score_dom = safe_int(match['score_domicile'])
+                    score_ext = safe_int(match['score_exterieur'])
+                    score = f"{score_dom}-{score_ext}"
 
-                # Tirs au but
+                # -----------------------------
+                # TIRS AU BUT (affichage uniquement)
+                # -----------------------------
                 if pd.notna(match.get('tab_score_domicile')):
-                    score += f" (TAB: {safe_int(match['tab_score_domicile'])}-{safe_int(match['tab_score_exterieur'])})"
+                    tab_dom = safe_int(match['tab_score_domicile'])
+                    tab_ext = safe_int(match['tab_score_exterieur'])
+                    score += f" (TAB: {tab_dom}-{tab_ext})"
+                else:
+                    tab_dom = tab_ext = None
 
-                # Détermination du vainqueur
+                # -----------------------------
+                # DÉTERMINATION VAINQUEUR
+                # -----------------------------
                 if score_dom > score_ext:
                     vainqueur = dom
                 elif score_ext > score_dom:
                     vainqueur = ext
                 else:
-                    vainqueur = None
+                    # Égalité → TAB
+                    if tab_dom is not None:
+                        if tab_dom > tab_ext:
+                            vainqueur = dom
+                        elif tab_ext > tab_dom:
+                            vainqueur = ext
+                        else:
+                            vainqueur = None
+                    else:
+                        vainqueur = None
 
-                rows.append({"Domicile": dom, "Score": score, "Extérieur": ext})
+                rows.append({
+                    "Domicile": dom,
+                    "Score": score,
+                    "Extérieur": ext
+                })
+
                 if vainqueur:
                     qualifiés.append(vainqueur)
 
-            # ----- Style des vainqueurs -----
+            # -----------------------------
+            # STYLE VAINQUEUR
+            # -----------------------------
             def highlight_winner(row):
                 styles = []
                 for col in row.index:
@@ -1914,10 +1997,16 @@ def show(tables):
                 return styles
 
             df_display = pd.DataFrame(rows)
+
             styled_df = (
                 df_display.style
                 .apply(highlight_winner, axis=1)
-                .set_properties(**{'text-align': 'center', 'white-space':'nowrap', 'padding':'4px 6px', 'font-size':'14px'})
+                .set_properties(**{
+                    'text-align': 'center',
+                    'white-space':'nowrap',
+                    'padding':'4px 6px',
+                    'font-size':'14px'
+                })
             )
 
             col_match, col_qualifie = st.columns([2, 1.4])
@@ -1931,25 +2020,31 @@ def show(tables):
                 )
 
             with col_qualifie:
+
                 if phase == "Finale":
-                    if vainqueur:
+                    if qualifiés:
+                        vainqueur_final = qualifiés[0]
                         st.markdown(
                             f"<div style='text-align:center'>"
-                            f"<span style='display:inline-block;background-color:#FFD700;color:#000;padding:10px 20px;border-radius:12px;font-weight:bold;font-size:18px'>🏆 {vainqueur}</span>"
-                            f"<br><span style='font-size:16px;margin-top:8px'>Score : {score}</span>"
+                            f"<span style='display:inline-block;background-color:#FFD700;color:#000;padding:10px 20px;border-radius:12px;font-weight:bold;font-size:18px'>🏆 {vainqueur_final}</span>"
                             f"</div>",
                             unsafe_allow_html=True
                         )
                     else:
-                        st.markdown("### Match nul au score régulier (prolongations/TAB déterminent le vainqueur)")
+                        st.markdown("### Résultat indéterminé")
                 else:
                     if qualifiés:
+                        locale.setlocale(locale.LC_COLLATE, "fr_FR.UTF-8")
+                        qualifiés = sorted(qualifiés, key=locale.strxfrm)
                         colors = ["#64c7ba", "#6664c7", "#ae76b3", "#5da78d", "#f79fc8", "#f48282"]
                         qualifies_html = " ".join([
-                            f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};color:#000;padding:4px 10px;border-radius:12px;margin:2px;font-weight:bold'>⚡ {team}</span>"
+                            f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};"
+                            f"color:#000;padding:4px 10px;border-radius:12px;margin:2px;font-weight:bold'>⚡ {team}</span>"
                             for i, team in enumerate(qualifiés)
                         ])
-                        st.markdown(f"<h4>Équipes qualifiées pour le tour suivant :</h4>{qualifies_html}", unsafe_allow_html=True)
+                        st.markdown(
+                            f"<h4>Équipes qualifiées pour le tour suivant :</h4>{qualifies_html}",
+                            unsafe_allow_html=True
+                        )
 
             st.markdown("---")
-

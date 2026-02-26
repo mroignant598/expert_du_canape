@@ -11,3 +11,4 @@ streamlit-aggrid
 gspread
 oauth2client
 google
+locale
