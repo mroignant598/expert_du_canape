@@ -1791,8 +1791,7 @@ def show(tables):
                         )
                     # ---- Affichage des qualifiés ----
                     colors = ["#a8d5ba", "#8fc1a9", "#76b39b", "#5da78d"]
-                    locale.setlocale(locale.LC_COLLATE, "fr_FR.UTF-8")
-                    qualifiés = sorted(qualifiés, key=locale.strxfrm)
+                    qualifiés = sorted(qualifiés)
                     qualifies_html = " ".join([
                         f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};color:#000;"
                         f"padding:4px 10px;border-radius:12px;margin:2px;font-weight:bold'>{team}</span>"
@@ -2034,8 +2033,7 @@ def show(tables):
                         st.markdown("### Résultat indéterminé")
                 else:
                     if qualifiés:
-                        locale.setlocale(locale.LC_COLLATE, "fr_FR.UTF-8")
-                        qualifiés = sorted(qualifiés, key=locale.strxfrm)
+                        qualifiés = sorted(qualifiés)
                         colors = ["#64c7ba", "#6664c7", "#ae76b3", "#5da78d", "#f79fc8", "#f48282"]
                         qualifies_html = " ".join([
                             f"<span style='display:inline-block;background-color:{colors[i%len(colors)]};"
