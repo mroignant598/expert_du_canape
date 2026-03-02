@@ -9672,7 +9672,7 @@ match_id,saison_id,saison,code_saison,competition,date,journee,equipe_domicile_i
 9671,59,2025-2026,L1_25-26,Ligue 1,2026-03-01,24,296,Lille OSC,194,FC Nantes,1.0,0.0,1.52,4.3,6.5,,,,,,,
 9672,59,2025-2026,L1_25-26,Ligue 1,2026-03-01,24,336,Paris FC,320,OGC Nice,1.0,0.0,2.48,3.43,2.88,,,,,,,
 9673,59,2025-2026,L1_25-26,Ligue 1,2026-02-27,24,354,RC Strasbourg Alsace,352,RC Lens,1.0,1.0,2.28,3.65,3.2,,,,,,,
-9674,59,2025-2026,L1_25-26,Ligue 1,2026-03-01,24,324,Olympique de Marseille,327,Olympique Lyonnais,,,1.98,3.7,3.85,,,,,,,
+9674,59,2025-2026,L1_25-26,Ligue 1,2026-03-01,24,324,Olympique de Marseille,327,Olympique Lyonnais,3.0,2.0,1.98,3.7,3.85,,,,,,,
 9675,59,2025-2026,L1_25-26,Ligue 1,2026-03-07,25,433,Toulouse FC,324,Olympique de Marseille,,,,,,,,,,,,
 9676,59,2025-2026,L1_25-26,Ligue 1,2026-03-08,25,411,Stade Brestois 29,286,Le Havre AC,,,,,,,,,,,,
 9677,59,2025-2026,L1_25-26,Ligue 1,2026-03-08,25,320,OGC Nice,422,Stade Rennais,,,,,,,,,,,,
