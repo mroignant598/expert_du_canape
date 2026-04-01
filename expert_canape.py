@@ -1529,9 +1529,7 @@ def show(tables):
         points_cumules["points_cumulés"] = points_cumules.groupby("participant_nom")["points"].cumsum()
 
         # Retirer les journées où il n'y a pas eu de progression de points (match non joué)
-        points_cumules = (points_cumules.sort_values(["participant_nom", "journee_match"]).assign(diff=lambda df: df.groupby("participant_nom")["points_cumulés"].diff()))
-
-        points_cumules = points_cumules[points_cumules["diff"].fillna(points_cumules["points_cumulés"]) != 0].drop(columns=["diff"])
+        points_cumules = points_cumules.groupby("participant_nom").apply(lambda df: df[df["points_cumulés"].diff().fillna(df["points_cumulés"]) != 0]).reset_index(drop=True)
 
         # Identification du Top 3 global
         top3 = classement.head(3)["participant_nom"].tolist() if "participant_nom" in classement.columns else []
@@ -1638,13 +1636,7 @@ def show(tables):
         joueur_evolution_transpose.loc["Écart avec Leader"] = joueur_evolution_transpose.loc["Écart avec Leader"].apply(lambda x: f"{x:.2f}")
             
         # Appliquer le style avec pandas
-        def style_row(row):
-            return [
-                color_cells(val, row.name)
-                for val in row
-            ]
-
-        styled_table = joueur_evolution_transpose.style.apply(style_row, axis=1)
+        styled_table = joueur_evolution_transpose.style.applymap(lambda val: color_cells(val, joueur_evolution_transpose.index[joueur_evolution_transpose.index.get_loc(val.name)] if hasattr(val, 'name') else ""),)
 
         # Affichage dans Streamlit
         st.dataframe(styled_table, use_container_width=True)
