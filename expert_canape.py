@@ -1529,7 +1529,9 @@ def show(tables):
         points_cumules["points_cumulés"] = points_cumules.groupby("participant_nom")["points"].cumsum()
 
         # Retirer les journées où il n'y a pas eu de progression de points (match non joué)
-        points_cumules = points_cumules.groupby("participant_nom").apply(lambda df: df[df["points_cumulés"].diff().fillna(df["points_cumulés"]) != 0]).reset_index(drop=True)
+        points_cumules = (points_cumules.sort_values(["participant_nom", "journee_match"]).assign(diff=lambda df: df.groupby("participant_nom")["points_cumulés"].diff()))
+
+        points_cumules = points_cumules[points_cumules["diff"].fillna(points_cumules["points_cumulés"]) != 0].drop(columns=["diff"])
 
         # Identification du Top 3 global
         top3 = classement.head(3)["participant_nom"].tolist() if "participant_nom" in classement.columns else []
