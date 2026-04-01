@@ -1636,10 +1636,10 @@ def show(tables):
         joueur_evolution_transpose.loc["Écart avec Leader"] = joueur_evolution_transpose.loc["Écart avec Leader"].apply(lambda x: f"{x:.2f}")
             
         # Appliquer le style avec pandas
-        styled_table = joueur_evolution_transpose.style.applymap(lambda val: color_cells(val, joueur_evolution_transpose.index[joueur_evolution_transpose.index.get_loc(val.name)] if hasattr(val, 'name') else ""),)
+        # styled_table = joueur_evolution_transpose.style.applymap(lambda val: color_cells(val, joueur_evolution_transpose.index[joueur_evolution_transpose.index.get_loc(val.name)] if hasattr(val, 'name') else ""),)
 
         # Affichage dans Streamlit
-        st.dataframe(styled_table, use_container_width=True)
+        #st.dataframe(styled_table, use_container_width=True)
         
         # Journées où au moins un participant a des points > 0
         journees_jouees = df_progress_all.groupby("journee_match")["points"].sum()
