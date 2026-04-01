@@ -1638,7 +1638,13 @@ def show(tables):
         joueur_evolution_transpose.loc["Écart avec Leader"] = joueur_evolution_transpose.loc["Écart avec Leader"].apply(lambda x: f"{x:.2f}")
             
         # Appliquer le style avec pandas
-        styled_table = joueur_evolution_transpose.style.applymap(lambda val: color_cells(val, ""))
+        def style_row(row):
+            return [
+                color_cells(val, row.name)
+                for val in row
+            ]
+
+        styled_table = joueur_evolution_transpose.style.apply(style_row, axis=1)
 
         # Affichage dans Streamlit
         st.dataframe(styled_table, use_container_width=True)
