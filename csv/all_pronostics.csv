@@ -54825,3 +54825,7 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56376,15,Matthieu,Nottingham Forest FC,FC Porto,2,0,12237,14,2025-2026,LE_25-26,
 56377,15,Matthieu,Real Betis Balompié,SC Braga,2,1,12238,14,2025-2026,LE_25-26,
 56378,15,Matthieu,Aston Villa FC,Bologne FC 1909,2,0,12239,14,2025-2026,LE_25-26,
+56379,10,Kévin,Club Atlético de Madrid,FC Barcelone,0,0,12228,14,2025-2026,LdC_25-26,
+56380,10,Kévin,Liverpool FC,Paris Saint Germain,0,0,12229,14,2025-2026,LdC_25-26,
+56381,10,Kévin,Arsenal FC,Sporting CP,1,0,12230,14,2025-2026,LdC_25-26,
+56382,10,Kévin,FC Bayern Munich,Real Madrid CF,0,0,12231,14,2025-2026,LdC_25-26,
