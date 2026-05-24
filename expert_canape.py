@@ -1501,6 +1501,44 @@ def show(tables):
                 df_joueur_journees_display["Multiplicateur"] = df_joueur_journees_display["Multiplicateur"].round(2)
 
                 st.dataframe(df_joueur_journees_display, hide_index=True, use_container_width=True)
+                
+                # --- Top 5 des pires journées du joueur ---
+                st.markdown("### 💀 Top 5 des pires journées")
+
+                # On récupère les scores du joueur par journée
+                df_joueur_pires = (
+                    df_progress_all[df_progress_all["participant_nom"] == participant_sel]
+                    .sort_values(by="points", ascending=True)
+                    .head(5)
+                )
+
+                if df_joueur_pires.empty:
+                    st.info("Aucune journée jouée pour ce participant.")
+                else:
+                    df_joueur_pires_display = df_joueur_pires[
+                        ["journee_match", "points", "bons_pronos", "multiplicateur"]
+                    ].copy()
+
+                    df_joueur_pires_display.rename(columns={
+                        "journee_match": "Journée",
+                        "points": "Points",
+                        "bons_pronos": "Bons pronostics",
+                        "multiplicateur": "Multiplicateur"
+                    }, inplace=True)
+
+                    # Formatage visuel
+                    df_joueur_pires_display["Points"] = (
+                        df_joueur_pires_display["Points"].round(2)
+                    )
+                    df_joueur_pires_display["Multiplicateur"] = (
+                        df_joueur_pires_display["Multiplicateur"].round(2)
+                    )
+
+                    st.dataframe(
+                        df_joueur_pires_display,
+                        hide_index=True,
+                        use_container_width=True
+                    )    
 
             # --- Petit résumé dynamique ---
             moyenne_points = df_joueur_journees["points"].mean() if not df_joueur_journees.empty else 0
@@ -1954,19 +1992,40 @@ def show(tables):
         col_select_pseudo, col_2, col_3, col_4 = st.columns(4)
         with col_select_pseudo:
             st.markdown("### Sélection du participant")
-            # Filtrer les pseudos déjà existants pour la saison et la compétition sélectionnées
-            df_pseudos = tables["all_pronostics"]
-            pseudos_dispo = df_pseudos[
-                (df_pseudos["saison"] == saison_sel) &
-                (df_pseudos["competition_nom"] == competition_sel)
-            ]["participant_nom"].dropna().unique()  # remplacer "pseudo" par le nom de la colonne contenant le pseudo
+
+            # --- Source 1 : pseudos déjà présents dans les pronostics ---
+            df_pronos = tables["all_pronostics"]
+
+            pseudos_pronos = df_pronos[
+                (df_pronos["saison"] == saison_sel) &
+                (df_pronos["competition_nom"] == competition_sel)
+            ]["participant_nom"].dropna().unique().tolist()
+
+            # --- Fusion des pseudos sans doublons ---
+            pseudos_dispo = sorted(list(set(pseudos_pronos)))
+
+            # --- Option d'ajout manuel ---
+            option_ajout = "➕ Ajouter un nouveau pseudo"
 
             if len(pseudos_dispo) == 0:
-                st.warning("Aucun pseudo existant pour cette saison/compétition. Veuillez en créer un manuellement.")
+                st.warning(
+                    "Aucun pseudo existant pour cette saison/compétition."
+                )
                 nom_participant = st.text_input("Nom / Pseudo")
             else:
-                nom_participant = st.selectbox(" 🚀 Pseudo :", sorted(pseudos_dispo))
+                choix_pseudo = st.selectbox(
+                    "🚀 Pseudo :",
+                    pseudos_dispo + [option_ajout]
+                )
 
+                # Si l'utilisateur veut créer un nouveau pseudo
+                if choix_pseudo == option_ajout:
+                    nom_participant = st.text_input(
+                        "Nouveau pseudo :"
+                    )
+                else:
+                    nom_participant = choix_pseudo
+                    
         # Filtrer les matchs
         matchs = df_matchs[
             (df_matchs["saison"] == saison_sel) &
