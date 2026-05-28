@@ -1475,9 +1475,19 @@ def show(tables):
             st.plotly_chart(fig, use_container_width=True)
 
             # --- Statistiques comparatives ---
-            diff_points = df_comparatif["points_cumul_joueur"].iloc[-1] - df_comparatif["points_cumul_moyenne"].iloc[-1]
-            tendance = "au-dessus" if diff_points > 0 else "en dessous"
-            st.markdown(f"💡 **{participant_sel}** est actuellement **{abs(diff_points):.2f} points {tendance}** de la moyenne des participants.")
+            if not df_comparatif.empty:
+                diff_points = (
+                    df_comparatif["points_cumul_joueur"].iloc[-1]
+                    - df_comparatif["points_cumul_moyenne"].iloc[-1]
+                )
+
+                tendance = "au-dessus" if diff_points > 0 else "en dessous"
+
+                st.markdown(
+                    f"💡 **{participant_sel}** est actuellement **{abs(diff_points):.2f} points {tendance}** de la moyenne des participants."
+                )
+            else:
+                st.warning("Pas assez de données pour calculer la comparaison.")
 
         with col_top5:
             # --- Top 5 des meilleures journées du joueur ---
