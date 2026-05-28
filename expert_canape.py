@@ -2026,7 +2026,7 @@ def show(tables):
             else:
                 choix_pseudo = st.selectbox(
                     "🚀 Pseudo :",
-                    pseudos_dispo + [option_ajout]
+                    [option_ajout] + pseudos_dispo
                 )
 
                 # Si l'utilisateur veut créer un nouveau pseudo
