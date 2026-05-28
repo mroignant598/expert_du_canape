@@ -34,35 +34,28 @@ def show(tables):
             integrity="sha512-K..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     """, unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé** !")
+    st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Edition Coupe du Monde** !")
     st.markdown("""
-    Prêt à découvrir qui est **vraiment le boss du terrain** ? 😏⚽  
-    Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
-    Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
-    """)
+    Prêt à montrer qui est le véritable boss du terrain ? 😏⚽
     
-    st.markdown("---")
-    col_historique, col_news = st.columns(2)
-    with col_historique:
-        st.markdown("### 🧮 Historique du calcul des points")
-
-        st.markdown("""
-        **2015-2016** et **2016-2017** : Un bon prono valait **1 point**, un bon score **3 points**, et un mauvais prono **-1 point**.  
-        **2018-2019** : Introduction du système de points basé sur les **côtes des matchs**.  
-        **2022-2023** : Ajout du **bonus pronostiqueur**.  
-        """)
-
-
-    with col_news:
-        st.markdown("### 🚀 Prochainement sur **Expert du Canapé** ...")
-
-        # Afficher la liste avec icône FA
-        st.markdown("""
-            - 🔹 **Ajout des bonus** sur les différentes saisons  <i class="fa-regular fa-circle-check" style="color:green;"></i>
-            - 🏆 Accès aux **archives de la Ligue des Champions**   
-            - 🌍 Accès aux **matchs internationaux**  
-            - ✍️ **Insertion directe des pronos** sur l’appli  <i class="fa-regular fa-circle-check" style="color:green;"></i>
-        """, unsafe_allow_html=True)
+    Voici comment fonctionne l’application : c’est très simple. Clique sur le rectangle vert « Les Experts du canapé » pour accéder à une première page regroupant les résultats de tous les participants.
+    
+    Ensuite, rends-toi dans l’onglet « Insertion Pronos » pour saisir tes pronostics. Pour la première journée, commence par entrer un pseudo, puis complète les scores dans le tableau en dessous et valide en cliquant sur « Soumettre mes pronostics ».
+    Attend d'avoir le message de validation avant de fermer la page 😏
+    
+    Pour les journées suivantes, il te suffira simplement de sélectionner ton pseudo dans la liste déroulante.
+    
+       
+    **🧮 Calcul des points** : Les points attribués à chaque match sont calculés à partir des cotes réelles, auxquelles s’applique un multiplicateur en fonction de tes pronostics.
+    Ce multiplicateur dépend de la précision de tes choix : bon score exact, bon vainqueur, bon écart et match prolifique (4 buts et plus).
+    
+    
+    Les résultats seront mis à jour chaque jour pour avoir un classement quasiment en temps réel !
+    
+    PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏   
+    """)
+    #Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
+    #Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
 
     st.markdown("---")
 
@@ -210,8 +203,31 @@ def show(tables):
 
     st.markdown("<hr style='border:1px solid #444444; margin: 2rem 0;'>", unsafe_allow_html=True)
 
+
+    col_historique, col_news = st.columns(2)
+    with col_historique:
+        st.markdown("### 🧮 Historique du calcul des points")
+
+        st.markdown("""
+        **2015-2016** et **2016-2017** : Un bon prono valait **1 point**, un bon score **3 points**, et un mauvais prono **-1 point**.  
+        **2018-2019** : Introduction du système de points basé sur les **côtes des matchs**.  
+        **2022-2023** : Ajout du **bonus pronostiqueur**.  
+        """)
+
+
+    with col_news:
+        st.markdown("### 🚀 Prochainement sur **Expert du Canapé** ...")
+
+        # Afficher la liste avec icône FA
+        st.markdown("""
+            - 🔹 **Ajout des bonus** sur les différentes saisons  <i class="fa-regular fa-circle-check" style="color:green;"></i>
+            - 🏆 Accès aux **archives de la Ligue des Champions**   
+            - 🌍 Accès aux **matchs internationaux**  
+            - ✍️ **Insertion directe des pronos** sur l’appli  <i class="fa-regular fa-circle-check" style="color:green;"></i>
+        """, unsafe_allow_html=True)
+        
     # =======================
     # Aperçu du fichier matchs
     # =======================
-    st.subheader("📋 Aperçu des matchs")
-    st.dataframe(df_matchs.sample(10), use_container_width=True, hide_index=True)
+    #st.subheader("📋 Aperçu des matchs")
+    #st.dataframe(df_matchs.sample(10), use_container_width=True, hide_index=True)
