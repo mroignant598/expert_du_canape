@@ -55161,10 +55161,21 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56712,26,Merguez,Angleterre,Croatie,2,1,12271,1,2025-2026,CDM_26,Coupe du Monde
 56713,26,Merguez,Ghana,Panama,2,2,12272,1,2025-2026,CDM_26,Coupe du Monde
 56714,26,Merguez,Ouzbékistan,Colombie,0,4,12273,1,2025-2026,CDM_26,Coupe du Monde
-56715,15,Matthieu,France,France,0,0,12322,0,2025-2026,CDM_26,
-56716,26,Merguez,France,France,0,0,12322,0,2025-2026,CDM_26,
-56717,21,Sébastien,France,France,0,0,12322,0,2025-2026,CDM_26,
-56718,10,Kévin,France,France,0,0,12322,0,2025-2026,CDM_26,
-56719,17,Olivier,France,France,0,0,12322,0,2025-2026,CDM_26,
-56720,18,Pierre,France,France,0,0,12322,0,2025-2026,CDM_26,
-56721,5,Cédric,France,France,0,0,12322,0,2025-2026,CDM_26,
+56715,15,Matthieu,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56716,26,Merguez,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56717,21,Sébastien,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56718,10,Kévin,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56719,17,Olivier,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56720,18,Pierre,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56721,5,Cédric,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56722,10,Kévin,Newcastle United FC,Qarabag FK,2,0,12152,10,2025-2026,58,Ligue des Champions
+56723,10,Kévin,Inter Milan,FK Bodo/Glimt,3,0,12153,10,2025-2026,58,Ligue des Champions
+56724,10,Kévin,Club Atlético de Madrid,Club Brugge KV,3,1,12154,10,2025-2026,58,Ligue des Champions
+56725,10,Kévin,Bayer 04 Leverkusen,Olympiakos,1,1,12155,10,2025-2026,58,Ligue des Champions
+56726,10,Kévin,Juventus FC,Galatasaray SK,2,0,12156,10,2025-2026,58,Ligue des Champions
+56727,10,Kévin,Real Madrid CF,SL Benfica,2,0,12157,10,2025-2026,58,Ligue des Champions
+56728,10,Kévin,Atalanta Bergame,Borussia Dortmund,1,1,12158,10,2025-2026,58,Ligue des Champions
+56729,10,Kévin,Paris Saint Germain,AS Monaco,3,0,12159,10,2025-2026,58,Ligue des Champions
+56730,15,Matthieu,FC Bayern Munich,Arsenal FC,1,2,12243,16,2025-2026,58,Ligue des Champions
+56731,10,Kévin,FC Bayern Munich,Arsenal FC,1,1,12243,16,2025-2026,58,Ligue des Champions
+56732,10,Kévin,Paris Saint Germain,Arsenal FC,3,1,12249,17,2025-2026,58,Ligue des Champions
