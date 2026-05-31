@@ -34,28 +34,45 @@ def show(tables):
             integrity="sha512-K..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     """, unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Edition Coupe du Monde** !")
-    st.markdown("""
-    Prêt à montrer qui est le véritable boss du terrain ? 😏⚽
-    
-    Voici comment fonctionne l’application : c’est très simple. Clique sur le rectangle vert « Les Experts du canapé » pour accéder à une première page regroupant les résultats de tous les participants.
-    
-    Ensuite, rends-toi dans l’onglet « Insertion Pronos » pour saisir tes pronostics. Pour la première journée, commence par entrer un pseudo, puis complète les scores dans le tableau en dessous et valide en cliquant sur « Soumettre mes pronostics ».
-    Attend d'avoir le message de validation avant de fermer la page 😏
-    
-    Pour les journées suivantes, il te suffira simplement de sélectionner ton pseudo dans la liste déroulante.
-    
-       
-    **🧮 Calcul des points** : Les points attribués à chaque match sont calculés à partir des cotes réelles, auxquelles s’applique un multiplicateur en fonction de tes pronostics.
-    Ce multiplicateur dépend de la précision de tes choix : bon score exact, bon vainqueur, bon écart et match prolifique (4 buts et plus).
-    
-    
-    Les résultats seront mis à jour chaque jour pour avoir un classement quasiment en temps réel !
-    
-    PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏   
-    """)
-    #Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
-    #Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
+    col_consigne, col_calendrier = st.columns([3,1], gap="large")
+    with col_consigne:
+        st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Edition Coupe du Monde** !")
+        st.markdown("""
+        Prêt à montrer qui est le véritable boss du terrain ? 😏⚽
+        
+        Voici comment fonctionne l’application : c’est très simple. Clique sur le rectangle vert « Les Experts du canapé » pour accéder à une première page regroupant les résultats de tous les participants.
+        
+        Ensuite, rends-toi dans l’onglet « Insertion Pronos » pour saisir tes pronostics. Pour la première journée, commence par entrer un pseudo, puis complète les scores dans le tableau en dessous et valide en cliquant sur « Soumettre mes pronostics ».
+        Attend d'avoir le message de validation avant de fermer la page 😏
+        
+        Pour les journées suivantes, il te suffira simplement de sélectionner ton pseudo dans la liste déroulante.
+        
+        
+        **🧮 Calcul des points** : Les points attribués à chaque match sont calculés à partir des cotes réelles, auxquelles s’applique un multiplicateur en fonction de tes pronostics.
+        Ce multiplicateur dépend de la précision de tes choix : bon score exact, bon vainqueur, bon écart et match prolifique (4 buts et plus).
+        
+        
+        Les résultats seront mis à jour chaque jour pour avoir un classement quasiment en temps réel !
+        
+        PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏   
+        """)
+        #Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
+        #Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
+        
+    with col_calendrier:
+        st.markdown("## 📆 **Calendrier** ")
+        st.markdown("""
+        - Journée 1 : 11 juin au 18 juin
+        - Journée 2 : 18 juin au 24 juin
+        - Journée 3 : 24 juin au 28 juin
+        - 16èmes : 28 juin au 4 juillet
+        - 8èmes : 4 juillet au 7 juillet
+        - Quarts : 9 juillet au 12 juillet
+        - Demies : 14 juillet au 15 juillet 
+        - Match pour la 3ème place : 18 juillet
+        - Finale : 19 juillet
+        
+        """)        
 
     st.markdown("---")
 

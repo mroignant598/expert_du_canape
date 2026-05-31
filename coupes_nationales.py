@@ -59,10 +59,10 @@ def show(tables):
 
     # ----- Affichage par phases -----
     phases = ["1/128 de finale", "1/64 de finale", "1/32 de finale", "Premier tour",
-                "Deuxième tour", "Seizièmes", "Huitièmes", "Quarts", "Demies", "Finale"]
+                "Deuxième tour", "Seizièmes", "Huitièmes", "Quarts", "Demies", "Petite Finale", "Finale"]
     hauteur_phase = {"1/128 de finale":1000, "1/64 de finale":600, "1/32 de finale":400,
                     "Premier tour":250, "Deuxième tour":250, "Seizièmes":600,
-                    "Huitièmes":310, "Quarts":180, "Demies":120, "Finale":80}
+                    "Huitièmes":310, "Quarts":180, "Demies":120, "Petite Finale": 120, "Finale":80}
 
     for phase in phases:
         df_phase = df[df['phase'] == phase]
