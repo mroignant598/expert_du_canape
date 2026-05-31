@@ -30,7 +30,7 @@ def navigate_to(page):
 menu_items = [
     {"label": "🏠 Accueil", "page": "Accueil", "color": ("#2196F3", "#022B5A")},
     {"label": "🏅 Les Experts du Canapé", "page": "Expert Canapé", "color": ("#4CAF50", "#035707")},
-    {"label": "⚽ Classements", "page": "Championnat", "color": ("#FF9800", "#8D4803")},
+#    {"label": "⚽ Classements", "page": "Championnat", "color": ("#FF9800", "#8D4803")},
 ]
 
 # === Navbar horizontale avec stylable_container ===
@@ -71,6 +71,6 @@ if st.session_state.page == "Accueil":
     page0.show(tables)
 elif st.session_state.page == "Expert Canapé":
     page1.show(tables)
-elif st.session_state.page == "Championnat":
-    page2.show(tables)
+#elif st.session_state.page == "Championnat":
+#    page2.show(tables)
 

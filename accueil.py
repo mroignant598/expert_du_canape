@@ -71,7 +71,6 @@ def show(tables):
         - Demies : 14 juillet au 15 juillet 
         - Match pour la 3ème place : 18 juillet
         - Finale : 19 juillet
-        
         """)        
 
     st.markdown("---")
