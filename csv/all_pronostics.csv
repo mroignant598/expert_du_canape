@@ -55169,3 +55169,27 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56720,18,Pierre,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
 56721,5,Cédric,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
 56732,10,Kévin,Paris Saint Germain,Arsenal FC,3,1,12249,17,2025-2026,LdC_25-26,Ligue des Champions
+56753,27,Thif Thif,Mexique,Afrique Du Sud,0,1,12251,1,2025-2026,62,Coupe du Monde
+56754,27,Thif Thif,Corée Du Sud,République Tchèque,1,0,12252,1,2025-2026,62,Coupe du Monde
+56755,27,Thif Thif,Canada,Bosnie-Herzégovine,1,2,12253,1,2025-2026,62,Coupe du Monde
+56756,27,Thif Thif,Qatar,Suisse,1,2,12254,1,2025-2026,62,Coupe du Monde
+56757,27,Thif Thif,Brésil,Maroc,2,2,12255,1,2025-2026,62,Coupe du Monde
+56758,27,Thif Thif,Haîti,Ecosse,0,1,12256,1,2025-2026,62,Coupe du Monde
+56759,27,Thif Thif,Australie,Turquie,1,2,12257,1,2025-2026,62,Coupe du Monde
+56760,27,Thif Thif,Allemagne,Curaçao,3,0,12258,1,2025-2026,62,Coupe du Monde
+56761,27,Thif Thif,Pays-Bas,Japon,2,1,12259,1,2025-2026,62,Coupe du Monde
+56762,27,Thif Thif,Côte D'Ivoire,Equateur,2,0,12260,1,2025-2026,62,Coupe du Monde
+56763,27,Thif Thif,Suède,Tunisie,1,2,12261,1,2025-2026,62,Coupe du Monde
+56764,27,Thif Thif,Espagne,Cap Vert,3,1,12262,1,2025-2026,62,Coupe du Monde
+56765,27,Thif Thif,Belgique,Egypte,2,0,12263,1,2025-2026,62,Coupe du Monde
+56766,27,Thif Thif,Arabie Saoudite,Uruguay,1,1,12264,1,2025-2026,62,Coupe du Monde
+56767,27,Thif Thif,Iran,Nouvelle-Zélande,0,1,12265,1,2025-2026,62,Coupe du Monde
+56768,27,Thif Thif,France,Sénégal,1,2,12266,1,2025-2026,62,Coupe du Monde
+56769,27,Thif Thif,Irak,Norvège,1,1,12267,1,2025-2026,62,Coupe du Monde
+56770,27,Thif Thif,Argentine,Algérie,2,1,12268,1,2025-2026,62,Coupe du Monde
+56771,27,Thif Thif,Autriche,Jordanie,1,0,12269,1,2025-2026,62,Coupe du Monde
+56772,27,Thif Thif,Portugal,RD Congo,2,0,12270,1,2025-2026,62,Coupe du Monde
+56773,27,Thif Thif,Angleterre,Croatie,1,2,12271,1,2025-2026,62,Coupe du Monde
+56774,27,Thif Thif,Ghana,Panama,2,1,12272,1,2025-2026,62,Coupe du Monde
+56775,27,Thif Thif,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,62,Coupe du Monde
+56776,27,Thif Thif,Etats-Unis,Paraguay,1,1,12323,1,2025-2026,62,Coupe du Monde
