@@ -55194,3 +55194,51 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56775,27,Thif Thif,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,62,Coupe du Monde
 56776,27,Thif Thif,Etats-Unis,Paraguay,1,1,12323,1,2025-2026,62,Coupe du Monde
 56777,27,Thif Thif,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
+56778,10,Kévin,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,62,Coupe du Monde
+56779,10,Kévin,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,62,Coupe du Monde
+56780,10,Kévin,Canada,Bosnie-Herzégovine,2,1,12253,1,2025-2026,62,Coupe du Monde
+56781,10,Kévin,Qatar,Suisse,0,3,12254,1,2025-2026,62,Coupe du Monde
+56782,10,Kévin,Brésil,Maroc,3,0,12255,1,2025-2026,62,Coupe du Monde
+56783,10,Kévin,Haîti,Ecosse,0,2,12256,1,2025-2026,62,Coupe du Monde
+56784,10,Kévin,Australie,Turquie,1,1,12257,1,2025-2026,62,Coupe du Monde
+56785,10,Kévin,Allemagne,Curaçao,7,0,12258,1,2025-2026,62,Coupe du Monde
+56786,10,Kévin,Pays-Bas,Japon,3,0,12259,1,2025-2026,62,Coupe du Monde
+56787,10,Kévin,Côte D'Ivoire,Equateur,1,1,12260,1,2025-2026,62,Coupe du Monde
+56788,10,Kévin,Suède,Tunisie,2,1,12261,1,2025-2026,62,Coupe du Monde
+56789,10,Kévin,Espagne,Cap Vert,7,0,12262,1,2025-2026,62,Coupe du Monde
+56790,10,Kévin,Belgique,Egypte,2,0,12263,1,2025-2026,62,Coupe du Monde
+56791,10,Kévin,Arabie Saoudite,Uruguay,0,2,12264,1,2025-2026,62,Coupe du Monde
+56792,10,Kévin,Iran,Nouvelle-Zélande,2,1,12265,1,2025-2026,62,Coupe du Monde
+56793,10,Kévin,France,Sénégal,2,0,12266,1,2025-2026,62,Coupe du Monde
+56794,10,Kévin,Irak,Norvège,0,3,12267,1,2025-2026,62,Coupe du Monde
+56795,10,Kévin,Argentine,Algérie,3,1,12268,1,2025-2026,62,Coupe du Monde
+56796,10,Kévin,Autriche,Jordanie,2,0,12269,1,2025-2026,62,Coupe du Monde
+56797,10,Kévin,Portugal,RD Congo,4,0,12270,1,2025-2026,62,Coupe du Monde
+56798,10,Kévin,Angleterre,Croatie,1,0,12271,1,2025-2026,62,Coupe du Monde
+56799,10,Kévin,Ghana,Panama,1,1,12272,1,2025-2026,62,Coupe du Monde
+56800,10,Kévin,Ouzbékistan,Colombie,0,2,12273,1,2025-2026,62,Coupe du Monde
+56801,10,Kévin,Etats-Unis,Paraguay,2,0,12323,1,2025-2026,62,Coupe du Monde
+56802,17,Olivier,Mexique,Afrique Du Sud,1,0,12251,1,2025-2026,62,Coupe du Monde
+56803,17,Olivier,Corée Du Sud,République Tchèque,0,2,12252,1,2025-2026,62,Coupe du Monde
+56804,17,Olivier,Canada,Bosnie-Herzégovine,2,1,12253,1,2025-2026,62,Coupe du Monde
+56805,17,Olivier,Qatar,Suisse,0,3,12254,1,2025-2026,62,Coupe du Monde
+56806,17,Olivier,Brésil,Maroc,1,1,12255,1,2025-2026,62,Coupe du Monde
+56807,17,Olivier,Haîti,Ecosse,0,4,12256,1,2025-2026,62,Coupe du Monde
+56808,17,Olivier,Australie,Turquie,0,1,12257,1,2025-2026,62,Coupe du Monde
+56809,17,Olivier,Allemagne,Curaçao,5,0,12258,1,2025-2026,62,Coupe du Monde
+56810,17,Olivier,Pays-Bas,Japon,2,2,12259,1,2025-2026,62,Coupe du Monde
+56811,17,Olivier,Côte D'Ivoire,Equateur,1,0,12260,1,2025-2026,62,Coupe du Monde
+56812,17,Olivier,Suède,Tunisie,2,0,12261,1,2025-2026,62,Coupe du Monde
+56813,17,Olivier,Espagne,Cap Vert,4,0,12262,1,2025-2026,62,Coupe du Monde
+56814,17,Olivier,Belgique,Egypte,2,1,12263,1,2025-2026,62,Coupe du Monde
+56815,17,Olivier,Arabie Saoudite,Uruguay,0,1,12264,1,2025-2026,62,Coupe du Monde
+56816,17,Olivier,Iran,Nouvelle-Zélande,0,0,12265,1,2025-2026,62,Coupe du Monde
+56817,17,Olivier,France,Sénégal,2,0,12266,1,2025-2026,62,Coupe du Monde
+56818,17,Olivier,Irak,Norvège,1,2,12267,1,2025-2026,62,Coupe du Monde
+56819,17,Olivier,Argentine,Algérie,1,0,12268,1,2025-2026,62,Coupe du Monde
+56820,17,Olivier,Autriche,Jordanie,3,0,12269,1,2025-2026,62,Coupe du Monde
+56821,17,Olivier,Portugal,RD Congo,3,1,12270,1,2025-2026,62,Coupe du Monde
+56822,17,Olivier,Angleterre,Croatie,2,2,12271,1,2025-2026,62,Coupe du Monde
+56823,17,Olivier,Ghana,Panama,1,0,12272,1,2025-2026,62,Coupe du Monde
+56824,17,Olivier,Ouzbékistan,Colombie,0,3,12273,1,2025-2026,62,Coupe du Monde
+56825,17,Olivier,Etats-Unis,Paraguay,2,2,12323,1,2025-2026,62,Coupe du Monde
