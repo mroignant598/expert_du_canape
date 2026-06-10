@@ -870,7 +870,7 @@ def show(tables):
         GROUPES_CLASSEMENT = {
             "Classement global": None,
             "Les experts du Canapé": ["Matthieu", "Kévin", "Olivier", "Cédric", "Sébastien", "Pierre"],
-            "Les hasards de dingue": ["Matthieu", "Merguez", "Mélanie", "Sam", "Thifanie"]
+            "Les hasards de dingue": ["Matthieu", "Merguez", "Meemway", "Bebou", "Goustine", "Thif Thif"]
         }
         
         st.subheader(f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
