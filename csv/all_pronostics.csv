@@ -55314,3 +55314,147 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56895,28,Bebou,Ghana,Panama,2,0,12272,1,2025-2026,62,Coupe du Monde
 56896,28,Bebou,Ouzbékistan,Colombie,0,2,12273,1,2025-2026,62,Coupe du Monde
 56897,28,Bebou,Etats-Unis,Paraguay,2,0,12323,1,2025-2026,62,Coupe du Monde
+56898,29,Meemway,Mexique,Afrique Du Sud,2,0,12251,1,2025-2026,62,Coupe du Monde
+56899,29,Meemway,Corée Du Sud,République Tchèque,1,2,12252,1,2025-2026,62,Coupe du Monde
+56900,29,Meemway,Canada,Bosnie-Herzégovine,2,1,12253,1,2025-2026,62,Coupe du Monde
+56901,29,Meemway,Qatar,Suisse,0,2,12254,1,2025-2026,62,Coupe du Monde
+56902,29,Meemway,Brésil,Maroc,2,1,12255,1,2025-2026,62,Coupe du Monde
+56903,29,Meemway,Haîti,Ecosse,0,2,12256,1,2025-2026,62,Coupe du Monde
+56904,29,Meemway,Australie,Turquie,1,2,12257,1,2025-2026,62,Coupe du Monde
+56905,29,Meemway,Allemagne,Curaçao,4,0,12258,1,2025-2026,62,Coupe du Monde
+56906,29,Meemway,Pays-Bas,Japon,2,2,12259,1,2025-2026,62,Coupe du Monde
+56907,29,Meemway,Côte D'Ivoire,Equateur,1,1,12260,1,2025-2026,62,Coupe du Monde
+56908,29,Meemway,Suède,Tunisie,2,0,12261,1,2025-2026,62,Coupe du Monde
+56909,29,Meemway,Espagne,Cap Vert,3,0,12262,1,2025-2026,62,Coupe du Monde
+56910,29,Meemway,Belgique,Egypte,3,1,12263,1,2025-2026,62,Coupe du Monde
+56911,29,Meemway,Arabie Saoudite,Uruguay,0,2,12264,1,2025-2026,62,Coupe du Monde
+56912,29,Meemway,Iran,Nouvelle-Zélande,1,0,12265,1,2025-2026,62,Coupe du Monde
+56913,29,Meemway,France,Sénégal,2,1,12266,1,2025-2026,62,Coupe du Monde
+56914,29,Meemway,Irak,Norvège,0,3,12267,1,2025-2026,62,Coupe du Monde
+56915,29,Meemway,Argentine,Algérie,2,0,12268,1,2025-2026,62,Coupe du Monde
+56916,29,Meemway,Autriche,Jordanie,3,0,12269,1,2025-2026,62,Coupe du Monde
+56917,29,Meemway,Portugal,RD Congo,3,1,12270,1,2025-2026,62,Coupe du Monde
+56918,29,Meemway,Angleterre,Croatie,1,0,12271,1,2025-2026,62,Coupe du Monde
+56919,29,Meemway,Ghana,Panama,2,0,12272,1,2025-2026,62,Coupe du Monde
+56920,29,Meemway,Ouzbékistan,Colombie,1,3,12273,1,2025-2026,62,Coupe du Monde
+56921,29,Meemway,Etats-Unis,Paraguay,2,0,12323,1,2025-2026,62,Coupe du Monde
+56922,31,Jean-Marc,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,62,Coupe du Monde
+56923,31,Jean-Marc,Corée Du Sud,République Tchèque,0,2,12252,1,2025-2026,62,Coupe du Monde
+56924,31,Jean-Marc,Canada,Bosnie-Herzégovine,1,1,12253,1,2025-2026,62,Coupe du Monde
+56925,31,Jean-Marc,Qatar,Suisse,0,2,12254,1,2025-2026,62,Coupe du Monde
+56926,31,Jean-Marc,Brésil,Maroc,2,2,12255,1,2025-2026,62,Coupe du Monde
+56927,31,Jean-Marc,Haîti,Ecosse,1,3,12256,1,2025-2026,62,Coupe du Monde
+56928,31,Jean-Marc,Australie,Turquie,1,2,12257,1,2025-2026,62,Coupe du Monde
+56929,31,Jean-Marc,Allemagne,Curaçao,3,0,12258,1,2025-2026,62,Coupe du Monde
+56930,31,Jean-Marc,Pays-Bas,Japon,2,1,12259,1,2025-2026,62,Coupe du Monde
+56931,31,Jean-Marc,Côte D'Ivoire,Equateur,4,0,12260,1,2025-2026,62,Coupe du Monde
+56932,31,Jean-Marc,Suède,Tunisie,3,1,12261,1,2025-2026,62,Coupe du Monde
+56933,31,Jean-Marc,Espagne,Cap Vert,4,0,12262,1,2025-2026,62,Coupe du Monde
+56934,31,Jean-Marc,Belgique,Egypte,2,1,12263,1,2025-2026,62,Coupe du Monde
+56935,31,Jean-Marc,Arabie Saoudite,Uruguay,0,2,12264,1,2025-2026,62,Coupe du Monde
+56936,31,Jean-Marc,Iran,Nouvelle-Zélande,1,1,12265,1,2025-2026,62,Coupe du Monde
+56937,31,Jean-Marc,France,Sénégal,2,0,12266,1,2025-2026,62,Coupe du Monde
+56938,31,Jean-Marc,Irak,Norvège,0,2,12267,1,2025-2026,62,Coupe du Monde
+56939,31,Jean-Marc,Argentine,Algérie,3,1,12268,1,2025-2026,62,Coupe du Monde
+56940,31,Jean-Marc,Autriche,Jordanie,2,0,12269,1,2025-2026,62,Coupe du Monde
+56941,31,Jean-Marc,Portugal,RD Congo,5,0,12270,1,2025-2026,62,Coupe du Monde
+56942,31,Jean-Marc,Angleterre,Croatie,2,1,12271,1,2025-2026,62,Coupe du Monde
+56943,31,Jean-Marc,Ghana,Panama,2,2,12272,1,2025-2026,62,Coupe du Monde
+56944,31,Jean-Marc,Ouzbékistan,Colombie,0,3,12273,1,2025-2026,62,Coupe du Monde
+56945,31,Jean-Marc,Etats-Unis,Paraguay,1,2,12323,1,2025-2026,62,Coupe du Monde
+56946,32,Fatoche,Mexique,Afrique Du Sud,2,3,12251,1,2025-2026,62,Coupe du Monde
+56947,32,Fatoche,Corée Du Sud,République Tchèque,2,3,12252,1,2025-2026,62,Coupe du Monde
+56948,32,Fatoche,Canada,Bosnie-Herzégovine,1,1,12253,1,2025-2026,62,Coupe du Monde
+56949,32,Fatoche,Qatar,Suisse,2,1,12254,1,2025-2026,62,Coupe du Monde
+56950,32,Fatoche,Brésil,Maroc,3,2,12255,1,2025-2026,62,Coupe du Monde
+56951,32,Fatoche,Haîti,Ecosse,1,2,12256,1,2025-2026,62,Coupe du Monde
+56952,32,Fatoche,Australie,Turquie,2,2,12257,1,2025-2026,62,Coupe du Monde
+56953,32,Fatoche,Allemagne,Curaçao,4,0,12258,1,2025-2026,62,Coupe du Monde
+56954,32,Fatoche,Pays-Bas,Japon,2,0,12259,1,2025-2026,62,Coupe du Monde
+56955,32,Fatoche,Côte D'Ivoire,Equateur,1,1,12260,1,2025-2026,62,Coupe du Monde
+56956,32,Fatoche,Suède,Tunisie,2,2,12261,1,2025-2026,62,Coupe du Monde
+56957,32,Fatoche,Espagne,Cap Vert,3,0,12262,1,2025-2026,62,Coupe du Monde
+56958,32,Fatoche,Belgique,Egypte,3,2,12263,1,2025-2026,62,Coupe du Monde
+56959,32,Fatoche,Arabie Saoudite,Uruguay,2,2,12264,1,2025-2026,62,Coupe du Monde
+56960,32,Fatoche,Iran,Nouvelle-Zélande,1,2,12265,1,2025-2026,62,Coupe du Monde
+56961,32,Fatoche,France,Sénégal,4,2,12266,1,2025-2026,62,Coupe du Monde
+56962,32,Fatoche,Irak,Norvège,2,2,12267,1,2025-2026,62,Coupe du Monde
+56963,32,Fatoche,Argentine,Algérie,3,4,12268,1,2025-2026,62,Coupe du Monde
+56964,32,Fatoche,Autriche,Jordanie,4,2,12269,1,2025-2026,62,Coupe du Monde
+56965,32,Fatoche,Portugal,RD Congo,3,1,12270,1,2025-2026,62,Coupe du Monde
+56966,32,Fatoche,Angleterre,Croatie,3,2,12271,1,2025-2026,62,Coupe du Monde
+56967,32,Fatoche,Ghana,Panama,1,1,12272,1,2025-2026,62,Coupe du Monde
+56968,32,Fatoche,Ouzbékistan,Colombie,1,2,12273,1,2025-2026,62,Coupe du Monde
+56969,32,Fatoche,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,62,Coupe du Monde
+56970,5,Cédric,Mexique,Afrique Du Sud,2,0,12251,1,2025-2026,62,Coupe du Monde
+56971,5,Cédric,Corée Du Sud,République Tchèque,1,0,12252,1,2025-2026,62,Coupe du Monde
+56972,5,Cédric,Canada,Bosnie-Herzégovine,2,1,12253,1,2025-2026,62,Coupe du Monde
+56973,5,Cédric,Qatar,Suisse,0,2,12254,1,2025-2026,62,Coupe du Monde
+56974,5,Cédric,Brésil,Maroc,1,0,12255,1,2025-2026,62,Coupe du Monde
+56975,5,Cédric,Haîti,Ecosse,0,2,12256,1,2025-2026,62,Coupe du Monde
+56976,5,Cédric,Australie,Turquie,1,1,12257,1,2025-2026,62,Coupe du Monde
+56977,5,Cédric,Allemagne,Curaçao,5,0,12258,1,2025-2026,62,Coupe du Monde
+56978,5,Cédric,Pays-Bas,Japon,2,1,12259,1,2025-2026,62,Coupe du Monde
+56979,5,Cédric,Côte D'Ivoire,Equateur,2,1,12260,1,2025-2026,62,Coupe du Monde
+56980,5,Cédric,Suède,Tunisie,1,0,12261,1,2025-2026,62,Coupe du Monde
+56981,5,Cédric,Espagne,Cap Vert,5,0,12262,1,2025-2026,62,Coupe du Monde
+56982,5,Cédric,Belgique,Egypte,2,1,12263,1,2025-2026,62,Coupe du Monde
+56983,5,Cédric,Arabie Saoudite,Uruguay,0,2,12264,1,2025-2026,62,Coupe du Monde
+56984,5,Cédric,Iran,Nouvelle-Zélande,1,0,12265,1,2025-2026,62,Coupe du Monde
+56985,5,Cédric,France,Sénégal,1,0,12266,1,2025-2026,62,Coupe du Monde
+56986,5,Cédric,Irak,Norvège,0,2,12267,1,2025-2026,62,Coupe du Monde
+56987,5,Cédric,Argentine,Algérie,2,1,12268,1,2025-2026,62,Coupe du Monde
+56988,5,Cédric,Autriche,Jordanie,1,0,12269,1,2025-2026,62,Coupe du Monde
+56989,5,Cédric,Portugal,RD Congo,3,1,12270,1,2025-2026,62,Coupe du Monde
+56990,5,Cédric,Angleterre,Croatie,2,1,12271,1,2025-2026,62,Coupe du Monde
+56991,5,Cédric,Ghana,Panama,2,0,12272,1,2025-2026,62,Coupe du Monde
+56992,5,Cédric,Ouzbékistan,Colombie,0,3,12273,1,2025-2026,62,Coupe du Monde
+56993,5,Cédric,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,62,Coupe du Monde
+56994,30,Juju,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,62,Coupe du Monde
+56995,30,Juju,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,62,Coupe du Monde
+56996,30,Juju,Canada,Bosnie-Herzégovine,2,0,12253,1,2025-2026,62,Coupe du Monde
+56997,30,Juju,Qatar,Suisse,0,2,12254,1,2025-2026,62,Coupe du Monde
+56998,30,Juju,Brésil,Maroc,3,0,12255,1,2025-2026,62,Coupe du Monde
+56999,30,Juju,Haîti,Ecosse,1,3,12256,1,2025-2026,62,Coupe du Monde
+57000,30,Juju,Australie,Turquie,2,0,12257,1,2025-2026,62,Coupe du Monde
+57001,30,Juju,Allemagne,Curaçao,3,0,12258,1,2025-2026,62,Coupe du Monde
+57002,30,Juju,Pays-Bas,Japon,2,1,12259,1,2025-2026,62,Coupe du Monde
+57003,30,Juju,Côte D'Ivoire,Equateur,1,0,12260,1,2025-2026,62,Coupe du Monde
+57004,30,Juju,Suède,Tunisie,3,1,12261,1,2025-2026,62,Coupe du Monde
+57005,30,Juju,Espagne,Cap Vert,5,0,12262,1,2025-2026,62,Coupe du Monde
+57006,30,Juju,Belgique,Egypte,2,1,12263,1,2025-2026,62,Coupe du Monde
+57007,30,Juju,Arabie Saoudite,Uruguay,1,1,12264,1,2025-2026,62,Coupe du Monde
+57008,30,Juju,Iran,Nouvelle-Zélande,0,4,12265,1,2025-2026,62,Coupe du Monde
+57009,30,Juju,France,Sénégal,4,0,12266,1,2025-2026,62,Coupe du Monde
+57010,30,Juju,Irak,Norvège,0,3,12267,1,2025-2026,62,Coupe du Monde
+57011,30,Juju,Argentine,Algérie,2,1,12268,1,2025-2026,62,Coupe du Monde
+57012,30,Juju,Autriche,Jordanie,2,0,12269,1,2025-2026,62,Coupe du Monde
+57013,30,Juju,Portugal,RD Congo,3,0,12270,1,2025-2026,62,Coupe du Monde
+57014,30,Juju,Angleterre,Croatie,3,2,12271,1,2025-2026,62,Coupe du Monde
+57015,30,Juju,Ghana,Panama,0,1,12272,1,2025-2026,62,Coupe du Monde
+57016,30,Juju,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,62,Coupe du Monde
+57017,30,Juju,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,62,Coupe du Monde
+57018,33,Claire,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,62,Coupe du Monde
+57019,33,Claire,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,62,Coupe du Monde
+57020,33,Claire,Canada,Bosnie-Herzégovine,0,1,12253,1,2025-2026,62,Coupe du Monde
+57021,33,Claire,Qatar,Suisse,1,2,12254,1,2025-2026,62,Coupe du Monde
+57022,33,Claire,Brésil,Maroc,3,2,12255,1,2025-2026,62,Coupe du Monde
+57023,33,Claire,Haîti,Ecosse,0,2,12256,1,2025-2026,62,Coupe du Monde
+57024,33,Claire,Australie,Turquie,2,2,12257,1,2025-2026,62,Coupe du Monde
+57025,33,Claire,Allemagne,Curaçao,4,0,12258,1,2025-2026,62,Coupe du Monde
+57026,33,Claire,Pays-Bas,Japon,3,1,12259,1,2025-2026,62,Coupe du Monde
+57027,33,Claire,Côte D'Ivoire,Equateur,2,1,12260,1,2025-2026,62,Coupe du Monde
+57028,33,Claire,Suède,Tunisie,2,1,12261,1,2025-2026,62,Coupe du Monde
+57029,33,Claire,Espagne,Cap Vert,3,0,12262,1,2025-2026,62,Coupe du Monde
+57030,33,Claire,Belgique,Egypte,2,1,12263,1,2025-2026,62,Coupe du Monde
+57031,33,Claire,Arabie Saoudite,Uruguay,1,3,12264,1,2025-2026,62,Coupe du Monde
+57032,33,Claire,Iran,Nouvelle-Zélande,1,1,12265,1,2025-2026,62,Coupe du Monde
+57033,33,Claire,France,Sénégal,2,1,12266,1,2025-2026,62,Coupe du Monde
+57034,33,Claire,Irak,Norvège,0,1,12267,1,2025-2026,62,Coupe du Monde
+57035,33,Claire,Argentine,Algérie,3,2,12268,1,2025-2026,62,Coupe du Monde
+57036,33,Claire,Autriche,Jordanie,1,0,12269,1,2025-2026,62,Coupe du Monde
+57037,33,Claire,Portugal,RD Congo,3,1,12270,1,2025-2026,62,Coupe du Monde
+57038,33,Claire,Angleterre,Croatie,2,2,12271,1,2025-2026,62,Coupe du Monde
+57039,33,Claire,Ghana,Panama,1,1,12272,1,2025-2026,62,Coupe du Monde
+57040,33,Claire,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,62,Coupe du Monde
+57041,33,Claire,Etats-Unis,Paraguay,1,2,12323,1,2025-2026,62,Coupe du Monde
