@@ -867,21 +867,21 @@ def show(tables):
         st.markdown("---")
 
         # --- Affichage classement et progression ---
-        GROUPES_CLASSEMENT = {
-            "Classement global": None,
-            "Les experts du Canapé": ["Matthieu", "Kévin", "Olivier", "Cédric", "Sébastien", "Pierre"],
-            "Les hasards de dingue": ["Matthieu", "Merguez", "Meemway", "Bebou", "Goustine", "Thif Thif"]
-        }
+        #GROUPES_CLASSEMENT = {
+        #    "Classement global": None,
+        #    "Les experts du Canapé": ["Matthieu", "Kévin", "Olivier", "Cédric", "Sébastien", "Pierre"],
+        #    "Les hasards de dingue": ["Matthieu", "Merguez", "Meemway", "Bebou", "Goustine", "Thif Thif"]
+        #}
         
         st.subheader(f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
             f"{'toutes compétitions' if championnat_sel == 'Toutes' else championnat_sel} – {saison_sel}")
 
         col_classement, col_evolution = st.columns([1, 2])
         with col_classement:
-            groupe_sel = st.selectbox(
-                "🎯 Groupe de classement",
-                list(GROUPES_CLASSEMENT.keys())
-            )
+            #groupe_sel = st.selectbox(
+            #    "🎯 Groupe de classement",
+            #    list(GROUPES_CLASSEMENT.keys())
+            #)
             
             journee_num = None
             # === 🕓 Classement précédent (pour visualiser les places gagnées/perdues) === #
@@ -907,16 +907,16 @@ def show(tables):
             else:
                 classement_prec = None
                 
-            participants_groupe = GROUPES_CLASSEMENT[groupe_sel]
+            #participants_groupe = GROUPES_CLASSEMENT[groupe_sel]
 
-            if participants_groupe is not None:
-                df_progress_filtered = df_progress_filtered[
-                    df_progress_filtered["participant_nom"].isin(participants_groupe)
-                ]
+            #if participants_groupe is not None:
+            #    df_progress_filtered = df_progress_filtered[
+            #        df_progress_filtered["participant_nom"].isin(participants_groupe)
+            #    ]
 
-                df_progress_all = df_progress_all[
-                    df_progress_all["participant_nom"].isin(participants_groupe)
-                ]    
+            #    df_progress_all = df_progress_all[
+            #        df_progress_all["participant_nom"].isin(participants_groupe)
+            #    ]    
                 
             # --- 🎯 CALCUL FINAL DU CLASSEMENT (cumul + bonus) --- #
             # Calcul du cumul actuel
