@@ -10170,7 +10170,7 @@ match_id,saison_id,saison,code_saison,competition,date,journee,equipe_domicile_i
 12248,58,2025-2026,LdC_25-26,Ligue des Champions,2026-05-06,16,161,FC Bayern Munich,337,Paris Saint Germain,1.0,1.0,1.67,5.6,3.9,,Demies,Retour,,,,
 12249,58,2025-2026,LdC_25-26,Ligue des Champions,2026-05-30,17,337,Paris Saint Germain,28,Arsenal FC,1.0,1.0,2.4,3.4,3.15,,Finale,,1.0,1.0,4.0,3.0
 12250,60,2025-2026,LE_25-26,Ligue Europa,2026-05-20,17,386,SC Fribourg,65,Aston Villa FC,0.0,3.0,6.0,4.0,1.6,,Finale,Retour,,,,
-12251,62,2025-2026,CDM_26,Coupe du Monde,2026-06-11,1,1347,Mexique,1324,Afrique Du Sud,,,,,,,,,,,,
+12251,62,2025-2026,CDM_26,Coupe du Monde,2026-06-11,1,1347,Mexique,1324,Afrique Du Sud,,,1.44,4.5,9.0,,,,,,,
 12252,62,2025-2026,CDM_26,Coupe du Monde,2026-06-12,1,1348,Corée Du Sud,1323,République Tchèque,,,,,,,,,,,,
 12253,62,2025-2026,CDM_26,Coupe du Monde,2026-06-12,1,1343,Canada,1320,Bosnie-Herzégovine,,,,,,,,,,,,
 12254,62,2025-2026,CDM_26,Coupe du Monde,2026-06-13,1,1344,Qatar,1319,Suisse,,,,,,,,,,,,
