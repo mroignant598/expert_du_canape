@@ -55161,13 +55161,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56712,26,Merguez,Angleterre,Croatie,2,1,12271,1,2025-2026,CDM_26,Coupe du Monde
 56713,26,Merguez,Ghana,Panama,2,2,12272,1,2025-2026,CDM_26,Coupe du Monde
 56714,26,Merguez,Ouzbékistan,Colombie,0,4,12273,1,2025-2026,CDM_26,Coupe du Monde
-56715,15,Matthieu,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56716,26,Merguez,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56717,21,Sébastien,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56718,10,Kévin,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56719,17,Olivier,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56720,18,Pierre,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
-56721,5,Cédric,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
 56732,10,Kévin,Paris Saint Germain,Arsenal FC,3,1,12249,17,2025-2026,LdC_25-26,Ligue des Champions
 56753,27,Thif Thif,Mexique,Afrique Du Sud,0,1,12251,1,2025-2026,62,Coupe du Monde
 56754,27,Thif Thif,Corée Du Sud,République Tchèque,1,0,12252,1,2025-2026,62,Coupe du Monde
@@ -55193,7 +55186,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56774,27,Thif Thif,Ghana,Panama,2,1,12272,1,2025-2026,62,Coupe du Monde
 56775,27,Thif Thif,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,62,Coupe du Monde
 56776,27,Thif Thif,Etats-Unis,Paraguay,1,1,12323,1,2025-2026,62,Coupe du Monde
-56777,27,Thif Thif,France,France,0,0,12322,0,2025-2026,CDM_26,Coupe du Monde
 56778,10,Kévin,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,62,Coupe du Monde
 56779,10,Kévin,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,62,Coupe du Monde
 56780,10,Kévin,Canada,Bosnie-Herzégovine,2,1,12253,1,2025-2026,62,Coupe du Monde
