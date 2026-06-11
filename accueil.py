@@ -38,6 +38,8 @@ def show(tables):
     with col_consigne:
         st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Edition Coupe du Monde** !")
         st.markdown("""
+        **_Pour une meilleure expérience, je te conseille de passer l'application en mode sombre. Tu as 3 points verticaux en haut à droite, clique dessus et passe l'application en mode dark !_** 
+        
         Prêt à montrer qui est le véritable boss du terrain ? 😏⚽
         
         Voici comment fonctionne l’application : c’est très simple. Clique sur le rectangle vert « Les Experts du canapé » pour accéder à une première page regroupant les résultats de tous les participants.
@@ -54,7 +56,8 @@ def show(tables):
         
         Les résultats seront mis à jour chaque jour pour avoir un classement quasiment en temps réel !
         
-        PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏   
+        PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏 
+        
         """)
         #Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
         #Ici, tu retrouveras **nos pronos depuis le début**, des **stats aux petits oignons**, et même les **classements des championnats** (mis à jour régulièrement). 🔥  
