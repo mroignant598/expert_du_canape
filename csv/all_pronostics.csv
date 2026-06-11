@@ -55113,30 +55113,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 56664,15,Matthieu,Paris Saint Germain,Arsenal FC,3,1,12249,17,2025-2026,LdC_25-26,Ligue des Champions
 56665,10,Kévin,SC Fribourg,Aston Villa FC,0,2,12250,17,2025-2026,LE_25-26,Ligue Europa
 56666,15,Matthieu,SC Fribourg,Aston Villa FC,1,2,12250,17,2025-2026,LE_25-26,Ligue Europa
-56667,15,Matthieu,Mexique,Afrique Du Sud,2,0,12251,1,2025-2026,CDM_26,Coupe du Monde
-56668,15,Matthieu,Corée Du Sud,République Tchèque,1,2,12252,1,2025-2026,CDM_26,Coupe du Monde
-56669,15,Matthieu,Canada,Bosnie-Herzégovine,1,0,12253,1,2025-2026,CDM_26,Coupe du Monde
-56670,15,Matthieu,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,CDM_26,Coupe du Monde
-56671,15,Matthieu,Qatar,Suisse,0,2,12254,1,2025-2026,CDM_26,Coupe du Monde
-56672,15,Matthieu,Brésil,Maroc,2,0,12255,1,2025-2026,CDM_26,Coupe du Monde
-56673,15,Matthieu,Haïti,Ecosse,0,4,12256,1,2025-2026,CDM_26,Coupe du Monde
-56674,15,Matthieu,Australie,Turquie,1,2,12257,1,2025-2026,CDM_26,Coupe du Monde
-56675,15,Matthieu,Allemagne,Curaçao,6,0,12258,1,2025-2026,CDM_26,Coupe du Monde
-56676,15,Matthieu,Pays-Bas,Japon,5,0,12259,1,2025-2026,CDM_26,Coupe du Monde
-56677,15,Matthieu,Côte D'Ivoire,Equateur,1,2,12260,1,2025-2026,CDM_26,Coupe du Monde
-56678,15,Matthieu,Suède,Tunisie,2,0,12261,1,2025-2026,CDM_26,Coupe du Monde
-56679,15,Matthieu,Espagne,Cap Vert,7,0,12262,1,2025-2026,CDM_26,Coupe du Monde
-56680,15,Matthieu,Belgique,Egypte,2,0,12263,1,2025-2026,CDM_26,Coupe du Monde
-56681,15,Matthieu,Arabie Saoudite,Uruguay,0,3,12264,1,2025-2026,CDM_26,Coupe du Monde
-56682,15,Matthieu,Iran,Nouvelle-Zélande,1,2,12265,1,2025-2026,CDM_26,Coupe du Monde
-56683,15,Matthieu,France,Sénégal,2,0,12266,1,2025-2026,CDM_26,Coupe du Monde
-56684,15,Matthieu,Irak,Norvège,0,4,12267,1,2025-2026,CDM_26,Coupe du Monde
-56685,15,Matthieu,Argentine,Algérie,2,0,12268,1,2025-2026,CDM_26,Coupe du Monde
-56686,15,Matthieu,Autriche,Jordanie,6,0,12269,1,2025-2026,CDM_26,Coupe du Monde
-56687,15,Matthieu,Portugal,RD Congo,5,0,12270,1,2025-2026,CDM_26,Coupe du Monde
-56688,15,Matthieu,Angleterre,Croatie,2,1,12271,1,2025-2026,CDM_26,Coupe du Monde
-56689,15,Matthieu,Ghana,Panama,1,1,12272,1,2025-2026,CDM_26,Coupe du Monde
-56690,15,Matthieu,Ouzbékistan,Colombie,0,4,12273,1,2025-2026,CDM_26,Coupe du Monde
 56691,26,Merguez,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,CDM_26,Coupe du Monde
 56692,26,Merguez,Corée Du Sud,République Tchèque,0,1,12252,1,2025-2026,CDM_26,Coupe du Monde
 56693,26,Merguez,Canada,Bosnie-Herzégovine,1,2,12253,1,2025-2026,CDM_26,Coupe du Monde
@@ -55474,3 +55450,27 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57425,34,Zoé,Ghana,Panama,1,1,12272,1,2025-2026,,Coupe du Monde
 57426,34,Zoé,Ouzbékistan,Colombie,0,2,12273,1,2025-2026,,Coupe du Monde
 57427,34,Zoé,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,,Coupe du Monde
+57428,35,Chouchou,Mexique,Afrique Du Sud,2,0,12251,1,2025-2026,,Coupe du Monde
+57429,35,Chouchou,Corée Du Sud,République Tchèque,1,2,12252,1,2025-2026,,Coupe du Monde
+57430,35,Chouchou,Canada,Bosnie-Herzégovine,1,0,12253,1,2025-2026,,Coupe du Monde
+57431,35,Chouchou,Qatar,Suisse,0,2,12254,1,2025-2026,,Coupe du Monde
+57432,35,Chouchou,Brésil,Maroc,2,0,12255,1,2025-2026,,Coupe du Monde
+57433,35,Chouchou,Haîti,Ecosse,0,4,12256,1,2025-2026,,Coupe du Monde
+57434,35,Chouchou,Australie,Turquie,1,2,12257,1,2025-2026,,Coupe du Monde
+57435,35,Chouchou,Allemagne,Curaçao,6,0,12258,1,2025-2026,,Coupe du Monde
+57436,35,Chouchou,Pays-Bas,Japon,5,0,12259,1,2025-2026,,Coupe du Monde
+57437,35,Chouchou,Côte D'Ivoire,Equateur,1,2,12260,1,2025-2026,,Coupe du Monde
+57438,35,Chouchou,Suède,Tunisie,2,0,12261,1,2025-2026,,Coupe du Monde
+57439,35,Chouchou,Espagne,Cap Vert,7,0,12262,1,2025-2026,,Coupe du Monde
+57440,35,Chouchou,Belgique,Egypte,2,0,12263,1,2025-2026,,Coupe du Monde
+57441,35,Chouchou,Arabie Saoudite,Uruguay,0,3,12264,1,2025-2026,,Coupe du Monde
+57442,35,Chouchou,Iran,Nouvelle-Zélande,1,2,12265,1,2025-2026,,Coupe du Monde
+57443,35,Chouchou,France,Sénégal,2,0,12266,1,2025-2026,,Coupe du Monde
+57444,35,Chouchou,Irak,Norvège,0,4,12267,1,2025-2026,,Coupe du Monde
+57445,35,Chouchou,Argentine,Algérie,2,0,12268,1,2025-2026,,Coupe du Monde
+57446,35,Chouchou,Autriche,Jordanie,6,0,12269,1,2025-2026,,Coupe du Monde
+57447,35,Chouchou,Portugal,RD Congo,5,0,12270,1,2025-2026,,Coupe du Monde
+57448,35,Chouchou,Angleterre,Croatie,2,1,12271,1,2025-2026,,Coupe du Monde
+57449,35,Chouchou,Ghana,Panama,1,1,12272,1,2025-2026,,Coupe du Monde
+57450,35,Chouchou,Ouzbékistan,Colombie,0,4,12273,1,2025-2026,,Coupe du Monde
+57451,35,Chouchou,Etats-Unis,Paraguay,2,1,12323,1,2025-2026,,Coupe du Monde
