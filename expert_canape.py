@@ -263,6 +263,8 @@ def calcul_points(r):
     buts_reel = r.match_dom + r.match_ext
     prolifique_prono = buts_prono >= 4
     prolifique_reel = buts_reel >= 4
+    super_prolifique_prono = buts_prono >=7
+    super_prolifique_reel = buts_prono >=7
 
     if r.match_dom > r.match_ext:
         cote_match = r.cote_domicile
@@ -280,6 +282,8 @@ def calcul_points(r):
     if ecart_correct and resultat_correct: multiplicateur += 1.33
     if prolifique_prono and prolifique_reel: multiplicateur += 1.25
     if prolifique_prono and not prolifique_reel: multiplicateur -= 0.5
+    if super_prolifique_prono and super_prolifique_reel: multiplicateur += 1.50
+    if super_prolifique_prono and not super_prolifique_reel: multiplicateur -= 0.75
 
     return cote_finale * multiplicateur
 
