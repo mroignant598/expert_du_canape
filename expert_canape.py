@@ -947,7 +947,7 @@ def show(tables):
             classement["bonus"] = 0
             classement["correction"] = 0
 
-            inclure_bonus = st.checkbox("Prendre en compte les bonus", value=True)
+            inclure_bonus = st.checkbox("Prendre en compte les bonus", value=False)
 
             # --- Fusion bonus uniquement si table OK --- #
             if isinstance(df_bonus, pd.DataFrame) and "participant" in df_bonus.columns:
