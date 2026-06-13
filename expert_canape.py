@@ -12,439 +12,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
 from google.oauth2.service_account import Credentials
+import Fonctions
 
-def afficher_classement_visuel(classement, saison_sel, championnat_sel=None, classement_prec=None, inclure_bonus=None):
-    # --- Sécurité / copie pour ne pas muter l'input ---
-    if classement is None or not isinstance(classement, pd.DataFrame):
-        st.info("Aucun classement à afficher.")
-        return
-
-    df = classement.copy()
-
-    # --- Garantir colonnes de base ---
-    for col in ["points", "bonus", "correction"]:
-        if col not in df.columns:
-            df[col] = 0
-    df[["points", "bonus", "correction"]] = df[["points", "bonus", "correction"]].fillna(0)
-
-    # --- Calcul / vérification de points_final (source de vérité) ---
-    if "points_final" not in df.columns:
-        # Si inclure_bonus est explicitement fourni on l'applique, sinon on considère bonus inclus par défaut
-        use_bonus = True if inclure_bonus is None else bool(inclure_bonus)
-        df["points_final"] = df["points"] + df["correction"] + (df["bonus"] if use_bonus else 0)
-    else:
-        # garantir pas de NaN
-        df["points_final"] = df["points_final"].fillna(df["points"] + df["correction"] + df["bonus"])
-
-    # --- points_affiches : valeur à afficher (permet d'afficher points sans bonus quand décoché) ---
-    if inclure_bonus is None:
-        # si on n'a pas de choix explicite, afficher points_final
-        df["points_affiches"] = df["points_final"]
-    else:
-        if inclure_bonus:
-            df["points_affiches"] = df["points_final"]
-        else:
-            # si points_final contenait bonus, on retire le bonus affiché
-            # préférer une calcul fiable plutôt que df["points_final"] - df["bonus"] (préserve correction)
-            df["points_affiches"] = df["points"] + df["correction"]
-
-    # --- Tri et rangs basés sur points_final (référence unique) ---
-    df = df.sort_values(by="points_final", ascending=False).reset_index(drop=True)
-    df["Rang"] = df.index + 1
-
-    # --- max pour les barres de progression (utiliser points_affiches pour cohérence d'affichage) ---
-    max_points = df["points_affiches"].max() if not df.empty else 1
-    if max_points == 0:
-        max_points = 1  # éviter division par zero
-
-    # --- Calcul du classement précédent (si fourni) ---
-    if classement_prec is not None and isinstance(classement_prec, pd.DataFrame) and not classement_prec.empty:
-        # On construit un df minimal avec participant_nom et Rang_prec
-        prec = classement_prec.copy()
-        # Si la colonne s'appelle points_cumul on la prend, sinon points
-        if "points_cumul" in prec.columns:
-            prec["points_for_rank"] = pd.to_numeric(prec["points_cumul"], errors="coerce").fillna(0)
-        elif "points" in prec.columns:
-            prec["points_for_rank"] = pd.to_numeric(prec["points"], errors="coerce").fillna(0)
-        else:
-            prec["points_for_rank"] = 0
-
-        prec = prec.groupby("participant_nom", as_index=False)["points_for_rank"].max()
-        prec = prec.sort_values(by="points_for_rank", ascending=False).reset_index(drop=True)
-        prec["Rang_prec"] = prec.index + 1
-        prec = prec[["participant_nom", "Rang_prec"]]
-
-        # Merge sans écraser les colonnes existantes
-        df = df.merge(prec, on="participant_nom", how="left")
-        df["Rang_prec"] = df["Rang_prec"].fillna(0).astype(int)
-        df["Δrang"] = df["Rang_prec"] - df["Rang"]
-    else:
-        df["Rang_prec"] = 0
-        df["Δrang"] = 0
-
-    # === 🌈 CSS global ===
-    st.markdown("""
-        <style>
-        .ranking-card, .podium-card {
-            background: linear-gradient(135deg, rgba(31,41,55,0.95), rgba(55,65,81,0.9));
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 14px;
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            transition: all 0.25s ease-in-out;
-            width: 95%;
-            max-width: 500px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            color: white;
-        }
-        .ranking-card:hover, .podium-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 14px rgba(255,255,255,0.08);
-        }
-        .ranking-card h5, .podium-card h4 {
-            margin: 0;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .progress-bar {
-            height: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: rgba(255,255,255,0.08);
-            margin-top: 4px;
-        }
-        .progress-fill {
-            height: 100%;
-            border-radius: 8px;
-            transition: width 0.8s ease;
-        }
-        .podium-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0 30px 0;
-        }
-        .podium-1 { background: linear-gradient(135deg, #facc15 10%, #92400e 120%); }
-        .podium-2 { background: linear-gradient(135deg, #a1a1aa 10%, #52525b 120%); }
-        .podium-3 { background: linear-gradient(135deg, #f97316 10%, #78350f 120%); }
-        .podium-1 h4 { font-size: 20px; }
-        .podium-2 h4 { font-size: 18px; }
-        .podium-3 h4 { font-size: 16px; }
-        .podium-card div.emoji {
-            margin-right: 8px;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    # === 🥇 Podium ===
-    top3 = df.head(3)
-    podium = {1: "🥇", 2: "🥈", 3: "🥉"}
-
-    for place in [1, 2, 3]:
-        if len(top3) >= place:
-            row = top3.iloc[place - 1]
-            progress = (row["points_affiches"] / max_points) if max_points else 0
-            delta = int(row.get("Δrang", 0))
-            bonus_html = ""
-            if inclure_bonus and row.get("bonus", 0) > 0:
-                bonus_html = f"<span class='bonus-tag'> &nbsp(dont {row['bonus']:.2f} bonus)</span>"
-
-            if delta > 0:
-                delta_html = f"<span style='color:#147E3BFF; font-weight:600;'>🔺+{delta}</span>"
-            elif delta < 0:
-                delta_html = f"<span style='color:#ef4444;'>🔻{abs(delta)}</span>"
-            else:
-                delta_html = ""
-
-            st.markdown(f"""
-                <div class="podium-card podium-{place}">
-                    <div style="display:flex; align-items:center; justify-content:flex-start;">
-                        <div class="emoji">{podium[place]}</div>
-                        <h4>{row['participant_nom']} - {row['points_affiches']:.2f} pts {bonus_html} {delta_html}</h4>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width:{progress*100:.1f}%;
-                            background: linear-gradient(90deg, #3b82f6, rgba(255,255,255,0.3));">
-                        </div>
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)
-
-    # === 🏅 Les autres participants ===
-    others = df.iloc[3:]
-    for _, row in others.iterrows():
-        rang = int(row["Rang"])
-        nom = row["participant_nom"]
-        pts = float(row["points_affiches"])
-        progress = (pts / max_points) if max_points else 0
-        delta = int(row.get("Δrang", 0))
-        bonus_html = f"<span class='bonus-tag'> &nbsp(dont {row['bonus']:.2f} bonus)</span>" if inclure_bonus and row.get("bonus", 0) > 0 else ""
-
-        if delta > 0:
-            delta_html = f"<span style='color:#075A25FF;'>🔺+{delta}</span>"
-        elif delta < 0:
-            delta_html = f"<span style='color:#ef4444;'>🔻{abs(delta)}</span>"
-        else:
-            delta_html = ""
-
-        st.markdown(f"""
-            <div class="ranking-card">
-                <h6>⚽ {rang}. {nom} - {pts:.2f} pts {bonus_html} {delta_html}</h6>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width:{progress*100:.1f}%;
-                        background: linear-gradient(90deg, #3b82f6, rgba(255,255,255,0.3));">
-                    </div>
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
-
-def kpi_card(title, value, delta=None, color="#2563eb", width="100%", height="120px"):
-    st.markdown(f"""
-    <div style="
-        background: {color};
-        padding: 20px;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        text-align: center;
-        color: white;
-        width: {width};
-        height: {height};       /* Hauteur fixe */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='scale(1.05)';" 
-        onmouseout="this.style.transform='scale(1)';">
-        <div style="font-size: 16px; font-weight: 500; margin-bottom: 5px;">{title}</div>
-        <div style="font-size: 28px; font-weight: bold;">{value}</div>
-        {"<div style='font-size:14px; opacity:0.8; margin-top:2px;'>{}</div>".format(delta) if delta else ""}
-    </div>
-    """, unsafe_allow_html=True)
-
-def normalize_text(s):
-            if not s or pd.isna(s):
-                return ""
-            s = str(s).lower()
-            s = ''.join(c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn')
-            return s.strip()
-        
-def calcul_points(r):
-    if pd.isna(r.match_dom) or pd.isna(r.match_ext):
-        return 0
-        
-    score_exact = (r.prono_dom == r.match_dom) and (r.prono_ext == r.match_ext)
-    resultat_correct = (
-        (r.prono_dom > r.prono_ext and r.match_dom > r.match_ext) or
-        (r.prono_dom < r.prono_ext and r.match_dom < r.match_ext) or
-        (r.prono_dom == r.prono_ext and r.match_dom == r.match_ext)
-    )
-    # -> On ignore l'ecart_correct si le match réel est un nul
-    ecart_correct = False
-    if r.match_dom != r.match_ext:
-        ecart_correct = ((r.prono_dom - r.prono_ext) == (r.match_dom - r.match_ext)) and not score_exact
-
-    cotes_absentes = pd.isna(r.cote_domicile) and pd.isna(r.cote_exterieur) and pd.isna(r.cote_nul)
-    if cotes_absentes:
-        points = 0
-        if score_exact: points += 3
-        if resultat_correct: points += 1
-        if not resultat_correct: points -= 1
-        return points
-
-    buts_prono = r.prono_dom + r.prono_ext
-    buts_reel = r.match_dom + r.match_ext
-    prolifique_prono = buts_prono >= 4
-    prolifique_reel = buts_reel >= 4
-    super_prolifique_prono = buts_prono >=7
-    super_prolifique_reel = buts_prono >=7
-
-    if r.match_dom > r.match_ext:
-        cote_match = r.cote_domicile
-    elif r.match_dom < r.match_ext:
-        cote_match = r.cote_exterieur
-    else:
-        cote_match = r.cote_nul
-
-    cote_min = min(r.cote_domicile, r.cote_exterieur, r.cote_nul)
-    cote_finale = cote_match if resultat_correct else cote_min
-
-    multiplicateur = 0
-    if resultat_correct: multiplicateur += 3
-    if score_exact and resultat_correct: multiplicateur += 2
-    if ecart_correct and resultat_correct: multiplicateur += 1.33
-    if prolifique_prono and prolifique_reel: multiplicateur += 1.25
-    if prolifique_prono and not prolifique_reel: multiplicateur -= 0.5
-    if super_prolifique_prono and super_prolifique_reel: multiplicateur += 1.50
-    if super_prolifique_prono and not super_prolifique_reel: multiplicateur -= 0.75
-
-    return cote_finale * multiplicateur
-
-def calcul_points_journee(df_journee):
-    """Calcule le score total d'une journée avec bonus si les matchs ont des cotes."""
-    n = len(df_journee)
-
-    # Vérifie s’il y a au moins un match sans cote
-    cotes_presentes = not (
-        df_journee["cote_domicile"].isna().all() and
-        df_journee["cote_exterieur"].isna().all() and
-        df_journee["cote_nul"].isna().all()
-    )
-
-    # Nombre de bons pronostics
-    bons_pronos = (
-        ((df_journee["prono_dom"] > df_journee["prono_ext"]) & (df_journee["match_dom"] > df_journee["match_ext"])) |
-        ((df_journee["prono_dom"] < df_journee["prono_ext"]) & (df_journee["match_dom"] < df_journee["match_ext"])) |
-        ((df_journee["prono_dom"] == df_journee["prono_ext"]) & (df_journee["match_dom"] == df_journee["match_ext"]))
-    ).sum()
-
-    # Score total de la journée
-    score_total = df_journee["points"].sum()
-
-    # Bonus appliqué uniquement si les cotes sont présentes
-    multiplicateur = 1
-    if cotes_presentes:
-        if n < 10:
-            # Barème original
-            if bons_pronos == n - 2:
-                multiplicateur = 1.33
-            elif bons_pronos == n - 1:
-                multiplicateur = 1.66
-            elif bons_pronos == n:
-                multiplicateur = 2
-        else:
-            # Nouveau barème pour n >= 10
-            if bons_pronos == n - 3:
-                multiplicateur = 1.25
-            elif bons_pronos == n - 2:
-                multiplicateur = 1.5
-            elif bons_pronos == n - 1:
-                multiplicateur = 1.75
-            elif bons_pronos == n:
-                multiplicateur = 2
-
-    score_final = score_total * multiplicateur
-
-    return pd.Series({
-        "points": score_final,
-        "bons_pronos": bons_pronos,
-        "multiplicateur": multiplicateur,
-        "cotes_presentes": cotes_presentes
-    })
-
-def gain_match(r):
-    """
-    Calcul du ROI pour un match :
-    - On mise 1€ sur le pronostic choisi
-    - Si le pronostic est correct, le gain net = cote - 1
-    - Si incorrect, perte = 1€
-    """
-    # Si le score réel n'est pas disponible
-    if pd.isna(r.match_dom) or pd.isna(r.match_ext):
-        return 0.0
-
-    # Déterminer le résultat réel et le résultat pronostiqué
-    resultat_reel = 'D' if r.match_dom > r.match_ext else ('E' if r.match_dom < r.match_ext else 'N')
-    resultat_prono = 'D' if r.prono_dom > r.prono_ext else ('E' if r.prono_dom < r.prono_ext else 'N')
-
-    # Déterminer la cote correspondante au pronostic
-    if resultat_prono == 'D':
-        cote = r.cote_domicile
-    elif resultat_prono == 'E':
-        cote = r.cote_exterieur
-    else:
-        cote = r.cote_nul
-
-    # Si la cote est manquante, considérer une mise perdue
-    if pd.isna(cote):
-        return -1.0
-
-    # Gain net : cote - 1 si gagné, sinon perte 1€
-    if resultat_prono == resultat_reel:
-        return cote - 1.0
-    else:
-        return -1.0
-
-def gain_match_detail(r):
-    """
-    Retourne le détail du ROI pour chaque match :
-    - résultat réel et pronostiqué
-    - cote utilisée
-    - gain ou perte net
-    """
-    if pd.isna(r.match_dom) or pd.isna(r.match_ext):
-        return pd.Series({
-            "résultat_prono": None,
-            "résultat_reel": None,
-            "cote_utilisée": None,
-            "gain_perte": 0.0
-        })
-
-    # Déterminer le résultat réel et le résultat pronostiqué
-    resultat_reel = 'D' if r.match_dom > r.match_ext else ('E' if r.match_dom < r.match_ext else 'N')
-    resultat_prono = 'D' if r.prono_dom > r.prono_ext else ('E' if r.prono_dom < r.prono_ext else 'N')
-
-    # Déterminer la cote correspondant au pronostic
-    if resultat_prono == 'D':
-        cote = r.cote_domicile
-    elif resultat_prono == 'E':
-        cote = r.cote_exterieur
-    else:
-        cote = r.cote_nul
-
-    if pd.isna(cote):
-        cote = 1.0  # mise par défaut si cote manquante
-
-    # Calcul du gain net : seulement le bénéfice ou la perte
-    if resultat_prono == resultat_reel:
-        gain_net = cote - 1  # on retire l'euro misé
-    else:
-        gain_net = -1  # perte de 1€
-
-    return pd.Series({
-        "résultat_prono": resultat_prono,
-        "résultat_reel": resultat_reel,
-        "cote_utilisée": cote,
-        "gain_perte": gain_net
-    })
-
-def cote_prono_correct(r):
-    # Déterminer le résultat pronostiqué
-    if r.prono_dom > r.prono_ext:
-        return r.cote_domicile
-    elif r.prono_dom < r.prono_ext:
-        return r.cote_exterieur
-    else:
-        return r.cote_nul
-
-def color_cells(val, row_name):
-    if row_name == "Classement":
-        # Vert si top 1, jaune si top 3, rouge sinon
-        if val == 1:
-            color = 'background-color: #b2f2bb'  # vert clair
-        elif val <= 3:
-            color = 'background-color: #fff3bf'  # jaune clair
-        else:
-            color = 'background-color: #ffa8a8'  # rouge clair
-    elif row_name == "Écart avec Leader":
-        # Dégradé vert-rouge selon l'écart
-        if val <= 1:
-            color = 'background-color: #b2f2bb'
-        elif val <= 3:
-            color = 'background-color: #fff3bf'
-        else:
-            color = 'background-color: #ffa8a8'
-    else:
-        color = ''
-    return color
-    
 def show(tables):
     st.title("📊 Les Experts du Canapé")
     tabs_expert, tabs_insertion, tabs_excel = st.tabs(["Classement/Visualisation", "Insertion Pronos", "Export Excel"])
@@ -665,14 +234,15 @@ def show(tables):
 
             # ⚙️ Slider dynamique selon le nombre réel de participants
             if nb_participants > 0:
-                top_n = st.slider(
-                    "Afficher les meilleurs participants",
-                    min_value=1,
-                    max_value=nb_participants,
-                    value=min(10, nb_participants),
-                    step=1,
-                    help=f"Sur un total de {nb_participants} participants pour {saison_sel} ({championnat_sel})"
-                )
+                top_n = nb_participants
+                #st.slider(
+                #    "Afficher les meilleurs participants",
+                #    min_value=1,
+                #    max_value=nb_participants,
+                #    value=min(10, nb_participants),
+                #    step=1,
+                #    help=f"Sur un total de {nb_participants} participants pour {saison_sel} ({championnat_sel})"
+                #)
             else:
                 st.warning("⚠️ Aucun participant trouvé pour cette saison / championnat.")
                 top_n = 0
@@ -789,8 +359,6 @@ def show(tables):
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("---")
-
         # --- 🔍 Filtrer la saison et le championnat, mais PAS la journée (pour permettre le cumul) --- #
         df_filtre = df_matchs[df_matchs["saison"] == saison_sel].copy()
         if championnat_sel != "Toutes":
@@ -828,10 +396,7 @@ def show(tables):
         })
         
         # --- Détection des scores exacts ---
-        df["bon_score"] = (
-            (df["prono_dom"] == df["match_dom"]) &
-            (df["prono_ext"] == df["match_ext"])
-        )
+        df["bon_score"] = ((df["prono_dom"] == df["match_dom"]) & (df["prono_ext"] == df["match_ext"]))
 
         # Convertir les journées en int
         df["journee_match"] = pd.to_numeric(df["journee_match"], errors="coerce")
@@ -839,10 +404,10 @@ def show(tables):
         df["journee_match"] = df["journee_match"].astype(int)
 
         # --- Calcul des points individuels --- #
-        df["points"] = df.apply(calcul_points, axis=1)
+        df["points"] = df.apply(Fonctions.calcul_points, axis=1)
 
         # --- Calcul des points par journée et cumul --- #
-        df_progress_all = (df.groupby(["participant_nom", "journee_match"]).apply(calcul_points_journee).reset_index())
+        df_progress_all = (df.groupby(["participant_nom", "journee_match"]).apply(Fonctions.calcul_points_journee).reset_index())
         df_progress_all["points_cumul"] = df_progress_all.groupby("participant_nom")["points"].cumsum()
 
         # --- 🧮 Filtrage jusqu’à la journée sélectionnée --- #
@@ -863,10 +428,10 @@ def show(tables):
         moyenne_points_joueur = total_points / nb_participants if nb_participants else 0
 
         kpi_cols = st.columns([1.2, 1, 1, 1])
-        with kpi_cols[0]: kpi_card("🏟️ Matchs", nb_matchs, color="#3b82f6")
-        with kpi_cols[1]: kpi_card("🧾 Pronostics", nb_pronos, color="#22c55e")
-        with kpi_cols[2]: kpi_card("👥 Participants", nb_participants, color="#f59e0b")
-        with kpi_cols[3]: kpi_card("🎯 Moy. pts/joueur", f"{moyenne_points_joueur:.2f}", color="#2563eb")
+        with kpi_cols[0]: Fonctions.kpi_card("🏟️ Matchs", nb_matchs, color="#3b82f6", width="100%", height="80px")
+        with kpi_cols[1]: Fonctions.kpi_card("🧾 Pronostics", nb_pronos, color="#22c55e", width="100%", height="80px")
+        with kpi_cols[2]: Fonctions.kpi_card("👥 Participants", nb_participants, color="#f59e0b", width="100%", height="80px")
+        with kpi_cols[3]: Fonctions.kpi_card("🎯 Moy. pts/joueur", f"{moyenne_points_joueur:.2f}", color="#2563eb", width="100%", height="80px")
 
         st.markdown("---")
 
@@ -1012,7 +577,7 @@ def show(tables):
             classement = classement.sort_values(by="points_final", ascending=False).reset_index(drop=True)
             classement["Rang"] = classement.index + 1
 
-            afficher_classement_visuel(classement, saison_sel, championnat_sel if championnat_sel != "Toutes" else None, classement_prec=classement_prec, inclure_bonus=inclure_bonus)
+            Fonctions.afficher_classement_visuel(classement, saison_sel, championnat_sel if championnat_sel != "Toutes" else None, classement_prec=classement_prec, inclure_bonus=inclure_bonus)
 
         with col_evolution:
             st.markdown('')
@@ -1092,119 +657,278 @@ def show(tables):
         st.markdown("---")
         
         # === 📍 SECTION 2 ===        
-        col_participants, col_resultats = st.columns([1,3])
-        with col_participants:
-            st.markdown("### 🎮 Sélection du joueur")
-            # --- Sélection du participant ---
-            participants = classement["participant_nom"].tolist()
-            participant_sel = participants[0]
 
-            # Création de 4 colonnes
-            cols = st.columns(4)
+        # =====================================================
+        # CALCULS JOURNÉE
+        # =====================================================
 
-            # On parcourt les participants et on les place dans les colonnes alternativement
-            for idx, participant in enumerate(participants):
-                col = cols[idx % 2]  # alterne entre les colonnes
-                card_class = "participant-card"
-                if participant == participant_sel:
-                    card_class += " selected"
-                
-                # Bouton caché pour détecter le clic
-                if col.button(participant, key=participant):
-                    participant_sel = participant
-    
-        # --- Filtrer les données du joueur sélectionné ---
-        df_participant = df[df["participant_nom"] == participant_sel].copy()
+        # Recalcul des points de chaque pronostic
+        df["points"] = df.apply(Fonctions.calcul_points, axis=1)
 
+        # Filtre sur la journée choisie
         if journee_sel != "Toutes":
-            df_participant = df_participant[df_participant["journee_match"] == int(journee_sel)]
-
-        if df_participant.empty:
-            st.warning("Aucun pronostic trouvé pour ce joueur sur cette journée.")
+            df_journee = df[df["journee_match"] == int(journee_sel)].copy()
         else:
-            # --- Recalcul des points de chaque match ---
-            df["points"] = df.apply(calcul_points, axis=1)
+            df_journee = df.copy()
 
-            journee_courante = df_participant["journee_match"].iloc[0]
-            df_journee = df[df["journee_match"] == journee_courante].copy()
+        if df_journee.empty:
+            st.warning("Aucune donnée disponible.")
+            st.stop()
 
-            # --- Points sans bonus ---
-            points_sans_bonus = (
-                df_journee.groupby("participant_nom")["points"]
-                .sum()
-                .reset_index()
-                .rename(columns={"points": "points_bruts"})
-            )
+        journee_courante = df_journee["journee_match"].iloc[0]
 
-            # --- Points totaux (avec bonus) ---
-            df_journee_bonus = (
-                df_journee.groupby("participant_nom")
-                .apply(calcul_points_journee)
-                .reset_index()
-                .rename(columns={"points": "points_total"})
-            )
+        # =====================================================
+        # CLASSEMENT DE LA JOURNÉE
+        # =====================================================
 
-            # --- Nombre de bons scores (score exact) ---
-            bons_scores = (
-                df_journee[df_journee["bon_score"] == True]
-                .groupby("participant_nom")
-                .size()
-                .reset_index(name="bons_scores")
-            )
+        # Points bruts (sans bonus)
+        points_sans_bonus = (
+            df_journee.groupby("participant_nom")["points"]
+            .sum()
+            .reset_index()
+            .rename(columns={"points": "points_bruts"})
+        )
 
-            # --- Fusion ---
-            classement_journee = pd.merge(points_sans_bonus, df_journee_bonus, on="participant_nom", how="left")
-            
-            # --- Fusion des bons scores ---
-            classement_journee = classement_journee.merge(bons_scores, on="participant_nom", how="left")
+        # Points totaux (avec bonus)
+        df_journee_bonus = (
+            df_journee.groupby("participant_nom")
+            .apply(Fonctions.calcul_points_journee)
+            .reset_index()
+            .rename(columns={"points": "points_total"})
+        )
 
-            # --- Calcul du bonus réel ---
-            classement_journee["points_bonus"] = classement_journee["points_total"] - classement_journee["points_bruts"]
-            classement_journee["points_bonus"] = classement_journee["points_bonus"].round(4)
-            classement_journee["bons_scores"] = classement_journee["bons_scores"].fillna(0).astype(int)
+        # Nombre de scores exacts
+        bons_scores = (
+            df_journee[df_journee["bon_score"] == True]
+            .groupby("participant_nom")
+            .size()
+            .reset_index(name="bons_scores")
+        )
 
-            # --- Tri ---
-            classement_journee = (
-                classement_journee.sort_values("points_total", ascending=False)
-                .reset_index(drop=True)
-            )
-            classement_journee["Rang"] = classement_journee.index + 1
+        # Fusion des résultats
+        classement_journee = (
+            points_sans_bonus
+            .merge(df_journee_bonus, on="participant_nom", how="left")
+            .merge(bons_scores, on="participant_nom", how="left")
+        )
 
-            # --- Performance ---
-            max_points = classement_journee["points_total"].max()
-            classement_journee["Performance (%)"] = (
-                classement_journee["points_total"] / max_points * 100).round(1)
-            
-            # --- Renommage des colonnes ---
-            classement_journee = classement_journee.rename(columns={
+        classement_journee["bons_scores"] = (
+            classement_journee["bons_scores"]
+            .fillna(0)
+            .astype(int)
+        )
+
+        # Bonus obtenu
+        classement_journee["points_bonus"] = (
+            classement_journee["points_total"]
+            - classement_journee["points_bruts"]
+        ).round(2)
+
+        # Tri classement
+        classement_journee = (
+            classement_journee
+            .sort_values("points_total", ascending=False)
+            .reset_index(drop=True)
+        )
+
+        classement_journee["Rang"] = classement_journee.index + 1
+
+        # Performance relative au meilleur joueur
+        max_points = classement_journee["points_total"].max()
+
+        classement_journee["Performance (%)"] = (
+            classement_journee["points_total"]
+            / max_points
+            * 100
+        ).round(1)
+
+        # Renommage
+        classement_journee = classement_journee.rename(
+            columns={
                 "participant_nom": "Participant",
                 "points_total": "Total Points",
                 "points_bonus": "Dont Bonus",
                 "bons_pronos": "Nombre de bons pronos",
                 "bons_scores": "Nombre de bons scores"
-            })
+            }
+        )
 
-            # --- Classement du joueur sélectionné ---
-            joueur_stats = classement_journee[classement_journee["Participant"] == participant_sel]
-            
-            # On supprime la colonne points_bruts
-            classement_journee = classement_journee.drop(columns=["points_bruts"])
+        # =====================================================
+        # TABLEAU GLOBAL DES PRONOSTICS
+        # =====================================================
 
-        with col_resultats:
-            st.markdown(f"### 🏅 Classement - Journée {journee_courante}")
+        df_journee["Match"] = (
+            df_journee["equipe_domicile_nom"]
+            + " - "
+            + df_journee["equipe_exterieure_nom"]
+        )
+
+        df_journee["Score Réel"] = df_journee.apply(
+            Fonctions.format_score_reel,
+            axis=1
+        )
+
+        df_journee["points_txt"] = (
+            df_journee["points"]
+            .fillna(0)
+            .astype(float)
+            .map(lambda x: f"{x:.2f}")
+        )
+
+        df_journee["Prono Points"] = (
+            df_journee["prono_dom"].fillna(0).astype(int).astype(str)
+            + "-"
+            + df_journee["prono_ext"].fillna(0).astype(int).astype(str)
+            + " ("
+            + df_journee["points_txt"]
+            + ")"
+        )
+
+        table_globale = (
+            df_journee
+            .pivot_table(
+                index=["Match", "Score Réel"],
+                columns="participant_nom",
+                values="Prono Points",
+                aggfunc="first"
+            )
+            .reset_index()
+        )
+        
+        # =====================================================
+        # VUE GLOBALE
+        # =====================================================
+
+        st.markdown(f"### 📝 Tous les pronostics - Journée {journee_sel}")
+
+        st.dataframe(
+            table_globale.style.apply(Fonctions.color_pronos, axis=None),
+            hide_index=True,
+            use_container_width=True
+        )
+
+        col_classement_journee, col_detail_pronos = st.columns(2)
+        with col_classement_journee:
+            st.markdown(f"### 🏅 Détails de la journée {journee_courante}")
+
             st.dataframe(
                 classement_journee[
                     [
-                        "Rang", "Participant",
-                        "Total Points", "Dont Bonus",
-                        "Nombre de bons pronos", "multiplicateur",
-                        "Performance (%)"
-                    ]
-                ],
+                    "Rang",
+                    "Participant",
+                    "Total Points",
+                    "Dont Bonus",
+                    "Nombre de bons pronos",
+                    "multiplicateur",
+                    "Performance (%)"
+                ]
+            ].style.format({
+                "Rang": "{:.0f}",
+                "Total Points": "{:.2f}",
+                "Dont Bonus": "{:.2f}",
+                "Nombre de bons pronos": "{:.0f}",
+                "multiplicateur": "{:.2f}",
+                "Performance (%)": "{:.1f}"
+            }),
                 hide_index=True,
                 use_container_width=False
             )
-            
+        
+        with col_detail_pronos:
+            details_cotes = (
+                df_journee[
+                    [
+                        "Match",
+                        "match_dom",
+                        "match_ext",
+                        "cote_domicile",
+                        "cote_nul",
+                        "cote_exterieur"
+                    ]
+                ]
+                .drop_duplicates()
+                .copy()
+            )
+
+            details_cotes["cote_gagnante"] = details_cotes.apply(
+                Fonctions.get_cote_gagnante,
+                axis=1
+            )
+
+            # Score affiché sans décimales
+            details_cotes["Score"] = details_cotes.apply(
+                Fonctions.format_score,
+                axis=1
+            )
+
+            details_cotes = details_cotes.rename(
+                columns={
+                    "cote_domicile": "1",
+                    "cote_nul": "N",
+                    "cote_exterieur": "2",
+                    "cote_gagnante": "Cote gagnante"
+                }
+            )
+
+            details_cotes = details_cotes[
+                [
+                    "Match",
+                    "Score",
+                    "1",
+                    "N",
+                    "2",
+                    "Cote gagnante"
+                ]
+            ]
+
+            st.markdown("### 💰 Cotes des matchs")
+
+            st.dataframe(
+                details_cotes.style
+                .apply(Fonctions.color_cotes, axis=1)
+                .format({
+                    "1": "{:.2f}",
+                    "N": "{:.2f}",
+                    "2": "{:.2f}",
+                    "Cote gagnante": "{:.2f}"
+                }),
+                hide_index=True,
+                use_container_width=False
+            )
+
+        # =====================================================
+        # SÉLECTION JOUEUR
+        # =====================================================
+
+        st.divider()
+        st.markdown("### 🎮 Analyse d'un joueur")
+
+        participants = classement["participant_nom"].tolist()
+
+        if "participant_sel" not in st.session_state:
+            st.session_state.participant_sel = participants[0]
+
+        cols = st.columns(10)
+
+        for idx, participant in enumerate(participants):
+            col = cols[idx % 10]
+
+            if col.button(
+                participant,
+                key=f"joueur_{participant}",
+                use_container_width=True
+            ):
+                st.session_state.participant_sel = participant
+
+        participant_sel = st.session_state.participant_sel
+
+        # =====================================================
+        # DÉTAILS DU JOUEUR
+        # =====================================================
+
+        df_participant = df[df["participant_nom"] == participant_sel].copy()
+        joueur_stats = classement_journee[classement_journee["Participant"] == participant_sel]
+                    
         # --- Résumé personnel ---
         if not joueur_stats.empty:
             points_bruts = joueur_stats["points_bruts"].values[0]
@@ -1220,12 +944,12 @@ def show(tables):
             # Colonnes KPI améliorées
             kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
-            with kpi_cols[0]: kpi_card("🏆 Rang", rang, color="#3b82f6")  
-            with kpi_cols[1]: kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e")  
-            with kpi_cols[2]: kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b")  
-            with kpi_cols[3]: kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444")
-            with kpi_cols[4]: kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea")  
-            with kpi_cols[5]: kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea")  
+            with kpi_cols[0]: Fonctions.kpi_card("🏆 Rang", rang, color="#3b82f6", width="100%", height="80px")  
+            with kpi_cols[1]: Fonctions.kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e", width="100%", height="80px")  
+            with kpi_cols[2]: Fonctions.kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b", width="100%", height="80px")  
+            with kpi_cols[3]: Fonctions.kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444", width="100%", height="80px")
+            with kpi_cols[4]: Fonctions.kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea", width="100%", height="80px")  
+            with kpi_cols[5]: Fonctions.kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea", width="100%", height="80px")  
 
             # Sécuriser la valeur de la barre de progression
             perf_safe = 0 if pd.isna(perf) else perf
@@ -1245,7 +969,7 @@ def show(tables):
         df_joueur_participant = df_progress_all[df_progress_all["participant_nom"] == participant_sel].copy()
 
         # --- Calculs de points par match avec bonus ---
-        df_joueur["points"] = df_joueur.apply(calcul_points, axis=1)
+        df_joueur["points"] = df_joueur.apply(Fonctions.calcul_points, axis=1)
 
         # --- Bons pronos ---
         df_joueur["bon_prono"] = (
@@ -1259,7 +983,7 @@ def show(tables):
             (df_joueur["prono_ext"] == df_joueur["match_ext"]))
 
         # --- Bonus multiplicateurs par match ---
-        df_joueur["bonus"] = df_joueur.apply(lambda r: float(calcul_points_journee(pd.DataFrame([r]))["multiplicateur"]), axis=1)
+        df_joueur["bonus"] = df_joueur.apply(lambda r: float(Fonctions.calcul_points_journee(pd.DataFrame([r]))["multiplicateur"]), axis=1)
 
         # --- Stats globales ---
         total_points = df_joueur["points"].sum().round(2)
@@ -1290,34 +1014,34 @@ def show(tables):
         # --- Sélection des bons pronostics ---
         df_bons = df_joueur[df_joueur["bon_prono"]].copy()
         # --- Appliquer la fonction ---
-        df_bons["cote_correcte"] = df_bons.apply(cote_prono_correct, axis=1)
+        df_bons["cote_correcte"] = df_bons.apply(Fonctions.cote_prono_correct, axis=1)
         # --- Moyenne des cotes exactes des pronos gagnés ---
         cote_moyenne = df_bons["cote_correcte"].mean()
 
-        df_joueur["roi_match"] = df_joueur.apply(gain_match, axis=1)
+        df_joueur["roi_match"] = df_joueur.apply(Fonctions.gain_match, axis=1)
         roi_total = df_joueur["roi_match"].sum()
         
         # --- Affichage final ---
         # --- Ligne 1 : Performances générales ---
         kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
-        with kpi_cols[0]: kpi_card("🎯 Total bons pronos", f"{nb_bons_pronos}/{total_pronos}", f"{pourcentage_bons_pronos}%", color="#f59e0b") 
-        with kpi_cols[1]: kpi_card("🎯 Total bons scores", f"{nb_bons_scores}/{total_pronos}", f"{pourcentage_bons_scores}%", color="#ef4444")
-        with kpi_cols[2]: kpi_card("🏅 Journées gagnées", int(journees_gagnees), color="#3b82f6")  
-        with kpi_cols[3]: kpi_card("Meilleur score / journée", round(meilleur_score_journee, 2), color="#22c55e")  
-        with kpi_cols[4]: kpi_card("Moyenne points / match", round(moyenne_points, 2), color="#22c55e")  
-        with kpi_cols[5]: kpi_card("💥 Max points sur un match", round(max_points_match, 2), color="#22c55e")  
+        with kpi_cols[0]: Fonctions.kpi_card("🎯 Total bons pronos", f"{nb_bons_pronos}/{total_pronos}", f"{pourcentage_bons_pronos}%", color="#f59e0b", width="100%", height="100px") 
+        with kpi_cols[1]: Fonctions.kpi_card("🎯 Total bons scores", f"{nb_bons_scores}/{total_pronos}", f"{pourcentage_bons_scores}%", color="#ef4444", width="100%", height="100px")
+        with kpi_cols[2]: Fonctions.kpi_card("🏅 Journées gagnées", int(journees_gagnees), color="#3b82f6", width="100%", height="100px")  
+        with kpi_cols[3]: Fonctions.kpi_card("Meilleur score / journée", round(meilleur_score_journee, 2), color="#22c55e", width="100%", height="100px")  
+        with kpi_cols[4]: Fonctions.kpi_card("Moyenne points / match", round(moyenne_points, 2), color="#22c55e", width="100%", height="100px")  
+        with kpi_cols[5]: Fonctions.kpi_card("💥 Max points sur un match", round(max_points_match, 2), color="#22c55e", width="100%", height="100px")  
 
         st.text("")
         
         # --- Ligne 2 : Bonus et scores spécifiques ---
         kpi_cols2 = st.columns([1, 1, 1, 1, 1])
 
-        with kpi_cols2[0]: kpi_card("⭐ Bonus x1.33", int(bonus_133), color="#9333ea")  
-        with kpi_cols2[1]: kpi_card("🔥 Bonus x1.66", int(bonus_166), color="#9333ea")  
-        with kpi_cols2[2]: kpi_card("💎 Bonus x2", int(bonus_200), color="#9333ea")  
-        with kpi_cols2[3]: kpi_card("📈 Cote moyenne bons pronos", round(cote_moyenne, 2), color="#12eccf")  
-        with kpi_cols2[4]: kpi_card("💰 ROI théorique", round(roi_total, 2), color="#12eccf")  
+        with kpi_cols2[0]: Fonctions.kpi_card("⭐ Bonus x1.33", int(bonus_133), color="#9333ea", width="100%", height="80px")  
+        with kpi_cols2[1]: Fonctions.kpi_card("🔥 Bonus x1.66", int(bonus_166), color="#9333ea", width="100%", height="80px")  
+        with kpi_cols2[2]: Fonctions.kpi_card("💎 Bonus x2", int(bonus_200), color="#9333ea", width="100%", height="80px")  
+        with kpi_cols2[3]: Fonctions.kpi_card("📈 Cote moyenne bons pronos", round(cote_moyenne, 2), color="#12eccf", width="100%", height="80px")  
+        with kpi_cols2[4]: Fonctions.kpi_card("💰 ROI théorique", round(roi_total, 2), color="#12eccf", width="100%", height="80px")  
 
         st.markdown("---")
             
@@ -1347,7 +1071,7 @@ def show(tables):
         with col_evolution_pts:
             # --- Préparer les données ---
             df["journee_match"] = df["journee_match"].astype(int)  # Conversion en entier
-            df_progress = df.groupby(["participant_nom", "journee_match"]).apply(calcul_points_journee).reset_index()
+            df_progress = df.groupby(["participant_nom", "journee_match"]).apply(Fonctions.calcul_points_journee).reset_index()
 
             df_joueur = df_progress[df_progress["participant_nom"] == participant_sel].copy()
 

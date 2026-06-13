@@ -3,27 +3,8 @@ import pandas as pd
 import os
 from st_aggrid import AgGrid
 from st_aggrid.grid_options_builder import GridOptionsBuilder
+import Fonctions
 
-# =======================
-# Fonction KPI
-# =======================
-def kpi_card(title, value, color):
-    st.markdown(f"""
-        <div style="
-            background: linear-gradient(135deg, {color} 0%, #ffffff20 100%);
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            text-align: center;
-            color: white;
-            transition: transform 0.2s, box-shadow 0.2s;
-        " onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 25px rgba(0,0,0,0.25)';" 
-            onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)';">
-            <div style="font-size: 18px; font-weight: 500; margin-bottom: 5px;">{title}</div>
-            <div style="font-size: 32px; font-weight: bold;">{value}</div>
-        </div>
-    """, unsafe_allow_html=True)
-    
 # =======================
 # Fonction principale
 # =======================
@@ -94,10 +75,10 @@ def show(tables):
     nb_archives = len(df_archives)
 
     col_kpi_matchs, col_kpi_pronos, col_kpi_participants, col_kpi_archives = st.columns(4, gap="large")
-    with col_kpi_matchs: kpi_card("🏟️ Matchs enregistrés", f"{nb_matchs:,}".replace(",", " "), "#3b82f6")
-    with col_kpi_pronos: kpi_card("📋 Pronostics saisis", f"{nb_pronos:,}".replace(",", " "), "#22c55e")
-    with col_kpi_participants: kpi_card("👥 Participants inscrits", f"{nb_participants:,}".replace(",", " "), "#f59e0b")
-    with col_kpi_archives: kpi_card("🏆 Matchs archivés", f"{nb_archives:,}".replace(",", " "), "#9333ea")
+    with col_kpi_matchs: Fonctions.kpi_card_accueil("🏟️ Matchs enregistrés", f"{nb_matchs:,}".replace(",", " "), "#3b82f6")
+    with col_kpi_pronos: Fonctions.kpi_card_accueil("📋 Pronostics saisis", f"{nb_pronos:,}".replace(",", " "), "#22c55e")
+    with col_kpi_participants: Fonctions.kpi_card_accueil("👥 Participants inscrits", f"{nb_participants:,}".replace(",", " "), "#f59e0b")
+    with col_kpi_archives: Fonctions.kpi_card_accueil("🏆 Matchs archivés", f"{nb_archives:,}".replace(",", " "), "#9333ea")
 
     st.markdown('')
     st.markdown("""
@@ -216,9 +197,9 @@ def show(tables):
     
     st.text('')
     col_kpi_nb_matchs, col_kpi_nb_pronos, col_kpi_nb_participants = st.columns(3)
-    with col_kpi_nb_matchs: kpi_card(f"🏟️ Nombre de matchs", f"{nb_matchs_saison:,}".replace(",", " "), "#3b82f6")
-    with col_kpi_nb_pronos: kpi_card(f"📋 Nombre de pronostics", f"{nb_pronos_saison:,}".replace(",", " "), "#22c55e")
-    with col_kpi_nb_participants: kpi_card(f"👥 Nombre de participants", f"{nb_participants_saison:,}".replace(",", " "), "#f59e0b")
+    with col_kpi_nb_matchs: Fonctions.kpi_card_accueil(f"🏟️ Nombre de matchs", f"{nb_matchs_saison:,}".replace(",", " "), "#3b82f6")
+    with col_kpi_nb_pronos: Fonctions.kpi_card_accueil(f"📋 Nombre de pronostics", f"{nb_pronos_saison:,}".replace(",", " "), "#22c55e")
+    with col_kpi_nb_participants: Fonctions.kpi_card_accueil(f"👥 Nombre de participants", f"{nb_participants_saison:,}".replace(",", " "), "#f59e0b")
 
     st.markdown("<hr style='border:1px solid #444444; margin: 2rem 0;'>", unsafe_allow_html=True)
 
