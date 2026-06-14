@@ -1006,7 +1006,7 @@ def show(tables):
             else:
                 df_joueur_journees_display = df_joueur_journees[["journee_match", "points", "bons_pronos", "multiplicateur"]]
                 df_joueur_journees_display.rename(columns={
-                    "journee": "Journée",
+                    "journee_match": "Journée",
                     "points": "Points",
                     "bons_pronos": "Bons pronostics",
                     "multiplicateur": "Multiplicateur"
