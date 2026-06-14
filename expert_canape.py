@@ -436,22 +436,11 @@ def show(tables):
         st.markdown("---")
 
         # --- Affichage classement et progression ---
-        #GROUPES_CLASSEMENT = {
-        #    "Classement global": None,
-        #    "Les experts du Canapé": ["Matthieu", "Kévin", "Olivier", "Cédric", "Sébastien", "Pierre"],
-        #    "Les hasards de dingue": ["Matthieu", "Merguez", "Meemway", "Bebou", "Goustine", "Thif Thif"]
-        #}
-        
         st.subheader(f"Classement {'global' if journee_sel == 'Toutes' else f'jusqu’à la journée {journee_sel}'} – "
             f"{'toutes compétitions' if championnat_sel == 'Toutes' else championnat_sel} – {saison_sel}")
 
         col_classement, col_evolution = st.columns([1, 2])
         with col_classement:
-            #groupe_sel = st.selectbox(
-            #    "🎯 Groupe de classement",
-            #    list(GROUPES_CLASSEMENT.keys())
-            #)
-            
             journee_num = None
             # === 🕓 Classement précédent (pour visualiser les places gagnées/perdues) === #
             if journee_sel != "Toutes":
@@ -475,18 +464,7 @@ def show(tables):
                     classement_prec = None
             else:
                 classement_prec = None
-                
-            #participants_groupe = GROUPES_CLASSEMENT[groupe_sel]
-
-            #if participants_groupe is not None:
-            #    df_progress_filtered = df_progress_filtered[
-            #        df_progress_filtered["participant_nom"].isin(participants_groupe)
-            #    ]
-
-            #    df_progress_all = df_progress_all[
-            #        df_progress_all["participant_nom"].isin(participants_groupe)
-            #    ]    
-                
+            
             # --- 🎯 CALCUL FINAL DU CLASSEMENT (cumul + bonus) --- #
             # Calcul du cumul actuel
             classement = (
@@ -656,8 +634,6 @@ def show(tables):
 
         st.markdown("---")
         
-        # === 📍 SECTION 2 ===        
-
         # =====================================================
         # CALCULS JOURNÉE
         # =====================================================
@@ -682,65 +658,31 @@ def show(tables):
         # =====================================================
 
         # Points bruts (sans bonus)
-        points_sans_bonus = (
-            df_journee.groupby("participant_nom")["points"]
-            .sum()
-            .reset_index()
-            .rename(columns={"points": "points_bruts"})
-        )
+        points_sans_bonus = (df_journee.groupby("participant_nom")["points"].sum().reset_index().rename(columns={"points": "points_bruts"}))
 
         # Points totaux (avec bonus)
-        df_journee_bonus = (
-            df_journee.groupby("participant_nom")
-            .apply(Fonctions.calcul_points_journee)
-            .reset_index()
-            .rename(columns={"points": "points_total"})
-        )
+        df_journee_bonus = (df_journee.groupby("participant_nom").apply(Fonctions.calcul_points_journee).reset_index().rename(columns={"points": "points_total"}))
 
         # Nombre de scores exacts
-        bons_scores = (
-            df_journee[df_journee["bon_score"] == True]
-            .groupby("participant_nom")
-            .size()
-            .reset_index(name="bons_scores")
-        )
+        bons_scores = (df_journee[df_journee["bon_score"] == True].groupby("participant_nom").size().reset_index(name="bons_scores"))
 
         # Fusion des résultats
-        classement_journee = (
-            points_sans_bonus
-            .merge(df_journee_bonus, on="participant_nom", how="left")
-            .merge(bons_scores, on="participant_nom", how="left")
-        )
+        classement_journee = (points_sans_bonus.merge(df_journee_bonus, on="participant_nom", how="left").merge(bons_scores, on="participant_nom", how="left"))
 
-        classement_journee["bons_scores"] = (
-            classement_journee["bons_scores"]
-            .fillna(0)
-            .astype(int)
-        )
+        classement_journee["bons_scores"] = (classement_journee["bons_scores"].fillna(0).astype(int))
 
         # Bonus obtenu
-        classement_journee["points_bonus"] = (
-            classement_journee["points_total"]
-            - classement_journee["points_bruts"]
-        ).round(2)
+        classement_journee["points_bonus"] = (classement_journee["points_total"] - classement_journee["points_bruts"]).round(2)
 
         # Tri classement
-        classement_journee = (
-            classement_journee
-            .sort_values("points_total", ascending=False)
-            .reset_index(drop=True)
-        )
+        classement_journee = (classement_journee.sort_values("points_total", ascending=False).reset_index(drop=True))
 
         classement_journee["Rang"] = classement_journee.index + 1
 
         # Performance relative au meilleur joueur
         max_points = classement_journee["points_total"].max()
 
-        classement_journee["Performance (%)"] = (
-            classement_journee["points_total"]
-            / max_points
-            * 100
-        ).round(1)
+        classement_journee["Performance (%)"] = (classement_journee["points_total"] / max_points * 100).round(1)
 
         # Renommage
         classement_journee = classement_journee.rename(
@@ -757,32 +699,13 @@ def show(tables):
         # TABLEAU GLOBAL DES PRONOSTICS
         # =====================================================
 
-        df_journee["Match"] = (
-            df_journee["equipe_domicile_nom"]
-            + " - "
-            + df_journee["equipe_exterieure_nom"]
-        )
+        df_journee["Match"] = (df_journee["equipe_domicile_nom"] + " - " + df_journee["equipe_exterieure_nom"])
 
-        df_journee["Score Réel"] = df_journee.apply(
-            Fonctions.format_score_reel,
-            axis=1
-        )
+        df_journee["Score Réel"] = df_journee.apply(Fonctions.format_score_reel, axis=1)
 
-        df_journee["points_txt"] = (
-            df_journee["points"]
-            .fillna(0)
-            .astype(float)
-            .map(lambda x: f"{x:.2f}")
-        )
+        df_journee["points_txt"] = (df_journee["points"].fillna(0).astype(float).map(lambda x: f"{x:.2f}"))
 
-        df_journee["Prono Points"] = (
-            df_journee["prono_dom"].fillna(0).astype(int).astype(str)
-            + "-"
-            + df_journee["prono_ext"].fillna(0).astype(int).astype(str)
-            + " ("
-            + df_journee["points_txt"]
-            + ")"
-        )
+        df_journee["Prono Points"] = (df_journee["prono_dom"].fillna(0).astype(int).astype(str) + "-" + df_journee["prono_ext"].fillna(0).astype(int).astype(str) + " (" + df_journee["points_txt"] + ")")
 
         table_globale = (
             df_journee
@@ -807,94 +730,52 @@ def show(tables):
             use_container_width=True
         )
 
-        col_classement_journee, col_detail_pronos = st.columns(2)
-        with col_classement_journee:
-            st.markdown(f"### 🏅 Détails de la journée {journee_courante}")
-
-            st.dataframe(
-                classement_journee[
-                    [
-                    "Rang",
-                    "Participant",
-                    "Total Points",
-                    "Dont Bonus",
-                    "Nombre de bons pronos",
-                    "multiplicateur",
-                    "Performance (%)"
-                ]
-            ].style.format({
-                "Rang": "{:.0f}",
-                "Total Points": "{:.2f}",
-                "Dont Bonus": "{:.2f}",
-                "Nombre de bons pronos": "{:.0f}",
-                "multiplicateur": "{:.2f}",
-                "Performance (%)": "{:.1f}"
-            }),
-                hide_index=True,
-                use_container_width=False
-            )
-        
-        with col_detail_pronos:
-            details_cotes = (
-                df_journee[
-                    [
-                        "Match",
-                        "match_dom",
-                        "match_ext",
-                        "cote_domicile",
-                        "cote_nul",
-                        "cote_exterieur"
-                    ]
-                ]
-                .drop_duplicates()
-                .copy()
-            )
-
-            details_cotes["cote_gagnante"] = details_cotes.apply(
-                Fonctions.get_cote_gagnante,
-                axis=1
-            )
-
-            # Score affiché sans décimales
-            details_cotes["Score"] = details_cotes.apply(
-                Fonctions.format_score,
-                axis=1
-            )
-
-            details_cotes = details_cotes.rename(
-                columns={
-                    "cote_domicile": "1",
-                    "cote_nul": "N",
-                    "cote_exterieur": "2",
-                    "cote_gagnante": "Cote gagnante"
-                }
-            )
-
-            details_cotes = details_cotes[
+        details_cotes = (
+            df_journee[
                 [
                     "Match",
-                    "Score",
-                    "1",
-                    "N",
-                    "2",
-                    "Cote gagnante"
+                    "match_dom",
+                    "match_ext",
+                    "cote_domicile",
+                    "cote_nul",
+                    "cote_exterieur"
                 ]
             ]
+            .drop_duplicates()
+            .copy()
+        )
 
-            st.markdown("### 💰 Cotes des matchs")
+        details_cotes["cote_gagnante"] = details_cotes.apply(Fonctions.get_cote_gagnante, axis=1)
 
-            st.dataframe(
-                details_cotes.style
-                .apply(Fonctions.color_cotes, axis=1)
-                .format({
-                    "1": "{:.2f}",
-                    "N": "{:.2f}",
-                    "2": "{:.2f}",
-                    "Cote gagnante": "{:.2f}"
-                }),
+        # Score affiché sans décimales
+        details_cotes["Score"] = details_cotes.apply(Fonctions.format_score, axis=1)
+
+        details_cotes = details_cotes.rename(
+            columns={
+                "cote_domicile": "1",
+                "cote_nul": "N",
+                "cote_exterieur": "2",
+                "cote_gagnante": "Cote gagnante"
+            }
+        )
+
+        details_cotes = details_cotes[
+            [
+                "Match",
+                "Score",
+                "1",
+                "N",
+                "2",
+                "Cote gagnante"
+            ]
+        ]
+
+        st.markdown("### 💰 Cotes des matchs")
+
+        st.dataframe(details_cotes.style.apply(Fonctions.color_cotes, axis=1).format({"1": "{:.2f}", "N": "{:.2f}", "2": "{:.2f}", "Cote gagnante": "{:.2f}"}),
                 hide_index=True,
                 use_container_width=False
-            )
+        )
 
         # =====================================================
         # SÉLECTION JOUEUR
@@ -913,11 +794,7 @@ def show(tables):
         for idx, participant in enumerate(participants):
             col = cols[idx % 10]
 
-            if col.button(
-                participant,
-                key=f"joueur_{participant}",
-                use_container_width=True
-            ):
+            if col.button(participant, key=f"joueur_{participant}", use_container_width=True):
                 st.session_state.participant_sel = participant
 
         participant_sel = st.session_state.participant_sel
@@ -939,31 +816,28 @@ def show(tables):
             perf = joueur_stats["Performance (%)"].values[0]
             bons_scores = joueur_stats["Nombre de bons scores"].values[0]
 
-            st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
+        st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
 
-            # Colonnes KPI améliorées
-            kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
+        # Colonnes KPI améliorées
+        kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
-            with kpi_cols[0]: Fonctions.kpi_card("🏆 Rang", rang, color="#3b82f6", width="100%", height="80px")  
-            with kpi_cols[1]: Fonctions.kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e", width="100%", height="80px")  
-            with kpi_cols[2]: Fonctions.kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b", width="100%", height="80px")  
-            with kpi_cols[3]: Fonctions.kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444", width="100%", height="80px")
-            with kpi_cols[4]: Fonctions.kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea", width="100%", height="80px")  
-            with kpi_cols[5]: Fonctions.kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea", width="100%", height="80px")  
+        with kpi_cols[0]: Fonctions.kpi_card("🏆 Rang", rang, color="#3b82f6", width="100%", height="80px")  
+        with kpi_cols[1]: Fonctions.kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e", width="100%", height="80px")  
+        with kpi_cols[2]: Fonctions.kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b", width="100%", height="80px")  
+        with kpi_cols[3]: Fonctions.kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444", width="100%", height="80px")
+        with kpi_cols[4]: Fonctions.kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea", width="100%", height="80px")  
+        with kpi_cols[5]: Fonctions.kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea", width="100%", height="80px")  
 
-            # Sécuriser la valeur de la barre de progression
-            perf_safe = 0 if pd.isna(perf) else perf
-            
-            # S'assurer que la valeur est entre 0 et 100
-            perf_safe = max(0, min(100, perf_safe))
+        # Sécuriser la valeur de la barre de progression
+        perf_safe = 0 if pd.isna(perf) else perf
+        
+        # S'assurer que la valeur est entre 0 et 100
+        perf_safe = max(0, min(100, perf_safe))
 
-            # --- Barre de performance visuelle ---
-            st.progress(perf_safe / 100)
-            st.caption(f"Performance de {perf_safe:.1f}% par rapport au meilleur score de la journée.")
+        # --- Barre de performance visuelle ---
+        st.progress(perf_safe / 100)
+        st.caption(f"Performance de {perf_safe:.1f}% par rapport au meilleur score de la journée.")
                 
-        # --- 🔍 Statistiques complémentaires ---
-        st.markdown(f"### 📊 Statistiques avancées de {participant_sel}")
-
         # Filtrer les matchs du joueur sélectionné
         df_joueur = df[df["participant_nom"] == participant_sel].copy()
         df_joueur_participant = df_progress_all[df_progress_all["participant_nom"] == participant_sel].copy()
@@ -1043,203 +917,84 @@ def show(tables):
         with kpi_cols2[3]: Fonctions.kpi_card("📈 Cote moyenne bons pronos", round(cote_moyenne, 2), color="#12eccf", width="100%", height="80px")  
         with kpi_cols2[4]: Fonctions.kpi_card("💰 ROI théorique", round(roi_total, 2), color="#12eccf", width="100%", height="80px")  
 
-        st.markdown("---")
-            
-        # === 📍 SECTION 3 ===       
-        col_pronos, col_evolution_pts = st.columns([1.3, 2])
-        with col_pronos:
-            st.markdown(f"### 📝 Pronostics de {participant_sel}")
-            
-            table_display = df_participant.copy()    
-            # --- Créer colonne Match avec noms des équipes ---
-            table_display["Match"] = table_display["equipe_domicile_nom"] + " - " + table_display["equipe_exterieure_nom"]
+        st.markdown("")
+                
+        # --- Préparer les données ---
+        df["journee_match"] = df["journee_match"].astype(int)  # Conversion en entier
+        df_progress = df.groupby(["participant_nom", "journee_match"]).apply(Fonctions.calcul_points_journee).reset_index()
 
-            # --- Conversion en int et création des colonnes simplifiées ---
-            table_display["Prono"] = table_display["prono_dom"].fillna(0).astype(int).astype(str) + " - " + \
-                                    table_display["prono_ext"].fillna(0).astype(int).astype(str)
-            table_display["Score Réel"] = table_display["match_dom"].fillna(0).astype(int).astype(str) + " - " + \
-                                        table_display["match_ext"].fillna(0).astype(int).astype(str)
+        df_joueur = df_progress[df_progress["participant_nom"] == participant_sel].copy()
 
-            # --- Colonnes à afficher ---
-            table_display = table_display[["journee_match", "Match", "Prono", "Score Réel", "points"]]
-            table_display.columns = ["Journée", "Match", "Prono", "Score Réel", "Points"]
-            table_display = table_display.sort_values("Match").reset_index(drop=True)
+        # Trier les journées de façon ascendante
+        df_joueur = df_joueur.sort_values("journee_match").reset_index(drop=True)
 
-            # --- Affichage ---
-            st.dataframe(table_display, hide_index=True, use_container_width=True)
+        # Points cumulés
+        df_joueur["points_cumulés"] = df_joueur["points"].cumsum()
 
-        with col_evolution_pts:
-            # --- Préparer les données ---
-            df["journee_match"] = df["journee_match"].astype(int)  # Conversion en entier
-            df_progress = df.groupby(["participant_nom", "journee_match"]).apply(Fonctions.calcul_points_journee).reset_index()
+        # --- Création de la figure ---
+        fig = go.Figure()
 
-            df_joueur = df_progress[df_progress["participant_nom"] == participant_sel].copy()
+        # Ligne points cumulés (axe Y gauche)
+        fig.add_trace(go.Scatter(
+            x=df_joueur["journee_match"],
+            y=df_joueur["points_cumulés"],
+            mode="lines+markers",
+            name="Points cumulés",
+            line=dict(color="limegreen", width=2),
+            marker=dict(size=8),
+            hovertemplate=(
+                "Journée : %{x}<br>"
+                "Points cumulés : %{y:.2f}<br>"
+                "Points journée : %{customdata[0]:.2f}<br>"
+                "Bons pronos : %{customdata[1]}<br>"
+                "Multiplicateur : %{customdata[2]}<extra></extra>"
+            ),
+            customdata=df_joueur[["points", "bons_pronos", "multiplicateur"]].values
+        ))
 
-            # Trier les journées de façon ascendante
-            df_joueur = df_joueur.sort_values("journee_match").reset_index(drop=True)
+        # Barres points par journée (axe Y droit)
+        fig.add_trace(go.Bar(
+            x=df_joueur["journee_match"],
+            y=df_joueur["points"],
+            name="Points par journée",
+            marker_color="skyblue",
+            opacity=0.6,
+            yaxis="y2",
+            hovertemplate=(
+                "Journée : %{x}<br>"
+                "Points journée : %{y:.2f}<br>"
+                "Bons pronos : %{customdata[0]}<br>"
+                "Multiplicateur : %{customdata[1]}<extra></extra>"
+            ),
+            customdata=df_joueur[["bons_pronos", "multiplicateur"]].values
+        ))
 
-            # Points cumulés
-            df_joueur["points_cumulés"] = df_joueur["points"].cumsum()
+        # --- Layout avec deux axes Y ---
+        fig.update_layout(
+            title=f"Évolution des points - {participant_sel}",
+            xaxis_title="Journée",
+            yaxis=dict(
+                title=dict(text="Points cumulés", font=dict(color="limegreen")),
+                tickfont=dict(color="limegreen")
+            ),
+            yaxis2=dict(
+                title=dict(text="Points par journée", font=dict(color="skyblue")),
+                tickfont=dict(color="skyblue"),
+                overlaying="y",
+                side="right"
+            ),
+            legend=dict(x=0.01, y=0.99),
+            template="plotly_white",
+            margin=dict(l=50, r=50, t=50, b=50),
+            hovermode="x unified"
+        )
 
-            # --- Création de la figure ---
-            fig = go.Figure()
-
-            # Ligne points cumulés (axe Y gauche)
-            fig.add_trace(go.Scatter(
-                x=df_joueur["journee_match"],
-                y=df_joueur["points_cumulés"],
-                mode="lines+markers",
-                name="Points cumulés",
-                line=dict(color="limegreen", width=2),
-                marker=dict(size=8),
-                hovertemplate=(
-                    "Journée : %{x}<br>"
-                    "Points cumulés : %{y:.2f}<br>"
-                    "Points journée : %{customdata[0]:.2f}<br>"
-                    "Bons pronos : %{customdata[1]}<br>"
-                    "Multiplicateur : %{customdata[2]}<extra></extra>"
-                ),
-                customdata=df_joueur[["points", "bons_pronos", "multiplicateur"]].values
-            ))
-
-            # Barres points par journée (axe Y droit)
-            fig.add_trace(go.Bar(
-                x=df_joueur["journee_match"],
-                y=df_joueur["points"],
-                name="Points par journée",
-                marker_color="skyblue",
-                opacity=0.6,
-                yaxis="y2",
-                hovertemplate=(
-                    "Journée : %{x}<br>"
-                    "Points journée : %{y:.2f}<br>"
-                    "Bons pronos : %{customdata[0]}<br>"
-                    "Multiplicateur : %{customdata[1]}<extra></extra>"
-                ),
-                customdata=df_joueur[["bons_pronos", "multiplicateur"]].values
-            ))
-
-            # --- Layout avec deux axes Y ---
-            fig.update_layout(
-                title=f"Évolution des points - {participant_sel}",
-                xaxis_title="Journée",
-                yaxis=dict(
-                    title=dict(text="Points cumulés", font=dict(color="limegreen")),
-                    tickfont=dict(color="limegreen")
-                ),
-                yaxis2=dict(
-                    title=dict(text="Points par journée", font=dict(color="skyblue")),
-                    tickfont=dict(color="skyblue"),
-                    overlaying="y",
-                    side="right"
-                ),
-                legend=dict(x=0.01, y=0.99),
-                template="plotly_white",
-                margin=dict(l=50, r=50, t=50, b=50),
-                hovermode="x unified"
-            )
-
+        col_evolution, col_top_flop = st.columns(2)
             # --- Affichage dans Streamlit ---
+        with col_evolution:
             st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("---")
-        
-        # === 📍 SECTION 4 ===
-        # --- Comparaison progression joueur vs moyenne générale ---
-        col_comparaison_moyenne, col_top5 = st.columns([2.2, 1])
-        with col_comparaison_moyenne:
-            st.markdown("### 📊 Comparaison avec la moyenne du championnat")
-
-            # Points cumulés du joueur sélectionné
-            df_joueur = df_progress_all[df_progress_all["participant_nom"] == participant_sel].copy()
-            df_joueur["points_cumul_joueur"] = df_joueur["points"].cumsum()
-
-            # Moyenne des points cumulés
-            df_moyenne = df_progress_all.groupby("journee_match")["points"].mean().reset_index()
-            df_moyenne["points_cumul_moyenne"] = df_moyenne["points"].cumsum()
-
-            # Filtrer les journées où la moyenne a changé
-            df_moyenne = df_moyenne[df_moyenne["points_cumul_moyenne"].diff().fillna(df_moyenne["points_cumul_moyenne"]) != 0]
-
-            # Merge pour aligner les axes
-            df_comparatif = pd.merge(df_joueur, df_moyenne, on="journee_match", how="inner")  # on utilise inner pour ne garder que les journées jouées
-
-            # --- Graphique comparatif ---
-            fig = go.Figure()
-
-            # Courbe du joueur
-            fig.add_trace(go.Scatter(
-                x=df_comparatif["journee_match"],
-                y=df_comparatif["points_cumul_joueur"],
-                mode="lines+markers",
-                name=participant_sel,
-                line=dict(color="limegreen", width=3),
-                marker=dict(size=8),
-                hovertemplate="Journée : %{x}<br>Points cumulés : %{y:.2f}<extra></extra>"
-            ))
-
-            # Courbe de la moyenne
-            fig.add_trace(go.Scatter(
-                x=df_comparatif["journee_match"],
-                y=df_comparatif["points_cumul_moyenne"],
-                mode="lines+markers",
-                name="Moyenne championnat",
-                line=dict(color="dodgerblue", width=3, dash="dash"),
-                marker=dict(symbol="square", size=7),
-                hovertemplate="Journée: %{x}<br>Moyenne: %{y:.2f}<extra></extra>"
-            ))
-
-            # Mise en page esthétique avec légende en bas
-            fig.update_layout(
-                title=dict(
-                    text=f"Comparaison des performances : {participant_sel} vs Moyenne ({championnat_sel})",
-                    font=dict(size=18)
-                ),
-                xaxis=dict(
-                    title=dict(text="Journée", font=dict(size=14)),
-                    tickfont=dict(size=12),
-                    showgrid=True,
-                    gridcolor="lightgray"
-                ),
-                yaxis=dict(
-                    title=dict(text="Points cumulés", font=dict(size=14)),
-                    tickfont=dict(size=12),
-                    showgrid=True,
-                    gridcolor="lightgray"
-                ),
-                template="plotly_white",
-                hovermode="x unified",
-                legend=dict(
-                    title="Légende",
-                    orientation="h",   # horizontale
-                    yanchor="bottom",
-                    y=-0.25,           # sous le graphique
-                    xanchor="left",
-                    x=0,
-                    font=dict(size=12)
-                ),
-                height=400,
-                margin=dict(l=50, r=50, t=60, b=80)  # plus de marge en bas pour la légende
-            )
-
-            st.plotly_chart(fig, use_container_width=True)
-
-            # --- Statistiques comparatives ---
-            if not df_comparatif.empty:
-                diff_points = (
-                    df_comparatif["points_cumul_joueur"].iloc[-1]
-                    - df_comparatif["points_cumul_moyenne"].iloc[-1]
-                )
-
-                tendance = "au-dessus" if diff_points > 0 else "en dessous"
-
-                st.markdown(
-                    f"💡 **{participant_sel}** est actuellement **{abs(diff_points):.2f} points {tendance}** de la moyenne des participants."
-                )
-            else:
-                st.warning("Pas assez de données pour calculer la comparaison.")
-
-        with col_top5:
+       
+        with col_top_flop:
             # --- Top 5 des meilleures journées du joueur ---
             st.markdown("### 🏅 Top 5 des meilleures journées")
 
@@ -1261,137 +1016,39 @@ def show(tables):
                 df_joueur_journees_display["Points"] = df_joueur_journees_display["Points"].round(2)
                 df_joueur_journees_display["Multiplicateur"] = df_joueur_journees_display["Multiplicateur"].round(2)
 
-                st.dataframe(df_joueur_journees_display, hide_index=True, use_container_width=True)
-                
-                # --- Top 5 des pires journées du joueur ---
-                st.markdown("### 💀 Top 5 des pires journées")
+                st.dataframe(df_joueur_journees_display, hide_index=True, use_container_width=False)
+                    
+            # --- Top 5 des pires journées du joueur ---
+            st.markdown("### 💀 Top 5 des pires journées")
 
-                # On récupère les scores du joueur par journée
-                df_joueur_pires = (
-                    df_progress_all[df_progress_all["participant_nom"] == participant_sel]
-                    .sort_values(by="points", ascending=True)
-                    .head(5)
-                )
-
-                if df_joueur_pires.empty:
-                    st.info("Aucune journée jouée pour ce participant.")
-                else:
-                    df_joueur_pires_display = df_joueur_pires[
-                        ["journee_match", "points", "bons_pronos", "multiplicateur"]
-                    ].copy()
-
-                    df_joueur_pires_display.rename(columns={
-                        "journee_match": "Journée",
-                        "points": "Points",
-                        "bons_pronos": "Bons pronostics",
-                        "multiplicateur": "Multiplicateur"
-                    }, inplace=True)
-
-                    # Formatage visuel
-                    df_joueur_pires_display["Points"] = (
-                        df_joueur_pires_display["Points"].round(2)
-                    )
-                    df_joueur_pires_display["Multiplicateur"] = (
-                        df_joueur_pires_display["Multiplicateur"].round(2)
-                    )
-
-                    st.dataframe(
-                        df_joueur_pires_display,
-                        hide_index=True,
-                        use_container_width=True
-                    )    
-
-            # --- Petit résumé dynamique ---
-            moyenne_points = df_joueur_journees["points"].mean() if not df_joueur_journees.empty else 0
-            max_points = df_joueur_journees["points"].max() if not df_joueur_journees.empty else 0
-            journee_max = (df_joueur_journees.loc[df_joueur_journees["points"].idxmax(), "journee_match"]
-                    if not df_joueur_journees.empty else None)
-
-            st.markdown("### 📋 Résumé des performances")
-            if journee_max:
-                st.markdown(
-                    f"🔥 **Meilleure journée :** journée **{journee_max}** avec **{max_points:.2f} pts** "
-                    f"(moyenne sur top 5 : {moyenne_points:.2f} pts)."
-                )
-            else:
-                st.markdown("Aucune performance enregistrée pour le moment.")
-        
-        st.markdown("---")
-        
-        # === 📍 SECTION 5 ===
-        # --- 📈 Comparaison des points cumulés avec le top 3 ---
-        st.markdown(f"### 🏆 Points cumulés de {participant_sel} vs Top 3")
-
-        # Calcul des points cumulés par joueur et par journée
-        points_cumules = df_progress_all.groupby(["participant_nom", "journee_match"], as_index=False)["points"].sum()
-        points_cumules = points_cumules.sort_values(["participant_nom", "journee_match"])
-        points_cumules["points_cumulés"] = points_cumules.groupby("participant_nom")["points"].cumsum()
-
-        # Retirer les journées où il n'y a pas eu de progression de points (match non joué)
-        # points_cumules = points_cumules.groupby("participant_nom").apply(lambda df: df[df["points_cumulés"].diff().fillna(df["points_cumulés"]) != 0]).reset_index(drop=True)
-
-        # Identification du Top 3 global
-        top3 = classement.head(3)["participant_nom"].tolist() if "participant_nom" in classement.columns else []
-
-        # Joueurs à afficher : joueur sélectionné + top3 (éviter doublons)
-        joueurs_affiches = list(set(top3 + [participant_sel]))
-        df_plot = points_cumules[points_cumules["participant_nom"].isin(joueurs_affiches)]
-
-        # Palette de couleurs Plotly pour les participants (sauf joueur sélectionné)
-        palette = px.colors.qualitative.Plotly
-        autres_joueurs = [j for j in joueurs_affiches if j != participant_sel]
-        couleurs = {j: palette[i % len(palette)] for i, j in enumerate(autres_joueurs)}
-        couleurs[participant_sel] = "limegreen"  # joueur sélectionné
-
-        fig = go.Figure()
-
-        for joueur, data_joueur in df_plot.groupby("participant_nom"):
-            if joueur == participant_sel:
-                fig.add_trace(go.Scatter(
-                    x=data_joueur["journee_match"],
-                    y=data_joueur["points_cumulés"],
-                    mode="lines+markers",
-                    name=joueur,
-                    line=dict(color=couleurs[joueur], width=3),
-                    marker=dict(size=8)
-                ))
-            else:
-                fig.add_trace(go.Scatter(
-                    x=data_joueur["journee_match"],
-                    y=data_joueur["points_cumulés"],
-                    mode="lines+markers",
-                    name=joueur,
-                    line=dict(color=couleurs[joueur], width=2, dash="dash"),
-                    marker=dict(size=6),
-                    opacity=0.9
-                ))
-
-        # Layout esthétique
-        fig.update_layout(
-            title=dict(text="Évolution des points cumulés - Comparaison avec le Top 3", font=dict(size=16)),
-            xaxis=dict(title="Journée", tickfont=dict(size=10)),
-            yaxis=dict(title="Points cumulés", tickfont=dict(size=10)),
-            height=450,
-            template="plotly_white",
-            hovermode="x unified",
-            legend=dict(
-                orientation="h",
-                yanchor="bottom",
-                y=-0.25,  # sous le graphique
-                xanchor="left",
-                x=0,
-                title="Participants"
+            # On récupère les scores du joueur par journée
+            df_joueur_pires = (
+                df_progress_all[df_progress_all["participant_nom"] == participant_sel]
+                .sort_values(by="points", ascending=True)
+                .head(5)
             )
-        )
 
-        st.plotly_chart(fig, use_container_width=True)
-        
-        st.markdown("---")
-            
-        # === 📍 SECTION 6 ===
+            if df_joueur_pires.empty:
+                st.info("Aucune journée jouée pour ce participant.")
+            else:
+                df_joueur_pires_display = df_joueur_pires[
+                    ["journee_match", "points", "bons_pronos", "multiplicateur"]
+                ].copy()
+
+                df_joueur_pires_display.rename(columns={
+                    "journee_match": "Journée",
+                    "points": "Points",
+                    "bons_pronos": "Bons pronostics",
+                    "multiplicateur": "Multiplicateur"
+                }, inplace=True)
+
+                # Formatage visuel
+                df_joueur_pires_display["Points"] = (df_joueur_pires_display["Points"].round(2))
+                df_joueur_pires_display["Multiplicateur"] = (df_joueur_pires_display["Multiplicateur"].round(2))
+
+                st.dataframe(df_joueur_pires_display, hide_index=True, use_container_width=False)    
+                
         # --- 📈 Évolution du classement du joueur par journée ---
-        st.markdown("### 📊 Évolution du classement par journée")
-
         # On recalcule les classements par journée
         classements_journees = (df_progress_all.groupby(["journee_match", "participant_nom"], as_index=False)["points"].sum())
 
@@ -1433,13 +1090,7 @@ def show(tables):
         # Formater Points et Écart avec Leader avec 2 décimales (conversion en float d'abord)
         joueur_evolution_transpose.loc["Points"] = joueur_evolution_transpose.loc["Points"].apply(lambda x: f"{x:.2f}")
         joueur_evolution_transpose.loc["Écart avec Leader"] = joueur_evolution_transpose.loc["Écart avec Leader"].apply(lambda x: f"{x:.2f}")
-            
-        # Appliquer le style avec pandas
-        # styled_table = joueur_evolution_transpose.style.applymap(lambda val: color_cells(val, joueur_evolution_transpose.index[joueur_evolution_transpose.index.get_loc(val.name)] if hasattr(val, 'name') else ""),)
-
-        # Affichage dans Streamlit
-        #st.dataframe(styled_table, use_container_width=True)
-        
+                    
         # Journées où au moins un participant a des points > 0
         journees_jouees = df_progress_all.groupby("journee_match")["points"].sum()
         journees_jouees = journees_jouees[journees_jouees > 0].index.tolist()
@@ -1499,187 +1150,8 @@ def show(tables):
 
         st.plotly_chart(fig, use_container_width=True)
             
-        # --- On récupère les journées effectivement jouées ---
-        journees_jouees = classements_journees.groupby("journee_match")["points"].sum()
-        journees_jouees = journees_jouees[journees_jouees > 0].index.tolist()
-
-        # Filtrer seulement les journées jouées
-        classements_effectifs = classements_journees[classements_journees["journee_match"].isin(journees_jouees)].copy()
-
-        # Palette de couleurs
-        colors = px.colors.qualitative.Set2
-
-        # Figure
-        fig = go.Figure()
-
-        for i, (nom, data_part) in enumerate(classements_effectifs.groupby("participant_nom")):
-            is_selected = nom == participant_sel
-            fig.add_trace(
-                go.Scatter(
-                    x=data_part["journee_match"],
-                    y=data_part["Rang"],
-                    mode="lines+markers",
-                    name=nom,
-                    line=dict(
-                        color=colors[i % len(colors)],
-                        width=4 if is_selected else 1.5
-                    ),
-                    marker=dict(size=6 if is_selected else 4),
-                    opacity=1.0 if is_selected else 0.3,
-                    hovertemplate="Journée %{x}<br>%{fullData.name} : %{y}ᵉ<extra></extra>"
-                )
-            )
-
-        # Layout
-        fig.update_layout(
-            xaxis=dict(title="Journée", tickfont=dict(size=10)),
-            yaxis=dict(title="Classement par journée", autorange="reversed", tickfont=dict(size=10)),
-            template="plotly_white",
-            height=500,
-            hovermode="x unified",
-            legend=dict(
-                orientation="h",
-                yanchor="bottom",
-                y=1.02,
-                xanchor="center",
-                x=0.5
-            ),
-            title=f"📊 Évolution du classement par journée - {participant_sel}"
-        )
-
-        st.plotly_chart(fig, use_container_width=True)
-            
         st.markdown("---")
-                    
-        # === 📍 SECTION 7 ===
-        # --- Récupération de l'historique complet du joueur depuis les CSV ---
-        # Filtrage sur le participant
-        # data_historique = df_pronos[df_pronos["participant_nom"] == participant_sel].merge(
-        #     df_matchs,
-        #    on="match_id",
-        #     suffixes=("_prono", "_match")
-        # )
 
-        # --- Filtrage selon la compétition sélectionnée ---
-        # if championnat_sel != "Toutes":
-        #     data_historique = data_historique[data_historique["competition"] == championnat_sel]
-
-        # --- Sélection des colonnes et renommage pour correspondre à l'ancien SQL ---
-        # data_historique = data_historique[[
-        #     "participant_id",
-        #     "participant_nom",
-        #     "score_domicile_prono", 
-        #     "score_exterieur_prono",
-        #     "score_domicile_match", 
-        #     "score_exterieur_match",
-        #     "equipe_domicile_nom",
-        #     "equipe_exterieure_nom",
-        #     "cote_domicile",
-        #     "cote_exterieur",
-        #     "cote_nul",
-        #     "journee_match",
-        #     "saison_match",
-        #     "competition",
-        #     "match_id"
-        # ]].rename(columns={
-        #     "score_domicile_prono": "prono_dom",
-        #     "score_exterieur_prono": "prono_ext",
-        #     "score_domicile_match": "match_dom",
-        #     "score_exterieur_match": "match_ext"
-        # })
-
-        # --- Suppression des doublons éventuels ---
-        # df_historique = data_historique.drop_duplicates(subset=["participant_id", "match_id"], keep="last")
-
-        # --- Préparer le DataFrame historique ---
-        # df_historique["journee_match"] = df_historique["journee_match"].astype(int)
-        # df_historique = df_historique.sort_values(by=["saison_match", "journee_match"]).reset_index(drop=True)
-
-        # Vérification des résultats
-        # if df_historique.empty:
-        #     st.info(f"Aucun pronostic historique trouvé pour {participant_sel}.")
-        # else:
-        #     # Calcul des points pour toutes les saisons
-        #    df_historique["points"] = df_historique.apply(calcul_points, axis=1)
-        #     df_historique = df_historique.sort_values(["saison_match", "journee_match"]).reset_index(drop=True)
-
-        # --- Comparaison progression joueur par saison ---
-        # st.markdown(f"### 📊 Comparaison des saisons de {participant_sel}")
-
-        # saisons_disponibles = sorted(df_historique["saison_match"].unique(), reverse=True)
-        # default_saisons = [saison_sel] if saison_sel in saisons_disponibles else []
-
-        # saisons_sel = st.multiselect(
-        #     "Sélectionnez les saisons à comparer",
-        #     options=saisons_disponibles,
-        #    default=default_saisons,
-        #     key=f"saisons_compare_{participant_sel}"
-        # )
-
-        # if not saisons_sel:
-        #     st.warning("Veuillez sélectionner au moins une saison pour l'affichage.")
-        # else:
-        #     fig = go.Figure()
-        #     couleurs_prev = px.colors.qualitative.Pastel
-        #     idx_couleur = 0
-
-        #     for saison in saisons_sel:
-        #         df_saison = df_historique[df_historique["saison_match"] == saison].copy()
-        #         if df_saison.empty:
-        #             continue
-
-                # Tri et conversion en int pour les journées
-        #         df_saison["journee_match"] = df_saison["journee_match"].astype(int)
-        #         df_saison = df_saison.sort_values("journee_match").reset_index(drop=True)
-
-                # --- Calcul cumulatif par journée ---
-        #         df_saison = df_saison.groupby("journee_match", as_index=False)["points"].sum()
-        #         df_saison["points_cumul"] = df_saison["points"].cumsum()
-
-                # Traces
-        #         if saison == saison_sel:
-        #             fig.add_trace(go.Scatter(
-        #                 x=df_saison["journee_match"],
-        #                 y=df_saison["points_cumul"],
-        #                 mode="lines+markers",
-        #                 name=f"Saison {saison} (actuelle)",
-        #                 line=dict(color="limegreen", width=4),
-        #                 marker=dict(size=10, symbol="circle"),
-        #                 hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
-        #                 customdata=df_saison[["points"]].values
-        #              ))
-        #         else:
-        #            couleur = couleurs_prev[idx_couleur % len(couleurs_prev)]
-        #             idx_couleur += 1
-        #             fig.add_trace(go.Scatter(
-        #                 x=df_saison["journee_match"],
-        #                 y=df_saison["points_cumul"],
-        #                 mode="lines+markers",
-        #                 name=f"Saison {saison} (précédente)",
-        #                 line=dict(color=couleur, width=2, dash="dash"),
-        #                 marker=dict(size=7, symbol="circle"),
-        #                 opacity=0.6,
-        #                 hovertemplate="Journée: %{x}<br>Points cumulés: %{y:.2f}<br>Points journée: %{customdata[0]:.2f}<extra></extra>",
-        #                 customdata=df_saison[["points"]].values
-        #             ))
-
-        #     fig.update_layout(
-        #        title=f"Progression cumulée de {participant_sel} par saison",
-        #         xaxis_title="Journée",
-        #         yaxis_title="Points cumulés",
-        #         xaxis=dict(range=[0, df_historique["journee_match"].max() + 1]),  # X commence à 0 et va jusqu'à max +1
-        #         hovermode="x unified",
-        #         template="plotly_white",
-        #         height=450,
-        #         legend=dict(title="Saisons", x=0.01, y=0.99),
-        #         margin=dict(l=50, r=50, t=60, b=50)
-        #     )
-
-        #     st.plotly_chart(fig, use_container_width=True)
-
-        # st.markdown("---") 
-        
-        # === 📍 SECTION 8 ===
         # --- Points par journée et participant ---
         df_points_journee = (df.groupby(["journee_match", "participant_nom"])["points"].sum().reset_index())
 

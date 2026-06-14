@@ -204,19 +204,19 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None, cla
 
         nb_lignes = len(tableau)
 
-    st.dataframe(
-        tableau,
-        hide_index=True,
-        use_container_width=False,
-        height=min(36 * (nb_lignes + 1), 1000),  # adapte la hauteur au nombre de lignes
-        column_config={
-            "Rang": st.column_config.NumberColumn("Rang", width=50),
-            "Participant": st.column_config.TextColumn("Participant", width=250),
-            "Points": st.column_config.NumberColumn("Points", width=80),
-            "Évolution": st.column_config.TextColumn("Évolution", width=80),
-            "Bonus": st.column_config.NumberColumn("Bonus", width=80),
-        }
-    )
+        st.dataframe(
+            tableau,
+            hide_index=True,
+            use_container_width=False,
+            height=min(36 * (nb_lignes + 1), 1000),
+            column_config={
+                "Rang": st.column_config.NumberColumn("Rang", width=50),
+                "Participant": st.column_config.TextColumn("Participant", width=250),
+                "Points": st.column_config.NumberColumn("Points", width=80),
+                "Évolution": st.column_config.TextColumn("Évolution", width=80),
+                "Bonus": st.column_config.NumberColumn("Bonus", width=80),
+            }
+        )
 
 def kpi_card(title, value, delta=None, color="#2563eb", width="100%", height="120px"):
     st.markdown(f"""
