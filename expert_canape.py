@@ -896,6 +896,7 @@ def show(tables):
         roi_total = df_joueur["roi_match"].sum()
         
         # --- Affichage final ---
+        st.markdown(f"###### Statistiques globales de la saison")
         # --- Ligne 1 : Performances générales ---
         kpi_cols = st.columns([1, 1, 1, 1, 1, 1])
 
@@ -996,7 +997,8 @@ def show(tables):
        
         with col_top_flop:
             # --- Top 5 des meilleures journées du joueur ---
-            st.markdown("### 🏅 Top 5 des meilleures journées")
+            st.markdown("")
+            st.markdown("###### 🏅 Top 5 des meilleures journées")
 
             # On récupère les scores du joueur par journée
             df_joueur_journees = (df_progress_all[df_progress_all["participant_nom"] == participant_sel].sort_values(by="points", ascending=False).head(5))
@@ -1019,7 +1021,7 @@ def show(tables):
                 st.dataframe(df_joueur_journees_display, hide_index=True, use_container_width=False)
                     
             # --- Top 5 des pires journées du joueur ---
-            st.markdown("### 💀 Top 5 des pires journées")
+            st.markdown("###### 💀 Top 5 des pires journées")
 
             # On récupère les scores du joueur par journée
             df_joueur_pires = (
@@ -1173,10 +1175,10 @@ def show(tables):
 
         classements_cols = st.columns([1, 1])
         with classements_cols[0] :
-            st.markdown("### 🏅 Classement – Journées gagnées")
+            st.markdown("#### 🏅 Classement – Journées gagnées")
             st.dataframe(classement_journees_gagnees[["Rang", "Participant", "Journees gagnées"]], hide_index=True, use_container_width=True)
         with classements_cols[1] :
-            st.markdown("### 🎯 Classement – Bons scores (score exact)")
+            st.markdown("#### 🎯 Classement – Bons scores (score exact)")
             st.dataframe(classement_bons_scores[["Rang", "Participant", "Bons scores"]], hide_index=True, use_container_width=True)
 
     # ---------------------- ONGLET 2 : Insertion Pronos ----------------------
