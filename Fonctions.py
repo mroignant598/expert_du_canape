@@ -291,10 +291,10 @@ def calcul_points(r):
 
     buts_prono = r.prono_dom + r.prono_ext
     buts_reel = r.match_dom + r.match_ext
-    prolifique_prono = buts_prono >= 4
-    prolifique_reel = buts_reel >= 4
+    prolifique_prono = 4 <= buts_prono < 7
+    prolifique_reel = 4 <= buts_reel < 7
     super_prolifique_prono = buts_prono >=7
-    super_prolifique_reel = buts_prono >=7
+    super_prolifique_reel = buts_reel >=7
 
     if r.match_dom > r.match_ext:
         cote_match = r.cote_domicile
