@@ -10181,7 +10181,7 @@ match_id,saison_id,saison,code_saison,competition,date,journee,equipe_domicile_i
 12259,62,2025-2026,CDM_26,Coupe du Monde,2026-06-14,1,1351,Pays-Bas,1328,Japon,2.0,2.0,2.0,3.5,3.85,,,,,,,
 12260,62,2025-2026,CDM_26,Coupe du Monde,2026-06-14,1,1350,Côte D'Ivoire,1325,Equateur,1.0,0.0,3.25,3.9,2.5,,,,,,,
 12261,62,2025-2026,CDM_26,Coupe du Monde,2026-06-15,1,1352,Suède,1327,Tunisie,5.0,1.0,1.85,3.55,4.8,,,,,,,
-12262,62,2025-2026,CDM_26,Coupe du Monde,2026-06-15,1,1358,Espagne,1333,Cap Vert,,,,,,,,,,,,
+12262,62,2025-2026,CDM_26,Coupe du Monde,2026-06-15,1,1358,Espagne,1333,Cap Vert,0.0,0.0,1.07,13.0,25.0,,,,,,,
 12263,62,2025-2026,CDM_26,Coupe du Monde,2026-06-15,1,1359,Belgique,1336,Egypte,,,,,,,,,,,,
 12264,62,2025-2026,CDM_26,Coupe du Monde,2026-06-15,1,1357,Arabie Saoudite,1334,Uruguay,,,,,,,,,,,,
 12265,62,2025-2026,CDM_26,Coupe du Monde,2026-06-16,1,1360,Iran,1335,Nouvelle-Zélande,,,,,,,,,,,,
