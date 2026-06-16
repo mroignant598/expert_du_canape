@@ -55562,7 +55562,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57537,35,Chouchou,Belgique,Iran,1,1,12287,2,2025-2026,CDM_26,Coupe du Monde
 57538,35,Chouchou,Uruguay,Cap Vert,2,1,12288,2,2025-2026,CDM_26,Coupe du Monde
 57539,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12289,2,2025-2026,CDM_26,Coupe du Monde
-57540,35,Chouchou,Argentine,Autriche,2,0,12290,2,2025-2026,CDM_26,Coupe du Monde
 57541,35,Chouchou,France,Irak,3,0,12291,2,2025-2026,CDM_26,Coupe du Monde
 57542,35,Chouchou,Norvège,Sénégal,1,1,12292,2,2025-2026,CDM_26,Coupe du Monde
 57543,35,Chouchou,Jordanie,Algérie,0,2,12293,2,2025-2026,CDM_26,Coupe du Monde
@@ -55586,7 +55585,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57561,17,Olivier,Belgique,Iran,3,0,12287,2,2025-2026,CDM_26,Coupe du Monde
 57562,17,Olivier,Uruguay,Cap Vert,2,0,12288,2,2025-2026,CDM_26,Coupe du Monde
 57563,17,Olivier,Nouvelle-Zélande,Egypte,0,1,12289,2,2025-2026,CDM_26,Coupe du Monde
-57564,17,Olivier,Argentine,Autriche,2,1,12290,2,2025-2026,CDM_26,Coupe du Monde
 57565,17,Olivier,France,Irak,3,0,12291,2,2025-2026,CDM_26,Coupe du Monde
 57566,17,Olivier,Norvège,Sénégal,1,1,12292,2,2025-2026,,Coupe du Monde
 57567,17,Olivier,Jordanie,Algérie,0,3,12293,2,2025-2026,,Coupe du Monde
@@ -55594,3 +55592,5 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57569,17,Olivier,Angleterre,Ghana,2,0,12295,2,2025-2026,,Coupe du Monde
 57570,17,Olivier,Panama,Croatie,0,2,12296,2,2025-2026,,Coupe du Monde
 57571,17,Olivier,Colombie,RD Congo,2,1,12297,2,2025-2026,,Coupe du Monde
+57572,35,Chouchou,Argentine,Autriche,2,0,12290,2,2025-2026,,Coupe du Monde
+57573,17,Olivier,Argentine,Autriche,2,1,12290,2,2025-2026,,Coupe du Monde
