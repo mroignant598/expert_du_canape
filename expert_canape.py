@@ -807,16 +807,24 @@ def show(tables):
         joueur_stats = classement_journee[classement_journee["Participant"] == participant_sel]
                     
         # --- Résumé personnel ---
+        points_bruts = 0
+        points_bonus = 0
+        bons_pronos = 0
+        multiplicateur = 1
+        rang = "-"
+        perf = 0
+        bons_scores = 0
+
         if joueur_stats.empty:
-            st.warning(f"Aucune statistique disponible pour {participant_sel}")
-            return
-        points_bruts = joueur_stats["points_bruts"].values[0]
-        points_bonus = joueur_stats["Dont Bonus"].values[0]
-        bons_pronos = joueur_stats["Nombre de bons pronos"].values[0]
-        multiplicateur = joueur_stats["multiplicateur"].values[0]
-        rang = joueur_stats["Rang"].values[0]
-        perf = joueur_stats["Performance (%)"].values[0]
-        bons_scores = joueur_stats["Nombre de bons scores"].values[0]
+            st.warning(f"Aucune statistique disponible pour {participant_sel} pour la journée {journee_sel}")
+        else:
+            points_bruts = joueur_stats["points_bruts"].values[0]
+            points_bonus = joueur_stats["Dont Bonus"].values[0]
+            bons_pronos = joueur_stats["Nombre de bons pronos"].values[0]
+            multiplicateur = joueur_stats["multiplicateur"].values[0]
+            rang = joueur_stats["Rang"].values[0]
+            perf = joueur_stats["Performance (%)"].values[0]
+            bons_scores = joueur_stats["Nombre de bons scores"].values[0]
 
         st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
 
@@ -996,7 +1004,7 @@ def show(tables):
             # --- Affichage dans Streamlit ---
         with col_evolution:
             st.plotly_chart(fig, use_container_width=True)
-       
+
         with col_top_flop:
             # --- Top 5 des meilleures journées du joueur ---
             st.markdown("")
@@ -1231,15 +1239,24 @@ def show(tables):
             st.markdown("### Sélection du participant")
 
             # --- Source 1 : pseudos déjà présents dans les pronostics ---
-            df_pronos = tables["all_pronostics"]
+            df_repartition = tables["repartition_saison_participant"]
 
-            pseudos_pronos = df_pronos[
-                (df_pronos["saison"] == saison_sel) &
-                (df_pronos["competition_nom"] == competition_sel)
-            ]["participant_nom"].dropna().unique().tolist()
-
-            # --- Fusion des pseudos sans doublons ---
-            pseudos_dispo = sorted(list(set(pseudos_pronos)))
+            pseudos_dispo = sorted(
+                df_repartition[
+                    (df_repartition["saison"] == saison_sel) &
+                    (df_repartition["competition"] == competition_sel)
+                ]["pseudo"]
+                .dropna()
+                .astype(str)
+                .unique()
+                .tolist()
+            )
+            
+            if not pseudos_dispo:
+                st.warning(
+                    f"Aucun participant enregistré pour {competition_sel} - {saison_sel}"
+                )
+                st.stop()
 
             # --- Option d'ajout manuel ---
             option_ajout = "➕ Ajouter un nouveau pseudo"
