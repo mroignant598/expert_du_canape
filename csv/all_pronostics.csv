@@ -55618,3 +55618,51 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57763,35,Chouchou,Angleterre,Ghana,1,1,12348,2,2025-2026,,Coupe du Monde
 57764,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
 57765,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
+57766,17,Olivier,République Tchèque,Afrique Du Sud,1,0,12327,2,2025-2026,,Coupe du Monde
+57767,17,Olivier,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
+57768,17,Olivier,Canada,Qatar,3,0,12329,2,2025-2026,,Coupe du Monde
+57769,17,Olivier,Mexique,Corée Du Sud,2,0,12330,2,2025-2026,,Coupe du Monde
+57770,17,Olivier,Etats-Unis,Australie,1,0,12331,2,2025-2026,,Coupe du Monde
+57771,17,Olivier,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
+57772,17,Olivier,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
+57773,17,Olivier,Turquie,Paraguay,2,2,12334,2,2025-2026,,Coupe du Monde
+57774,17,Olivier,Pays-Bas,Suède,1,0,12335,2,2025-2026,,Coupe du Monde
+57775,17,Olivier,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,,Coupe du Monde
+57776,17,Olivier,Equateur,Curaçao,1,0,12337,2,2025-2026,,Coupe du Monde
+57777,17,Olivier,Tunisie,Japon,0,1,12338,2,2025-2026,,Coupe du Monde
+57778,17,Olivier,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
+57779,17,Olivier,Belgique,Iran,3,0,12340,2,2025-2026,,Coupe du Monde
+57780,17,Olivier,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
+57781,17,Olivier,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
+57782,17,Olivier,Argentine,Autriche,2,1,12343,2,2025-2026,,Coupe du Monde
+57783,17,Olivier,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
+57784,17,Olivier,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
+57785,17,Olivier,Jordanie,Algérie,0,3,12346,2,2025-2026,,Coupe du Monde
+57786,17,Olivier,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
+57787,17,Olivier,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
+57788,17,Olivier,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
+57789,17,Olivier,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
+57790,37,LeV,République Tchèque,Afrique Du Sud,0,2,12327,2,2025-2026,,Coupe du Monde
+57791,37,LeV,Suisse,Bosnie-Herzégovine,3,0,12328,2,2025-2026,,Coupe du Monde
+57792,37,LeV,Canada,Qatar,1,1,12329,2,2025-2026,,Coupe du Monde
+57793,37,LeV,Mexique,Corée Du Sud,1,2,12330,2,2025-2026,,Coupe du Monde
+57794,37,LeV,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
+57795,37,LeV,Ecosse,Maroc,1,1,12332,2,2025-2026,,Coupe du Monde
+57796,37,LeV,Brésil,Haïti,4,1,12333,2,2025-2026,,Coupe du Monde
+57797,37,LeV,Turquie,Paraguay,2,2,12334,2,2025-2026,,Coupe du Monde
+57798,37,LeV,Pays-Bas,Suède,3,1,12335,2,2025-2026,,Coupe du Monde
+57799,37,LeV,Allemagne,Côte D'Ivoire,4,1,12336,2,2025-2026,,Coupe du Monde
+57800,37,LeV,Equateur,Curaçao,1,1,12337,2,2025-2026,,Coupe du Monde
+57801,37,LeV,Tunisie,Japon,1,3,12338,2,2025-2026,,Coupe du Monde
+57802,37,LeV,Espagne,Arabie Saoudite,3,1,12339,2,2025-2026,,Coupe du Monde
+57803,37,LeV,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
+57804,37,LeV,Uruguay,Cap Vert,3,1,12341,2,2025-2026,,Coupe du Monde
+57805,37,LeV,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
+57806,37,LeV,Argentine,Autriche,3,1,12343,2,2025-2026,,Coupe du Monde
+57807,37,LeV,France,Irak,3,2,12344,2,2025-2026,,Coupe du Monde
+57808,37,LeV,Norvège,Sénégal,1,2,12345,2,2025-2026,,Coupe du Monde
+57809,37,LeV,Jordanie,Algérie,1,1,12346,2,2025-2026,,Coupe du Monde
+57810,37,LeV,Portugal,Ouzbékistan,5,0,12347,2,2025-2026,,Coupe du Monde
+57811,37,LeV,Angleterre,Ghana,1,1,12348,2,2025-2026,,Coupe du Monde
+57812,37,LeV,Panama,Croatie,2,3,12349,2,2025-2026,,Coupe du Monde
+57813,37,LeV,Colombie,RD Congo,2,2,12350,2,2025-2026,,Coupe du Monde
