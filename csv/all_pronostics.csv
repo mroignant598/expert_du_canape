@@ -55546,30 +55546,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57667,37,LeV,Angleterre,Ghana,1,1,12295,2,2025-2026,CDM_26,Coupe du Monde
 57668,37,LeV,Panama,Croatie,2,3,12296,2,2025-2026,CDM_26,Coupe du Monde
 57669,37,LeV,Colombie,RD Congo,2,2,12297,2,2025-2026,CDM_26,Coupe du Monde
-57670,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12274,2,2025-2026,CDM_26,Coupe du Monde
-57671,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12275,2,2025-2026,CDM_26,Coupe du Monde
-57672,35,Chouchou,Canada,Qatar,2,0,12276,2,2025-2026,CDM_26,Coupe du Monde
-57673,35,Chouchou,Mexique,Corée Du Sud,1,1,12277,2,2025-2026,CDM_26,Coupe du Monde
-57674,35,Chouchou,Etats-Unis,Australie,1,1,12278,2,2025-2026,CDM_26,Coupe du Monde
-57675,35,Chouchou,Ecosse,Maroc,1,2,12279,2,2025-2026,CDM_26,Coupe du Monde
-57676,35,Chouchou,Brésil,Haîti,3,0,12280,2,2025-2026,CDM_26,Coupe du Monde
-57677,35,Chouchou,Turquie,Paraguay,2,0,12281,2,2025-2026,CDM_26,Coupe du Monde
-57678,35,Chouchou,Pays-Bas,Suède,1,2,12282,2,2025-2026,CDM_26,Coupe du Monde
-57679,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12283,2,2025-2026,CDM_26,Coupe du Monde
-57680,35,Chouchou,Equateur,Curaçao,2,0,12284,2,2025-2026,CDM_26,Coupe du Monde
-57681,35,Chouchou,Tunisie,Japon,0,2,12285,2,2025-2026,CDM_26,Coupe du Monde
-57682,35,Chouchou,Espagne,Arabie Saoudite,2,0,12286,2,2025-2026,CDM_26,Coupe du Monde
-57683,35,Chouchou,Belgique,Iran,1,1,12287,2,2025-2026,CDM_26,Coupe du Monde
-57684,35,Chouchou,Uruguay,Cap Vert,2,1,12288,2,2025-2026,CDM_26,Coupe du Monde
-57685,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12289,2,2025-2026,CDM_26,Coupe du Monde
-57686,35,Chouchou,Argentine,Autriche,2,0,12290,2,2025-2026,CDM_26,Coupe du Monde
-57687,35,Chouchou,France,Irak,3,0,12291,2,2025-2026,CDM_26,Coupe du Monde
-57688,35,Chouchou,Norvège,Sénégal,1,1,12292,2,2025-2026,CDM_26,Coupe du Monde
-57689,35,Chouchou,Jordanie,Algérie,0,2,12293,2,2025-2026,CDM_26,Coupe du Monde
-57690,35,Chouchou,Portugal,Ouzbékistan,3,0,12294,2,2025-2026,CDM_26,Coupe du Monde
-57691,35,Chouchou,Angleterre,Ghana,1,1,12295,2,2025-2026,CDM_26,Coupe du Monde
-57692,35,Chouchou,Panama,Croatie,0,2,12296,2,2025-2026,CDM_26,Coupe du Monde
-57693,35,Chouchou,Colombie,RD Congo,2,1,12297,2,2025-2026,CDM_26,Coupe du Monde
 57694,17,Olivier,République Tchèque,Afrique Du Sud,1,0,12274,2,2025-2026,CDM_26,Coupe du Monde
 57695,17,Olivier,Suisse,Bosnie-Herzégovine,2,1,12275,2,2025-2026,CDM_26,Coupe du Monde
 57696,17,Olivier,Canada,Qatar,3,0,12276,2,2025-2026,CDM_26,Coupe du Monde
@@ -55594,27 +55570,51 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57715,17,Olivier,Angleterre,Ghana,2,0,12295,2,2025-2026,CDM_26,Coupe du Monde
 57716,17,Olivier,Panama,Croatie,0,2,12296,2,2025-2026,CDM_26,Coupe du Monde
 57717,17,Olivier,Colombie,RD Congo,2,1,12297,2,2025-2026,CDM_26,Coupe du Monde
-57718,29,Meemway,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,,Coupe du Monde
-57719,29,Meemway,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,,Coupe du Monde
-57720,29,Meemway,Canada,Qatar,3,0,12329,2,2025-2026,,Coupe du Monde
-57721,29,Meemway,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
-57722,29,Meemway,Etats-Unis,Australie,2,1,12331,2,2025-2026,,Coupe du Monde
-57723,29,Meemway,Ecosse,Maroc,1,1,12332,2,2025-2026,,Coupe du Monde
-57724,29,Meemway,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57725,29,Meemway,Turquie,Paraguay,1,0,12334,2,2025-2026,,Coupe du Monde
-57726,29,Meemway,Pays-Bas,Suède,1,1,12335,2,2025-2026,,Coupe du Monde
-57727,29,Meemway,Allemagne,Côte D'Ivoire,2,1,12336,2,2025-2026,,Coupe du Monde
-57728,29,Meemway,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-57729,29,Meemway,Tunisie,Japon,0,2,12338,2,2025-2026,,Coupe du Monde
-57730,29,Meemway,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,,Coupe du Monde
-57731,29,Meemway,Belgique,Iran,2,1,12340,2,2025-2026,,Coupe du Monde
-57732,29,Meemway,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57733,29,Meemway,Nouvelle-Zélande,Egypte,0,2,12342,2,2025-2026,,Coupe du Monde
-57734,29,Meemway,Argentine,Autriche,1,1,12343,2,2025-2026,,Coupe du Monde
-57735,29,Meemway,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-57736,29,Meemway,Norvège,Sénégal,2,2,12345,2,2025-2026,,Coupe du Monde
-57737,29,Meemway,Jordanie,Algérie,0,2,12346,2,2025-2026,,Coupe du Monde
-57738,29,Meemway,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-57739,29,Meemway,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-57740,29,Meemway,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
-57741,29,Meemway,Colombie,RD Congo,3,1,12350,2,2025-2026,,Coupe du Monde
+57718,29,Meemway,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+57719,29,Meemway,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+57720,29,Meemway,Canada,Qatar,3,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57721,29,Meemway,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57722,29,Meemway,Etats-Unis,Australie,2,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57723,29,Meemway,Ecosse,Maroc,1,1,12332,2,2025-2026,CDM_26,Coupe du Monde
+57724,29,Meemway,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57725,29,Meemway,Turquie,Paraguay,1,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57726,29,Meemway,Pays-Bas,Suède,1,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57727,29,Meemway,Allemagne,Côte D'Ivoire,2,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57728,29,Meemway,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57729,29,Meemway,Tunisie,Japon,0,2,12338,2,2025-2026,CDM_26,Coupe du Monde
+57730,29,Meemway,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57731,29,Meemway,Belgique,Iran,2,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57732,29,Meemway,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57733,29,Meemway,Nouvelle-Zélande,Egypte,0,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+57734,29,Meemway,Argentine,Autriche,1,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+57735,29,Meemway,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57736,29,Meemway,Norvège,Sénégal,2,2,12345,2,2025-2026,CDM_26,Coupe du Monde
+57737,29,Meemway,Jordanie,Algérie,0,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+57738,29,Meemway,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57739,29,Meemway,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57740,29,Meemway,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57741,29,Meemway,Colombie,RD Congo,3,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57742,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
+57743,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,,Coupe du Monde
+57744,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
+57745,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
+57746,35,Chouchou,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
+57747,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
+57748,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,,Coupe du Monde
+57749,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,,Coupe du Monde
+57750,35,Chouchou,Pays-Bas,Suède,1,2,12335,2,2025-2026,,Coupe du Monde
+57751,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,,Coupe du Monde
+57752,35,Chouchou,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
+57753,35,Chouchou,Tunisie,Japon,0,3,12338,2,2025-2026,,Coupe du Monde
+57754,35,Chouchou,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
+57755,35,Chouchou,Belgique,Iran,1,1,12340,2,2025-2026,,Coupe du Monde
+57756,35,Chouchou,Uruguay,Cap Vert,2,1,12341,2,2025-2026,,Coupe du Monde
+57757,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,,Coupe du Monde
+57758,35,Chouchou,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
+57759,35,Chouchou,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
+57760,35,Chouchou,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
+57761,35,Chouchou,Jordanie,Algérie,0,3,12346,2,2025-2026,,Coupe du Monde
+57762,35,Chouchou,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
+57763,35,Chouchou,Angleterre,Ghana,1,1,12348,2,2025-2026,,Coupe du Monde
+57764,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
+57765,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
