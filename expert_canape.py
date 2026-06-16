@@ -807,14 +807,16 @@ def show(tables):
         joueur_stats = classement_journee[classement_journee["Participant"] == participant_sel]
                     
         # --- Résumé personnel ---
-        if not joueur_stats.empty:
-            points_bruts = joueur_stats["points_bruts"].values[0]
-            points_bonus = joueur_stats["Dont Bonus"].values[0]
-            bons_pronos = joueur_stats["Nombre de bons pronos"].values[0]
-            multiplicateur = joueur_stats["multiplicateur"].values[0]
-            rang = joueur_stats["Rang"].values[0]
-            perf = joueur_stats["Performance (%)"].values[0]
-            bons_scores = joueur_stats["Nombre de bons scores"].values[0]
+        if joueur_stats.empty:
+            st.warning(f"Aucune statistique disponible pour {participant_sel}")
+            return
+        points_bruts = joueur_stats["points_bruts"].values[0]
+        points_bonus = joueur_stats["Dont Bonus"].values[0]
+        bons_pronos = joueur_stats["Nombre de bons pronos"].values[0]
+        multiplicateur = joueur_stats["multiplicateur"].values[0]
+        rang = joueur_stats["Rang"].values[0]
+        perf = joueur_stats["Performance (%)"].values[0]
+        bons_scores = joueur_stats["Nombre de bons scores"].values[0]
 
         st.markdown(f"### 👤 Statistiques de {participant_sel} - Journée {journee_courante}")
 
