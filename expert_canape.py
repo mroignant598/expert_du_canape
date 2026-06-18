@@ -174,11 +174,13 @@ def show(tables):
             
             # --- 📅 Détermination de la dernière journée jouée --- #
             # Une journée est "jouée" si elle a au moins un score renseigné
-            df_journees["match_joue"] = df_journees["score_domicile"].notna() & df_journees["score_exterieur"].notna()
-            df_statut = df_journees.groupby("journee").apply(lambda x: x["match_joue"].all()).reset_index(name="complete")
+            # Une journée est considérée jouée si AU MOINS UN match a un score
+            df_journees["match_joue"] = (df_journees["score_domicile"].notna() & df_journees["score_exterieur"].notna())
 
-            journees_jouees = df_statut[df_statut["complete"]]["journee"].tolist()
-            derniere_journee = max(journees_jouees) if journees_jouees else min(df_journees["journee"])
+            journees_jouees = (df_journees.groupby("journee")["match_joue"].any())
+            journees_jouees = (journees_jouees[journees_jouees].index.tolist())
+
+            derniere_journee = (max(journees_jouees) if journees_jouees else min(df_journees["journee"]))
             prochaine_journee = derniere_journee + 1 if derniere_journee is not None else min(df_journees["journee"])
 
             # --- Prochains matchs ---
