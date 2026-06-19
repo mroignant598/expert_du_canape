@@ -55574,7 +55574,7 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57743,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,CDM_26,Coupe du Monde
 57744,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
 57745,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
-57746,35,Chouchou,Etats-Unis,Australie,1,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57746,35,Chouchou,Etats-Unis,Australie,3,1,12331,2,2025-2026,CDM_26,Coupe du Monde
 57747,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
 57748,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,CDM_26,Coupe du Monde
 57749,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,CDM_26,Coupe du Monde
@@ -55978,27 +55978,27 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 58171,32,Fatoche,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
 58172,32,Fatoche,Panama,Croatie,2,2,12349,2,2025-2026,CDM_26,Coupe du Monde
 58173,32,Fatoche,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
-58222,31,Jean,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
-58223,31,Jean,Suisse,Bosnie-Herzégovine,4,1,12328,2,2025-2026,,Coupe du Monde
-58224,31,Jean,Canada,Qatar,6,0,12329,2,2025-2026,,Coupe du Monde
-58225,31,Jean,Mexique,Corée Du Sud,3,0,12330,2,2025-2026,,Coupe du Monde
-58226,31,Jean,Etats-Unis,Australie,2,1,12331,2,2025-2026,,Coupe du Monde
-58227,31,Jean,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
-58228,31,Jean,Brésil,Haïti,7,0,12333,2,2025-2026,,Coupe du Monde
-58229,31,Jean,Turquie,Paraguay,2,1,12334,2,2025-2026,,Coupe du Monde
-58230,31,Jean,Pays-Bas,Suède,2,2,12335,2,2025-2026,,Coupe du Monde
-58231,31,Jean,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
-58232,31,Jean,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-58233,31,Jean,Tunisie,Japon,2,2,12338,2,2025-2026,,Coupe du Monde
-58234,31,Jean,Espagne,Arabie Saoudite,4,2,12339,2,2025-2026,,Coupe du Monde
-58235,31,Jean,Belgique,Iran,3,0,12340,2,2025-2026,,Coupe du Monde
-58236,31,Jean,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
-58237,31,Jean,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,,Coupe du Monde
-58238,31,Jean,Argentine,Autriche,2,2,12343,2,2025-2026,,Coupe du Monde
-58239,31,Jean,France,Irak,3,3,12344,2,2025-2026,,Coupe du Monde
-58240,31,Jean,Norvège,Sénégal,3,1,12345,2,2025-2026,,Coupe du Monde
-58241,31,Jean,Jordanie,Algérie,1,2,12346,2,2025-2026,,Coupe du Monde
-58242,31,Jean,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
-58243,31,Jean,Angleterre,Ghana,2,2,12348,2,2025-2026,,Coupe du Monde
-58244,31,Jean,Panama,Croatie,1,2,12349,2,2025-2026,,Coupe du Monde
-58245,31,Jean,Colombie,RD Congo,1,0,12350,2,2025-2026,,Coupe du Monde
+58222,31,Jean,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+58223,31,Jean,Suisse,Bosnie-Herzégovine,4,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58224,31,Jean,Canada,Qatar,6,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+58225,31,Jean,Mexique,Corée Du Sud,3,0,12330,2,2025-2026,CDM_26,Coupe du Monde
+58226,31,Jean,Etats-Unis,Australie,2,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+58227,31,Jean,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+58228,31,Jean,Brésil,Haïti,7,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58229,31,Jean,Turquie,Paraguay,2,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58230,31,Jean,Pays-Bas,Suède,2,2,12335,2,2025-2026,CDM_26,Coupe du Monde
+58231,31,Jean,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58232,31,Jean,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58233,31,Jean,Tunisie,Japon,2,2,12338,2,2025-2026,CDM_26,Coupe du Monde
+58234,31,Jean,Espagne,Arabie Saoudite,4,2,12339,2,2025-2026,CDM_26,Coupe du Monde
+58235,31,Jean,Belgique,Iran,3,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+58236,31,Jean,Uruguay,Cap Vert,1,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+58237,31,Jean,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+58238,31,Jean,Argentine,Autriche,2,2,12343,2,2025-2026,CDM_26,Coupe du Monde
+58239,31,Jean,France,Irak,3,3,12344,2,2025-2026,CDM_26,Coupe du Monde
+58240,31,Jean,Norvège,Sénégal,3,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+58241,31,Jean,Jordanie,Algérie,1,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+58242,31,Jean,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58243,31,Jean,Angleterre,Ghana,2,2,12348,2,2025-2026,CDM_26,Coupe du Monde
+58244,31,Jean,Panama,Croatie,1,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+58245,31,Jean,Colombie,RD Congo,1,0,12350,2,2025-2026,CDM_26,Coupe du Monde
