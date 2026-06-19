@@ -55570,411 +55570,435 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 57739,29,Meemway,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
 57740,29,Meemway,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
 57741,29,Meemway,Colombie,RD Congo,3,1,12350,2,2025-2026,CDM_26,Coupe du Monde
-57742,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
-57743,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,,Coupe du Monde
-57744,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-57745,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
-57746,35,Chouchou,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
-57747,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
-57748,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,,Coupe du Monde
-57749,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,,Coupe du Monde
-57750,35,Chouchou,Pays-Bas,Suède,1,2,12335,2,2025-2026,,Coupe du Monde
-57751,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,,Coupe du Monde
-57752,35,Chouchou,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-57753,35,Chouchou,Tunisie,Japon,0,3,12338,2,2025-2026,,Coupe du Monde
-57754,35,Chouchou,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-57755,35,Chouchou,Belgique,Iran,1,1,12340,2,2025-2026,,Coupe du Monde
-57756,35,Chouchou,Uruguay,Cap Vert,2,1,12341,2,2025-2026,,Coupe du Monde
-57757,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,,Coupe du Monde
-57758,35,Chouchou,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-57759,35,Chouchou,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-57760,35,Chouchou,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-57761,35,Chouchou,Jordanie,Algérie,0,3,12346,2,2025-2026,,Coupe du Monde
-57762,35,Chouchou,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-57763,35,Chouchou,Angleterre,Ghana,1,1,12348,2,2025-2026,,Coupe du Monde
-57764,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
-57765,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
-57766,17,Olivier,République Tchèque,Afrique Du Sud,1,0,12327,2,2025-2026,,Coupe du Monde
-57767,17,Olivier,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
-57768,17,Olivier,Canada,Qatar,3,0,12329,2,2025-2026,,Coupe du Monde
-57769,17,Olivier,Mexique,Corée Du Sud,2,0,12330,2,2025-2026,,Coupe du Monde
-57770,17,Olivier,Etats-Unis,Australie,1,0,12331,2,2025-2026,,Coupe du Monde
-57771,17,Olivier,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
-57772,17,Olivier,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57773,17,Olivier,Turquie,Paraguay,2,2,12334,2,2025-2026,,Coupe du Monde
-57774,17,Olivier,Pays-Bas,Suède,1,0,12335,2,2025-2026,,Coupe du Monde
-57775,17,Olivier,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,,Coupe du Monde
-57776,17,Olivier,Equateur,Curaçao,1,0,12337,2,2025-2026,,Coupe du Monde
-57777,17,Olivier,Tunisie,Japon,0,1,12338,2,2025-2026,,Coupe du Monde
-57778,17,Olivier,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-57779,17,Olivier,Belgique,Iran,3,0,12340,2,2025-2026,,Coupe du Monde
-57780,17,Olivier,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57781,17,Olivier,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
-57782,17,Olivier,Argentine,Autriche,2,1,12343,2,2025-2026,,Coupe du Monde
-57783,17,Olivier,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-57784,17,Olivier,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-57785,17,Olivier,Jordanie,Algérie,0,3,12346,2,2025-2026,,Coupe du Monde
-57786,17,Olivier,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
-57787,17,Olivier,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-57788,17,Olivier,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
-57789,17,Olivier,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
-57814,26,Merguez,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
-57815,26,Merguez,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,,Coupe du Monde
-57816,26,Merguez,Canada,Qatar,1,2,12329,2,2025-2026,,Coupe du Monde
-57817,26,Merguez,Mexique,Corée Du Sud,3,1,12330,2,2025-2026,,Coupe du Monde
-57818,26,Merguez,Etats-Unis,Australie,1,2,12331,2,2025-2026,,Coupe du Monde
-57819,26,Merguez,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
-57820,26,Merguez,Brésil,Haïti,2,0,12333,2,2025-2026,,Coupe du Monde
-57821,26,Merguez,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-57822,26,Merguez,Pays-Bas,Suède,3,1,12335,2,2025-2026,,Coupe du Monde
-57823,26,Merguez,Allemagne,Côte D'Ivoire,5,1,12336,2,2025-2026,,Coupe du Monde
-57824,26,Merguez,Equateur,Curaçao,1,1,12337,2,2025-2026,,Coupe du Monde
-57825,26,Merguez,Tunisie,Japon,1,1,12338,2,2025-2026,,Coupe du Monde
-57826,26,Merguez,Espagne,Arabie Saoudite,4,1,12339,2,2025-2026,,Coupe du Monde
-57827,26,Merguez,Belgique,Iran,3,1,12340,2,2025-2026,,Coupe du Monde
-57828,26,Merguez,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
-57829,26,Merguez,Nouvelle-Zélande,Egypte,1,3,12342,2,2025-2026,,Coupe du Monde
-57830,26,Merguez,Argentine,Autriche,2,2,12343,2,2025-2026,,Coupe du Monde
-57831,26,Merguez,France,Irak,3,1,12344,2,2025-2026,,Coupe du Monde
-57832,26,Merguez,Norvège,Sénégal,2,1,12345,2,2025-2026,,Coupe du Monde
-57833,26,Merguez,Jordanie,Algérie,1,1,12346,2,2025-2026,,Coupe du Monde
-57834,26,Merguez,Portugal,Ouzbékistan,3,1,12347,2,2025-2026,,Coupe du Monde
-57835,26,Merguez,Angleterre,Ghana,3,1,12348,2,2025-2026,,Coupe du Monde
-57836,26,Merguez,Panama,Croatie,1,3,12349,2,2025-2026,,Coupe du Monde
-57837,26,Merguez,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-57838,21,Sébastien,République Tchèque,Afrique Du Sud,1,2,12327,2,2025-2026,,Coupe du Monde
-57839,21,Sébastien,Suisse,Bosnie-Herzégovine,3,0,12328,2,2025-2026,,Coupe du Monde
-57840,21,Sébastien,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-57841,21,Sébastien,Mexique,Corée Du Sud,1,2,12330,2,2025-2026,,Coupe du Monde
-57842,21,Sébastien,Etats-Unis,Australie,3,1,12331,2,2025-2026,,Coupe du Monde
-57843,21,Sébastien,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
-57844,21,Sébastien,Brésil,Haïti,3,0,12333,2,2025-2026,,Coupe du Monde
-57845,21,Sébastien,Turquie,Paraguay,2,0,12334,2,2025-2026,,Coupe du Monde
-57846,21,Sébastien,Pays-Bas,Suède,3,1,12335,2,2025-2026,,Coupe du Monde
-57847,21,Sébastien,Allemagne,Côte D'Ivoire,1,2,12336,2,2025-2026,,Coupe du Monde
-57848,21,Sébastien,Equateur,Curaçao,3,0,12337,2,2025-2026,,Coupe du Monde
-57849,21,Sébastien,Tunisie,Japon,1,3,12338,2,2025-2026,,Coupe du Monde
-57850,21,Sébastien,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-57851,21,Sébastien,Belgique,Iran,3,0,12340,2,2025-2026,,Coupe du Monde
-57852,21,Sébastien,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57853,21,Sébastien,Nouvelle-Zélande,Egypte,1,3,12342,2,2025-2026,,Coupe du Monde
-57854,21,Sébastien,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-57855,21,Sébastien,France,Irak,4,0,12344,2,2025-2026,,Coupe du Monde
-57856,21,Sébastien,Norvège,Sénégal,1,3,12345,2,2025-2026,,Coupe du Monde
-57857,21,Sébastien,Jordanie,Algérie,2,1,12346,2,2025-2026,,Coupe du Monde
-57858,21,Sébastien,Portugal,Ouzbékistan,3,1,12347,2,2025-2026,,Coupe du Monde
-57859,21,Sébastien,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-57860,21,Sébastien,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
-57861,21,Sébastien,Colombie,RD Congo,2,4,12350,2,2025-2026,,Coupe du Monde
-57862,27,Thif Thif,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
-57863,27,Thif Thif,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,,Coupe du Monde
-57864,27,Thif Thif,Canada,Qatar,1,1,12329,2,2025-2026,,Coupe du Monde
-57865,27,Thif Thif,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,,Coupe du Monde
-57866,27,Thif Thif,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
-57867,27,Thif Thif,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
-57868,27,Thif Thif,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57869,27,Thif Thif,Turquie,Paraguay,1,0,12334,2,2025-2026,,Coupe du Monde
-57870,27,Thif Thif,Pays-Bas,Suède,2,2,12335,2,2025-2026,,Coupe du Monde
-57871,27,Thif Thif,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
-57872,27,Thif Thif,Equateur,Curaçao,1,0,12337,2,2025-2026,,Coupe du Monde
-57873,27,Thif Thif,Tunisie,Japon,1,2,12338,2,2025-2026,,Coupe du Monde
-57874,27,Thif Thif,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-57875,27,Thif Thif,Belgique,Iran,2,1,12340,2,2025-2026,,Coupe du Monde
-57876,27,Thif Thif,Uruguay,Cap Vert,1,0,12341,2,2025-2026,,Coupe du Monde
-57877,27,Thif Thif,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,,Coupe du Monde
-57878,27,Thif Thif,Argentine,Autriche,3,1,12343,2,2025-2026,,Coupe du Monde
-57879,27,Thif Thif,France,Irak,4,0,12344,2,2025-2026,,Coupe du Monde
-57880,27,Thif Thif,Norvège,Sénégal,3,1,12345,2,2025-2026,,Coupe du Monde
-57881,27,Thif Thif,Jordanie,Algérie,1,1,12346,2,2025-2026,,Coupe du Monde
-57882,27,Thif Thif,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,,Coupe du Monde
-57883,27,Thif Thif,Angleterre,Ghana,2,1,12348,2,2025-2026,,Coupe du Monde
-57884,27,Thif Thif,Panama,Croatie,1,2,12349,2,2025-2026,,Coupe du Monde
-57885,27,Thif Thif,Colombie,RD Congo,3,1,12350,2,2025-2026,,Coupe du Monde
-57886,18,Pierre,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
-57887,18,Pierre,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
-57888,18,Pierre,Canada,Qatar,1,0,12329,2,2025-2026,,Coupe du Monde
-57889,18,Pierre,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
-57890,18,Pierre,Etats-Unis,Australie,2,1,12331,2,2025-2026,,Coupe du Monde
-57891,18,Pierre,Ecosse,Maroc,0,3,12332,2,2025-2026,,Coupe du Monde
-57892,18,Pierre,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57893,18,Pierre,Turquie,Paraguay,2,0,12334,2,2025-2026,,Coupe du Monde
-57894,18,Pierre,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-57895,18,Pierre,Allemagne,Côte D'Ivoire,2,2,12336,2,2025-2026,,Coupe du Monde
-57896,18,Pierre,Equateur,Curaçao,4,1,12337,2,2025-2026,,Coupe du Monde
-57897,18,Pierre,Tunisie,Japon,1,4,12338,2,2025-2026,,Coupe du Monde
-57898,18,Pierre,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,,Coupe du Monde
-57899,18,Pierre,Belgique,Iran,1,1,12340,2,2025-2026,,Coupe du Monde
-57900,18,Pierre,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57901,18,Pierre,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,,Coupe du Monde
-57902,18,Pierre,Argentine,Autriche,3,0,12343,2,2025-2026,,Coupe du Monde
-57903,18,Pierre,France,Irak,6,1,12344,2,2025-2026,,Coupe du Monde
-57904,18,Pierre,Norvège,Sénégal,2,2,12345,2,2025-2026,,Coupe du Monde
-57905,18,Pierre,Jordanie,Algérie,1,3,12346,2,2025-2026,,Coupe du Monde
-57906,18,Pierre,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
-57907,18,Pierre,Angleterre,Ghana,3,0,12348,2,2025-2026,,Coupe du Monde
-57908,18,Pierre,Panama,Croatie,1,3,12349,2,2025-2026,,Coupe du Monde
-57909,18,Pierre,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-57910,34,Zoé,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,,Coupe du Monde
-57911,34,Zoé,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,,Coupe du Monde
-57912,34,Zoé,Canada,Qatar,2,1,12329,2,2025-2026,,Coupe du Monde
-57913,34,Zoé,Mexique,Corée Du Sud,2,2,12330,2,2025-2026,,Coupe du Monde
-57914,34,Zoé,Etats-Unis,Australie,3,2,12331,2,2025-2026,,Coupe du Monde
-57915,34,Zoé,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
-57916,34,Zoé,Brésil,Haïti,1,0,12333,2,2025-2026,,Coupe du Monde
-57917,34,Zoé,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-57918,34,Zoé,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-57919,34,Zoé,Allemagne,Côte D'Ivoire,5,1,12336,2,2025-2026,,Coupe du Monde
-57920,34,Zoé,Equateur,Curaçao,1,1,12337,2,2025-2026,,Coupe du Monde
-57921,34,Zoé,Tunisie,Japon,1,2,12338,2,2025-2026,,Coupe du Monde
-57922,34,Zoé,Espagne,Arabie Saoudite,1,1,12339,2,2025-2026,,Coupe du Monde
-57923,34,Zoé,Belgique,Iran,2,1,12340,2,2025-2026,,Coupe du Monde
-57924,34,Zoé,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
-57925,34,Zoé,Nouvelle-Zélande,Egypte,1,0,12342,2,2025-2026,,Coupe du Monde
-57926,34,Zoé,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-57927,34,Zoé,France,Irak,4,1,12344,2,2025-2026,,Coupe du Monde
-57928,34,Zoé,Norvège,Sénégal,3,1,12345,2,2025-2026,,Coupe du Monde
-57929,34,Zoé,Jordanie,Algérie,0,1,12346,2,2025-2026,,Coupe du Monde
-57930,34,Zoé,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,,Coupe du Monde
-57931,34,Zoé,Angleterre,Ghana,3,0,12348,2,2025-2026,,Coupe du Monde
-57932,34,Zoé,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
-57933,34,Zoé,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-57934,33,*Claire*,République Tchèque,Afrique Du Sud,1,0,12327,2,2025-2026,,Coupe du Monde
-57935,33,*Claire*,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,,Coupe du Monde
-57936,33,*Claire*,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-57937,33,*Claire*,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
-57938,33,*Claire*,Etats-Unis,Australie,1,0,12331,2,2025-2026,,Coupe du Monde
-57939,33,*Claire*,Ecosse,Maroc,0,1,12332,2,2025-2026,,Coupe du Monde
-57940,33,*Claire*,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57941,33,*Claire*,Turquie,Paraguay,1,0,12334,2,2025-2026,,Coupe du Monde
-57942,33,*Claire*,Pays-Bas,Suède,1,1,12335,2,2025-2026,,Coupe du Monde
-57943,33,*Claire*,Allemagne,Côte D'Ivoire,2,0,12336,2,2025-2026,,Coupe du Monde
-57944,33,*Claire*,Equateur,Curaçao,3,0,12337,2,2025-2026,,Coupe du Monde
-57945,33,*Claire*,Tunisie,Japon,0,1,12338,2,2025-2026,,Coupe du Monde
-57946,33,*Claire*,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,,Coupe du Monde
-57947,33,*Claire*,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-57948,33,*Claire*,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57949,33,*Claire*,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
-57950,33,*Claire*,Argentine,Autriche,1,0,12343,2,2025-2026,,Coupe du Monde
-57951,33,*Claire*,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-57952,33,*Claire*,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-57953,33,*Claire*,Jordanie,Algérie,0,1,12346,2,2025-2026,,Coupe du Monde
-57954,33,*Claire*,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-57955,33,*Claire*,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-57956,33,*Claire*,Panama,Croatie,1,2,12349,2,2025-2026,,Coupe du Monde
-57957,33,*Claire*,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-57958,30,Juju,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,,Coupe du Monde
-57959,30,Juju,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,,Coupe du Monde
-57960,30,Juju,Canada,Qatar,3,1,12329,2,2025-2026,,Coupe du Monde
-57961,30,Juju,Mexique,Corée Du Sud,3,2,12330,2,2025-2026,,Coupe du Monde
-57962,30,Juju,Etats-Unis,Australie,2,1,12331,2,2025-2026,,Coupe du Monde
-57963,30,Juju,Ecosse,Maroc,1,4,12332,2,2025-2026,,Coupe du Monde
-57964,30,Juju,Brésil,Haïti,3,0,12333,2,2025-2026,,Coupe du Monde
-57965,30,Juju,Turquie,Paraguay,2,1,12334,2,2025-2026,,Coupe du Monde
-57966,30,Juju,Pays-Bas,Suède,2,3,12335,2,2025-2026,,Coupe du Monde
-57967,30,Juju,Allemagne,Côte D'Ivoire,5,0,12336,2,2025-2026,,Coupe du Monde
-57968,30,Juju,Equateur,Curaçao,2,1,12337,2,2025-2026,,Coupe du Monde
-57969,30,Juju,Tunisie,Japon,1,3,12338,2,2025-2026,,Coupe du Monde
-57970,30,Juju,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,,Coupe du Monde
-57971,30,Juju,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-57972,30,Juju,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-57973,30,Juju,Nouvelle-Zélande,Egypte,1,1,12342,2,2025-2026,,Coupe du Monde
-57974,30,Juju,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-57975,30,Juju,France,Irak,5,0,12344,2,2025-2026,,Coupe du Monde
-57976,30,Juju,Norvège,Sénégal,1,3,12345,2,2025-2026,,Coupe du Monde
-57977,30,Juju,Jordanie,Algérie,0,1,12346,2,2025-2026,,Coupe du Monde
-57978,30,Juju,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
-57979,30,Juju,Angleterre,Ghana,3,0,12348,2,2025-2026,,Coupe du Monde
-57980,30,Juju,Panama,Croatie,2,1,12349,2,2025-2026,,Coupe du Monde
-57981,30,Juju,Colombie,RD Congo,1,0,12350,2,2025-2026,,Coupe du Monde
-57982,9,Hélène,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
-57983,9,Hélène,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,,Coupe du Monde
-57984,9,Hélène,Canada,Qatar,1,2,12329,2,2025-2026,,Coupe du Monde
-57985,9,Hélène,Mexique,Corée Du Sud,3,0,12330,2,2025-2026,,Coupe du Monde
-57986,9,Hélène,Etats-Unis,Australie,3,1,12331,2,2025-2026,,Coupe du Monde
-57987,9,Hélène,Ecosse,Maroc,0,1,12332,2,2025-2026,,Coupe du Monde
-57988,9,Hélène,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-57989,9,Hélène,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-57990,9,Hélène,Pays-Bas,Suède,1,2,12335,2,2025-2026,,Coupe du Monde
-57991,9,Hélène,Allemagne,Côte D'Ivoire,4,1,12336,2,2025-2026,,Coupe du Monde
-57992,9,Hélène,Equateur,Curaçao,2,1,12337,2,2025-2026,,Coupe du Monde
-57993,9,Hélène,Tunisie,Japon,1,1,12338,2,2025-2026,,Coupe du Monde
-57994,9,Hélène,Espagne,Arabie Saoudite,3,1,12339,2,2025-2026,,Coupe du Monde
-57995,9,Hélène,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-57996,9,Hélène,Uruguay,Cap Vert,2,2,12341,2,2025-2026,,Coupe du Monde
-57997,9,Hélène,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,,Coupe du Monde
-57998,9,Hélène,Argentine,Autriche,1,1,12343,2,2025-2026,,Coupe du Monde
-57999,9,Hélène,France,Irak,2,0,12344,2,2025-2026,,Coupe du Monde
-58000,9,Hélène,Norvège,Sénégal,3,0,12345,2,2025-2026,,Coupe du Monde
-58001,9,Hélène,Jordanie,Algérie,1,2,12346,2,2025-2026,,Coupe du Monde
-58002,9,Hélène,Portugal,Ouzbékistan,0,0,12347,2,2025-2026,,Coupe du Monde
-58003,9,Hélène,Angleterre,Ghana,3,0,12348,2,2025-2026,,Coupe du Monde
-58004,9,Hélène,Panama,Croatie,0,1,12349,2,2025-2026,,Coupe du Monde
-58005,9,Hélène,Colombie,RD Congo,0,0,12350,2,2025-2026,,Coupe du Monde
-58006,5,Cédric,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,,Coupe du Monde
-58007,5,Cédric,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
-58008,5,Cédric,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-58009,5,Cédric,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,,Coupe du Monde
-58010,5,Cédric,Etats-Unis,Australie,1,0,12331,2,2025-2026,,Coupe du Monde
-58011,5,Cédric,Ecosse,Maroc,1,3,12332,2,2025-2026,,Coupe du Monde
-58012,5,Cédric,Brésil,Haïti,5,0,12333,2,2025-2026,,Coupe du Monde
-58013,5,Cédric,Turquie,Paraguay,2,1,12334,2,2025-2026,,Coupe du Monde
-58014,5,Cédric,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-58015,5,Cédric,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
-58016,5,Cédric,Equateur,Curaçao,3,0,12337,2,2025-2026,,Coupe du Monde
-58017,5,Cédric,Tunisie,Japon,1,0,12338,2,2025-2026,,Coupe du Monde
-58018,5,Cédric,Espagne,Arabie Saoudite,2,1,12339,2,2025-2026,,Coupe du Monde
-58019,5,Cédric,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-58020,5,Cédric,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-58021,5,Cédric,Nouvelle-Zélande,Egypte,0,2,12342,2,2025-2026,,Coupe du Monde
-58022,5,Cédric,Argentine,Autriche,3,0,12343,2,2025-2026,,Coupe du Monde
-58023,5,Cédric,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-58024,5,Cédric,Norvège,Sénégal,1,2,12345,2,2025-2026,,Coupe du Monde
-58025,5,Cédric,Jordanie,Algérie,0,1,12346,2,2025-2026,,Coupe du Monde
-58026,5,Cédric,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,,Coupe du Monde
-58027,5,Cédric,Angleterre,Ghana,3,1,12348,2,2025-2026,,Coupe du Monde
-58028,5,Cédric,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
-58029,5,Cédric,Colombie,RD Congo,2,2,12350,2,2025-2026,,Coupe du Monde
-58030,36,Jeje et Elo,République Tchèque,Afrique Du Sud,1,2,12327,2,2025-2026,,Coupe du Monde
-58031,36,Jeje et Elo,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,,Coupe du Monde
-58032,36,Jeje et Elo,Canada,Qatar,2,1,12329,2,2025-2026,,Coupe du Monde
-58033,36,Jeje et Elo,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,,Coupe du Monde
-58034,36,Jeje et Elo,Etats-Unis,Australie,1,2,12331,2,2025-2026,,Coupe du Monde
-58035,36,Jeje et Elo,Ecosse,Maroc,3,0,12332,2,2025-2026,,Coupe du Monde
-58036,36,Jeje et Elo,Brésil,Haïti,4,1,12333,2,2025-2026,,Coupe du Monde
-58037,36,Jeje et Elo,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-58038,36,Jeje et Elo,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-58039,36,Jeje et Elo,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
-58040,36,Jeje et Elo,Equateur,Curaçao,0,1,12337,2,2025-2026,,Coupe du Monde
-58041,36,Jeje et Elo,Tunisie,Japon,0,1,12338,2,2025-2026,,Coupe du Monde
-58042,36,Jeje et Elo,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-58043,36,Jeje et Elo,Belgique,Iran,3,1,12340,2,2025-2026,,Coupe du Monde
-58044,36,Jeje et Elo,Uruguay,Cap Vert,0,2,12341,2,2025-2026,,Coupe du Monde
-58045,36,Jeje et Elo,Nouvelle-Zélande,Egypte,3,0,12342,2,2025-2026,,Coupe du Monde
-58046,36,Jeje et Elo,Argentine,Autriche,2,1,12343,2,2025-2026,,Coupe du Monde
-58047,36,Jeje et Elo,France,Irak,2,0,12344,2,2025-2026,,Coupe du Monde
-58048,36,Jeje et Elo,Norvège,Sénégal,2,2,12345,2,2025-2026,,Coupe du Monde
-58049,36,Jeje et Elo,Jordanie,Algérie,1,0,12346,2,2025-2026,,Coupe du Monde
-58050,36,Jeje et Elo,Portugal,Ouzbékistan,4,1,12347,2,2025-2026,,Coupe du Monde
-58051,36,Jeje et Elo,Angleterre,Ghana,3,1,12348,2,2025-2026,,Coupe du Monde
-58052,36,Jeje et Elo,Panama,Croatie,1,2,12349,2,2025-2026,,Coupe du Monde
-58053,36,Jeje et Elo,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-58054,28,Bebou,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,,Coupe du Monde
-58055,28,Bebou,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
-58056,28,Bebou,Canada,Qatar,1,0,12329,2,2025-2026,,Coupe du Monde
-58057,28,Bebou,Mexique,Corée Du Sud,1,2,12330,2,2025-2026,,Coupe du Monde
-58058,28,Bebou,Etats-Unis,Australie,2,0,12331,2,2025-2026,,Coupe du Monde
-58059,28,Bebou,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
-58060,28,Bebou,Brésil,Haïti,4,0,12333,2,2025-2026,,Coupe du Monde
-58061,28,Bebou,Turquie,Paraguay,2,1,12334,2,2025-2026,,Coupe du Monde
-58062,28,Bebou,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-58063,28,Bebou,Allemagne,Côte D'Ivoire,2,1,12336,2,2025-2026,,Coupe du Monde
-58064,28,Bebou,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-58065,28,Bebou,Tunisie,Japon,0,2,12338,2,2025-2026,,Coupe du Monde
-58066,28,Bebou,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,,Coupe du Monde
-58067,28,Bebou,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-58068,28,Bebou,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-58069,28,Bebou,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
-58070,28,Bebou,Argentine,Autriche,1,1,12343,2,2025-2026,,Coupe du Monde
-58071,28,Bebou,France,Irak,4,0,12344,2,2025-2026,,Coupe du Monde
-58072,28,Bebou,Norvège,Sénégal,2,1,12345,2,2025-2026,,Coupe du Monde
-58073,28,Bebou,Jordanie,Algérie,0,2,12346,2,2025-2026,,Coupe du Monde
-58074,28,Bebou,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,,Coupe du Monde
-58075,28,Bebou,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-58076,28,Bebou,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
-58077,28,Bebou,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
-58078,10,Kévin,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
-58079,10,Kévin,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,,Coupe du Monde
-58080,10,Kévin,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-58081,10,Kévin,Mexique,Corée Du Sud,2,0,12330,2,2025-2026,,Coupe du Monde
-58082,10,Kévin,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
-58083,10,Kévin,Ecosse,Maroc,1,1,12332,2,2025-2026,,Coupe du Monde
-58084,10,Kévin,Brésil,Haïti,5,0,12333,2,2025-2026,,Coupe du Monde
-58085,10,Kévin,Turquie,Paraguay,1,2,12334,2,2025-2026,,Coupe du Monde
-58086,10,Kévin,Pays-Bas,Suède,1,1,12335,2,2025-2026,,Coupe du Monde
-58087,10,Kévin,Allemagne,Côte D'Ivoire,3,0,12336,2,2025-2026,,Coupe du Monde
-58088,10,Kévin,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-58089,10,Kévin,Tunisie,Japon,0,1,12338,2,2025-2026,,Coupe du Monde
-58090,10,Kévin,Espagne,Arabie Saoudite,5,0,12339,2,2025-2026,,Coupe du Monde
-58091,10,Kévin,Belgique,Iran,2,1,12340,2,2025-2026,,Coupe du Monde
-58092,10,Kévin,Uruguay,Cap Vert,2,0,12341,2,2025-2026,,Coupe du Monde
-58093,10,Kévin,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
-58094,10,Kévin,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-58095,10,Kévin,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-58096,10,Kévin,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-58097,10,Kévin,Jordanie,Algérie,1,1,12346,2,2025-2026,,Coupe du Monde
-58098,10,Kévin,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-58099,10,Kévin,Angleterre,Ghana,1,1,12348,2,2025-2026,,Coupe du Monde
-58100,10,Kévin,Panama,Croatie,0,2,12349,2,2025-2026,,Coupe du Monde
-58101,10,Kévin,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
-58102,37,LeVal,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,,Coupe du Monde
-58103,37,LeVal,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,,Coupe du Monde
-58104,37,LeVal,Canada,Bosnie-Herzégovine,1,0,12253,1,2025-2026,,Coupe du Monde
-58105,37,LeVal,Qatar,Suisse,1,3,12254,1,2025-2026,,Coupe du Monde
-58106,37,LeVal,Brésil,Maroc,3,1,12255,1,2025-2026,,Coupe du Monde
-58107,37,LeVal,Haîti,Ecosse,1,1,12256,1,2025-2026,,Coupe du Monde
-58108,37,LeVal,Australie,Turquie,0,2,12257,1,2025-2026,,Coupe du Monde
-58109,37,LeVal,Allemagne,Curaçao,3,0,12258,1,2025-2026,,Coupe du Monde
-58110,37,LeVal,Pays-Bas,Japon,1,2,12259,1,2025-2026,,Coupe du Monde
-58111,37,LeVal,Côte D'Ivoire,Equateur,1,1,12260,1,2025-2026,,Coupe du Monde
-58112,37,LeVal,Suède,Tunisie,2,1,12261,1,2025-2026,,Coupe du Monde
-58113,37,LeVal,Espagne,Cap Vert,3,2,12262,1,2025-2026,,Coupe du Monde
-58114,37,LeVal,Belgique,Egypte,2,2,12263,1,2025-2026,,Coupe du Monde
-58115,37,LeVal,Arabie Saoudite,Uruguay,0,1,12264,1,2025-2026,,Coupe du Monde
-58116,37,LeVal,Iran,Nouvelle-Zélande,0,0,12265,1,2025-2026,,Coupe du Monde
-58117,37,LeVal,France,Sénégal,3,0,12266,1,2025-2026,,Coupe du Monde
-58118,37,LeVal,Irak,Norvège,0,2,12267,1,2025-2026,,Coupe du Monde
-58119,37,LeVal,Argentine,Algérie,3,1,12268,1,2025-2026,,Coupe du Monde
-58120,37,LeVal,Autriche,Jordanie,1,1,12269,1,2025-2026,,Coupe du Monde
-58121,37,LeVal,Portugal,RD Congo,3,1,12270,1,2025-2026,,Coupe du Monde
-58122,37,LeVal,Angleterre,Croatie,1,3,12271,1,2025-2026,,Coupe du Monde
-58123,37,LeVal,Ghana,Panama,1,1,12272,1,2025-2026,,Coupe du Monde
-58124,37,LeVal,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,,Coupe du Monde
-58125,37,LeVal,Etats-Unis,Paraguay,1,0,12323,1,2025-2026,,Coupe du Monde
-58126,37,LeVal,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
-58127,37,LeVal,Suisse,Bosnie-Herzégovine,3,1,12328,2,2025-2026,,Coupe du Monde
-58128,37,LeVal,Canada,Qatar,1,2,12329,2,2025-2026,,Coupe du Monde
-58129,37,LeVal,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,,Coupe du Monde
-58130,37,LeVal,Etats-Unis,Australie,1,1,12331,2,2025-2026,,Coupe du Monde
-58131,37,LeVal,Ecosse,Maroc,0,2,12332,2,2025-2026,,Coupe du Monde
-58132,37,LeVal,Brésil,Haïti,4,1,12333,2,2025-2026,,Coupe du Monde
-58133,37,LeVal,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-58134,37,LeVal,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-58135,37,LeVal,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
-58136,37,LeVal,Equateur,Curaçao,0,0,12337,2,2025-2026,,Coupe du Monde
-58137,37,LeVal,Tunisie,Japon,2,3,12338,2,2025-2026,,Coupe du Monde
-58138,37,LeVal,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,,Coupe du Monde
-58139,37,LeVal,Belgique,Iran,2,0,12340,2,2025-2026,,Coupe du Monde
-58140,37,LeVal,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
-58141,37,LeVal,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,,Coupe du Monde
-58142,37,LeVal,Argentine,Autriche,3,1,12343,2,2025-2026,,Coupe du Monde
-58143,37,LeVal,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-58144,37,LeVal,Norvège,Sénégal,1,2,12345,2,2025-2026,,Coupe du Monde
-58145,37,LeVal,Jordanie,Algérie,1,2,12346,2,2025-2026,,Coupe du Monde
-58146,37,LeVal,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
-58147,37,LeVal,Angleterre,Ghana,2,1,12348,2,2025-2026,,Coupe du Monde
-58148,37,LeVal,Panama,Croatie,1,3,12349,2,2025-2026,,Coupe du Monde
-58149,37,LeVal,Colombie,RD Congo,1,1,12350,2,2025-2026,,Coupe du Monde
-58150,32,Fatoche,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
-58151,32,Fatoche,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,,Coupe du Monde
-58152,32,Fatoche,Canada,Qatar,2,2,12329,2,2025-2026,,Coupe du Monde
-58153,32,Fatoche,Mexique,Corée Du Sud,1,0,12330,2,2025-2026,,Coupe du Monde
-58154,32,Fatoche,Etats-Unis,Australie,1,2,12331,2,2025-2026,,Coupe du Monde
-58155,32,Fatoche,Ecosse,Maroc,2,1,12332,2,2025-2026,,Coupe du Monde
-58156,32,Fatoche,Brésil,Haïti,2,0,12333,2,2025-2026,,Coupe du Monde
-58157,32,Fatoche,Turquie,Paraguay,1,1,12334,2,2025-2026,,Coupe du Monde
-58158,32,Fatoche,Pays-Bas,Suède,2,2,12335,2,2025-2026,,Coupe du Monde
-58159,32,Fatoche,Allemagne,Côte D'Ivoire,3,0,12336,2,2025-2026,,Coupe du Monde
-58160,32,Fatoche,Equateur,Curaçao,1,0,12337,2,2025-2026,,Coupe du Monde
-58161,32,Fatoche,Tunisie,Japon,1,1,12338,2,2025-2026,,Coupe du Monde
-58162,32,Fatoche,Espagne,Arabie Saoudite,3,1,12339,2,2025-2026,,Coupe du Monde
-58163,32,Fatoche,Belgique,Iran,1,0,12340,2,2025-2026,,Coupe du Monde
-58164,32,Fatoche,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
-58165,32,Fatoche,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,,Coupe du Monde
-58166,32,Fatoche,Argentine,Autriche,3,1,12343,2,2025-2026,,Coupe du Monde
-58167,32,Fatoche,France,Irak,3,1,12344,2,2025-2026,,Coupe du Monde
-58168,32,Fatoche,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-58169,32,Fatoche,Jordanie,Algérie,0,2,12346,2,2025-2026,,Coupe du Monde
-58170,32,Fatoche,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-58171,32,Fatoche,Angleterre,Ghana,2,0,12348,2,2025-2026,,Coupe du Monde
-58172,32,Fatoche,Panama,Croatie,2,2,12349,2,2025-2026,,Coupe du Monde
-58173,32,Fatoche,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
+57742,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+57743,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57744,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57745,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57746,35,Chouchou,Etats-Unis,Australie,1,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57747,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57748,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57749,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57750,35,Chouchou,Pays-Bas,Suède,1,2,12335,2,2025-2026,CDM_26,Coupe du Monde
+57751,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57752,35,Chouchou,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57753,35,Chouchou,Tunisie,Japon,0,3,12338,2,2025-2026,CDM_26,Coupe du Monde
+57754,35,Chouchou,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57755,35,Chouchou,Belgique,Iran,1,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57756,35,Chouchou,Uruguay,Cap Vert,2,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+57757,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+57758,35,Chouchou,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57759,35,Chouchou,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57760,35,Chouchou,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57761,35,Chouchou,Jordanie,Algérie,0,3,12346,2,2025-2026,CDM_26,Coupe du Monde
+57762,35,Chouchou,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57763,35,Chouchou,Angleterre,Ghana,1,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+57764,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+57765,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57766,17,Olivier,République Tchèque,Afrique Du Sud,1,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+57767,17,Olivier,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+57768,17,Olivier,Canada,Qatar,3,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57769,17,Olivier,Mexique,Corée Du Sud,2,0,12330,2,2025-2026,CDM_26,Coupe du Monde
+57770,17,Olivier,Etats-Unis,Australie,1,0,12331,2,2025-2026,CDM_26,Coupe du Monde
+57771,17,Olivier,Ecosse,Maroc,0,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57772,17,Olivier,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57773,17,Olivier,Turquie,Paraguay,2,2,12334,2,2025-2026,CDM_26,Coupe du Monde
+57774,17,Olivier,Pays-Bas,Suède,1,0,12335,2,2025-2026,CDM_26,Coupe du Monde
+57775,17,Olivier,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57776,17,Olivier,Equateur,Curaçao,1,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57777,17,Olivier,Tunisie,Japon,0,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+57778,17,Olivier,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57779,17,Olivier,Belgique,Iran,3,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+57780,17,Olivier,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57781,17,Olivier,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+57782,17,Olivier,Argentine,Autriche,2,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+57783,17,Olivier,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57784,17,Olivier,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57785,17,Olivier,Jordanie,Algérie,0,3,12346,2,2025-2026,CDM_26,Coupe du Monde
+57786,17,Olivier,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57787,17,Olivier,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57788,17,Olivier,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57789,17,Olivier,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57814,26,Merguez,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+57815,26,Merguez,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+57816,26,Merguez,Canada,Qatar,1,2,12329,2,2025-2026,CDM_26,Coupe du Monde
+57817,26,Merguez,Mexique,Corée Du Sud,3,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57818,26,Merguez,Etats-Unis,Australie,1,2,12331,2,2025-2026,CDM_26,Coupe du Monde
+57819,26,Merguez,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57820,26,Merguez,Brésil,Haïti,2,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57821,26,Merguez,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+57822,26,Merguez,Pays-Bas,Suède,3,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57823,26,Merguez,Allemagne,Côte D'Ivoire,5,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57824,26,Merguez,Equateur,Curaçao,1,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+57825,26,Merguez,Tunisie,Japon,1,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+57826,26,Merguez,Espagne,Arabie Saoudite,4,1,12339,2,2025-2026,CDM_26,Coupe du Monde
+57827,26,Merguez,Belgique,Iran,3,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57828,26,Merguez,Uruguay,Cap Vert,1,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+57829,26,Merguez,Nouvelle-Zélande,Egypte,1,3,12342,2,2025-2026,CDM_26,Coupe du Monde
+57830,26,Merguez,Argentine,Autriche,2,2,12343,2,2025-2026,CDM_26,Coupe du Monde
+57831,26,Merguez,France,Irak,3,1,12344,2,2025-2026,CDM_26,Coupe du Monde
+57832,26,Merguez,Norvège,Sénégal,2,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57833,26,Merguez,Jordanie,Algérie,1,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57834,26,Merguez,Portugal,Ouzbékistan,3,1,12347,2,2025-2026,CDM_26,Coupe du Monde
+57835,26,Merguez,Angleterre,Ghana,3,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+57836,26,Merguez,Panama,Croatie,1,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+57837,26,Merguez,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57838,21,Sébastien,République Tchèque,Afrique Du Sud,1,2,12327,2,2025-2026,CDM_26,Coupe du Monde
+57839,21,Sébastien,Suisse,Bosnie-Herzégovine,3,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57840,21,Sébastien,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57841,21,Sébastien,Mexique,Corée Du Sud,1,2,12330,2,2025-2026,CDM_26,Coupe du Monde
+57842,21,Sébastien,Etats-Unis,Australie,3,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57843,21,Sébastien,Ecosse,Maroc,0,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57844,21,Sébastien,Brésil,Haïti,3,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57845,21,Sébastien,Turquie,Paraguay,2,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57846,21,Sébastien,Pays-Bas,Suède,3,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57847,21,Sébastien,Allemagne,Côte D'Ivoire,1,2,12336,2,2025-2026,CDM_26,Coupe du Monde
+57848,21,Sébastien,Equateur,Curaçao,3,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57849,21,Sébastien,Tunisie,Japon,1,3,12338,2,2025-2026,CDM_26,Coupe du Monde
+57850,21,Sébastien,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57851,21,Sébastien,Belgique,Iran,3,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+57852,21,Sébastien,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57853,21,Sébastien,Nouvelle-Zélande,Egypte,1,3,12342,2,2025-2026,CDM_26,Coupe du Monde
+57854,21,Sébastien,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57855,21,Sébastien,France,Irak,4,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57856,21,Sébastien,Norvège,Sénégal,1,3,12345,2,2025-2026,CDM_26,Coupe du Monde
+57857,21,Sébastien,Jordanie,Algérie,2,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57858,21,Sébastien,Portugal,Ouzbékistan,3,1,12347,2,2025-2026,CDM_26,Coupe du Monde
+57859,21,Sébastien,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57860,21,Sébastien,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57861,21,Sébastien,Colombie,RD Congo,2,4,12350,2,2025-2026,CDM_26,Coupe du Monde
+57862,27,Thif Thif,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+57863,27,Thif Thif,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57864,27,Thif Thif,Canada,Qatar,1,1,12329,2,2025-2026,CDM_26,Coupe du Monde
+57865,27,Thif Thif,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57866,27,Thif Thif,Etats-Unis,Australie,1,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57867,27,Thif Thif,Ecosse,Maroc,0,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57868,27,Thif Thif,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57869,27,Thif Thif,Turquie,Paraguay,1,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57870,27,Thif Thif,Pays-Bas,Suède,2,2,12335,2,2025-2026,CDM_26,Coupe du Monde
+57871,27,Thif Thif,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57872,27,Thif Thif,Equateur,Curaçao,1,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57873,27,Thif Thif,Tunisie,Japon,1,2,12338,2,2025-2026,CDM_26,Coupe du Monde
+57874,27,Thif Thif,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57875,27,Thif Thif,Belgique,Iran,2,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57876,27,Thif Thif,Uruguay,Cap Vert,1,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57877,27,Thif Thif,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+57878,27,Thif Thif,Argentine,Autriche,3,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+57879,27,Thif Thif,France,Irak,4,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57880,27,Thif Thif,Norvège,Sénégal,3,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57881,27,Thif Thif,Jordanie,Algérie,1,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57882,27,Thif Thif,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57883,27,Thif Thif,Angleterre,Ghana,2,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+57884,27,Thif Thif,Panama,Croatie,1,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57885,27,Thif Thif,Colombie,RD Congo,3,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57886,18,Pierre,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+57887,18,Pierre,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+57888,18,Pierre,Canada,Qatar,1,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57889,18,Pierre,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57890,18,Pierre,Etats-Unis,Australie,2,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57891,18,Pierre,Ecosse,Maroc,0,3,12332,2,2025-2026,CDM_26,Coupe du Monde
+57892,18,Pierre,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57893,18,Pierre,Turquie,Paraguay,2,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57894,18,Pierre,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57895,18,Pierre,Allemagne,Côte D'Ivoire,2,2,12336,2,2025-2026,CDM_26,Coupe du Monde
+57896,18,Pierre,Equateur,Curaçao,4,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+57897,18,Pierre,Tunisie,Japon,1,4,12338,2,2025-2026,CDM_26,Coupe du Monde
+57898,18,Pierre,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57899,18,Pierre,Belgique,Iran,1,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57900,18,Pierre,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57901,18,Pierre,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+57902,18,Pierre,Argentine,Autriche,3,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57903,18,Pierre,France,Irak,6,1,12344,2,2025-2026,CDM_26,Coupe du Monde
+57904,18,Pierre,Norvège,Sénégal,2,2,12345,2,2025-2026,CDM_26,Coupe du Monde
+57905,18,Pierre,Jordanie,Algérie,1,3,12346,2,2025-2026,CDM_26,Coupe du Monde
+57906,18,Pierre,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57907,18,Pierre,Angleterre,Ghana,3,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57908,18,Pierre,Panama,Croatie,1,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+57909,18,Pierre,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57910,34,Zoé,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+57911,34,Zoé,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+57912,34,Zoé,Canada,Qatar,2,1,12329,2,2025-2026,CDM_26,Coupe du Monde
+57913,34,Zoé,Mexique,Corée Du Sud,2,2,12330,2,2025-2026,CDM_26,Coupe du Monde
+57914,34,Zoé,Etats-Unis,Australie,3,2,12331,2,2025-2026,CDM_26,Coupe du Monde
+57915,34,Zoé,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+57916,34,Zoé,Brésil,Haïti,1,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57917,34,Zoé,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+57918,34,Zoé,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57919,34,Zoé,Allemagne,Côte D'Ivoire,5,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57920,34,Zoé,Equateur,Curaçao,1,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+57921,34,Zoé,Tunisie,Japon,1,2,12338,2,2025-2026,CDM_26,Coupe du Monde
+57922,34,Zoé,Espagne,Arabie Saoudite,1,1,12339,2,2025-2026,CDM_26,Coupe du Monde
+57923,34,Zoé,Belgique,Iran,2,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+57924,34,Zoé,Uruguay,Cap Vert,1,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+57925,34,Zoé,Nouvelle-Zélande,Egypte,1,0,12342,2,2025-2026,CDM_26,Coupe du Monde
+57926,34,Zoé,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57927,34,Zoé,France,Irak,4,1,12344,2,2025-2026,CDM_26,Coupe du Monde
+57928,34,Zoé,Norvège,Sénégal,3,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57929,34,Zoé,Jordanie,Algérie,0,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57930,34,Zoé,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57931,34,Zoé,Angleterre,Ghana,3,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57932,34,Zoé,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57933,34,Zoé,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57934,33,*Claire*,République Tchèque,Afrique Du Sud,1,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+57935,33,*Claire*,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57936,33,*Claire*,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+57937,33,*Claire*,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+57938,33,*Claire*,Etats-Unis,Australie,1,0,12331,2,2025-2026,CDM_26,Coupe du Monde
+57939,33,*Claire*,Ecosse,Maroc,0,1,12332,2,2025-2026,CDM_26,Coupe du Monde
+57940,33,*Claire*,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57941,33,*Claire*,Turquie,Paraguay,1,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+57942,33,*Claire*,Pays-Bas,Suède,1,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+57943,33,*Claire*,Allemagne,Côte D'Ivoire,2,0,12336,2,2025-2026,CDM_26,Coupe du Monde
+57944,33,*Claire*,Equateur,Curaçao,3,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+57945,33,*Claire*,Tunisie,Japon,0,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+57946,33,*Claire*,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57947,33,*Claire*,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+57948,33,*Claire*,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57949,33,*Claire*,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+57950,33,*Claire*,Argentine,Autriche,1,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57951,33,*Claire*,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57952,33,*Claire*,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+57953,33,*Claire*,Jordanie,Algérie,0,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57954,33,*Claire*,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57955,33,*Claire*,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57956,33,*Claire*,Panama,Croatie,1,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+57957,33,*Claire*,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+57958,30,Juju,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+57959,30,Juju,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57960,30,Juju,Canada,Qatar,3,1,12329,2,2025-2026,CDM_26,Coupe du Monde
+57961,30,Juju,Mexique,Corée Du Sud,3,2,12330,2,2025-2026,CDM_26,Coupe du Monde
+57962,30,Juju,Etats-Unis,Australie,2,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57963,30,Juju,Ecosse,Maroc,1,4,12332,2,2025-2026,CDM_26,Coupe du Monde
+57964,30,Juju,Brésil,Haïti,3,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57965,30,Juju,Turquie,Paraguay,2,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+57966,30,Juju,Pays-Bas,Suède,2,3,12335,2,2025-2026,CDM_26,Coupe du Monde
+57967,30,Juju,Allemagne,Côte D'Ivoire,5,0,12336,2,2025-2026,CDM_26,Coupe du Monde
+57968,30,Juju,Equateur,Curaçao,2,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+57969,30,Juju,Tunisie,Japon,1,3,12338,2,2025-2026,CDM_26,Coupe du Monde
+57970,30,Juju,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+57971,30,Juju,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+57972,30,Juju,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+57973,30,Juju,Nouvelle-Zélande,Egypte,1,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+57974,30,Juju,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+57975,30,Juju,France,Irak,5,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+57976,30,Juju,Norvège,Sénégal,1,3,12345,2,2025-2026,CDM_26,Coupe du Monde
+57977,30,Juju,Jordanie,Algérie,0,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+57978,30,Juju,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+57979,30,Juju,Angleterre,Ghana,3,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+57980,30,Juju,Panama,Croatie,2,1,12349,2,2025-2026,CDM_26,Coupe du Monde
+57981,30,Juju,Colombie,RD Congo,1,0,12350,2,2025-2026,CDM_26,Coupe du Monde
+57982,9,Hélène,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+57983,9,Hélène,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+57984,9,Hélène,Canada,Qatar,1,2,12329,2,2025-2026,CDM_26,Coupe du Monde
+57985,9,Hélène,Mexique,Corée Du Sud,3,0,12330,2,2025-2026,CDM_26,Coupe du Monde
+57986,9,Hélène,Etats-Unis,Australie,3,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+57987,9,Hélène,Ecosse,Maroc,0,1,12332,2,2025-2026,CDM_26,Coupe du Monde
+57988,9,Hélène,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+57989,9,Hélène,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+57990,9,Hélène,Pays-Bas,Suède,1,2,12335,2,2025-2026,CDM_26,Coupe du Monde
+57991,9,Hélène,Allemagne,Côte D'Ivoire,4,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+57992,9,Hélène,Equateur,Curaçao,2,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+57993,9,Hélène,Tunisie,Japon,1,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+57994,9,Hélène,Espagne,Arabie Saoudite,3,1,12339,2,2025-2026,CDM_26,Coupe du Monde
+57995,9,Hélène,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+57996,9,Hélène,Uruguay,Cap Vert,2,2,12341,2,2025-2026,CDM_26,Coupe du Monde
+57997,9,Hélène,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+57998,9,Hélène,Argentine,Autriche,1,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+57999,9,Hélène,France,Irak,2,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58000,9,Hélène,Norvège,Sénégal,3,0,12345,2,2025-2026,CDM_26,Coupe du Monde
+58001,9,Hélène,Jordanie,Algérie,1,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+58002,9,Hélène,Portugal,Ouzbékistan,0,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58003,9,Hélène,Angleterre,Ghana,3,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+58004,9,Hélène,Panama,Croatie,0,1,12349,2,2025-2026,CDM_26,Coupe du Monde
+58005,9,Hélène,Colombie,RD Congo,0,0,12350,2,2025-2026,CDM_26,Coupe du Monde
+58006,5,Cédric,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+58007,5,Cédric,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58008,5,Cédric,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+58009,5,Cédric,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+58010,5,Cédric,Etats-Unis,Australie,1,0,12331,2,2025-2026,CDM_26,Coupe du Monde
+58011,5,Cédric,Ecosse,Maroc,1,3,12332,2,2025-2026,CDM_26,Coupe du Monde
+58012,5,Cédric,Brésil,Haïti,5,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58013,5,Cédric,Turquie,Paraguay,2,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58014,5,Cédric,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58015,5,Cédric,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58016,5,Cédric,Equateur,Curaçao,3,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58017,5,Cédric,Tunisie,Japon,1,0,12338,2,2025-2026,CDM_26,Coupe du Monde
+58018,5,Cédric,Espagne,Arabie Saoudite,2,1,12339,2,2025-2026,CDM_26,Coupe du Monde
+58019,5,Cédric,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+58020,5,Cédric,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+58021,5,Cédric,Nouvelle-Zélande,Egypte,0,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+58022,5,Cédric,Argentine,Autriche,3,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+58023,5,Cédric,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58024,5,Cédric,Norvège,Sénégal,1,2,12345,2,2025-2026,CDM_26,Coupe du Monde
+58025,5,Cédric,Jordanie,Algérie,0,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+58026,5,Cédric,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58027,5,Cédric,Angleterre,Ghana,3,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+58028,5,Cédric,Panama,Croatie,0,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+58029,5,Cédric,Colombie,RD Congo,2,2,12350,2,2025-2026,CDM_26,Coupe du Monde
+58030,36,Jeje et Elo,République Tchèque,Afrique Du Sud,1,2,12327,2,2025-2026,CDM_26,Coupe du Monde
+58031,36,Jeje et Elo,Suisse,Bosnie-Herzégovine,1,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58032,36,Jeje et Elo,Canada,Qatar,2,1,12329,2,2025-2026,CDM_26,Coupe du Monde
+58033,36,Jeje et Elo,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+58034,36,Jeje et Elo,Etats-Unis,Australie,1,2,12331,2,2025-2026,CDM_26,Coupe du Monde
+58035,36,Jeje et Elo,Ecosse,Maroc,3,0,12332,2,2025-2026,CDM_26,Coupe du Monde
+58036,36,Jeje et Elo,Brésil,Haïti,4,1,12333,2,2025-2026,CDM_26,Coupe du Monde
+58037,36,Jeje et Elo,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58038,36,Jeje et Elo,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58039,36,Jeje et Elo,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58040,36,Jeje et Elo,Equateur,Curaçao,0,1,12337,2,2025-2026,CDM_26,Coupe du Monde
+58041,36,Jeje et Elo,Tunisie,Japon,0,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+58042,36,Jeje et Elo,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+58043,36,Jeje et Elo,Belgique,Iran,3,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+58044,36,Jeje et Elo,Uruguay,Cap Vert,0,2,12341,2,2025-2026,CDM_26,Coupe du Monde
+58045,36,Jeje et Elo,Nouvelle-Zélande,Egypte,3,0,12342,2,2025-2026,CDM_26,Coupe du Monde
+58046,36,Jeje et Elo,Argentine,Autriche,2,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+58047,36,Jeje et Elo,France,Irak,2,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58048,36,Jeje et Elo,Norvège,Sénégal,2,2,12345,2,2025-2026,CDM_26,Coupe du Monde
+58049,36,Jeje et Elo,Jordanie,Algérie,1,0,12346,2,2025-2026,CDM_26,Coupe du Monde
+58050,36,Jeje et Elo,Portugal,Ouzbékistan,4,1,12347,2,2025-2026,CDM_26,Coupe du Monde
+58051,36,Jeje et Elo,Angleterre,Ghana,3,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+58052,36,Jeje et Elo,Panama,Croatie,1,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+58053,36,Jeje et Elo,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+58054,28,Bebou,République Tchèque,Afrique Du Sud,2,0,12327,2,2025-2026,CDM_26,Coupe du Monde
+58055,28,Bebou,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58056,28,Bebou,Canada,Qatar,1,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+58057,28,Bebou,Mexique,Corée Du Sud,1,2,12330,2,2025-2026,CDM_26,Coupe du Monde
+58058,28,Bebou,Etats-Unis,Australie,2,0,12331,2,2025-2026,CDM_26,Coupe du Monde
+58059,28,Bebou,Ecosse,Maroc,0,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+58060,28,Bebou,Brésil,Haïti,4,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58061,28,Bebou,Turquie,Paraguay,2,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58062,28,Bebou,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58063,28,Bebou,Allemagne,Côte D'Ivoire,2,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58064,28,Bebou,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58065,28,Bebou,Tunisie,Japon,0,2,12338,2,2025-2026,CDM_26,Coupe du Monde
+58066,28,Bebou,Espagne,Arabie Saoudite,3,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+58067,28,Bebou,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+58068,28,Bebou,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+58069,28,Bebou,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+58070,28,Bebou,Argentine,Autriche,1,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+58071,28,Bebou,France,Irak,4,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58072,28,Bebou,Norvège,Sénégal,2,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+58073,28,Bebou,Jordanie,Algérie,0,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+58074,28,Bebou,Portugal,Ouzbékistan,2,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58075,28,Bebou,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+58076,28,Bebou,Panama,Croatie,0,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+58077,28,Bebou,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+58078,10,Kévin,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+58079,10,Kévin,Suisse,Bosnie-Herzégovine,2,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58080,10,Kévin,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+58081,10,Kévin,Mexique,Corée Du Sud,2,0,12330,2,2025-2026,CDM_26,Coupe du Monde
+58082,10,Kévin,Etats-Unis,Australie,1,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+58083,10,Kévin,Ecosse,Maroc,1,1,12332,2,2025-2026,CDM_26,Coupe du Monde
+58084,10,Kévin,Brésil,Haïti,5,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58085,10,Kévin,Turquie,Paraguay,1,2,12334,2,2025-2026,CDM_26,Coupe du Monde
+58086,10,Kévin,Pays-Bas,Suède,1,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58087,10,Kévin,Allemagne,Côte D'Ivoire,3,0,12336,2,2025-2026,CDM_26,Coupe du Monde
+58088,10,Kévin,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58089,10,Kévin,Tunisie,Japon,0,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+58090,10,Kévin,Espagne,Arabie Saoudite,5,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+58091,10,Kévin,Belgique,Iran,2,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+58092,10,Kévin,Uruguay,Cap Vert,2,0,12341,2,2025-2026,CDM_26,Coupe du Monde
+58093,10,Kévin,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+58094,10,Kévin,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+58095,10,Kévin,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58096,10,Kévin,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+58097,10,Kévin,Jordanie,Algérie,1,1,12346,2,2025-2026,CDM_26,Coupe du Monde
+58098,10,Kévin,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58099,10,Kévin,Angleterre,Ghana,1,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+58100,10,Kévin,Panama,Croatie,0,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+58101,10,Kévin,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+58102,37,LeVal,Mexique,Afrique Du Sud,2,1,12251,1,2025-2026,CDM_26,Coupe du Monde
+58103,37,LeVal,Corée Du Sud,République Tchèque,1,1,12252,1,2025-2026,CDM_26,Coupe du Monde
+58104,37,LeVal,Canada,Bosnie-Herzégovine,1,0,12253,1,2025-2026,CDM_26,Coupe du Monde
+58105,37,LeVal,Qatar,Suisse,1,3,12254,1,2025-2026,CDM_26,Coupe du Monde
+58106,37,LeVal,Brésil,Maroc,3,1,12255,1,2025-2026,CDM_26,Coupe du Monde
+58107,37,LeVal,Haîti,Ecosse,1,1,12256,1,2025-2026,CDM_26,Coupe du Monde
+58108,37,LeVal,Australie,Turquie,0,2,12257,1,2025-2026,CDM_26,Coupe du Monde
+58109,37,LeVal,Allemagne,Curaçao,3,0,12258,1,2025-2026,CDM_26,Coupe du Monde
+58110,37,LeVal,Pays-Bas,Japon,1,2,12259,1,2025-2026,CDM_26,Coupe du Monde
+58111,37,LeVal,Côte D'Ivoire,Equateur,1,1,12260,1,2025-2026,CDM_26,Coupe du Monde
+58112,37,LeVal,Suède,Tunisie,2,1,12261,1,2025-2026,CDM_26,Coupe du Monde
+58113,37,LeVal,Espagne,Cap Vert,3,2,12262,1,2025-2026,CDM_26,Coupe du Monde
+58114,37,LeVal,Belgique,Egypte,2,2,12263,1,2025-2026,CDM_26,Coupe du Monde
+58115,37,LeVal,Arabie Saoudite,Uruguay,0,1,12264,1,2025-2026,CDM_26,Coupe du Monde
+58116,37,LeVal,Iran,Nouvelle-Zélande,0,0,12265,1,2025-2026,CDM_26,Coupe du Monde
+58117,37,LeVal,France,Sénégal,3,0,12266,1,2025-2026,CDM_26,Coupe du Monde
+58118,37,LeVal,Irak,Norvège,0,2,12267,1,2025-2026,CDM_26,Coupe du Monde
+58119,37,LeVal,Argentine,Algérie,3,1,12268,1,2025-2026,CDM_26,Coupe du Monde
+58120,37,LeVal,Autriche,Jordanie,1,1,12269,1,2025-2026,CDM_26,Coupe du Monde
+58121,37,LeVal,Portugal,RD Congo,3,1,12270,1,2025-2026,CDM_26,Coupe du Monde
+58122,37,LeVal,Angleterre,Croatie,1,3,12271,1,2025-2026,CDM_26,Coupe du Monde
+58123,37,LeVal,Ghana,Panama,1,1,12272,1,2025-2026,CDM_26,Coupe du Monde
+58124,37,LeVal,Ouzbékistan,Colombie,0,1,12273,1,2025-2026,CDM_26,Coupe du Monde
+58125,37,LeVal,Etats-Unis,Paraguay,1,0,12323,1,2025-2026,CDM_26,Coupe du Monde
+58126,37,LeVal,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+58127,37,LeVal,Suisse,Bosnie-Herzégovine,3,1,12328,2,2025-2026,CDM_26,Coupe du Monde
+58128,37,LeVal,Canada,Qatar,1,2,12329,2,2025-2026,CDM_26,Coupe du Monde
+58129,37,LeVal,Mexique,Corée Du Sud,2,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+58130,37,LeVal,Etats-Unis,Australie,1,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+58131,37,LeVal,Ecosse,Maroc,0,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+58132,37,LeVal,Brésil,Haïti,4,1,12333,2,2025-2026,CDM_26,Coupe du Monde
+58133,37,LeVal,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58134,37,LeVal,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58135,37,LeVal,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58136,37,LeVal,Equateur,Curaçao,0,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58137,37,LeVal,Tunisie,Japon,2,3,12338,2,2025-2026,CDM_26,Coupe du Monde
+58138,37,LeVal,Espagne,Arabie Saoudite,2,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+58139,37,LeVal,Belgique,Iran,2,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+58140,37,LeVal,Uruguay,Cap Vert,1,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+58141,37,LeVal,Nouvelle-Zélande,Egypte,0,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+58142,37,LeVal,Argentine,Autriche,3,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+58143,37,LeVal,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58144,37,LeVal,Norvège,Sénégal,1,2,12345,2,2025-2026,CDM_26,Coupe du Monde
+58145,37,LeVal,Jordanie,Algérie,1,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+58146,37,LeVal,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58147,37,LeVal,Angleterre,Ghana,2,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+58148,37,LeVal,Panama,Croatie,1,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+58149,37,LeVal,Colombie,RD Congo,1,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+58150,32,Fatoche,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+58151,32,Fatoche,Suisse,Bosnie-Herzégovine,1,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+58152,32,Fatoche,Canada,Qatar,2,2,12329,2,2025-2026,CDM_26,Coupe du Monde
+58153,32,Fatoche,Mexique,Corée Du Sud,1,0,12330,2,2025-2026,CDM_26,Coupe du Monde
+58154,32,Fatoche,Etats-Unis,Australie,1,2,12331,2,2025-2026,CDM_26,Coupe du Monde
+58155,32,Fatoche,Ecosse,Maroc,2,1,12332,2,2025-2026,CDM_26,Coupe du Monde
+58156,32,Fatoche,Brésil,Haïti,2,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58157,32,Fatoche,Turquie,Paraguay,1,1,12334,2,2025-2026,CDM_26,Coupe du Monde
+58158,32,Fatoche,Pays-Bas,Suède,2,2,12335,2,2025-2026,CDM_26,Coupe du Monde
+58159,32,Fatoche,Allemagne,Côte D'Ivoire,3,0,12336,2,2025-2026,CDM_26,Coupe du Monde
+58160,32,Fatoche,Equateur,Curaçao,1,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58161,32,Fatoche,Tunisie,Japon,1,1,12338,2,2025-2026,CDM_26,Coupe du Monde
+58162,32,Fatoche,Espagne,Arabie Saoudite,3,1,12339,2,2025-2026,CDM_26,Coupe du Monde
+58163,32,Fatoche,Belgique,Iran,1,0,12340,2,2025-2026,CDM_26,Coupe du Monde
+58164,32,Fatoche,Uruguay,Cap Vert,1,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+58165,32,Fatoche,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,CDM_26,Coupe du Monde
+58166,32,Fatoche,Argentine,Autriche,3,1,12343,2,2025-2026,CDM_26,Coupe du Monde
+58167,32,Fatoche,France,Irak,3,1,12344,2,2025-2026,CDM_26,Coupe du Monde
+58168,32,Fatoche,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+58169,32,Fatoche,Jordanie,Algérie,0,2,12346,2,2025-2026,CDM_26,Coupe du Monde
+58170,32,Fatoche,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58171,32,Fatoche,Angleterre,Ghana,2,0,12348,2,2025-2026,CDM_26,Coupe du Monde
+58172,32,Fatoche,Panama,Croatie,2,2,12349,2,2025-2026,CDM_26,Coupe du Monde
+58173,32,Fatoche,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
+58222,31,Jean,République Tchèque,Afrique Du Sud,1,1,12327,2,2025-2026,,Coupe du Monde
+58223,31,Jean,Suisse,Bosnie-Herzégovine,4,1,12328,2,2025-2026,,Coupe du Monde
+58224,31,Jean,Canada,Qatar,6,0,12329,2,2025-2026,,Coupe du Monde
+58225,31,Jean,Mexique,Corée Du Sud,3,0,12330,2,2025-2026,,Coupe du Monde
+58226,31,Jean,Etats-Unis,Australie,2,1,12331,2,2025-2026,,Coupe du Monde
+58227,31,Jean,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
+58228,31,Jean,Brésil,Haïti,7,0,12333,2,2025-2026,,Coupe du Monde
+58229,31,Jean,Turquie,Paraguay,2,1,12334,2,2025-2026,,Coupe du Monde
+58230,31,Jean,Pays-Bas,Suède,2,2,12335,2,2025-2026,,Coupe du Monde
+58231,31,Jean,Allemagne,Côte D'Ivoire,3,1,12336,2,2025-2026,,Coupe du Monde
+58232,31,Jean,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
+58233,31,Jean,Tunisie,Japon,2,2,12338,2,2025-2026,,Coupe du Monde
+58234,31,Jean,Espagne,Arabie Saoudite,4,2,12339,2,2025-2026,,Coupe du Monde
+58235,31,Jean,Belgique,Iran,3,0,12340,2,2025-2026,,Coupe du Monde
+58236,31,Jean,Uruguay,Cap Vert,1,1,12341,2,2025-2026,,Coupe du Monde
+58237,31,Jean,Nouvelle-Zélande,Egypte,2,1,12342,2,2025-2026,,Coupe du Monde
+58238,31,Jean,Argentine,Autriche,2,2,12343,2,2025-2026,,Coupe du Monde
+58239,31,Jean,France,Irak,3,3,12344,2,2025-2026,,Coupe du Monde
+58240,31,Jean,Norvège,Sénégal,3,1,12345,2,2025-2026,,Coupe du Monde
+58241,31,Jean,Jordanie,Algérie,1,2,12346,2,2025-2026,,Coupe du Monde
+58242,31,Jean,Portugal,Ouzbékistan,4,0,12347,2,2025-2026,,Coupe du Monde
+58243,31,Jean,Angleterre,Ghana,2,2,12348,2,2025-2026,,Coupe du Monde
+58244,31,Jean,Panama,Croatie,1,2,12349,2,2025-2026,,Coupe du Monde
+58245,31,Jean,Colombie,RD Congo,1,0,12350,2,2025-2026,,Coupe du Monde
