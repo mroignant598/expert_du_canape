@@ -311,6 +311,7 @@ def calcul_points(r):
     if score_exact and resultat_correct: multiplicateur += 2
     if ecart_correct and resultat_correct: multiplicateur += 1.33
     if prolifique_prono and prolifique_reel: multiplicateur += 1.25
+    if prolifique_prono and super_prolifique_reel: multiplicateur += 1.25
     if prolifique_prono and not prolifique_reel: multiplicateur -= 0.5
     if super_prolifique_prono and super_prolifique_reel: multiplicateur += 1.50
     if super_prolifique_prono and not super_prolifique_reel: multiplicateur -= 0.75
