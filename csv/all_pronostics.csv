@@ -55978,27 +55978,27 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 58243,31,Jean,Angleterre,Ghana,2,2,12348,2,2025-2026,CDM_26,Coupe du Monde
 58244,31,Jean,Panama,Croatie,1,2,12349,2,2025-2026,CDM_26,Coupe du Monde
 58245,31,Jean,Colombie,RD Congo,1,0,12350,2,2025-2026,CDM_26,Coupe du Monde
-58246,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,,Coupe du Monde
-58247,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,,Coupe du Monde
-58248,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,,Coupe du Monde
-58249,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,,Coupe du Monde
-58250,35,Chouchou,Etats-Unis,Australie,3,1,12331,2,2025-2026,,Coupe du Monde
-58251,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,,Coupe du Monde
-58252,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,,Coupe du Monde
-58253,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,,Coupe du Monde
-58254,35,Chouchou,Pays-Bas,Suède,2,1,12335,2,2025-2026,,Coupe du Monde
-58255,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,,Coupe du Monde
-58256,35,Chouchou,Equateur,Curaçao,2,0,12337,2,2025-2026,,Coupe du Monde
-58257,35,Chouchou,Tunisie,Japon,0,3,12338,2,2025-2026,,Coupe du Monde
-58258,35,Chouchou,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,,Coupe du Monde
-58259,35,Chouchou,Belgique,Iran,3,1,12340,2,2025-2026,,Coupe du Monde
-58260,35,Chouchou,Uruguay,Cap Vert,2,1,12341,2,2025-2026,,Coupe du Monde
-58261,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,,Coupe du Monde
-58262,35,Chouchou,Argentine,Autriche,2,0,12343,2,2025-2026,,Coupe du Monde
-58263,35,Chouchou,France,Irak,3,0,12344,2,2025-2026,,Coupe du Monde
-58264,35,Chouchou,Norvège,Sénégal,1,1,12345,2,2025-2026,,Coupe du Monde
-58265,35,Chouchou,Jordanie,Algérie,0,3,12346,2,2025-2026,,Coupe du Monde
-58266,35,Chouchou,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,,Coupe du Monde
-58267,35,Chouchou,Angleterre,Ghana,2,1,12348,2,2025-2026,,Coupe du Monde
-58268,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,,Coupe du Monde
-58269,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,,Coupe du Monde
+58246,35,Chouchou,République Tchèque,Afrique Du Sud,2,1,12327,2,2025-2026,CDM_26,Coupe du Monde
+58247,35,Chouchou,Suisse,Bosnie-Herzégovine,2,0,12328,2,2025-2026,CDM_26,Coupe du Monde
+58248,35,Chouchou,Canada,Qatar,2,0,12329,2,2025-2026,CDM_26,Coupe du Monde
+58249,35,Chouchou,Mexique,Corée Du Sud,1,1,12330,2,2025-2026,CDM_26,Coupe du Monde
+58250,35,Chouchou,Etats-Unis,Australie,3,1,12331,2,2025-2026,CDM_26,Coupe du Monde
+58251,35,Chouchou,Ecosse,Maroc,1,2,12332,2,2025-2026,CDM_26,Coupe du Monde
+58252,35,Chouchou,Brésil,Haïti,3,0,12333,2,2025-2026,CDM_26,Coupe du Monde
+58253,35,Chouchou,Turquie,Paraguay,2,0,12334,2,2025-2026,CDM_26,Coupe du Monde
+58254,35,Chouchou,Pays-Bas,Suède,2,1,12335,2,2025-2026,CDM_26,Coupe du Monde
+58255,35,Chouchou,Allemagne,Côte D'Ivoire,1,1,12336,2,2025-2026,CDM_26,Coupe du Monde
+58256,35,Chouchou,Equateur,Curaçao,2,0,12337,2,2025-2026,CDM_26,Coupe du Monde
+58257,35,Chouchou,Tunisie,Japon,0,3,12338,2,2025-2026,CDM_26,Coupe du Monde
+58258,35,Chouchou,Espagne,Arabie Saoudite,4,0,12339,2,2025-2026,CDM_26,Coupe du Monde
+58259,35,Chouchou,Belgique,Iran,3,1,12340,2,2025-2026,CDM_26,Coupe du Monde
+58260,35,Chouchou,Uruguay,Cap Vert,2,1,12341,2,2025-2026,CDM_26,Coupe du Monde
+58261,35,Chouchou,Nouvelle-Zélande,Egypte,1,2,12342,2,2025-2026,CDM_26,Coupe du Monde
+58262,35,Chouchou,Argentine,Autriche,2,0,12343,2,2025-2026,CDM_26,Coupe du Monde
+58263,35,Chouchou,France,Irak,3,0,12344,2,2025-2026,CDM_26,Coupe du Monde
+58264,35,Chouchou,Norvège,Sénégal,1,1,12345,2,2025-2026,CDM_26,Coupe du Monde
+58265,35,Chouchou,Jordanie,Algérie,0,3,12346,2,2025-2026,CDM_26,Coupe du Monde
+58266,35,Chouchou,Portugal,Ouzbékistan,3,0,12347,2,2025-2026,CDM_26,Coupe du Monde
+58267,35,Chouchou,Angleterre,Ghana,2,1,12348,2,2025-2026,CDM_26,Coupe du Monde
+58268,35,Chouchou,Panama,Croatie,0,3,12349,2,2025-2026,CDM_26,Coupe du Monde
+58269,35,Chouchou,Colombie,RD Congo,2,1,12350,2,2025-2026,CDM_26,Coupe du Monde
