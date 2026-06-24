@@ -772,12 +772,39 @@ def show(tables):
             ]
         ]
 
-        st.markdown("### 💰 Cotes des matchs")
+        col_detail_pronos, col_classement_journee = st.columns(2)
+        
+        with col_detail_pronos:
+            st.markdown("### 💰 Cotes des matchs")
 
-        st.dataframe(details_cotes.style.apply(Fonctions.color_cotes, axis=1).format({"1": "{:.2f}", "N": "{:.2f}", "2": "{:.2f}", "Cote gagnante": "{:.2f}"}),
+            st.dataframe(details_cotes.style.apply(Fonctions.color_cotes, axis=1).format({"1": "{:.2f}", "N": "{:.2f}", "2": "{:.2f}", "Cote gagnante": "{:.2f}"}),
+                    hide_index=True,
+                    use_container_width=False
+            )
+        
+        with col_classement_journee:
+            st.markdown(f"### 🏅 Détails du classement de la journée {journee_courante}")
+
+            st.dataframe(
+                classement_journee[
+                    [
+                    "Rang",
+                    "Participant",
+                    "Total Points",
+                    "Nombre de bons pronos",
+                    "multiplicateur",
+                    "Performance (%)"
+                ]
+            ].style.format({
+                "Rang": "{:.0f}",
+                "Total Points": "{:.2f}",
+                "Nombre de bons pronos": "{:.0f}",
+                "multiplicateur": "{:.2f}",
+                "Performance (%)": "{:.1f}"
+            }),
                 hide_index=True,
                 use_container_width=False
-        )
+            )
 
         # =====================================================
         # SÉLECTION JOUEUR
@@ -807,6 +834,8 @@ def show(tables):
 
         df_participant = df[df["participant_nom"] == participant_sel].copy()
         joueur_stats = classement_journee[classement_journee["Participant"] == participant_sel]
+        
+        nb_matchs_journee = df_journee["Match"].nunique()
                     
         # --- Résumé personnel ---
         points_bruts = 0
@@ -835,7 +864,7 @@ def show(tables):
 
         with kpi_cols[0]: Fonctions.kpi_card("🏆 Rang", rang, color="#3b82f6", width="100%", height="80px")  
         with kpi_cols[1]: Fonctions.kpi_card("💯 Points bruts", f"{points_bruts:.2f}", color="#22c55e", width="100%", height="80px")  
-        with kpi_cols[2]: Fonctions.kpi_card("🎯 Bons pronos", f"{bons_pronos} / {len(df_participant)}", color="#f59e0b", width="100%", height="80px")  
+        with kpi_cols[2]: Fonctions.kpi_card("🎯 Bons pronos", f"{bons_pronos} / {nb_matchs_journee}", color="#f59e0b", width="100%", height="80px")  
         with kpi_cols[3]: Fonctions.kpi_card("🎯 Bons scores", f"{bons_scores}", color="#ef4444", width="100%", height="80px")
         with kpi_cols[4]: Fonctions.kpi_card("✨ Points avec bonus", f"{points_bonus:.2f}", color="#9333ea", width="100%", height="80px")  
         with kpi_cols[5]: Fonctions.kpi_card("⚡ Multiplicateur", f"x{multiplicateur}", color="#9333ea", width="100%", height="80px")  
