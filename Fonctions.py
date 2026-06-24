@@ -184,7 +184,9 @@ def afficher_classement_visuel(classement, saison_sel, championnat_sel=None, cla
             if delta > 0:
                 return f"🔺 +{delta}"
             elif delta < 0:
-                return f"🔻 {abs(delta)}"
+                return f"🔻 {delta}"
+            elif delta == 0:
+                return ""
             return "➖"
 
         others["Évolution"] = others["Δrang"].apply(evolution)
