@@ -1217,10 +1217,10 @@ def show(tables):
         classements_cols = st.columns([1, 1])
         with classements_cols[0] :
             st.markdown("#### 🏅 Classement – Journées gagnées")
-            st.dataframe(classement_journees_gagnees[["Rang", "Participant", "Journees gagnées"]], hide_index=True, use_container_width=False)
+            st.dataframe(classement_journees_gagnees[["Rang", "Participant", "Journees gagnées"]], hide_index=True, use_container_width=True)
         with classements_cols[1] :
             st.markdown("#### 🎯 Classement – Bons scores (score exact)")
-            st.dataframe(classement_bons_scores[["Rang", "Participant", "Bons scores"]], hide_index=True, use_container_width=False)
+            st.dataframe(classement_bons_scores[["Rang", "Participant", "Bons scores"]], hide_index=True, use_container_width=True)
 
     # ---------------------- ONGLET 2 : Insertion Pronos ----------------------
     with tabs_insertion:
