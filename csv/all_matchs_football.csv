@@ -10258,7 +10258,7 @@ match_id,saison_id,saison,code_saison,competition,date,journee,equipe_domicile_i
 12388,62,2025-2026,CDM_26,Coupe du Monde,2026-07-03,4,1363,Portugal,1337,Croatie,2.0,1.0,1.65,3.65,5.75,,,,,,,
 12389,62,2025-2026,CDM_26,Coupe du Monde,2026-07-03,4,1319,Suisse,1341,Algérie,2.0,0.0,1.91,3.25,4.5,,,,,,,
 12390,62,2025-2026,CDM_26,Coupe du Monde,2026-07-04,4,1339,Colombie,1361,Ghana,1.0,0.0,1.4,4.4,9.25,,,,,,,
-12391,62,2025-2026,CDM_26,Coupe du Monde,2026-07-04,5,1343,Canada,1322,Maroc,,,,,,,,,,,,
+12391,62,2025-2026,CDM_26,Coupe du Monde,2026-07-04,5,1343,Canada,1322,Maroc,0.0,3.0,5.4,3.3,1.78,,,,,,,
 12392,62,2025-2026,CDM_26,Coupe du Monde,2026-07-05,5,1345,Brésil,1331,Norvège,,,,,,,,,,,,
 12393,62,2025-2026,CDM_26,Coupe du Monde,2026-07-04,5,1330,Paraguay,1355,France,,,,,,,,,,,,
 12394,62,2025-2026,CDM_26,Coupe du Monde,2026-07-06,5,1347,Mexique,1362,Angleterre,,,,,,,,,,,,
