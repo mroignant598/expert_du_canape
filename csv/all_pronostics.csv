@@ -56847,3 +56847,59 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59112,10,Kévin,Portugal,Espagne,1,2,12396,5,2025-2026,,Coupe du Monde
 59113,10,Kévin,Argentine,Egypte,2,0,12397,5,2025-2026,,Coupe du Monde
 59114,10,Kévin,Suisse,Colombie,2,0,12398,5,2025-2026,,Coupe du Monde
+59115,17,Olivier,France,Maroc,3,1,12399,6,2025-2026,,Coupe du Monde
+59116,17,Olivier,Norvège,Angleterre,1,2,12400,6,2025-2026,,Coupe du Monde
+59117,17,Olivier,Espagne,Belgique,2,0,12401,6,2025-2026,,Coupe du Monde
+59118,17,Olivier,Argentine,Suisse,1,1,12402,6,2025-2026,,Coupe du Monde
+59119,27,Thif Thif,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59120,27,Thif Thif,Norvège,Angleterre,1,1,12400,6,2025-2026,,Coupe du Monde
+59121,27,Thif Thif,Espagne,Belgique,2,1,12401,6,2025-2026,,Coupe du Monde
+59122,27,Thif Thif,Argentine,Suisse,3,1,12402,6,2025-2026,,Coupe du Monde
+59123,38,Le Will,France,Maroc,3,1,12399,6,2025-2026,,Coupe du Monde
+59124,38,Le Will,Norvège,Angleterre,1,1,12400,6,2025-2026,,Coupe du Monde
+59125,38,Le Will,Espagne,Belgique,3,0,12401,6,2025-2026,,Coupe du Monde
+59126,38,Le Will,Argentine,Suisse,2,0,12402,6,2025-2026,,Coupe du Monde
+59127,30,Juju,France,Maroc,3,1,12399,6,2025-2026,,Coupe du Monde
+59128,30,Juju,Norvège,Angleterre,2,0,12400,6,2025-2026,,Coupe du Monde
+59129,30,Juju,Espagne,Belgique,2,1,12401,6,2025-2026,,Coupe du Monde
+59130,30,Juju,Argentine,Suisse,3,2,12402,6,2025-2026,,Coupe du Monde
+59131,36,Jeje et Elo,France,Maroc,1,0,12399,6,2025-2026,,Coupe du Monde
+59132,36,Jeje et Elo,Norvège,Angleterre,2,1,12400,6,2025-2026,,Coupe du Monde
+59133,36,Jeje et Elo,Espagne,Belgique,1,0,12401,6,2025-2026,,Coupe du Monde
+59134,36,Jeje et Elo,Argentine,Suisse,2,0,12402,6,2025-2026,,Coupe du Monde
+59135,21,Sébastien,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59136,21,Sébastien,Norvège,Angleterre,1,0,12400,6,2025-2026,,Coupe du Monde
+59137,21,Sébastien,Espagne,Belgique,2,0,12401,6,2025-2026,,Coupe du Monde
+59138,21,Sébastien,Argentine,Suisse,1,1,12402,6,2025-2026,,Coupe du Monde
+59139,37,LeVal,Canada,Maroc,0,1,12391,5,2025-2026,,Coupe du Monde
+59140,37,LeVal,Brésil,Norvège,2,0,12392,5,2025-2026,,Coupe du Monde
+59141,37,LeVal,Paraguay,France,1,3,12393,5,2025-2026,,Coupe du Monde
+59142,37,LeVal,Mexique,Angleterre,1,2,12394,5,2025-2026,,Coupe du Monde
+59143,37,LeVal,Etats-Unis,Belgique,0,2,12395,5,2025-2026,,Coupe du Monde
+59144,37,LeVal,Portugal,Espagne,1,2,12396,5,2025-2026,,Coupe du Monde
+59145,37,LeVal,Argentine,Egypte,2,0,12397,5,2025-2026,,Coupe du Monde
+59146,37,LeVal,Suisse,Colombie,2,1,12398,5,2025-2026,,Coupe du Monde
+59147,37,LeVal,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59148,37,LeVal,Norvège,Angleterre,1,0,12400,6,2025-2026,,Coupe du Monde
+59149,37,LeVal,Espagne,Belgique,2,2,12401,6,2025-2026,,Coupe du Monde
+59150,37,LeVal,Argentine,Suisse,2,1,12402,6,2025-2026,,Coupe du Monde
+59151,26,Merguez,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59152,26,Merguez,Norvège,Angleterre,1,2,12400,6,2025-2026,,Coupe du Monde
+59153,26,Merguez,Espagne,Belgique,1,1,12401,6,2025-2026,,Coupe du Monde
+59154,26,Merguez,Argentine,Suisse,1,0,12402,6,2025-2026,,Coupe du Monde
+59155,9,Hélène,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59156,9,Hélène,Norvège,Angleterre,1,2,12400,6,2025-2026,,Coupe du Monde
+59157,9,Hélène,Espagne,Belgique,1,1,12401,6,2025-2026,,Coupe du Monde
+59158,9,Hélène,Argentine,Suisse,2,0,12402,6,2025-2026,,Coupe du Monde
+59159,18,Pierre,France,Maroc,0,0,12399,6,2025-2026,,Coupe du Monde
+59160,18,Pierre,Norvège,Angleterre,0,0,12400,6,2025-2026,,Coupe du Monde
+59161,18,Pierre,Espagne,Belgique,0,0,12401,6,2025-2026,,Coupe du Monde
+59162,18,Pierre,Argentine,Suisse,0,0,12402,6,2025-2026,,Coupe du Monde
+59163,34,Zoé,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59164,34,Zoé,Norvège,Angleterre,2,1,12400,6,2025-2026,,Coupe du Monde
+59165,34,Zoé,Espagne,Belgique,2,1,12401,6,2025-2026,,Coupe du Monde
+59166,34,Zoé,Argentine,Suisse,3,2,12402,6,2025-2026,,Coupe du Monde
+59167,35,Chouchou,France,Maroc,2,1,12399,6,2025-2026,,Coupe du Monde
+59168,35,Chouchou,Norvège,Angleterre,0,2,12400,6,2025-2026,,Coupe du Monde
+59169,35,Chouchou,Espagne,Belgique,2,1,12401,6,2025-2026,,Coupe du Monde
+59170,35,Chouchou,Argentine,Suisse,2,1,12402,6,2025-2026,,Coupe du Monde
