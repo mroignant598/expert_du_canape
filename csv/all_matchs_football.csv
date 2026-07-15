@@ -10271,4 +10271,6 @@ match_id,saison_id,saison,code_saison,competition,date,journee,equipe_domicile_i
 12401,62,2025-2026,CDM_26,Coupe du Monde,2026-07-10,6,1358,Espagne,1359,Belgique,2.0,1.0,1.6,4.0,5.75,,,,,,,
 12402,62,2025-2026,CDM_26,Coupe du Monde,2026-07-12,6,1366,Argentine,1319,Suisse,1.0,1.0,1.68,3.4,6.25,,,,,,,
 12403,62,2025-2026,CDM_26,Coupe du Monde,2026-07-14,7,1355,France,1358,Espagne,0.0,2.0,2.5,3.05,3.2,,,,,,,
-12404,62,2025-2026,CDM_26,Coupe du Monde,2026-07-15,7,1362,Angleterre,1366,Argentine,,,,,,,,,,,,
+12404,62,2025-2026,CDM_26,Coupe du Monde,2026-07-15,7,1362,Angleterre,1366,Argentine,1.0,2.0,2.7,2.95,3.05,,,,,,,
+12405,62,2025-2026,CDM_26,Coupe du Monde,2026-07-18,8,1355,France,1362,Angleterre,,,,,,,,,,,,
+12406,62,2025-2026,CDM_26,Coupe du Monde,2026-07-19,8,1358,Espagne,1366,Argentine,,,,,,,,,,,,
