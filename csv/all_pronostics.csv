@@ -56919,33 +56919,61 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59184,5,Cédric,Norvège,Angleterre,2,1,12400,6,2025-2026,CDM_26,Coupe du Monde
 59185,5,Cédric,Espagne,Belgique,1,0,12401,6,2025-2026,CDM_26,Coupe du Monde
 59186,5,Cédric,Argentine,Suisse,2,0,12402,6,2025-2026,CDM_26,Coupe du Monde
-59187,30,Juju,France,Espagne,3,1,12403,7,2025-2026,,Coupe du Monde
-59188,30,Juju,Angleterre,Argentine,1,2,12404,7,2025-2026,,Coupe du Monde
-59189,17,Olivier,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59190,17,Olivier,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59191,27,Thif Thif,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59192,27,Thif Thif,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59193,36,Jeje et Elo,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59194,36,Jeje et Elo,Angleterre,Argentine,2,3,12404,7,2025-2026,,Coupe du Monde
-59195,38,Le Will,France,Espagne,3,1,12403,7,2025-2026,,Coupe du Monde
-59196,38,Le Will,Angleterre,Argentine,2,2,12404,7,2025-2026,,Coupe du Monde
-59197,26,Merguez,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59198,26,Merguez,Angleterre,Argentine,2,0,12404,7,2025-2026,,Coupe du Monde
-59199,21,Sébastien,France,Espagne,1,0,12403,7,2025-2026,,Coupe du Monde
-59200,21,Sébastien,Angleterre,Argentine,3,1,12404,7,2025-2026,,Coupe du Monde
-59201,10,Kévin,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59202,10,Kévin,Angleterre,Argentine,0,2,12404,7,2025-2026,,Coupe du Monde
-59203,34,Zoé,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59204,34,Zoé,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59205,33,*Claire*,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59206,33,*Claire*,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59207,29,Meemway,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59208,29,Meemway,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59209,9,Hélène,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59210,9,Hélène,Angleterre,Argentine,3,2,12404,7,2025-2026,,Coupe du Monde
-59211,35,Chouchou,France,Espagne,2,1,12403,7,2025-2026,,Coupe du Monde
-59212,35,Chouchou,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59213,18,Pierre,France,Espagne,2,3,12403,7,2025-2026,,Coupe du Monde
-59214,18,Pierre,Angleterre,Argentine,1,1,12404,7,2025-2026,,Coupe du Monde
-59215,5,Cédric,France,Espagne,2,0,12403,7,2025-2026,,Coupe du Monde
-59216,5,Cédric,Angleterre,Argentine,0,0,12404,7,2025-2026,,Coupe du Monde
+59187,30,Juju,France,Espagne,3,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59188,30,Juju,Angleterre,Argentine,1,2,12404,7,2025-2026,CDM_26,Coupe du Monde
+59189,17,Olivier,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59190,17,Olivier,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59191,27,Thif Thif,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59192,27,Thif Thif,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59193,36,Jeje et Elo,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59194,36,Jeje et Elo,Angleterre,Argentine,2,3,12404,7,2025-2026,CDM_26,Coupe du Monde
+59195,38,Le Will,France,Espagne,3,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59196,38,Le Will,Angleterre,Argentine,2,2,12404,7,2025-2026,CDM_26,Coupe du Monde
+59197,26,Merguez,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59198,26,Merguez,Angleterre,Argentine,2,0,12404,7,2025-2026,CDM_26,Coupe du Monde
+59199,21,Sébastien,France,Espagne,1,0,12403,7,2025-2026,CDM_26,Coupe du Monde
+59200,21,Sébastien,Angleterre,Argentine,3,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59201,10,Kévin,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59202,10,Kévin,Angleterre,Argentine,0,2,12404,7,2025-2026,CDM_26,Coupe du Monde
+59203,34,Zoé,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59204,34,Zoé,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59205,33,*Claire*,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59206,33,*Claire*,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59207,29,Meemway,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59208,29,Meemway,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59209,9,Hélène,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59210,9,Hélène,Angleterre,Argentine,3,2,12404,7,2025-2026,CDM_26,Coupe du Monde
+59211,35,Chouchou,France,Espagne,2,1,12403,7,2025-2026,CDM_26,Coupe du Monde
+59212,35,Chouchou,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59213,18,Pierre,France,Espagne,2,3,12403,7,2025-2026,CDM_26,Coupe du Monde
+59214,18,Pierre,Angleterre,Argentine,1,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59215,5,Cédric,France,Espagne,2,0,12403,7,2025-2026,CDM_26,Coupe du Monde
+59216,5,Cédric,Angleterre,Argentine,2,1,12404,7,2025-2026,CDM_26,Coupe du Monde
+59217,17,Olivier,France,Angleterre,3,1,12405,8,2025-2026,,Coupe du Monde
+59218,17,Olivier,Espagne,Argentine,2,0,12406,8,2025-2026,,Coupe du Monde
+59219,30,Juju,France,Angleterre,2,1,12405,8,2025-2026,,Coupe du Monde
+59220,30,Juju,Espagne,Argentine,3,1,12406,8,2025-2026,,Coupe du Monde
+59221,36,Jeje et Elo,France,Angleterre,0,1,12405,8,2025-2026,,Coupe du Monde
+59222,36,Jeje et Elo,Espagne,Argentine,2,1,12406,8,2025-2026,,Coupe du Monde
+59223,38,Le Will,France,Angleterre,3,2,12405,8,2025-2026,,Coupe du Monde
+59224,38,Le Will,Espagne,Argentine,3,1,12406,8,2025-2026,,Coupe du Monde
+59225,27,Thif Thif,France,Angleterre,2,1,12405,8,2025-2026,,Coupe du Monde
+59226,27,Thif Thif,Espagne,Argentine,2,2,12406,8,2025-2026,,Coupe du Monde
+59227,26,Merguez,France,Angleterre,2,1,12405,8,2025-2026,,Coupe du Monde
+59228,26,Merguez,Espagne,Argentine,2,0,12406,8,2025-2026,,Coupe du Monde
+59229,29,Meemway,France,Angleterre,2,1,12405,8,2025-2026,,Coupe du Monde
+59230,29,Meemway,Espagne,Argentine,2,1,12406,8,2025-2026,,Coupe du Monde
+59231,34,Zoé,France,Angleterre,3,1,12405,8,2025-2026,,Coupe du Monde
+59232,34,Zoé,Espagne,Argentine,2,2,12406,8,2025-2026,,Coupe du Monde
+59233,33,*Claire*,France,Angleterre,3,1,12405,8,2025-2026,,Coupe du Monde
+59234,33,*Claire*,Espagne,Argentine,2,0,12406,8,2025-2026,,Coupe du Monde
+59235,18,Pierre,France,Angleterre,2,3,12405,8,2025-2026,,Coupe du Monde
+59236,18,Pierre,Espagne,Argentine,1,0,12406,8,2025-2026,,Coupe du Monde
+59237,21,Sébastien,France,Angleterre,3,1,12405,8,2025-2026,,Coupe du Monde
+59238,21,Sébastien,Espagne,Argentine,4,1,12406,8,2025-2026,,Coupe du Monde
+59239,10,Kévin,France,Angleterre,2,0,12405,8,2025-2026,,Coupe du Monde
+59240,10,Kévin,Espagne,Argentine,2,1,12406,8,2025-2026,,Coupe du Monde
+59241,9,Hélène,France,Angleterre,1,1,12405,8,2025-2026,,Coupe du Monde
+59242,9,Hélène,Espagne,Argentine,2,1,12406,8,2025-2026,,Coupe du Monde
+59243,35,Chouchou,France,Angleterre,3,1,12405,8,2025-2026,,Coupe du Monde
+59244,35,Chouchou,Espagne,Argentine,2,0,12406,8,2025-2026,,Coupe du Monde
