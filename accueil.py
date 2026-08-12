@@ -17,7 +17,7 @@ def show(tables):
     st.markdown("---")
     col_consigne, col_calendrier = st.columns([3,1], gap="large")
     with col_consigne:
-        st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Edition Coupe du Monde** !")
+        st.markdown("## 🛋️ Bienvenue sur **Expert du Canapé - Saison 2026-2027** !")
         st.markdown("""
         **_Pour une meilleure expérience, je te conseille de passer l'application en mode sombre. Tu as 3 points verticaux en haut à droite, clique dessus et passe l'application en mode dark !_** 
         
@@ -32,12 +32,8 @@ def show(tables):
         
         
         **🧮 Calcul des points** : Les points attribués à chaque match sont calculés à partir des cotes réelles, auxquelles s’applique un multiplicateur en fonction de tes pronostics.
-        Ce multiplicateur dépend de la précision de tes choix : bon score exact, bon vainqueur, bon écart et match prolifique (4 buts et plus).
+        Ce multiplicateur dépend de la précision de tes choix : bon score exact, bon vainqueur, bon écart et match prolifique (4 buts et plus). Attention, ici, un match dure 90 min ! Si il y a des prolongations, elles ne sont pas prises en compte dans les calculs.
         
-        
-        Les résultats seront mis à jour chaque jour pour avoir un classement quasiment en temps réel !
-        
-        PS : Je te conseille de faire les pronos par journée (24 matchs) pour éviter les oublis 😏 
         
         """)
         #Les fichiers Excel, c’était bien… mais avoir **toutes nos données au même endroit**, c’est encore mieux ! 📊  
@@ -46,15 +42,12 @@ def show(tables):
     with col_calendrier:
         st.markdown("## 📆 **Calendrier** ")
         st.markdown("""
-        - Journée 1 : 11 juin au 18 juin
-        - Journée 2 : 18 juin au 24 juin
-        - Journée 3 : 24 juin au 28 juin
-        - 16èmes : 28 juin au 4 juillet
-        - 8èmes : 4 juillet au 7 juillet
-        - Quarts : 9 juillet au 12 juillet
-        - Demies : 14 juillet au 15 juillet 
-        - Match pour la 3ème place : 18 juillet
-        - Finale : 19 juillet
+        - Reprise de la Ligue 1 : 21 aout
+        - Reprise de la Ligue 2 : 8 aout
+        - Reprise de la Ligue 3 : 7 aout
+        - Reprise de la Ligue des champions : 8 septembre
+        - Reprise de la Ligue Europa : 16 septembre
+        - Reprise de la Ligue Europa Conference : 15 octobre
         """)        
 
     st.markdown("---")

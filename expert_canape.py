@@ -144,8 +144,35 @@ def show(tables):
 
         # --- Sélection de la saison --- #
         with col_select_saison:
-            saisons = sorted(df_matchs["saison"].unique(), reverse=True)
-            saison_sel = st.selectbox("Sélectionner une saison", saisons)
+
+            # Toutes les saisons disponibles dans les matchs
+            saisons = sorted(df_matchs["saison"].dropna().unique(), reverse=True)
+
+            # Garder uniquement les saisons ayant au moins 1 participant
+            if "participant_nom" in df_pronos.columns:
+                saisons_avec_participants = (
+                    df_pronos
+                    .dropna(subset=["participant_nom"])
+                    .groupby("saison")["participant_nom"]
+                    .nunique()
+                )
+
+                saisons = [
+                    saison for saison in saisons
+                    if saisons_avec_participants.get(saison, 0) > 0
+                ]
+
+            # Sécurité : aucune saison avec participant
+            if not saisons:
+                st.warning("⚠️ Aucun participant trouvé dans aucune saison.")
+                st.stop()
+
+            # La première est automatiquement la saison la plus récente
+            saison_sel = st.selectbox(
+                "Sélectionner une saison",
+                saisons,
+                index=0
+            )
 
         # --- Sélection du championnat --- #
         with col_select_championnat:
