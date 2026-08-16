@@ -177,9 +177,10 @@ def show(tables):
         # --- Sélection du championnat --- #
         with col_select_championnat:
             championnats = df_matchs[df_matchs["saison"] == saison_sel]["competition"].dropna().unique().tolist()
-            championnats = ["Toutes"] + sorted(championnats)
-        #   default_champ = "Ligue 1" if "Ligue 1" in championnats else "Toutes"
-            default_champ = "Coupe du Monde" if "Coupe du Monde" in championnats else "Toutes"
+        #   championnats = ["Toutes"] + sorted(championnats)
+            championnats = sorted(championnats)
+            default_champ = "Ligue 1" if "Ligue 1" in championnats else "Ligue 2"
+        #   default_champ = "Coupe du Monde" if "Coupe du Monde" in championnats else "Toutes"
             championnat_sel = st.selectbox("Sélectionner un championnat", championnats, index=championnats.index(default_champ))
 
         # --- Sélection de la journée --- #
