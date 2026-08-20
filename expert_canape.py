@@ -1286,7 +1286,10 @@ def show(tables):
             derniere_journee = max(journees_jouees) if journees_jouees else df_journees["journee"].min()
 
             # Déterminer la prochaine journée à jouer
-            prochaine_journee = derniere_journee + 1
+            if derniere_journee == 1:
+                prochaine_journee = derniere_journee
+            else:
+                prochaine_journee = derniere_journee + 1
 
             # Sélecteur Streamlit directement sur la prochaine journée
             journees_dispo = sorted(df_journees["journee"].dropna().unique())
