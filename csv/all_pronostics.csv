@@ -57038,14 +57038,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59318,17,Olivier,ESTAC Troyes,Paris FC,0,1,13080,1,2026-2027,,Ligue 1
 59319,17,Olivier,Angers SCO,Lille OSC,0,3,13081,1,2026-2027,,Ligue 1
 59320,17,Olivier,Le Havre AC,AS Monaco,1,3,13082,1,2026-2027,,Ligue 1
-59322,21,Sébastien,Olympique de Marseille,RC Strasbourg Alsace,1,2,13075,1,2026-2027,,Ligue 1
-59323,21,Sébastien,RC Lens,AJ Auxerre,3,0,13076,1,2026-2027,,Ligue 1
-59324,21,Sébastien,Le Mans FC,Stade Brestois 29,1,3,13077,1,2026-2027,,Ligue 1
-59325,21,Sébastien,OGC Nice,FC Lorient,1,2,13078,1,2026-2027,,Ligue 1
-59326,21,Sébastien,Toulouse FC,Olympique Lyonnais,2,0,13079,1,2026-2027,,Ligue 1
-59327,21,Sébastien,ESTAC Troyes,Paris FC,1,2,13080,1,2026-2027,,Ligue 1
-59328,21,Sébastien,Angers SCO,Lille OSC,1,3,13081,1,2026-2027,,Ligue 1
-59329,21,Sébastien,Le Havre AC,AS Monaco,0,2,13082,1,2026-2027,,Ligue 1
 59331,10,Kévin,US Boulogne Côte d'Opale,Red Star FC 93,1,1,13367,3,2026-2027,,Ligue 2
 59332,10,Kévin,Clermont Foot 63,Dijon FCO,1,2,13368,3,2026-2027,,Ligue 2
 59333,10,Kévin,USL Dunkerque,Montpellier HSC,1,2,13369,3,2026-2027,,Ligue 2
@@ -57081,7 +57073,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59365,18,Pierre,Le Havre AC,AS Monaco,0,1,13082,1,2026-2027,,Ligue 1
 59367,15,Matthieu,Stade Rennais,Paris Saint Germain,0,2,13655,1,2026-2027,,Ligue 1
 59368,17,Olivier,Stade Rennais,Paris Saint Germain,1,2,13655,1,2026-2027,,Ligue 1
-59369,21,Sébastien,Stade Rennais,Paris Saint Germain,1,3,13655,1,2026-2027,,Ligue 1
 59371,5,Cédric,Stade Rennais,Paris Saint Germain,1,2,13655,1,2026-2027,,Ligue 1
 59372,18,Pierre,Stade Rennais,Paris Saint Germain,0,1,13655,1,2026-2027,,Ligue 1
 59373,10,Kévin,Stade Rennais,Paris Saint Germain,0,2,13655,1,2026-2027,,Ligue 1
@@ -57103,15 +57094,6 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59389,10,Kévin,AS Nancy Lorraine,USL Dunkerque,2,1,13382,4,2026-2027,,Ligue 2
 59390,10,Kévin,Red Star FC 93,Stade de Reims,0,1,13383,4,2026-2027,,Ligue 2
 59391,10,Kévin,Rodez Aveyron Football,Pau FC,1,1,13384,4,2026-2027,,Ligue 2
-59392,21,Sébastien,Lille OSC,Paris Saint Germain,0,2,13083,2,2026-2027,,Ligue 1
-59393,21,Sébastien,RC Strasbourg Alsace,RC Lens,1,3,13084,2,2026-2027,,Ligue 1
-59394,21,Sébastien,AJ Auxerre,Angers SCO,0,2,13085,2,2026-2027,,Ligue 1
-59395,21,Sébastien,Stade Brestois 29,Toulouse FC,3,0,13086,2,2026-2027,,Ligue 1
-59396,21,Sébastien,FC Lorient,ESTAC Troyes,2,0,13087,2,2026-2027,,Ligue 1
-59397,21,Sébastien,Olympique Lyonnais,Le Havre AC,0,1,13088,2,2026-2027,,Ligue 1
-59398,21,Sébastien,Paris FC,OGC Nice,0,0,13089,2,2026-2027,,Ligue 1
-59399,21,Sébastien,AS Monaco,Olympique de Marseille,3,2,13090,2,2026-2027,,Ligue 1
-59400,21,Sébastien,Stade Rennais,Le Mans FC,2,0,13656,2,2026-2027,,Ligue 1
 59401,17,Olivier,Lille OSC,Paris Saint Germain,0,1,13083,2,2026-2027,,Ligue 1
 59402,17,Olivier,RC Strasbourg Alsace,RC Lens,0,2,13084,2,2026-2027,,Ligue 1
 59403,17,Olivier,AJ Auxerre,Angers SCO,0,0,13085,2,2026-2027,,Ligue 1
@@ -57157,3 +57139,21 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59443,5,Cédric,Paris FC,OGC Nice,1,1,13089,2,2026-2027,,Ligue 1
 59444,5,Cédric,AS Monaco,Olympique de Marseille,2,2,13090,2,2026-2027,,Ligue 1
 59445,5,Cédric,Stade Rennais,Le Mans FC,2,1,13656,2,2026-2027,,Ligue 1
+59446,39,Roméo,Olympique de Marseille,RC Strasbourg Alsace,1,2,13075,1,2026-2027,,Ligue 1
+59447,39,Roméo,RC Lens,AJ Auxerre,3,0,13076,1,2026-2027,,Ligue 1
+59448,39,Roméo,Le Mans FC,Stade Brestois 29,1,3,13077,1,2026-2027,,Ligue 1
+59449,39,Roméo,OGC Nice,FC Lorient,1,2,13078,1,2026-2027,,Ligue 1
+59450,39,Roméo,Toulouse FC,Olympique Lyonnais,2,0,13079,1,2026-2027,,Ligue 1
+59451,39,Roméo,ESTAC Troyes,Paris FC,1,2,13080,1,2026-2027,,Ligue 1
+59452,39,Roméo,Angers SCO,Lille OSC,1,3,13081,1,2026-2027,,Ligue 1
+59453,39,Roméo,Le Havre AC,AS Monaco,0,2,13082,1,2026-2027,,Ligue 1
+59454,39,Roméo,Stade Rennais,Paris Saint Germain,1,3,13655,1,2026-2027,,Ligue 1
+59455,39,Roméo,Lille OSC,Paris Saint Germain,0,2,13083,2,2026-2027,,Ligue 1
+59456,39,Roméo,RC Strasbourg Alsace,RC Lens,1,3,13084,2,2026-2027,,Ligue 1
+59457,39,Roméo,AJ Auxerre,Angers SCO,0,2,13085,2,2026-2027,,Ligue 1
+59458,39,Roméo,Stade Brestois 29,Toulouse FC,3,0,13086,2,2026-2027,,Ligue 1
+59459,39,Roméo,FC Lorient,ESTAC Troyes,2,0,13087,2,2026-2027,,Ligue 1
+59460,39,Roméo,Olympique Lyonnais,Le Havre AC,0,1,13088,2,2026-2027,,Ligue 1
+59461,39,Roméo,Paris FC,OGC Nice,0,0,13089,2,2026-2027,,Ligue 1
+59462,39,Roméo,AS Monaco,Olympique de Marseille,3,2,13090,2,2026-2027,,Ligue 1
+59463,39,Roméo,Stade Rennais,Le Mans FC,2,0,13656,2,2026-2027,,Ligue 1
