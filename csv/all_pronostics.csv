@@ -57229,3 +57229,57 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59533,18,Pierre,ESTAC Troyes,RC Strasbourg Alsace,0,1,13097,3,2026-2027,,Ligue 1
 59534,18,Pierre,Olympique de Marseille,Paris FC,1,0,13098,3,2026-2027,,Ligue 1
 59535,18,Pierre,Angers SCO,Stade Rennais,0,1,13657,3,2026-2027,,Ligue 1
+59536,10,Kévin,AEK Athènes,Linzer Athletik-Sport-Klub,0,1,13689,1,2026-2027,,Ligue des Champions
+59537,10,Kévin,Club Brugge KV,Aston Villa FC,0,2,13690,1,2026-2027,,Ligue des Champions
+59538,10,Kévin,Borussia Dortmund,Villarreal CF,2,1,13691,1,2026-2027,,Ligue des Champions
+59539,10,Kévin,FC Porto,Manchester City FC,1,3,13692,1,2026-2027,,Ligue des Champions
+59540,10,Kévin,Lille OSC,Real Betis Balompié,2,0,13693,1,2026-2027,,Ligue des Champions
+59541,10,Kévin,Real Madrid CF,Inter Milan,2,1,13694,1,2026-2027,,Ligue des Champions
+59542,10,Kévin,FC Barcelone,Feyenoord Rotterdam,3,0,13695,1,2026-2027,,Ligue des Champions
+59543,10,Kévin,VfB Stuttgart,Viking FK,3,0,13696,1,2026-2027,,Ligue des Champions
+59544,10,Kévin,Liverpool FC,Club Atlético de Madrid,1,1,13697,1,2026-2027,,Ligue des Champions
+59545,10,Kévin,SSC Naples,Arsenal FC,0,1,13698,1,2026-2027,,Ligue des Champions
+59546,10,Kévin,Paris Saint Germain,ŠK Slovan Bratislava,3,0,13699,1,2026-2027,,Ligue des Champions
+59547,10,Kévin,Sporting CP,Galatasaray SK,1,1,13700,1,2026-2027,,Ligue des Champions
+59548,10,Kévin,Fenerbahçe SK,AS Rome,1,1,13701,1,2026-2027,,Ligue des Champions
+59549,10,Kévin,PSV Eindhoven,Shakhtar Donetsk,1,1,13702,1,2026-2027,,Ligue des Champions
+59550,10,Kévin,FC Bayern Munich,FK Bodo/Glimt,5,0,13703,1,2026-2027,,Ligue des Champions
+59551,10,Kévin,Como 1907,RB Leipzig,0,2,13704,1,2026-2027,,Ligue des Champions
+59552,10,Kévin,Manchester United FC,Sabah Futbol Klubu,3,0,13705,1,2026-2027,,Ligue des Champions
+59553,10,Kévin,Slavia Prague,RC Lens,1,2,13706,1,2026-2027,,Ligue des Champions
+59554,39,Roméo,AEK Athènes,Linzer Athletik-Sport-Klub,2,0,13689,1,2026-2027,,Ligue des Champions
+59555,39,Roméo,Club Brugge KV,Aston Villa FC,1,2,13690,1,2026-2027,,Ligue des Champions
+59556,39,Roméo,Borussia Dortmund,Villarreal CF,2,0,13691,1,2026-2027,,Ligue des Champions
+59557,39,Roméo,FC Porto,Manchester City FC,1,2,13692,1,2026-2027,,Ligue des Champions
+59558,39,Roméo,Lille OSC,Real Betis Balompié,2,0,13693,1,2026-2027,,Ligue des Champions
+59559,39,Roméo,Real Madrid CF,Inter Milan,3,1,13694,1,2026-2027,,Ligue des Champions
+59560,39,Roméo,FC Barcelone,Feyenoord Rotterdam,4,0,13695,1,2026-2027,,Ligue des Champions
+59561,39,Roméo,VfB Stuttgart,Viking FK,3,0,13696,1,2026-2027,,Ligue des Champions
+59562,39,Roméo,Liverpool FC,Club Atlético de Madrid,2,1,13697,1,2026-2027,,Ligue des Champions
+59563,39,Roméo,SSC Naples,Arsenal FC,0,2,13698,1,2026-2027,,Ligue des Champions
+59564,39,Roméo,Paris Saint Germain,ŠK Slovan Bratislava,3,0,13699,1,2026-2027,,Ligue des Champions
+59565,39,Roméo,Sporting CP,Galatasaray SK,2,2,13700,1,2026-2027,,Ligue des Champions
+59566,39,Roméo,Fenerbahçe SK,AS Rome,1,2,13701,1,2026-2027,,Ligue des Champions
+59567,39,Roméo,PSV Eindhoven,Shakhtar Donetsk,1,0,13702,1,2026-2027,,Ligue des Champions
+59568,39,Roméo,FC Bayern Munich,FK Bodo/Glimt,5,0,13703,1,2026-2027,,Ligue des Champions
+59569,39,Roméo,Como 1907,RB Leipzig,1,0,13704,1,2026-2027,,Ligue des Champions
+59570,39,Roméo,Manchester United FC,Sabah Futbol Klubu,3,0,13705,1,2026-2027,,Ligue des Champions
+59571,39,Roméo,Slavia Prague,RC Lens,1,2,13706,1,2026-2027,,Ligue des Champions
+59572,15,Matthieu,AEK Athènes,Linzer Athletik-Sport-Klub,2,1,13689,1,2026-2027,,Ligue des Champions
+59573,15,Matthieu,Club Brugge KV,Aston Villa FC,0,2,13690,1,2026-2027,,Ligue des Champions
+59574,15,Matthieu,Borussia Dortmund,Villarreal CF,3,0,13691,1,2026-2027,,Ligue des Champions
+59575,15,Matthieu,FC Porto,Manchester City FC,2,1,13692,1,2026-2027,,Ligue des Champions
+59576,15,Matthieu,Lille OSC,Real Betis Balompié,2,1,13693,1,2026-2027,,Ligue des Champions
+59577,15,Matthieu,Real Madrid CF,Inter Milan,1,1,13694,1,2026-2027,,Ligue des Champions
+59578,15,Matthieu,FC Barcelone,Feyenoord Rotterdam,4,0,13695,1,2026-2027,,Ligue des Champions
+59579,15,Matthieu,VfB Stuttgart,Viking FK,5,0,13696,1,2026-2027,,Ligue des Champions
+59580,15,Matthieu,Liverpool FC,Club Atlético de Madrid,2,1,13697,1,2026-2027,,Ligue des Champions
+59581,15,Matthieu,SSC Naples,Arsenal FC,1,2,13698,1,2026-2027,,Ligue des Champions
+59582,15,Matthieu,Paris Saint Germain,ŠK Slovan Bratislava,4,0,13699,1,2026-2027,,Ligue des Champions
+59583,15,Matthieu,Sporting CP,Galatasaray SK,0,1,13700,1,2026-2027,,Ligue des Champions
+59584,15,Matthieu,Fenerbahçe SK,AS Rome,0,2,13701,1,2026-2027,,Ligue des Champions
+59585,15,Matthieu,PSV Eindhoven,Shakhtar Donetsk,2,1,13702,1,2026-2027,,Ligue des Champions
+59586,15,Matthieu,FC Bayern Munich,FK Bodo/Glimt,5,0,13703,1,2026-2027,,Ligue des Champions
+59587,15,Matthieu,Como 1907,RB Leipzig,1,2,13704,1,2026-2027,,Ligue des Champions
+59588,15,Matthieu,Manchester United FC,Sabah Futbol Klubu,6,0,13705,1,2026-2027,,Ligue des Champions
+59589,15,Matthieu,Slavia Prague,RC Lens,1,2,13706,1,2026-2027,,Ligue des Champions
