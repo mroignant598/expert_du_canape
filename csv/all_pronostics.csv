@@ -57517,3 +57517,75 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59821,15,Matthieu,Pau FC,Stade Lavallois Mayenne FC,3,0,13418,8,2026-2027,,Ligue 2
 59822,15,Matthieu,AS Saint-Etienne,Rodez Aveyron Football,3,0,13419,8,2026-2027,,Ligue 2
 59823,15,Matthieu,FC Sochaux-Montbéliard,US Boulogne Côte d'Opale,2,1,13420,8,2026-2027,,Ligue 2
+59824,15,Matthieu,Angers SCO,Olympique de Marseille,1,2,13123,7,2026-2027,,Ligue 1
+59825,15,Matthieu,Le Havre AC,AJ Auxerre,1,2,13124,7,2026-2027,,Ligue 1
+59826,15,Matthieu,Le Mans FC,Toulouse FC,2,0,13125,7,2026-2027,,Ligue 1
+59827,15,Matthieu,Lille OSC,Stade Brestois 29,1,1,13126,7,2026-2027,,Ligue 1
+59828,15,Matthieu,FC Lorient,AS Monaco,0,2,13127,7,2026-2027,,Ligue 1
+59829,15,Matthieu,Olympique Lyonnais,OGC Nice,3,1,13128,7,2026-2027,,Ligue 1
+59830,15,Matthieu,RC Strasbourg Alsace,Paris Saint Germain,0,2,13129,7,2026-2027,,Ligue 1
+59831,15,Matthieu,ESTAC Troyes,RC Lens,0,2,13130,7,2026-2027,,Ligue 1
+59832,15,Matthieu,Paris FC,Stade Rennais,2,1,13661,7,2026-2027,,Ligue 1
+59833,15,Matthieu,FC Annecy,AS Nancy Lorraine,2,0,13421,9,2026-2027,,Ligue 2
+59834,15,Matthieu,Grenoble Foot 38,US Boulogne Côte d'Opale,1,1,13422,9,2026-2027,,Ligue 2
+59835,15,Matthieu,En Avant de Guingamp,Pau FC,0,2,13423,9,2026-2027,,Ligue 2
+59836,15,Matthieu,Stade Lavallois Mayenne FC,Clermont Foot 63,2,1,13424,9,2026-2027,,Ligue 2
+59837,15,Matthieu,FC Metz,FC Sochaux-Montbéliard,2,1,13425,9,2026-2027,,Ligue 2
+59838,15,Matthieu,FC Nantes,USL Dunkerque,0,2,13426,9,2026-2027,,Ligue 2
+59839,15,Matthieu,Red Star FC 93,AS Saint-Etienne,1,2,13427,9,2026-2027,,Ligue 2
+59840,15,Matthieu,Stade de Reims,Dijon FCO,2,1,13428,9,2026-2027,,Ligue 2
+59841,15,Matthieu,Rodez Aveyron Football,Montpellier HSC,0,2,13429,9,2026-2027,,Ligue 2
+59842,15,Matthieu,AZ Alkmaar,Hapoël Beer-Sheva FC,2,0,13865,2,2026-2027,,Ligue Europa
+59843,15,Matthieu,Lech Poznan,Bayer 04 Leverkusen,0,3,13866,2,2026-2027,,Ligue Europa
+59844,15,Matthieu,Olympique Lyonnais,Crystal Palace FC,2,1,13867,2,2026-2027,,Ligue Europa
+59845,15,Matthieu,Red Bull Salzbourg,AC Milan,0,2,13868,2,2026-2027,,Ligue Europa
+59846,15,Matthieu,Royal Union Saint-Gilloise,Real Sociedad de Fútbol,2,1,13869,2,2026-2027,,Ligue Europa
+59847,15,Matthieu,AC Sparta Prague,Lillestrom SK,2,0,13870,2,2026-2027,,Ligue Europa
+59848,15,Matthieu,SCU Torreense,Sunderland AFC,0,3,13871,2,2026-2027,,Ligue Europa
+59849,15,Matthieu,SL Benfica,Celtic FC,2,1,13872,2,2026-2027,,Ligue Europa
+59850,15,Matthieu,AFC Bournemouth,SK Sturm Graz,2,0,13873,2,2026-2027,,Ligue Europa
+59851,15,Matthieu,Real Club Celta de Vigo,Juventus FC,0,2,13874,2,2026-2027,,Ligue Europa
+59852,15,Matthieu,GNK Dinamo Zagreb,RSC Anderlecht,1,2,13875,2,2026-2027,,Ligue Europa
+59853,15,Matthieu,Ferencváros TC,FC Viktoria Plzen,1,1,13876,2,2026-2027,,Ligue Europa
+59854,15,Matthieu,TSG 1899 Hoffenheim,Besiktas JK,1,1,13877,2,2026-2027,,Ligue Europa
+59855,15,Matthieu,Jagiellonia Bialystok,FC Ararat-Armenia,0,2,13878,2,2026-2027,,Ligue Europa
+59856,15,Matthieu,Olympique de Marseille,Olympiakos,1,2,13879,2,2026-2027,,Ligue Europa
+59857,15,Matthieu,NEC Nimègue,PFK Levski Sofia,2,0,13880,2,2026-2027,,Ligue Europa
+59858,15,Matthieu,Stade Rennais,OFI Crète,3,0,13881,2,2026-2027,,Ligue Europa
+59859,15,Matthieu,NK Celje,Omónia Nicosie,0,2,13985,2,2026-2027,,Ligue Europa
+59860,15,Matthieu,RC Lens,Sporting CP,2,1,13707,2,2026-2027,,Ligue des Champions
+59861,15,Matthieu,Sabah Futbol Klubu,Slavia Prague,0,2,13708,2,2026-2027,,Ligue des Champions
+59862,15,Matthieu,Arsenal FC,Lille OSC,2,0,13709,2,2026-2027,,Ligue des Champions
+59863,15,Matthieu,Club Atlético de Madrid,Manchester United FC,2,1,13710,2,2026-2027,,Ligue des Champions
+59864,15,Matthieu,Galatasaray SK,FC Barcelone,0,4,13711,2,2026-2027,,Ligue des Champions
+59865,15,Matthieu,Inter Milan,Club Brugge KV,3,0,13712,2,2026-2027,,Ligue des Champions
+59866,15,Matthieu,RB Leipzig,PSV Eindhoven,2,1,13713,2,2026-2027,,Ligue des Champions
+59867,15,Matthieu,Viking FK,FC Bayern Munich,0,7,13714,2,2026-2027,,Ligue des Champions
+59868,15,Matthieu,Villarreal CF,SSC Naples,0,2,13715,2,2026-2027,,Ligue des Champions
+59869,15,Matthieu,Feyenoord Rotterdam,Como 1907,0,2,13716,2,2026-2027,,Ligue des Champions
+59870,15,Matthieu,Linzer Athletik-Sport-Klub,Liverpool FC,0,5,13717,2,2026-2027,,Ligue des Champions
+59871,15,Matthieu,AS Rome,Real Madrid CF,1,2,13718,2,2026-2027,,Ligue des Champions
+59872,15,Matthieu,Aston Villa FC,Fenerbahçe SK,2,0,13719,2,2026-2027,,Ligue des Champions
+59873,15,Matthieu,Real Betis Balompié,FC Porto,2,1,13720,2,2026-2027,,Ligue des Champions
+59874,15,Matthieu,FK Bodo/Glimt,Borussia Dortmund,0,2,13721,2,2026-2027,,Ligue des Champions
+59875,15,Matthieu,Manchester City FC,Paris Saint Germain,2,1,13722,2,2026-2027,,Ligue des Champions
+59876,15,Matthieu,Shakhtar Donetsk,AEK Athènes,2,0,13723,2,2026-2027,,Ligue des Champions
+59877,15,Matthieu,ŠK Slovan Bratislava,VfB Stuttgart,0,2,13724,2,2026-2027,,Ligue des Champions
+59878,10,Kévin,Stade Brestois 29,Angers SCO,1,1,13115,6,2026-2027,,Ligue 1
+59879,10,Kévin,RC Lens,Olympique Lyonnais,2,0,13116,6,2026-2027,,Ligue 1
+59880,10,Kévin,Lille OSC,Le Havre AC,2,0,13117,6,2026-2027,,Ligue 1
+59881,10,Kévin,FC Lorient,Paris FC,0,1,13118,6,2026-2027,,Ligue 1
+59882,10,Kévin,AS Monaco,Toulouse FC,3,0,13119,6,2026-2027,,Ligue 1
+59883,10,Kévin,OGC Nice,RC Strasbourg Alsace,2,1,13120,6,2026-2027,,Ligue 1
+59884,10,Kévin,Paris Saint Germain,Le Mans FC,5,0,13121,6,2026-2027,,Ligue 1
+59885,10,Kévin,ESTAC Troyes,Olympique de Marseille,0,2,13122,6,2026-2027,,Ligue 1
+59886,10,Kévin,Stade Rennais,AJ Auxerre,3,0,13660,6,2026-2027,,Ligue 1
+59887,10,Kévin,Clermont Foot 63,Red Star FC 93,2,0,13412,8,2026-2027,,Ligue 2
+59888,10,Kévin,Dijon FCO,FC Metz,2,1,13413,8,2026-2027,,Ligue 2
+59889,10,Kévin,USL Dunkerque,FC Annecy,0,2,13414,8,2026-2027,,Ligue 2
+59890,10,Kévin,Montpellier HSC,Grenoble Foot 38,2,1,13415,8,2026-2027,,Ligue 2
+59891,10,Kévin,AS Nancy Lorraine,En Avant de Guingamp,1,1,13416,8,2026-2027,,Ligue 2
+59892,10,Kévin,FC Nantes,Stade de Reims,1,1,13417,8,2026-2027,,Ligue 2
+59893,10,Kévin,Pau FC,Stade Lavallois Mayenne FC,1,1,13418,8,2026-2027,,Ligue 2
+59894,10,Kévin,AS Saint-Etienne,Rodez Aveyron Football,3,0,13419,8,2026-2027,,Ligue 2
+59895,10,Kévin,FC Sochaux-Montbéliard,US Boulogne Côte d'Opale,1,1,13420,8,2026-2027,,Ligue 2
