@@ -57661,3 +57661,39 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 59974,10,Kévin,RC Strasbourg Alsace,Paris Saint Germain,1,2,13129,7,2026-2027,,Ligue 1
 59975,10,Kévin,ESTAC Troyes,RC Lens,0,2,13130,7,2026-2027,,Ligue 1
 59976,10,Kévin,Paris FC,Stade Rennais,2,1,13661,7,2026-2027,,Ligue 1
+59977,39,Roméo,Angers SCO,Olympique de Marseille,2,1,13123,7,2026-2027,,Ligue 1
+59978,39,Roméo,Le Havre AC,AJ Auxerre,1,1,13124,7,2026-2027,,Ligue 1
+59979,39,Roméo,Le Mans FC,Toulouse FC,2,1,13125,7,2026-2027,,Ligue 1
+59980,39,Roméo,Lille OSC,Stade Brestois 29,1,0,13126,7,2026-2027,,Ligue 1
+59981,39,Roméo,FC Lorient,AS Monaco,0,2,13127,7,2026-2027,,Ligue 1
+59982,39,Roméo,Olympique Lyonnais,OGC Nice,0,2,13128,7,2026-2027,,Ligue 1
+59983,39,Roméo,RC Strasbourg Alsace,Paris Saint Germain,0,2,13129,7,2026-2027,,Ligue 1
+59984,39,Roméo,ESTAC Troyes,RC Lens,0,3,13130,7,2026-2027,,Ligue 1
+59985,39,Roméo,Paris FC,Stade Rennais,2,3,13661,7,2026-2027,,Ligue 1
+59986,17,Olivier,Angers SCO,Olympique de Marseille,1,1,13123,7,2026-2027,,Ligue 1
+59987,17,Olivier,Le Havre AC,AJ Auxerre,1,0,13124,7,2026-2027,,Ligue 1
+59988,17,Olivier,Le Mans FC,Toulouse FC,0,1,13125,7,2026-2027,,Ligue 1
+59989,17,Olivier,Lille OSC,Stade Brestois 29,2,0,13126,7,2026-2027,,Ligue 1
+59990,17,Olivier,FC Lorient,AS Monaco,1,3,13127,7,2026-2027,,Ligue 1
+59991,17,Olivier,Olympique Lyonnais,OGC Nice,2,1,13128,7,2026-2027,,Ligue 1
+59992,17,Olivier,RC Strasbourg Alsace,Paris Saint Germain,0,3,13129,7,2026-2027,,Ligue 1
+59993,17,Olivier,ESTAC Troyes,RC Lens,0,2,13130,7,2026-2027,,Ligue 1
+59994,17,Olivier,Paris FC,Stade Rennais,2,2,13661,7,2026-2027,,Ligue 1
+59995,18,Pierre,Angers SCO,Olympique de Marseille,0,0,13123,7,2026-2027,,Ligue 1
+59996,18,Pierre,Le Havre AC,AJ Auxerre,0,0,13124,7,2026-2027,,Ligue 1
+59997,18,Pierre,Le Mans FC,Toulouse FC,0,0,13125,7,2026-2027,,Ligue 1
+59998,18,Pierre,Lille OSC,Stade Brestois 29,1,0,13126,7,2026-2027,,Ligue 1
+59999,18,Pierre,FC Lorient,AS Monaco,0,0,13127,7,2026-2027,,Ligue 1
+60000,18,Pierre,Olympique Lyonnais,OGC Nice,1,0,13128,7,2026-2027,,Ligue 1
+60001,18,Pierre,RC Strasbourg Alsace,Paris Saint Germain,0,0,13129,7,2026-2027,,Ligue 1
+60002,18,Pierre,ESTAC Troyes,RC Lens,0,0,13130,7,2026-2027,,Ligue 1
+60003,18,Pierre,Paris FC,Stade Rennais,0,0,13661,7,2026-2027,,Ligue 1
+60004,5,Cédric,Angers SCO,Olympique de Marseille,0,1,13123,7,2026-2027,,Ligue 1
+60005,5,Cédric,Le Havre AC,AJ Auxerre,1,0,13124,7,2026-2027,,Ligue 1
+60006,5,Cédric,Le Mans FC,Toulouse FC,2,2,13125,7,2026-2027,,Ligue 1
+60007,5,Cédric,Lille OSC,Stade Brestois 29,1,0,13126,7,2026-2027,,Ligue 1
+60008,5,Cédric,FC Lorient,AS Monaco,0,2,13127,7,2026-2027,,Ligue 1
+60009,5,Cédric,Olympique Lyonnais,OGC Nice,2,1,13128,7,2026-2027,,Ligue 1
+60010,5,Cédric,RC Strasbourg Alsace,Paris Saint Germain,1,2,13129,7,2026-2027,,Ligue 1
+60011,5,Cédric,ESTAC Troyes,RC Lens,0,1,13130,7,2026-2027,,Ligue 1
+60012,5,Cédric,Paris FC,Stade Rennais,2,1,13661,7,2026-2027,,Ligue 1
