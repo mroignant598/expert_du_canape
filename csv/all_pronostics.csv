@@ -57697,3 +57697,75 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 60010,5,Cédric,RC Strasbourg Alsace,Paris Saint Germain,1,2,13129,7,2026-2027,,Ligue 1
 60011,5,Cédric,ESTAC Troyes,RC Lens,0,1,13130,7,2026-2027,,Ligue 1
 60012,5,Cédric,Paris FC,Stade Rennais,2,1,13661,7,2026-2027,,Ligue 1
+60013,39,Roméo,Fenerbahçe SK,Slavia Prague,2,0,13725,3,2026-2027,,Ligue des Champions
+60014,39,Roméo,Sabah Futbol Klubu,Borussia Dortmund,0,4,13726,3,2026-2027,,Ligue des Champions
+60015,39,Roméo,AS Rome,ŠK Slovan Bratislava,3,1,13727,3,2026-2027,,Ligue des Champions
+60016,39,Roméo,FC Porto,PSV Eindhoven,2,0,13728,3,2026-2027,,Ligue des Champions
+60017,39,Roméo,Liverpool FC,Villarreal CF,3,1,13729,3,2026-2027,,Ligue des Champions
+60018,39,Roméo,Manchester City FC,AEK Athènes,4,0,13730,3,2026-2027,,Ligue des Champions
+60019,39,Roméo,SSC Naples,FK Bodo/Glimt,2,0,13731,3,2026-2027,,Ligue des Champions
+60020,39,Roméo,Paris Saint Germain,FC Barcelone,3,2,13732,3,2026-2027,,Ligue des Champions
+60021,39,Roméo,VfB Stuttgart,Club Atlético de Madrid,0,2,13733,3,2026-2027,,Ligue des Champions
+60022,39,Roméo,Como 1907,Manchester United FC,2,1,13734,3,2026-2027,,Ligue des Champions
+60023,39,Roméo,Lille OSC,Galatasaray SK,3,0,13735,3,2026-2027,,Ligue des Champions
+60024,39,Roméo,Aston Villa FC,Viking FK,2,0,13736,3,2026-2027,,Ligue des Champions
+60025,39,Roméo,FC Bayern Munich,Arsenal FC,3,2,13737,3,2026-2027,,Ligue des Champions
+60026,39,Roméo,Real Betis Balompié,Feyenoord Rotterdam,1,0,13738,3,2026-2027,,Ligue des Champions
+60027,39,Roméo,Club Brugge KV,RC Lens,0,2,13739,3,2026-2027,,Ligue des Champions
+60028,39,Roméo,Inter Milan,Shakhtar Donetsk,3,0,13740,3,2026-2027,,Ligue des Champions
+60029,39,Roméo,Real Madrid CF,RB Leipzig,4,0,13741,3,2026-2027,,Ligue des Champions
+60030,39,Roméo,Sporting CP,Linzer Athletik-Sport-Klub,2,0,13742,3,2026-2027,,Ligue des Champions
+60031,15,Matthieu,Fenerbahçe SK,Slavia Prague,2,0,13725,3,2026-2027,,Ligue des Champions
+60032,15,Matthieu,Sabah Futbol Klubu,Borussia Dortmund,0,3,13726,3,2026-2027,,Ligue des Champions
+60033,15,Matthieu,AS Rome,ŠK Slovan Bratislava,2,1,13727,3,2026-2027,,Ligue des Champions
+60034,15,Matthieu,FC Porto,PSV Eindhoven,2,0,13728,3,2026-2027,,Ligue des Champions
+60035,15,Matthieu,Liverpool FC,Villarreal CF,4,0,13729,3,2026-2027,,Ligue des Champions
+60036,15,Matthieu,Manchester City FC,AEK Athènes,7,0,13730,3,2026-2027,,Ligue des Champions
+60037,15,Matthieu,SSC Naples,FK Bodo/Glimt,2,1,13731,3,2026-2027,,Ligue des Champions
+60038,15,Matthieu,Paris Saint Germain,FC Barcelone,3,1,13732,3,2026-2027,,Ligue des Champions
+60039,15,Matthieu,VfB Stuttgart,Club Atlético de Madrid,0,2,13733,3,2026-2027,,Ligue des Champions
+60040,15,Matthieu,Como 1907,Manchester United FC,2,0,13734,3,2026-2027,,Ligue des Champions
+60041,15,Matthieu,Lille OSC,Galatasaray SK,0,1,13735,3,2026-2027,,Ligue des Champions
+60042,15,Matthieu,Aston Villa FC,Viking FK,6,0,13736,3,2026-2027,,Ligue des Champions
+60043,15,Matthieu,FC Bayern Munich,Arsenal FC,3,1,13737,3,2026-2027,,Ligue des Champions
+60044,15,Matthieu,Real Betis Balompié,Feyenoord Rotterdam,1,1,13738,3,2026-2027,,Ligue des Champions
+60045,15,Matthieu,Club Brugge KV,RC Lens,2,0,13739,3,2026-2027,,Ligue des Champions
+60046,15,Matthieu,Inter Milan,Shakhtar Donetsk,3,1,13740,3,2026-2027,,Ligue des Champions
+60047,15,Matthieu,Real Madrid CF,RB Leipzig,4,0,13741,3,2026-2027,,Ligue des Champions
+60048,15,Matthieu,Sporting CP,Linzer Athletik-Sport-Klub,4,0,13742,3,2026-2027,,Ligue des Champions
+60049,15,Matthieu,Angers SCO,FC Lorient,2,1,13131,8,2026-2027,,Ligue 1
+60050,15,Matthieu,AJ Auxerre,Le Mans FC,2,0,13132,8,2026-2027,,Ligue 1
+60051,15,Matthieu,Stade Brestois 29,OGC Nice,2,1,13133,8,2026-2027,,Ligue 1
+60052,15,Matthieu,RC Lens,Paris FC,2,1,13134,8,2026-2027,,Ligue 1
+60053,15,Matthieu,Olympique de Marseille,Le Havre AC,3,0,13135,8,2026-2027,,Ligue 1
+60054,15,Matthieu,AS Monaco,Lille OSC,2,1,13136,8,2026-2027,,Ligue 1
+60055,15,Matthieu,Paris Saint Germain,Olympique Lyonnais,3,1,13137,8,2026-2027,,Ligue 1
+60056,15,Matthieu,Toulouse FC,ESTAC Troyes,2,0,13138,8,2026-2027,,Ligue 1
+60057,15,Matthieu,Stade Rennais,RC Strasbourg Alsace,2,1,13662,8,2026-2027,,Ligue 1
+60058,15,Matthieu,US Boulogne Côte d'Opale,Stade de Reims,0,2,13430,10,2026-2027,,Ligue 2
+60059,15,Matthieu,Clermont Foot 63,En Avant de Guingamp,1,1,13431,10,2026-2027,,Ligue 2
+60060,15,Matthieu,Dijon FCO,Rodez Aveyron Football,2,0,13432,10,2026-2027,,Ligue 2
+60061,15,Matthieu,USL Dunkerque,FC Metz,2,1,13433,10,2026-2027,,Ligue 2
+60062,15,Matthieu,Montpellier HSC,Red Star FC 93,2,0,13434,10,2026-2027,,Ligue 2
+60063,15,Matthieu,AS Nancy Lorraine,Stade Lavallois Mayenne FC,2,1,13435,10,2026-2027,,Ligue 2
+60064,15,Matthieu,Pau FC,Grenoble Foot 38,2,0,13436,10,2026-2027,,Ligue 2
+60065,15,Matthieu,AS Saint-Etienne,FC Nantes,3,0,13437,10,2026-2027,,Ligue 2
+60066,15,Matthieu,FC Sochaux-Montbéliard,FC Annecy,2,1,13438,10,2026-2027,,Ligue 2
+60067,15,Matthieu,FC Ararat-Armenia,AZ Alkmaar,2,1,13882,3,2026-2027,,Ligue Europa
+60068,15,Matthieu,GNK Dinamo Zagreb,NEC Nimègue,2,0,13883,3,2026-2027,,Ligue Europa
+60069,15,Matthieu,Ferencváros TC,SCU Torreense,3,0,13884,3,2026-2027,,Ligue Europa
+60070,15,Matthieu,Juventus FC,Stade Rennais,2,0,13885,3,2026-2027,,Ligue Europa
+60071,15,Matthieu,Lech Poznan,Sunderland AFC,0,2,13886,3,2026-2027,,Ligue Europa
+60072,15,Matthieu,OFI Crète,Bayer 04 Leverkusen,0,3,13887,3,2026-2027,,Ligue Europa
+60073,15,Matthieu,Royal Union Saint-Gilloise,Hapoël Beer-Sheva FC,2,0,13888,3,2026-2027,,Ligue Europa
+60074,15,Matthieu,SK Sturm Graz,Olympique de Marseille,1,2,13889,3,2026-2027,,Ligue Europa
+60075,15,Matthieu,Besiktas JK,Crystal Palace FC,2,1,13890,3,2026-2027,,Ligue Europa
+60076,15,Matthieu,AFC Bournemouth,AC Milan,2,1,13891,3,2026-2027,,Ligue Europa
+60077,15,Matthieu,Celtic FC,Real Club Celta de Vigo,2,1,13892,3,2026-2027,,Ligue Europa
+60078,15,Matthieu,TSG 1899 Hoffenheim,Olympique Lyonnais,0,2,13893,3,2026-2027,,Ligue Europa
+60079,15,Matthieu,Jagiellonia Bialystok,RSC Anderlecht,2,1,13894,3,2026-2027,,Ligue Europa
+60080,15,Matthieu,Lillestrom SK,Real Sociedad de Fútbol,2,1,13895,3,2026-2027,,Ligue Europa
+60081,15,Matthieu,Olympiakos,AC Sparta Prague,2,1,13896,3,2026-2027,,Ligue Europa
+60082,15,Matthieu,Omónia Nicosie,SL Benfica,0,2,13897,3,2026-2027,,Ligue Europa
+60083,15,Matthieu,FC Viktoria Plzen,PFK Levski Sofia,2,0,13898,3,2026-2027,,Ligue Europa
+60084,15,Matthieu,NK Celje,Red Bull Salzbourg,0,4,13986,3,2026-2027,,Ligue Europa
