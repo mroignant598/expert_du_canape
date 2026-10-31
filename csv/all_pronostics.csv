@@ -57859,3 +57859,48 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 60172,5,Cédric,Paris Saint Germain,Olympique Lyonnais,2,1,13137,8,2026-2027,,Ligue 1
 60173,5,Cédric,Toulouse FC,ESTAC Troyes,2,0,13138,8,2026-2027,,Ligue 1
 60174,5,Cédric,Stade Rennais,RC Strasbourg Alsace,2,1,13662,8,2026-2027,,Ligue 1
+60175,39,Roméo,Le Havre AC,Paris Saint Germain,0,4,13139,9,2026-2027,,Ligue 1
+60176,39,Roméo,Lille OSC,RC Lens,2,0,13140,9,2026-2027,,Ligue 1
+60177,39,Roméo,FC Lorient,Stade Brestois 29,2,1,13141,9,2026-2027,,Ligue 1
+60178,39,Roméo,Olympique Lyonnais,Angers SCO,0,1,13142,9,2026-2027,,Ligue 1
+60179,39,Roméo,Olympique de Marseille,Toulouse FC,3,1,13143,9,2026-2027,,Ligue 1
+60180,39,Roméo,Paris FC,AS Monaco,0,0,13144,9,2026-2027,,Ligue 1
+60181,39,Roméo,RC Strasbourg Alsace,AJ Auxerre,2,0,13145,9,2026-2027,,Ligue 1
+60182,39,Roméo,ESTAC Troyes,Le Mans FC,0,0,13146,9,2026-2027,,Ligue 1
+60183,39,Roméo,OGC Nice,Stade Rennais,0,1,13663,9,2026-2027,,Ligue 1
+60184,15,Matthieu,Le Havre AC,Paris Saint Germain,0,3,13139,9,2026-2027,,Ligue 1
+60185,15,Matthieu,Lille OSC,RC Lens,2,1,13140,9,2026-2027,,Ligue 1
+60186,15,Matthieu,FC Lorient,Stade Brestois 29,0,1,13141,9,2026-2027,,Ligue 1
+60187,15,Matthieu,Olympique Lyonnais,Angers SCO,3,0,13142,9,2026-2027,,Ligue 1
+60188,15,Matthieu,Olympique de Marseille,Toulouse FC,2,1,13143,9,2026-2027,,Ligue 1
+60189,15,Matthieu,Paris FC,AS Monaco,1,1,13144,9,2026-2027,,Ligue 1
+60190,15,Matthieu,RC Strasbourg Alsace,AJ Auxerre,2,0,13145,9,2026-2027,,Ligue 1
+60191,15,Matthieu,ESTAC Troyes,Le Mans FC,1,2,13146,9,2026-2027,,Ligue 1
+60192,15,Matthieu,OGC Nice,Stade Rennais,0,3,13663,9,2026-2027,,Ligue 1
+60193,15,Matthieu,FC Annecy,Montpellier HSC,2,1,13439,11,2026-2027,,Ligue 2
+60194,15,Matthieu,Grenoble Foot 38,Dijon FCO,0,2,13440,11,2026-2027,,Ligue 2
+60195,15,Matthieu,En Avant de Guingamp,AS Saint-Etienne,0,2,13441,11,2026-2027,,Ligue 2
+60196,15,Matthieu,Stade Lavallois Mayenne FC,US Boulogne Côte d'Opale,0,2,13442,11,2026-2027,,Ligue 2
+60197,15,Matthieu,FC Metz,Pau FC,2,1,13443,11,2026-2027,,Ligue 2
+60198,15,Matthieu,FC Nantes,Clermont Foot 63,1,0,13444,11,2026-2027,,Ligue 2
+60199,15,Matthieu,Red Star FC 93,AS Nancy Lorraine,2,0,13445,11,2026-2027,,Ligue 2
+60200,15,Matthieu,Stade de Reims,FC Sochaux-Montbéliard,2,1,13446,11,2026-2027,,Ligue 2
+60201,15,Matthieu,Rodez Aveyron Football,USL Dunkerque,0,1,13447,11,2026-2027,,Ligue 2
+60202,17,Olivier,Le Havre AC,Paris Saint Germain,0,4,13139,9,2026-2027,,Ligue 1
+60203,17,Olivier,Lille OSC,RC Lens,1,1,13140,9,2026-2027,,Ligue 1
+60204,17,Olivier,FC Lorient,Stade Brestois 29,0,1,13141,9,2026-2027,,Ligue 1
+60205,17,Olivier,Olympique Lyonnais,Angers SCO,2,0,13142,9,2026-2027,,Ligue 1
+60206,17,Olivier,Olympique de Marseille,Toulouse FC,1,0,13143,9,2026-2027,,Ligue 1
+60207,17,Olivier,Paris FC,AS Monaco,2,1,13144,9,2026-2027,,Ligue 1
+60208,17,Olivier,RC Strasbourg Alsace,AJ Auxerre,2,0,13145,9,2026-2027,,Ligue 1
+60209,17,Olivier,ESTAC Troyes,Le Mans FC,0,0,13146,9,2026-2027,,Ligue 1
+60210,17,Olivier,OGC Nice,Stade Rennais,2,2,13663,9,2026-2027,,Ligue 1
+60211,18,Pierre,Le Havre AC,Paris Saint Germain,0,1,13139,9,2026-2027,,Ligue 1
+60212,18,Pierre,Lille OSC,RC Lens,0,0,13140,9,2026-2027,,Ligue 1
+60213,18,Pierre,FC Lorient,Stade Brestois 29,0,0,13141,9,2026-2027,,Ligue 1
+60214,18,Pierre,Olympique Lyonnais,Angers SCO,1,0,13142,9,2026-2027,,Ligue 1
+60215,18,Pierre,Olympique de Marseille,Toulouse FC,0,0,13143,9,2026-2027,,Ligue 1
+60216,18,Pierre,Paris FC,AS Monaco,0,0,13144,9,2026-2027,,Ligue 1
+60217,18,Pierre,RC Strasbourg Alsace,AJ Auxerre,0,0,13145,9,2026-2027,,Ligue 1
+60218,18,Pierre,ESTAC Troyes,Le Mans FC,0,0,13146,9,2026-2027,,Ligue 1
+60219,18,Pierre,OGC Nice,Stade Rennais,0,0,13663,9,2026-2027,,Ligue 1
