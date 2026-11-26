@@ -58219,3 +58219,39 @@ id,participant_id,participant_nom,equipe_domicile,equipe_exterieure,score_domici
 60532,15,Matthieu,Sunderland AFC,Jagiellonia Bialystok,4,0,13931,5,2026-2027,,Ligue Europa
 60533,15,Matthieu,SCU Torreense,Celtic FC,1,1,13932,5,2026-2027,,Ligue Europa
 60534,15,Matthieu,Ferencváros TC,NK Celje,1,1,13988,5,2026-2027,,Ligue Europa
+60535,5,Cédric,RC Lens,Toulouse FC,1,0,13155,11,2026-2027,,Ligue 1
+60536,5,Cédric,Lille OSC,Olympique Lyonnais,1,0,13156,11,2026-2027,,Ligue 1
+60537,5,Cédric,Olympique de Marseille,Le Mans FC,1,0,13157,11,2026-2027,,Ligue 1
+60538,5,Cédric,AS Monaco,AJ Auxerre,1,0,13158,11,2026-2027,,Ligue 1
+60539,5,Cédric,OGC Nice,Paris Saint Germain,1,0,13159,11,2026-2027,,Ligue 1
+60540,5,Cédric,Paris FC,Angers SCO,0,1,13160,11,2026-2027,,Ligue 1
+60541,5,Cédric,RC Strasbourg Alsace,Stade Brestois 29,1,0,13161,11,2026-2027,,Ligue 1
+60542,5,Cédric,ESTAC Troyes,Le Havre AC,0,1,13162,11,2026-2027,,Ligue 1
+60543,5,Cédric,FC Lorient,Stade Rennais,1,0,13665,11,2026-2027,,Ligue 1
+60544,10,Kévin,AC Milan,Ferencváros TC,1,0,13899,4,2026-2027,,Ligue Europa
+60545,10,Kévin,RSC Anderlecht,Red Bull Salzbourg,0,1,13900,4,2026-2027,,Ligue Europa
+60546,10,Kévin,Crystal Palace FC,TSG 1899 Hoffenheim,1,0,13901,4,2026-2027,,Ligue Europa
+60547,10,Kévin,PFK Levski Sofia,Jagiellonia Bialystok,0,1,13902,4,2026-2027,,Ligue Europa
+60548,10,Kévin,Lillestrom SK,FC Viktoria Plzen,1,0,13903,4,2026-2027,,Ligue Europa
+60549,10,Kévin,NEC Nimègue,Omónia Nicosie,0,1,13904,4,2026-2027,,Ligue Europa
+60550,10,Kévin,Real Sociedad de Fútbol,Olympique Lyonnais,1,0,13905,4,2026-2027,,Ligue Europa
+60551,10,Kévin,Stade Rennais,Olympiakos,1,0,13906,4,2026-2027,,Ligue Europa
+60552,10,Kévin,AC Sparta Prague,AFC Bournemouth,1,0,13907,4,2026-2027,,Ligue Europa
+60553,10,Kévin,AZ Alkmaar,Juventus FC,1,0,13908,4,2026-2027,,Ligue Europa
+60554,10,Kévin,Bayer 04 Leverkusen,Olympique de Marseille,1,0,13909,4,2026-2027,,Ligue Europa
+60555,10,Kévin,SL Benfica,Lech Poznan,0,1,13910,4,2026-2027,,Ligue Europa
+60556,10,Kévin,Real Club Celta de Vigo,Royal Union Saint-Gilloise,1,0,13911,4,2026-2027,,Ligue Europa
+60557,10,Kévin,Celtic FC,Besiktas JK,0,1,13912,4,2026-2027,,Ligue Europa
+60558,10,Kévin,Hapoël Beer-Sheva FC,OFI Crète,1,0,13913,4,2026-2027,,Ligue Europa
+60559,10,Kévin,Sunderland AFC,GNK Dinamo Zagreb,1,0,13914,4,2026-2027,,Ligue Europa
+60560,10,Kévin,SCU Torreense,FC Ararat-Armenia,0,1,13915,4,2026-2027,,Ligue Europa
+60561,10,Kévin,SK Sturm Graz,NK Celje,1,0,13987,4,2026-2027,,Ligue Europa
+60562,15,Matthieu,Angers SCO,RC Lens,2,1,13163,12,2026-2027,,Ligue 1
+60563,15,Matthieu,AJ Auxerre,Olympique de Marseille,0,2,13164,12,2026-2027,,Ligue 1
+60564,15,Matthieu,Stade Brestois 29,Paris FC,2,1,13165,12,2026-2027,,Ligue 1
+60565,15,Matthieu,Le Havre AC,RC Strasbourg Alsace,2,1,13166,12,2026-2027,,Ligue 1
+60566,15,Matthieu,Le Mans FC,Lille OSC,2,0,13167,12,2026-2027,,Ligue 1
+60567,15,Matthieu,Olympique Lyonnais,AS Monaco,2,0,13168,12,2026-2027,,Ligue 1
+60568,15,Matthieu,OGC Nice,ESTAC Troyes,4,0,13169,12,2026-2027,,Ligue 1
+60569,15,Matthieu,Paris Saint Germain,FC Lorient,3,0,13170,12,2026-2027,,Ligue 1
+60570,15,Matthieu,Toulouse FC,Stade Rennais,1,2,13666,12,2026-2027,,Ligue 1
